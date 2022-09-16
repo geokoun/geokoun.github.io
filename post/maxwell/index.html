@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8" />
+
+  <title>Electrodynamics from First Principles - I Physicist</title>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://hugotex.vercel.app/css/latex.css" />
+<link rel="stylesheet" href="https://hugotex.vercel.app/css/main.css" />
+
+<link rel="stylesheet" href="https://hugotex.vercel.app/css/darkmode.css" />
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hugo 0.102.3" /><body>
+
+
+
+
+
+
+<header>
+  <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+  <div class="intro-header">
+    <div class="container">
+      <div class="post-heading">
+        
+          <h1>Electrodynamics from First Principles</h1>
+          
+        
+      </div>
+    </div>
+  </div>
+</header>
+<div id="content">
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      <div class="postmeta">
+        <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>Sep 10, 2022
+  
+</span>
+      </div>
+      <br>
+      
+    <p>A step to step derivation of Maxwell&rsquo;s equations for Electrodynamics starting
+from the principles of Relativity and Quantum Mechanics</p>
+<h1 id="introduction">Introduction</h1>
+<p>The first set of equations somebody studying physics encounters, right after Newton&rsquo;s laws are Maxwell&rsquo;s equations. These equations describe the electromagnetic field permeating space and how it&rsquo;s affected by and affects charges moving through it. In classical electrodynamics these equations are derived by seemingly arbitrary axioms that are limited to just the derivation of Maxwell&rsquo;s equations. In fact there is a way to derive all of Maxwell&rsquo;s equations just by the principles of relativity and quantum mechanics together with some simple experimental observations.<br>
+In the following text we are going derive, step by step, Maxwell&rsquo;s equations from the very fundamental axioms of physics.</p>
+<h1 id="the-principles">The principles</h1>
+<p><strong>Least Action:</strong>  The first principle, proposed by Maupertuis and then formalised by Lagrange and Hamilton is that of the least(/stationary) action. It claims that for every physical system there exists a quantity \(\mathcal{S}\) 
+called the action that is defined as the integral of another function called the Lagrangian \(\mathcal{L}\) over the path taken by the system, and that that quantity takes an extremal value (usually a minimum) when the path taken is the physical one
+$$\mathcal{S}=\int_{t_1}^{t_2} \mathcal{L} \ dt \;\;\; (2.1) $$</p>
+<p><strong>Relativity:</strong> Based on the famous experiment by Michelson and Morley and, ironically, Maxwell&rsquo;s equations, Einstein postulated two axioms on which to base his theory of relativity. The first one is that the speed of light c in a vacuum is constant and the same regardless of reference frame used. The second one is that the laws of physics should be the same for all inertial frames of reference (not accelerating).<br>
+Aside from the experimental confirmation of the first principle there is also a philosophical argument to be made based on the experimental result that light is an electromagnetic wave (Thomas Young conducted the first double slit experiment in 1801). Based on the second principle of relativity, electromagnetic interactions should be the same in every frame of reference so the speed electromagnetic waves should be the same too.<br>
+<strong>Quantum Mechanics:</strong> Again, based on experiments like the double slit experiment and the photo-electric phenomenon two axioms were proposed by Heisenberg and others to explain the results. The first principle is that of superposition. Mathematically speaking the principle of superposition says that the wave equations (double slit) describing particles can be linearly combined to give a new wave equation that describes the new system. The second principle is that of uncertainty, which claims that the momentum and the position of a particle cannot be simultaneously measured with arbitrary accuracy.</p>
+<h1 id="basics-results-derived-from-the-principles">Basics results derived from the principles</h1>
+<h6 id="principle-of-least-action">Principle of least action</h6>
+<p><strong>Euler-Lagrange equations:</strong> First, we assume that the Lagrangian is a function of the positions \(q_i\),of the corresponding velocities \(\dot{q_i}\) and of time.
+We do not need to consider higher derivatives of the positions because experimentally we only need the initial position and velocity to fully determine the motion of a system.
+Now, assume that \(\vec{x(t)}\) is in fact the natural path of the system and that we care about the movement between the points \(\vec{x_1}\) and \(\vec{x_2}\). There is now an action \(\mathcal{S}\) corresponding to the natural path \(\vec{x(t)}\). Next we assume a slightly altered path:
+$$\vec{x&rsquo;(t,\epsilon)}=\vec{x(t)} + \epsilon\vec{\eta(t)} \;\;\; (3.1) $$</p>
+<p>Where \(\eta\) is an arbitrary continuous function and \(\epsilon\) the strength of the alteration. \(\eta\) is not completely arbitrary, since we have  chosen a specific starting and ending point, we demand that
+$$\vec{\eta(t_1)}=\vec{\eta(t_2)}=0 \;\;\; (3.2)$$
+so that:
+$$\vec{x&rsquo;(t_1)}=\vec{x_1}\; ,\;\vec{x&rsquo;(t_2)}=\vec{x_2}$$</p>
+<p>Taking the Taylor expansion of \(\mathcal{L}(\vec{x&rsquo;},\vec{\dot{x&rsquo;}},t)\) and keeping only the terms up to first order with respect to \(\epsilon\) we get
+$$\mathcal{L&rsquo;}(\vec{x}+\epsilon\vec{\eta},\vec{\dot{x}}+\vec{\dot{\eta}},t)=\mathcal{L}(\vec{x},\vec{\dot{x}},t)+\frac{\partial \mathcal{L}}{\partial x_i}\eta_i +\frac{\partial \mathcal{L}}{\partial \dot{x_i}}\dot{\eta_i} \;\;\; (3.3)$$</p>
+<p>The principle of  least (stationary) action claims that the action corresponding to the altered path \(\mathcal{S&rsquo;}\) should be the same as the original action up to a degree of \(\epsilon\) (that is the definition of an extremum):
+$$\delta\mathcal{S}=\mathcal{S&rsquo;}-\mathcal{S}=0$$
+So using (3.3) and the chain rule we get
+$$\delta\mathcal{S}=\int_{t_1}^{t_2} \frac{\partial \mathcal{L}}{\partial x_i}\eta_i +\frac{\partial \mathcal{L}}{\partial \dot{x_i}}\dot{\eta_i} \ dt =\int_{t_1}^{t_2} \frac{\partial \mathcal{L}}{\partial x_i}\eta_i + \frac{d}{dt}(\frac{\partial \mathcal{L}}{\partial \dot{x_i}}\eta_i) - \frac{d}{dt}(\frac{\partial \mathcal{L}}{\partial \dot{x_i}})\eta_i  dt =0$$
+$$ \delta\mathcal{S}=\int_{t_1}^{t_2} [\frac{\partial \mathcal{L}}{\partial x_i}-\frac{d}{dt}(\frac{\partial \mathcal{L}}{\partial \dot{x_i}})]\eta_i  dt + [\frac{\partial \mathcal{L}}{\partial \dot{x_i}}\eta_i]_{t_1}^{t_2} =0$$</p>
+<p>Now, because of (3.2) the integrated part is equal to zero so the integral also has to be zero. Notice however that \(\vec{\eta}\) is arbitrary so the term inside the parentheses has to be identically zero. The resulting equations are known as the Euler-Lagrange equations
+$$\frac{d}{dt}(\frac{\partial \mathcal{L}}{\partial \dot{x_i}}) = \frac{\partial \mathcal{L}}{\partial x_i} \;\;\; (3.4)$$ 
+The term \(\frac{\partial \mathcal{L}}{\partial \dot{x_i}}\) is called the generalised momentum because it plays the role that momentum plays in Newton&rsquo;s second law \(\frac{d\vec{p}}{dt}=\vec{F}\).</p>
+<h6 id="principles-of-qm">Principles of QM</h6>
+<p><strong>Linearlity of equations:</strong> Next we are going to look at QM because the results we need for our derivations are simpler than those of relativity. From the principle of superposition we can deduce that the equations describing the wave equations are <em>linear</em> differential equations. The linearity comes from the fact that the addition of two solutions of the hypothetical equations give another solution of the equations.<br>
+<strong>Operators:</strong> The second result is a bit more subtle. In QM classically measurable quantities are replaced with operators that act on the wave functions. This method is motivated by the uncertainty principle. As a result of uncertainty it is impossible to describe momentum as a function of the position and therefore we need to use mean values instead. 
+We again need a linear function of the wave equation so we define the operator \(\hat{f}\) of a physical quantity f as the operator that satisfies the relation
+$$ &lt;f&gt;=\int_V \Psi^*\hat{f}\Psi  dV \;\;\; (3.5) $$
+Where \(&lt;f&gt;\) is the mean value of f in the region of space V.
+We will be concerned with two operators, those of energy and momentum. It turns out that the operators are<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>:
+$$\hat{E}=i\hbar \partial_t \;,\;\hat{\vec{p}}=-i\hbar \vec{\nabla} \;\;\; (3.6)$$</p>
+<h6 id="princples-of-relativity">Princples of Relativity</h6>
+<p><strong>Space-time Intervals:</strong> The last result we are going to need is probably the most famous equation in physics, derived by Einstein from the principles of relativity
+$$E^2=m^2c^4 + p^2c^2  \;\;\; (3.7) $$
+To get to (3.7) we begin by mathematically stating the invariance of the speed of light. We consider two reference frames \(O\) and \(O&rsquo;\) that are moving with constant velocity with respect to one-another. We choose the \(X\) and \(X&rsquo;\) so they coincide. From now on all quantities without \(&rsquo;\) refer to them as measured in \(O\) and all quantities with \(&rsquo;\) refer to the same quantities as measure in \(O&rsquo;\).<br>
+Assume that a signal traveling at the speed of light is sent at \(t_1\) from the point \(x_1,y_1,z_1\) and reaches the point \(x_2,y_2,z_2\) at time \(t_2\).
+Now the distance traveled can be written as \(c(t_2-t_1)\) and also as \(\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}\) so in \(O\) we have
+$$(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2 - c^2(t_2-t_1)^2 = 0 \;\;\; (3.8)$$</p>
+<p>By the same logic, the same relation holds in \(O&rsquo;\)
+$$(x&rsquo;_2-x&rsquo;_1)^2+(y&rsquo;_2-y&rsquo;_1)^2+(z&rsquo;_2-z&rsquo;_1)^2 - c^2(t&rsquo;_2-t&rsquo;_1)^2 = 0 \;\;\; (3.9)$$</p>
+<p>We now define the <em>interval</em> between two events in space-time as
+$$ s_{12}=\sqrt{-c^2(t_2-t_1)^2+(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2 } $$
+As we have seen, if the interval is zero in one frame of reference then it must be zero in all frames of reference.<br>
+If two events are infinitesimally close to one-another then we can write
+$$ ds^2=-c^2dt^2 + dx^2+dy^2+dz^2$$
+From the definitions of \(ds^2\) and \(s_{12}\) we see that we can naturally define a geometry on a four-dimensional space-time (Notice that this new space-time is not the classical Euclidean one seeing as in euclidean space \(ds^2=dx^2+dy^2+dz^2+dt^2\)).<br>
+Now, if \(ds=0\) then \(ds&rsquo;=0\) and the two infinitesimals are of the same order so the following must be true:
+$$ds^2=\alpha ds&rsquo;^2$$
+The value of \(\alpha\) cannot depend on the coordinates of space-time (since it&rsquo;s constant when talking about two specific frames of reference) and it cannot depends on the direction of the relative velocity between the two systems since we assume that our world is isotropic. Therefore, it can only depend on the absolute value of the relative velocity.<br>
+Assume three reference frames \(O,O_1,O_2\) where \(V_1\) and \(V_2\) are the relative velocities of the two numbered frames with respect to \(O\). From the above considerations we have
+$$ds^2 = \alpha (V_1)ds_1^2\;,\;ds^2=\alpha (V_2)ds_2^2 $$
+Similarly we can write
+$$ds_1^2=\alpha (V_{12})ds_2^2$$
+Where \(V_{12}\) is the relative velocity of \(O_2\) with respect to \(O_1\). Comparing the above three relations we get
+$$\frac{\alpha (V_2)}{\alpha (V_1)}=\alpha (V_{12})\;\;\; (3.10)$$
+Notice that \(V_{12}\) depends on the angle between \(V_1\) and \(V_2\) while the right hand side of (3.10) does not. The only way the equation is true is if \(\alpha\) is a constant and by the same equation \(\alpha =1\). Therefore we get the invariance of intervals in space-time
+$$ds^2=ds&rsquo;^2$$
+A finite interval is just the sum of infinitesimal ones so it follows that \(s=s&rsquo;\).</p>
+<p><strong>Proper Time:</strong> ssume that we are in an inertial frame and that there is a clock that is moving. At each particular moment we can assume that the clock is moving in a straight line and introduce a coordinate system moving with the clock.
+In an interval \(dt\) the clock has moved a distance \(\sqrt{dx^2+dy^2+dz^2}\). What is the value $dt&rsquo;$ that the clock sees?
+The clock&rsquo;s system moves with it so \(dx&rsquo;=dy&rsquo;=dz=0\) and from the last section we know that the intervals must be the same so:
+$$-ds^2=c^2dt^2-dx^2-dy^2-dz^2=c^2dt&rsquo;^2 $$</p>
+<p>Solving for the clock&rsquo;s time
+$$dt&rsquo;=dt\sqrt{1-\frac{dx^2+dy^2+dz^2}{c^2dt^2}}=dt\sqrt{1-\frac{v^2}{c^2}}\;\;\; (3.11)$$
+We can get the total time measured by the moving clock by integrating this expression. The result is called the <em>proper time</em> of the moving object:
+$$ t_2&rsquo; - t_1&rsquo;=\int_{t_1}^{t_2}dt\sqrt{1-\frac{v^2}{c^2}} \;\;\;(3.12) $$</p>
+<p><strong>The Equations of Special Relativity:</strong> To get started we go back to our ever present principle of least action. Now our action \(\mathcal{S}\) must be the same in all reference frames (principle of relativity) since it must lead to the same equations in every frame.
+\(\mathcal{S}\) must therefore be a scalar (non-vector) integral that is invariant to changes of reference frame. The only quantity we know that satisfies these conditions in the space-time interval so we get
+$$\mathcal{S}=\alpha\int_a^b ds$$</p>
+<p>Where a and b are points in 4d space-time and \(\alpha\) is some constant characteristic of the particle in question. As we saw in the first subsection, to use our machinery on the action function we need to bring it to a form:
+$$\mathcal{S}=\int_{t_1}^{t_2}\mathcal{L}dt$$</p>
+<p>We saw that \(ds=-cdt&rsquo;\) so we can write
+$$\mathcal{S}=-\int_{t_1}^{t_2} c\alpha\sqrt{1-\frac{v^2}{c^2}}dt$$</p>
+<p>So we see that our Lagrangian is
+$$\mathcal{L}=-c\alpha\sqrt{1-\frac{v^2}{c^2}}$$</p>
+<p>To determine the constant \(\alpha\) we assume that \(v&laquo;c\) so we Taylor expand \(\mathcal{L}\) and get
+$$\mathcal{L}\approx -\alpha c +\frac{\alpha v^2}{2c}$$
+The constant can be ignored as it does not affect the equations of motion. In classical mechanics the Lagrangian of the free particle is equal to its kinetic energy (\(\mathcal{L}=mv^2/2\)) so we find that \(\alpha=mc\) and so the Lagrangian is
+$$\mathcal{L}= -mc^2\sqrt{1-\frac{v^2}{c^2}} \;\;\; (3.13)$$
+Now we are in position to calculate the momentum vector is special relativity. As we noted in the first subsection:
+$$\vec{p}=\frac{\partial\mathcal{L}}{\partial\vec{v}}=\frac{m\vec{v}}{\sqrt{1-\frac{v^2}{c^2}}} \;\;\; (3.14)$$
+Finally the energy of a system (the Hamiltonian of a system see Appendix I) is given by the expression
+$$E=\vec{p}\cdot\vec{v}-\mathcal{L}=\frac{mc^2}{\sqrt{1-\frac{v^2}{c^2}}} \;\;\; (3.15)$$
+Squaring and comparing the equations (3.14) and (3.15) we finally get
+$$E^2=m^2c^4 + p^2c^2 \;\;\; (3.16)$$
+We now have every fundamental result we need to begin our exploration of Electromagnetism.</p>
+<h1 id="diracs-equation-for-the-electron">Dirac&rsquo;s Equation for the electron</h1>
+<p><strong>Symbolism:</strong> Before we go deeper into the mathematics we are going to introduce some symbols that will make our life easier when dealing with the four-dimensional space-time of relativity. First, we are going to use Einstein&rsquo;s summing convention which tells us that when we see two indices (one lower and one upper) we sum them. For example we can write:
+$$r^2=x^ax_a (=\sum_a x_a^2=x_1\cdot x_1 +x_2\cdot x_2 + x_3\cdot x_3)$$</p>
+<p>Notice that we have already seen that space-time is not Euclidean so when we are dealing with <em>Four-vectors</em> (i.e. vectors in space-time) we have:
+$$ds^2=x^{\alpha}x_{\alpha}=-x_0\cdot x_0 + x_1\cdot x_1+ x_2\cdot x_2 + x_3\cdot x_3$$
+here \(x_0\) represents the time coordinate. By convention Greek indices represent four-vectors while Latin indices represent the space part of a four-vector.<br>
+As a last note we can write differential derivatives as
+$$\partial_{\alpha}\phi=-\partial_{x_0}\phi +\partial_{x_1}\phi +\partial_{x_2}\phi+\partial_{x_3}\phi$$</p>
+<p>Sometimes in literature opposite signs are used (+,-,-,-) but the results are exactly the same.</p>
+<p><strong>Dirac&rsquo;s equation:</strong> For the rest of the derivations we are going to use natural units \(c=\hbar=1)\). Our first step is to &ldquo;quantise&rdquo; equation (3.16) by replacing energy and momentum with the corresponding operators (3.6) which yields the <em>Klein-Gordon equation</em>:
+$$ ( -\hat{E}^2 + \hat{p}^2 + m^2)\psi=0 \rightarrow (-\partial_t^2 -\nabla^2 +m^2)\psi=0 \;\;\; (4.1) $$</p>
+<p>However, this equation <em>does not</em> agree with the principles of QM. Any equation describing a quantum system should only be of the first degree with respect to time derivatives (see Appendix I).
+Since time and space are equivalent in relativity, the right equation should also be of the first degree with respect to space derivatives. Therefore we assume that the correct equation is of the form
+$$(a_0\hat{p}_0 + a_1\hat{p}_1 + a_2\hat{p}_2 +a_3\hat{p}_3 + m)\psi=0 \;\;\; (4.2)$$
+Where \(\hat{p}_0=\hat{E}\). We can fully determine the constants \(a_i\) by demanding that the equation (4.2) &ldquo;squared&rdquo; gives (4.1)<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.
+$$0  = (-a_0\hat{p}_0 + a_1\hat{p}_1 + a_2\hat{p}_2 +a_3\hat{p}_3 + m)(a_0\hat{p}_0 + a_1\hat{p}_1 + a_2\hat{p}_2 +a_3\hat{p}_3 + m)\psi= $$</p>
+<p>$$ -a_0^2\hat{p}_0^2 + \sum_i^3 a_i\hat{p}_i^2 +\sum^3 (a_ia_j-a_ja_i)\hat{p}_i\hat{p}_j + m^2 + \sum_i^3(a_im-m a_i)\hat{p}_i   ]\psi =0 \;\;\; (4.3) $$
+In order for (4.3) to agree with (4.1) the following conditions must be satisfied:
+$$ a_i^2=1 \;\;\;\; a_ia_j-a_ja_i=0 \;(i\neq j),\;\;\;\;(i,j=1,2,3,4)$$</p>
+<p>We can naturally assume that the \(a_i\)&rsquo;s can be represented as matrices that satisfy the above relations. These matrices are known as the Dirac matrices \(\gamma^i\) and they are fully defined by the relation
+$$ \{\gamma^i, \gamma^j \} = 2\eta^{ij}I_4  $$</p>
+<p>Where \(I_4\) is the \(4x4\) identity matrix and \(\eta^{ij}\) the Minkowsky metric<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>
+These matrices are:
+$$\gamma^0= \begin{pmatrix} I_2 &amp; 0 \\ 0 &amp; -I_2 \end{pmatrix} ,; \gamma^1 = \begin{pmatrix}   0 &amp; \sigma_x  \\ -\sigma_x &amp; 0 \end{pmatrix},\;\gamma^2 = \begin{pmatrix}   0 &amp; \sigma_y  \\ -\sigma_y &amp; 0 \end{pmatrix},\;\gamma^3 = \begin{pmatrix}   0 &amp; \sigma_z  \\ -\sigma_z &amp; 0 \end{pmatrix}   \;\;\; (4.4) $$</p>
+<p>Where \(\sigma_i\) are the \(2x2\) Pauli matrices
+$$ \sigma_x = \begin{pmatrix}   0 &amp; 1  \\1 &amp; 0 \end{pmatrix},\;\sigma_y = \begin{pmatrix}   0 &amp; -i  \\i &amp; 0 \end{pmatrix},\;\sigma_z = \begin{pmatrix}   1 &amp; 0  \\ 0 &amp; -1 \end{pmatrix} $$</p>
+<p>Notice that now \(\psi\) in (4.2) is not a scalar but a vertical matrix of four elements. So , in fact, (4.2) is not one equation but four.
+The physical interpretation of the \(4x1\) column matrix \(\psi\) is that two of the components refer to a spin up and a spin down electron , while the other two components refer to a spin up and a spin down positron.  We can write Dirac&rsquo;s equation more compactly using the summing convention <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>
+$$(\gamma^a\partial_a+m)\psi=(\not\partial+m)\psi = 0 \;\;\;(4.5) $$</p>
+<p>The corresponding Lagrangian that gives us (4.5) through the E-L equations is
+$$\mathcal{L}= -\psi^* \not\partial \psi-m\psi^* \psi \;\;\; (4.6) $$ 
+The star indicates the complex conjugate of \(\psi\) and we consider \(\psi^*\) and \(\psi\) as independent variables.</p>
+<h1 id="the-gauge-theory-of-electromagnetism">The Gauge Theory of Electromagnetism</h1>
+<p><strong>The motivation:</strong> A symmetry of the Lagrangian is a transformation of the variables that leaves the equations of motion unchanged.
+Most symmetries leave \(\mathcal{L}\) unchanged but there are some that change \(\mathcal{L}\) by a perfect divergence 
+$$\mathcal{L}&rsquo;=\mathcal{L} + \partial^aA_a \;\;\; (5.1)$$</p>
+<p>hese symmetries (thanks to Wigner) are called gauge symmetries because they change our &ldquo;measuring&rdquo; system without changing the relations between quantities. For example, if we change the potential by a constant amount \(V&rsquo;=V+const\) the equations of motion do not change because we only care about differences of potential. A similar symmetry exists when considering the phase of a wave-function.
+We can write a wave function in the form \(\Psi=\psi e^{i\theta}\) where \(\theta\) is the phase.
+The actual probability of finding a particle in any position is given by the norm squared \(|\Psi|^2\) so \(\theta\) is arbitrary.
+When dealing with multiple particles only the difference in phase is important so the phase chosen as \(\theta =0\) is arbitrary. Therefore, our equations should not change under a total change of phase.<br>
+This is exactly the symmetry to rotations of a two dimensional circle and it&rsquo;s called \(U(1)\). Mathematically the change in phase is equivalent to multiplication with \(e^{i\phi}\). If we want our Lagrangian to describe electrons it must be invariant under the gauge transformations of \(U(1)\).</p>
+<p><strong>Covariant Derivatives:</strong> The Lagrangian (4.6) is obviously invariant under a change in phase that is the same in every point
+$$\psi \longrightarrow \psi&rsquo;=\psi e^{i\phi}$$</p>
+<p>Since \((\psi e^{i\phi})^* =\psi^*e^{-i\phi}\) so the changes in phase cancel out and \(\mathcal{L}&rsquo;=\mathcal{L}\). But what if the change of phase is different in different points in space-time?
+The symmetry should still hold since we only care about the differences in phase which stays the same. The mass term stays the same like before but now the derivative term is more complicated:
+$$\partial_a\psi(x) \longrightarrow (\partial_a\psi(x))&rsquo;=\partial_a(e^{i\phi(x)}\psi(x))=e^{i\phi(x)}(\partial_a\psi(x)+i\psi(x)\partial_a\phi(x)) \;\;\; (5.2) $$</p>
+<p>We can clearly see that the Lagrangian (4.6) is not gauge invariant under a change of phase. One way to make the Lagrangian gauge invariant is to construct a modified derivative \(D_a\) which is gauge invariant.
+$$D_a\longrightarrow (D_a\psi(x))&rsquo;=e^{i\phi(x)}(D_a\psi(x)) \;\;\; (5.3) $$</p>
+<p>hen we can replace the derivative in (4.6) with the new \emph{covariant derivative}. It&rsquo;s covariant because it changed differently depending on the specific phase change of the specific point in space-time (co-variant = changes with).
+The new derivative needs a term that cancels out the &ldquo;asymmetric&rdquo; term \(i\psi(x)\partial_aq(x)\) so let&rsquo;s define
+$$D_a\psi(x)=(\partial_a-iA_a(x))\psi(x)$$</p>
+<p>So the transformation becomes
+$$D_a\psi \longrightarrow (D_a\psi)&rsquo;=e^{i\phi}(\partial_a + i\partial_a\phi\psi -i\phi A_a&rsquo;\psi)$$</p>
+<p>In order for (5.3) to hold $A_a$ needs to transform in a specific way under a phase change.
+$$A_a \longrightarrow A_a&rsquo; = A_a + \partial_a\phi$$</p>
+<p>This new field \(A_a\) is <em>called a gauge field</em> but is not itself gauge invariant. By substituting the regular derivative in (4.6) with the covariant derivative we get the Lagrangian of particles interacting with a field
+$$\mathcal{L}=-\psi^* \not D\psi-m\psi^* \psi = -\psi^* \not\partial\psi-m\psi^* \psi +iA_a\psi^* \gamma^a\psi \;\;\; (5.4)$$</p>
+<p>We can also define a covariant \(4x4\) matrix from \(A\) called the field strength tensor
+$$F_{\mu\nu}=\partial_{\mu}A_\nu - \partial_{\nu}A_\mu \;\;\; (5.5)$$</p>
+<p>Actually, F is gauge invariant itself since \(D^aF_{\mu\nu}=\partial_aF_{\mu\nu}\). The field strength tensor can be used to write a gauge invariant Lagrangian for the gauge field itself
+$$\mathcal{L}=-\frac{1}{4}F_{\mu\nu}^2$$</p>
+<p>Combining this Lagrangian and (5.4) we finally get a Lagrangian that describes a field of spin one-half particles interacting with a vector field. This is the theory of Electrodynamics.
+$$\mathcal{L}=-\frac{1}{4}(\partial_{\mu}A_\nu - \partial_{\nu}A_\mu)^2 -\psi^* \not\partial\psi-m\psi^* \psi +iA_a\psi^* \gamma^a\psi \;\;\; (5.6) $$</p>
+<p>he equations of this theory are given by the E-L equations
+$$\partial^\nu F_{\mu\nu}=J_\mu \;\;\; (5.7)$$
+$$( \not\partial + m)\psi = i \not A\psi \;\;\; (5.8)$$
+$$( \not\partial - m)\psi^* = -i \not A\psi^* \;\;\; (5.9)$$</p>
+<p>Where \(J_\mu\) is the four-current defined as \(J_\mu = i\psi^* \gamma_\mu\psi\). This is the flow of charge through space-time. 
+Equation (5.7) contains the inhomogeneous Maxwell&rsquo;s equations though it is hard to see due to the notation (see Appendix II) while equation (5.8) describes how electrons interact with the electromagnetic field.<br>
+The last thing left to do is to derive the homogeneous Maxwell&rsquo;s equations. To do this we first notice that a covariant derivative of a covariant derivative is also a covariant quantity therefore we can define the commutator
+$$[D_\mu , D_\nu]\psi = D_\mu(D_\nu\psi)-D_\nu(D_\mu\psi) \;\;\; (5.10)$$</p>
+<p>Going through the calculations we find that
+$$[D_\mu , D_\nu]\psi = -iF_{\mu\nu}\psi \;\;\; (5.11)$$</p>
+<p>The Jacobi identity that holds for all commutators tells us that:
+$$ [D_\mu,[D_\nu,D_\rho]] +[D_\rho,[D_\mu,D_\nu]] + [D_\nu,[D_\rho,D_\mu]] = 0 \;\;\; (5.12)$$</p>
+<p>Applying the first term of the identity to a function \(\psi\) gives us 
+$$[D_\mu,[D_\nu,D_\rho]]\psi = D_\mu([D_\nu,D_\rho]\psi)-[D_\nu,D_\rho]D_\mu\psi = -i(D_\mu F_{\nu\rho})\psi $$</p>
+<p>So (5.12) becomes<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> 
+$$\partial_\mu F_{\nu\rho} +\partial_\nu F_{\rho\mu} +\partial_\rho F_{\mu\nu} = 0 \;\;\; (5.13)$$</p>
+<p>Which are Hamilton&rsquo;s homogeneous equations (Appendix II). Equations (5.7), (5.8) and (5.13) give us a complete description of the Electromagnetic field and it&rsquo;s interaction with the electron field.</p>
+<h1 id="conclusion-and-resources">Conclusion and (Re)sources</h1>
+<p><strong>Conclusion:</strong> We have succeeded in constructing the whole theory of electrodynamics by only using the principles of Relativity, Quantum Mechanics and the Principle of Least Action. It is however very important to note that physics is the science that describes <em>our</em> world and that all of our principles are based on experimental evidence. Principles like the homogeneity of space, the constant speed of light and the principle of superposition do not describe the only possible world that science can imagine, but they are (as far as we can tell) facts of our current universe.
+Having said all that, this construction is not only (in my opinion) beautiful but it&rsquo;s also very easily generalised. Both the theory of the Weak and Strong interactions can be derived by the same gauge theory method by assuming a different symmetry group than \(U(1)\) while all of the scaffolding remains the same.</p>
+<p><strong>References and Further Reading:</strong></p>
+<ol>
+<li>Our approach to special relativity and quantum mechanics is based on two books from Landau and Lifshitz  &ldquo;The Classical Theory of Fields&rdquo; and &ldquo;Quantum Mechanics (Non-relativistic theory)&rdquo;. Landau&rsquo;s series of theoretical physics introduces each subject beginning from fundamentals and was an inspiration for this essay.</li>
+<li>The thought behind and the derivation of Dirac&rsquo;s equation is taken from Dirac&rsquo;s original article &ldquo;The Quantum Theory of the Electron,1920&rdquo;. Dirac&rsquo;s writing is very accessible to anyone with a basic knowledge of mechanics classical and quantum .</li>
+<li>The explanation of gauge theories and the method for deriving of Electrodynamics using covariant derivatives is taken from  de Witt&rsquo;s lectures at Cern &ldquo;Introduction to gauge theories and the Standard model&rdquo;. Not only does he go into deriving the Weak and Strong interactions, he explains Feynman diagrams and a lot of other fundamentals of modern field theories.</li>
+</ol>
+<h2 id="appendix-i">Appendix I</h2>
+<p><strong>The Semi-classical Equations:</strong> When crossing the classical limit into the quantum world, we are treating something thought of as a particle as a wave. A similar transition happens in optics when we go from wave optics to geometric optics where light is seen as taking a precise path. To make this jump in optics is to write down any component \(u\) of the Electromagnetic wave (light) as:
+$$u=\alpha e^{i\phi}$$</p>
+<p>Where \(\alpha\) is the amplitude of the wave and \(\phi\) the phase. Now to cross to the geometric limit we assume very short wave-lengths so very quickly \(\phi\) becomes very big in absolute value.<br>
+Likewise, we assume that near the classical limit the wave-equation describing a particle is of the form \(\Psi=\alpha e^{i\phi}\) where $\alpha$ changes slowly and \(\phi\) is big.
+Based on the principle of least action we know that the right path minimises action. In geometric optics Fermat&rsquo;s principle states that the right path is the one that minimises the change is phase.
+Based on that analogy we demand \(\mathcal{S}=const\times \phi\) where the constant is denoted by \(\hbar\) and has units of action. Now our classical limit becomes
+$$\Psi=\alpha e^{i\mathcal{S}/\hbar} \;\;\; (I.1)$$</p>
+<p>he constant \(\hbar\) gives us a measure of &ldquo;quantisation&rdquo; and we get the classical limit by taking \(\hbar \longrightarrow 0\). We now expect our operators to tend to multiplication with the physical quantity in the classical limit.</p>
+<p><strong>The Hamiltonian/Energy operator:</strong>  The wave equation \(\Psi\) fully describes the state of a system which means that if we know \(\Psi\) we can determine the future state of a system with certainty.
+Mathematically, the time derivative \(\partial_t \Psi\) must be a function of \(\Psi\) and from the superposition principle the relation must be linear<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>
+$$\partial_t\Psi =\frac{\hbar}{i}\hat{\mathcal{H}}\Psi \;\;\;  (I.2)$$</p>
+<p>Now we can plug in our semi-classical wave equation (I.1) and ignoring the change in $\alpha$ we get<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>
+$$\hat{\mathcal{H}}\Psi = -\partial_t\mathcal{S} \Psi \;\;\; (I.3)$$</p>
+<p>From classical mechanics we know that \( -\partial_t\mathcal{S}\) is the Hamiltonian of the system so we have found the operator of the Hamiltonian in quantum mechanics. (\(\hat{\mathcal{H}}=i\hbar \partial_t\Psi\)). The Hamiltonian corresponds to the total energy of a system so we have found our Energy operator.</p>
+<p><strong>The Momentum Operator:</strong> Assume a closed system of particles in the absence of an external field. Since all positions are equivalent the Hamiltonian shouldn&rsquo;t change if we displaced every particle by the same amount.
+All we have to demand is that the system remains unchanged for an infinitesimal displacement \(\delta\vec{r}\)
+$$\Psi(\vec{r_1} +\delta\vec{r},\vec{r_2} +\delta\vec{r},&hellip;)=\Psi(\vec{r_1},\vec{r_2},..) + \delta\vec{r}\sum_{\alpha}\vec{\nabla_{\alpha}}\Psi=(1+\delta\vec{r}\sum_{\alpha}\vec{\nabla_{\alpha}})\Psi$$</p>
+<p>So the displacement operator is \(1+\delta\vec{r}\sum_{\alpha}\vec{\nabla_{\alpha}}\). In classical mechanics momentum is linked to displacements so let&rsquo;s assume that the momentum operator is \(\hat{\vec{p}}=const\times\vec{\nabla} \). Checking the classsical limit (I.1) we get
+$$ \vec{\nabla}\Psi = i\hbar\vec{\nabla}\mathcal{S}\Psi $$</p>
+<p>And from classical mechanics the momentum is \(\vec{\nabla}\mathcal{S}\) so the momentum operator is
+$$\hat{\vec{p}}=-i\hbar\vec{\nabla} \;\;\; (I.4)$$</p>
+<h1 id="appendix-ii">Appendix II</h1>
+<p><strong>The Field Strengh Tensor:</strong>  We are going to use more familiar symbolism to see how (5.7) describes Maxwell&rsquo;s equations.
+Keeping with the four-dimensional time-space symbolism of relativity we assume the vector potential \(\vec{\mathcal{A}=(\phi,-\vec{A}})\) so that the Electric and the Magnetic field are given by
+$$\vec{E}=-\frac{\partial \vec{A}}{\partial t}-\vec{\nabla}\phi \;\;,\;\; \vec{H}=\vec{\nabla}\times\vec{A} \;\;\; (II.1)$$
+The field strength tensor is defined in section 5 is now <sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>
+$$ F_{\mu\nu} = \begin{pmatrix} 
+0 &amp; E_x &amp; E_y &amp; E_z\\
+-E_x &amp; 0 &amp; -H_z &amp; H_y\\
+-E_y &amp; H_z &amp; 0 &amp; -H_x\\
+-E_z &amp; -H_y &amp; H_x &amp; 0 \end{pmatrix}
+\;\;\; (II.2) $$</p>
+<p>From the above definitions together with the current four-vector \(\vec{\mathcal{J}}=(\rho,\vec{J})\) (Where q is the charge density and \(\vec{J}\) the three dimensional current or flow of charge) we can derive four equations known as Maxwell&rsquo;s equations
+$$\vec{\nabla}\times\vec{E}=-\frac{\partial \vec{H}}{\partial t}  \;\;\; (II.3)$$
+$$\nabla\vec{H}=0\;\;\;(II.4)$$
+$$ \nabla\vec{E}= 4\pi\rho\;\;\; (II.5)$$
+$$\vec{\nabla}\times\vec{H}=\frac{\partial \vec{E}}{\partial t}+4\pi\vec{J} \;\;\;(II.6)$$</p>
+<p>The first two equations are known as the homogeneous equations because they do not contain a source (\(\vec{\mathcal{J}}\) ) and the latter two are the inhomogeneous ones. If one does the math they will find that the homogeneous equations can be written as
+$$ \partial_\mu F_{\nu\rho} +\partial_\nu F_{\rho\mu} +\partial_\rho F_{\mu\nu} = 0 \;\;\; (II.7)$$</p>
+<p>While the inhomogeneous ones can be written as
+$$\partial^\nu F_{\mu\nu}=\mathcal{J}_\mu \;\;\; (II.8)$$</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Deriving these two operators requires going into the Hamiltonian formalism of the principle of least action which is not necessary for the rest of the results. For the shake of completeness you can find the proof in Appendix I at the end.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Remember that in relativity we use the (-,+,+,+) signature when squaring&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>$$\eta = \begin{pmatrix}
+-1&amp;0&amp;0&amp;0 \\
+0&amp;1&amp;0&amp;0\\
+0&amp;0&amp;1&amp;0\\
+0&amp;0&amp;0&amp;1
+\end{pmatrix} $$&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>The second expression used the Feynmann slash notation \(\not B=\gamma^aB_a \)&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>We replaced the covariant derivative D with \(\partial\) because of the gauge invariance of F&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>The constant \(\frac{\hbar}{i}\) is chosen so all constants vanish from (I.3) and as afar as we know \(\hat{\mathcal{H}}\) is some linear operator to be defined.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p>We are ignoring the change in \(\alpha\) because in the classical limit we assumed that the rate of change of the phase is much bigger than that of \(\alpha\).&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p>\(\mathcal{A}\) is the same as A in section 5&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+      
+    </article>
+    
+  </div>
+
+        </div><footer>
+  <div class="container">
+    <p class="credits copyright">
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;/&nbsp;Theme&nbsp;<a href="https://github.com/kaisugi/HugoTeX">HugoTeX</a>
+        <br>
+        <a href="https://hugotex.vercel.app/about">Georgios Koundouros</a>
+        &copy;
+        2022
+      </p>
+  </div>
+</footer></body>
+</html>

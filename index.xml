@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>I Physicist</title>
+    <link>https://hugotex.vercel.app/</link>
+    <description>Recent content on I Physicist</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 10 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://hugotex.vercel.app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://hugotex.vercel.app/about/</link>
+      <pubDate>Thu, 15 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://hugotex.vercel.app/about/</guid>
+      <description>I am an undergraduate student of physics at the National and Kapodistiran University of Athens. I enjoy going deeper into physics and using fundemental principles to derive the known laws of physics. This blog can bee seen as a journal of the things I look into outside the university courses and it is written so as to be accesible to any other undergraduate student.</description>
+    </item>
+    
+    <item>
+      <title>Electrodynamics from First Principles</title>
+      <link>https://hugotex.vercel.app/post/maxwell/</link>
+      <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://hugotex.vercel.app/post/maxwell/</guid>
+      <description>&lt;p&gt;A step to step derivation of Maxwell&amp;rsquo;s equations for Electrodynamics starting
+from the principles of Relativity and Quantum Mechanics&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>(Hidden) Symmetries in Physics and the LRL vector</title>
+      <link>https://hugotex.vercel.app/post/lrl-vector/</link>
+      <pubDate>Mon, 05 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://hugotex.vercel.app/post/lrl-vector/</guid>
+      <description>&lt;p&gt;Constructing the formalism used to deal with symmetries in physics and applying it on the Laplace-Runge-Lenz vector.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
