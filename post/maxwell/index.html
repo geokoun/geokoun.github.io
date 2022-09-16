@@ -161,7 +161,7 @@ Since time and space are equivalent in relativity, the right equation should als
 $$(a_0\hat{p}_0 + a_1\hat{p}_1 + a_2\hat{p}_2 +a_3\hat{p}_3 + m)\psi=0 \;\;\; (4.2)$$
 Where \(\hat{p}_0=\hat{E}\). We can fully determine the constants \(a_i\) by demanding that the equation (4.2) &ldquo;squared&rdquo; gives (4.1)<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.
 $$0  = (-a_0\hat{p}_0 + a_1\hat{p}_1 + a_2\hat{p}_2 +a_3\hat{p}_3 + m)(a_0\hat{p}_0 + a_1\hat{p}_1 + a_2\hat{p}_2 +a_3\hat{p}_3 + m)\psi= $$</p>
-<p>$$ -a_0^2\hat{p}_0^2 + \sum_i^3 a_i\hat{p}_i^2 +\sum^3 (a_ia_j-a_ja_i)\hat{p}_i\hat{p}_j + m^2 + \sum_i^3(a_im-m a_i)\hat{p}_i   ]\psi =0 \;\;\; (4.3) $$
+<p>$$ [-a_0^2\hat{p}_0^2 + \sum_i^3 a_i\hat{p}_i^2 +\sum^3 (a_ia_j-a_ja_i)\hat{p}_i\hat{p}_j + m^2 + \sum_i^3(a_im-m a_i)\hat{p}_i   ]\psi =0 \;\;\; (4.3) $$
 In order for (4.3) to agree with (4.1) the following conditions must be satisfied:
 $$ a_i^2=1 \;\;\;\; a_ia_j-a_ja_i=0 \;(i\neq j),\;\;\;\;(i,j=1,2,3,4)$$</p>
 <p>We can naturally assume that the \(a_i\)&rsquo;s can be represented as matrices that satisfy the above relations. These matrices are known as the Dirac matrices \(\gamma^i\) and they are fully defined by the relation
@@ -193,12 +193,12 @@ The symmetry should still hold since we only care about the differences in phase
 $$\partial_a\psi(x) \longrightarrow (\partial_a\psi(x))&rsquo;=\partial_a(e^{i\phi(x)}\psi(x))=e^{i\phi(x)}(\partial_a\psi(x)+i\psi(x)\partial_a\phi(x)) \;\;\; (5.2) $$</p>
 <p>We can clearly see that the Lagrangian (4.6) is not gauge invariant under a change of phase. One way to make the Lagrangian gauge invariant is to construct a modified derivative \(D_a\) which is gauge invariant.
 $$D_a\longrightarrow (D_a\psi(x))&rsquo;=e^{i\phi(x)}(D_a\psi(x)) \;\;\; (5.3) $$</p>
-<p>hen we can replace the derivative in (4.6) with the new \emph{covariant derivative}. It&rsquo;s covariant because it changed differently depending on the specific phase change of the specific point in space-time (co-variant = changes with).
+<p>hen we can replace the derivative in (4.6) with the new <em>covariant derivative</em>. It&rsquo;s covariant because it changed differently depending on the specific phase change of the specific point in space-time (co-variant = changes with).
 The new derivative needs a term that cancels out the &ldquo;asymmetric&rdquo; term \(i\psi(x)\partial_aq(x)\) so let&rsquo;s define
 $$D_a\psi(x)=(\partial_a-iA_a(x))\psi(x)$$</p>
 <p>So the transformation becomes
 $$D_a\psi \longrightarrow (D_a\psi)&rsquo;=e^{i\phi}(\partial_a + i\partial_a\phi\psi -i\phi A_a&rsquo;\psi)$$</p>
-<p>In order for (5.3) to hold $A_a$ needs to transform in a specific way under a phase change.
+<p>In order for (5.3) to hold \(A_a\) needs to transform in a specific way under a phase change.
 $$A_a \longrightarrow A_a&rsquo; = A_a + \partial_a\phi$$</p>
 <p>This new field \(A_a\) is <em>called a gauge field</em> but is not itself gauge invariant. By substituting the regular derivative in (4.6) with the covariant derivative we get the Lagrangian of particles interacting with a field
 $$\mathcal{L}=-\psi^* \not D\psi-m\psi^* \psi = -\psi^* \not\partial\psi-m\psi^* \psi +iA_a\psi^* \gamma^a\psi \;\;\; (5.4)$$</p>
