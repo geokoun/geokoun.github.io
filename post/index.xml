@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on I Physicist</title>
-    <link>https://hugotex.vercel.app/post/</link>
+    <link>https://geokoun.github.io/post/</link>
     <description>Recent content in Posts on I Physicist</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://hugotex.vercel.app/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://geokoun.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Electrodynamics from First Principles</title>
-      <link>https://hugotex.vercel.app/post/maxwell/</link>
+      <link>https://geokoun.github.io/post/maxwell/</link>
       <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://hugotex.vercel.app/post/maxwell/</guid>
+      <guid>https://geokoun.github.io/post/maxwell/</guid>
       <description>&lt;p&gt;A step to step derivation of Maxwell&amp;rsquo;s equations for Electrodynamics starting
 from the principles of Relativity and Quantum Mechanics&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>(Hidden) Symmetries in Physics and the LRL vector</title>
-      <link>https://hugotex.vercel.app/post/lrl-vector/</link>
+      <link>https://geokoun.github.io/post/lrl-vector/</link>
       <pubDate>Mon, 05 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://hugotex.vercel.app/post/lrl-vector/</guid>
+      <guid>https://geokoun.github.io/post/lrl-vector/</guid>
       <description>&lt;p&gt;Constructing the formalism used to deal with symmetries in physics and applying it on the Laplace-Runge-Lenz vector.&lt;/p&gt;</description>
     </item>
     
