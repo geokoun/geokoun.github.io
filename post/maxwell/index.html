@@ -181,7 +181,7 @@ The star indicates the complex conjugate of \(\psi\) and we consider \(\psi^*\) 
 <p><strong>The motivation:</strong> A symmetry of the Lagrangian is a transformation of the variables that leaves the equations of motion unchanged.
 Most symmetries leave \(\mathcal{L}\) unchanged but there are some that change \(\mathcal{L}\) by a perfect divergence 
 $$\mathcal{L}&rsquo;=\mathcal{L} + \partial^aA_a \;\;\; (5.1)$$</p>
-<p>hese symmetries (thanks to Wigner) are called gauge symmetries because they change our &ldquo;measuring&rdquo; system without changing the relations between quantities. For example, if we change the potential by a constant amount \(V&rsquo;=V+const\) the equations of motion do not change because we only care about differences of potential. A similar symmetry exists when considering the phase of a wave-function.
+<p>These symmetries (thanks to Wigner) are called gauge symmetries because they change our &ldquo;measuring&rdquo; system without changing the relations between quantities. For example, if we change the potential by a constant amount \(V&rsquo;=V+const\) the equations of motion do not change because we only care about differences of potential. A similar symmetry exists when considering the phase of a wave-function.
 We can write a wave function in the form \(\Psi=\psi e^{i\theta}\) where \(\theta\) is the phase.
 The actual probability of finding a particle in any position is given by the norm squared \(|\Psi|^2\) so \(\theta\) is arbitrary.
 When dealing with multiple particles only the difference in phase is important so the phase chosen as \(\theta =0\) is arbitrary. Therefore, our equations should not change under a total change of phase.<br>
@@ -193,11 +193,11 @@ The symmetry should still hold since we only care about the differences in phase
 $$\partial_a\psi(x) \longrightarrow (\partial_a\psi(x))&rsquo;=\partial_a(e^{i\phi(x)}\psi(x))=e^{i\phi(x)}(\partial_a\psi(x)+i\psi(x)\partial_a\phi(x)) \;\;\; (5.2) $$</p>
 <p>We can clearly see that the Lagrangian (4.6) is not gauge invariant under a change of phase. One way to make the Lagrangian gauge invariant is to construct a modified derivative \(D_a\) which is gauge invariant.
 $$D_a\longrightarrow (D_a\psi(x))&rsquo;=e^{i\phi(x)}(D_a\psi(x)) \;\;\; (5.3) $$</p>
-<p>hen we can replace the derivative in (4.6) with the new <em>covariant derivative</em>. It&rsquo;s covariant because it changed differently depending on the specific phase change of the specific point in space-time (co-variant = changes with).
-The new derivative needs a term that cancels out the &ldquo;asymmetric&rdquo; term \(i\psi(x)\partial_aq(x)\) so let&rsquo;s define
+<p>Then we can replace the derivative in (4.6) with the new <em>covariant derivative</em>. It&rsquo;s covariant because it changed differently depending on the specific phase change of the specific point in space-time (co-variant = changes with).
+The new derivative needs a term that cancels out the &ldquo;asymmetric&rdquo; term \(i\psi(x)\partial_a\phi(x)\) so let&rsquo;s define
 $$D_a\psi(x)=(\partial_a-iA_a(x))\psi(x)$$</p>
 <p>So the transformation becomes
-$$D_a\psi \longrightarrow (D_a\psi)&rsquo;=e^{i\phi}(\partial_a + i\partial_a\phi\psi -i\phi A_a&rsquo;\psi)$$</p>
+$$D_a\psi \longrightarrow (D_a\psi)&rsquo;=e^{i\phi}(\partial_a \phi + i\partial_a\phi\psi -i\phi A_a&rsquo;\psi)$$</p>
 <p>In order for (5.3) to hold \(A_a\) needs to transform in a specific way under a phase change.
 $$A_a \longrightarrow A_a&rsquo; = A_a + \partial_a\phi$$</p>
 <p>This new field \(A_a\) is <em>called a gauge field</em> but is not itself gauge invariant. By substituting the regular derivative in (4.6) with the covariant derivative we get the Lagrangian of particles interacting with a field
@@ -208,7 +208,7 @@ $$F_{\mu\nu}=\partial_{\mu}A_\nu - \partial_{\nu}A_\mu \;\;\; (5.5)$$</p>
 $$\mathcal{L}=-\frac{1}{4}F_{\mu\nu}^2$$</p>
 <p>Combining this Lagrangian and (5.4) we finally get a Lagrangian that describes a field of spin one-half particles interacting with a vector field. This is the theory of Electrodynamics.
 $$\mathcal{L}=-\frac{1}{4}(\partial_{\mu}A_\nu - \partial_{\nu}A_\mu)^2 -\psi^* \not\partial\psi-m\psi^* \psi +iA_a\psi^* \gamma^a\psi \;\;\; (5.6) $$</p>
-<p>he equations of this theory are given by the E-L equations
+<p>The equations of this theory are given by the E-L equations
 $$\partial^\nu F_{\mu\nu}=J_\mu \;\;\; (5.7)$$
 $$( \not\partial + m)\psi = i \not A\psi \;\;\; (5.8)$$
 $$( \not\partial - m)\psi^* = -i \not A\psi^* \;\;\; (5.9)$$</p>
@@ -238,7 +238,7 @@ Having said all that, this construction is not only (in my opinion) beautiful bu
 <p><strong>The Semi-classical Equations:</strong> When crossing the classical limit into the quantum world, we are treating something thought of as a particle as a wave. A similar transition happens in optics when we go from wave optics to geometric optics where light is seen as taking a precise path. To make this jump in optics is to write down any component \(u\) of the Electromagnetic wave (light) as:
 $$u=\alpha e^{i\phi}$$</p>
 <p>Where \(\alpha\) is the amplitude of the wave and \(\phi\) the phase. Now to cross to the geometric limit we assume very short wave-lengths so very quickly \(\phi\) becomes very big in absolute value.<br>
-Likewise, we assume that near the classical limit the wave-equation describing a particle is of the form \(\Psi=\alpha e^{i\phi}\) where $\alpha$ changes slowly and \(\phi\) is big.
+Likewise, we assume that near the classical limit the wave-equation describing a particle is of the form \(\Psi=\alpha e^{i\phi}\) where \(\alpha\) changes slowly and \(\phi\) is big.
 Based on the principle of least action we know that the right path minimises action. In geometric optics Fermat&rsquo;s principle states that the right path is the one that minimises the change is phase.
 Based on that analogy we demand \(\mathcal{S}=const\times \phi\) where the constant is denoted by \(\hbar\) and has units of action. Now our classical limit becomes
 $$\Psi=\alpha e^{i\mathcal{S}/\hbar} \;\;\; (I.1)$$</p>
@@ -246,7 +246,7 @@ $$\Psi=\alpha e^{i\mathcal{S}/\hbar} \;\;\; (I.1)$$</p>
 <p><strong>The Hamiltonian/Energy operator:</strong>  The wave equation \(\Psi\) fully describes the state of a system which means that if we know \(\Psi\) we can determine the future state of a system with certainty.
 Mathematically, the time derivative \(\partial_t \Psi\) must be a function of \(\Psi\) and from the superposition principle the relation must be linear<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>
 $$\partial_t\Psi =\frac{\hbar}{i}\hat{\mathcal{H}}\Psi \;\;\;  (I.2)$$</p>
-<p>Now we can plug in our semi-classical wave equation (I.1) and ignoring the change in $\alpha$ we get<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>
+<p>Now we can plug in our semi-classical wave equation (I.1) and ignoring the change in \(\alpha\) we get<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>
 $$\hat{\mathcal{H}}\Psi = -\partial_t\mathcal{S} \Psi \;\;\; (I.3)$$</p>
 <p>From classical mechanics we know that \( -\partial_t\mathcal{S}\) is the Hamiltonian of the system so we have found the operator of the Hamiltonian in quantum mechanics. (\(\hat{\mathcal{H}}=i\hbar \partial_t\Psi\)). The Hamiltonian corresponds to the total energy of a system so we have found our Energy operator.</p>
 <p><strong>The Momentum Operator:</strong> Assume a closed system of particles in the absence of an external field. Since all positions are equivalent the Hamiltonian shouldn&rsquo;t change if we displaced every particle by the same amount.
@@ -258,9 +258,9 @@ $$ \vec{\nabla}\Psi = i\hbar\vec{\nabla}\mathcal{S}\Psi $$</p>
 $$\hat{\vec{p}}=-i\hbar\vec{\nabla} \;\;\; (I.4)$$</p>
 <h1 id="appendix-ii">Appendix II</h1>
 <p><strong>The Field Strengh Tensor:</strong>  We are going to use more familiar symbolism to see how (5.7) describes Maxwell&rsquo;s equations.
-Keeping with the four-dimensional time-space symbolism of relativity we assume the vector potential \(\vec{\mathcal{A}=(\phi,-\vec{A}})\) so that the Electric and the Magnetic field are given by
+Keeping with the four-dimensional time-space symbolism of relativity we assume the vector potential \(\vec{\mathcal{A}=(\phi,-\vec{A}})\) <sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> so that the Electric and the Magnetic field are given by
 $$\vec{E}=-\frac{\partial \vec{A}}{\partial t}-\vec{\nabla}\phi \;\;,\;\; \vec{H}=\vec{\nabla}\times\vec{A} \;\;\; (II.1)$$
-The field strength tensor is defined in section 5 is now <sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>
+The field strength tensor is defined in section 5 is now 
 $$ F_{\mu\nu} = \begin{pmatrix} 
 0 &amp; E_x &amp; E_y &amp; E_z\\
 -E_x &amp; 0 &amp; -H_z &amp; H_y\\
