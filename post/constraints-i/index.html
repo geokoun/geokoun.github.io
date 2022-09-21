@@ -58,10 +58,10 @@ In this article we are going to explore the Lagrange multiplier description of c
 <h6 id="the-definitions">The definitions</h6>
 <p>The constraints we are going to be concerned with here are going to be Holonomic. That means that they can be expressed as the demand that a certain function
 \(\phi(q)\) of the coordinates is zero at all times during the evolution of the system.<br>
-Geometrically, if the original system has $N$ degrees of freedom then the system evolves in a N-dimensional configuration space. Every constraint we introduce removes one degree of freedom so it limits the evolution to a (N-1)-dimensional subspace. Now the constraint is obviously being enforced by some force that by definition has no other effect on the system so it has to be orthogonal to the constrained subspace.<br>
+Geometrically, if the original system has \(N\) degrees of freedom then the system evolves in a N-dimensional configuration space. Every constraint we introduce removes one degree of freedom so it limits the evolution to a (N-1)-dimensional subspace. Now the constraint is obviously being enforced by some force that by definition has no other effect on the system so it has to be orthogonal to the constrained subspace.<br>
 To see all of the above remarks in action we will consider the simple problem of a pendulum of mass m that has a constant length</p>
 <h6 id="the-simple-pendulum">The simple pendulum</h6>
-<p>Assuming that the pendulum has a constant length $L$ and the only force acting on it is gravity, then we only need one variable, the angle 
+<p>Assuming that the pendulum has a constant length \(L\) and the only force acting on it is gravity, then we only need one variable, the angle 
 \(\theta\), to fully describe the system. The configuration space in a circle since \(\theta + 2\pi=\theta\). The Lagrangian is as usual:
 $$ \mathcal{L}=T-V=\frac{1}{2}mL^2\dot{\theta}^2 + mgLcos\theta =\frac{1}{2}L\dot{\theta}^2 - gcos\theta  \;\;\; (2.1)  $$</p>
 <p>and from the Euler-Lagrange equations we get the usual pendulum equation
@@ -76,13 +76,13 @@ $$\theta: \;\;\;mr^2\ddot{\theta}=mgrsin\theta \;\;\; (2.3b)$$
 $$r: \;\;\; m\ddot{r}=mr\dot{\theta}+mgcos\theta+ \lambda \;\;\; (2.3c)$$</p>
 <p>We can see that (2.3a) is the constraint, so replacing \(r=L\) in (2.3b) gives us the same equation as (2.1). What we have gained is (2.3c). Since $r$ is constant \(\ddot{r}=0\) so
 $$\lambda = -mL\dot{\theta} -mgcos\theta \;\;\; (2.4)$$</p>
-<p>Comparing (2.3c) with Newton&rsquo;s Second Law \(m\ddot{r}=F_r\) we can see that \(\lambda\) or in general \(\lambda\cdot \nabla\phi|\) is the force acting on the system to enforce the constraint \(\phi\).
+<p>Comparing (2.3c) with Newton&rsquo;s Second Law \(m\ddot{r}=F_r\) we can see that \(\lambda\) or in general \(\lambda\cdot \nabla\phi\) is the force acting on the system to enforce the constraint \(\phi\).
 As predicted, the force is orthogonal to the circle describing the constrained motion in the configuration space.</p>
 <h6 id="schrodingers-equation">Schrodinger&rsquo;s equation</h6>
 <p>Lagrange multipliers, and constraints in general, can also be used to derive the equations describing a system. The first example we are going to look at is a derivation of Schrodinger&rsquo;s time independant equation.
 We define the Hamiltonian operator \(\hat{\mathcal{H}}\) by the relation
 $$&lt;E&gt;=\int  \psi^*\hat{\mathcal{H}}\psi;d^3x \;\;\; (2.5)$$</p>
-<p>Where $<E>$ is the mean value of the energy, $\psi$ the wave function of the system and \(\psi^<em>\) it&rsquo;s complex conjugate. Similar to the principle of least action, we demand that \(&lt;E&gt;\) is stationary so we identify the action with \(&lt;E&gt;\).<br>
+<p>Where $&lt;E&gt;$ is the mean value of the energy, $\psi$ the wave function of the system and \(\psi^<em>\) it&rsquo;s complex conjugate. Similar to the principle of least action, we demand that \(&lt;E&gt;\) is stationary so we identify the action with \(&lt;E&gt;\).<br>
 It is well known that the probability of a particle existing in the volume V is given by the integral of the norm of \(\psi\) squared.
 So, if we take the integral to encompass all of space we expect the probability to be 1, since the particle must exist somewhere. Therefore our constrain is:
 $$ \phi \equiv \int \psi^</em>\psi\;d^3x - 1 = 0 \;\;\; (2.6) $$</p>
