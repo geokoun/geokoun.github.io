@@ -74,7 +74,7 @@ $$\mathcal{L}=\frac{1}{2}m(r^2\dot{\theta}^2 + \dot{r}^2) + mgrcos\theta + \lamb
 $$\lambda: \;\;\;r-L=0 \;\;\; (2.3a)$$
 $$\theta: \;\;\;mr^2\ddot{\theta}=mgrsin\theta \;\;\; (2.3b)$$
 $$r: \;\;\; m\ddot{r}=mr\dot{\theta}+mgcos\theta+ \lambda \;\;\; (2.3c)$$</p>
-<p>We can see that (2.3a) is the constraint, so replacing \(r=L\) in (2.3b) gives us the same equation as (2.1). What we have gained is (2.3c). Since $r$ is constant \(\ddot{r}=0\) so
+<p>We can see that (2.3a) is the constraint, so replacing \(r=L\) in (2.3b) gives us the same equation as (2.1). What we have gained is (2.3c). Since \(r\) is constant \(\ddot{r}=0\) so
 $$\lambda = -mL\dot{\theta} -mgcos\theta \;\;\; (2.4)$$</p>
 <p>Comparing (2.3c) with Newton&rsquo;s Second Law \(m\ddot{r}=F_r\) we can see that \(\lambda\) or in general \(\lambda\cdot \nabla\phi\) is the force acting on the system to enforce the constraint \(\phi\).
 As predicted, the force is orthogonal to the circle describing the constrained motion in the configuration space.</p>
@@ -82,12 +82,12 @@ As predicted, the force is orthogonal to the circle describing the constrained m
 <p>Lagrange multipliers, and constraints in general, can also be used to derive the equations describing a system. The first example we are going to look at is a derivation of Schrodinger&rsquo;s time independant equation.
 We define the Hamiltonian operator \(\hat{\mathcal{H}}\) by the relation
 $$&lt;E&gt;=\int  \psi^*\hat{\mathcal{H}}\psi\;d^3x \;\;\; (2.5)$$</p>
-<p>Where \(&lt;E&gt;\) is the mean value of the energy, \(\psi\) the wave function of the system and \(\psi^<em>\) it&rsquo;s complex conjugate. Similar to the principle of least action, we demand that \(&lt;E&gt;\) is stationary so we identify the action with \(&lt;E&gt;\).<br>
+<p>Where \(&lt;E&gt;\) is the mean value of the energy, \(\psi\) the wave function of the system and \(\psi^* \) it&rsquo;s complex conjugate. Similar to the principle of least action, we demand that \(&lt;E&gt;\) is stationary so we identify the action with \(&lt;E&gt;\).<br>
 It is well known that the probability of a particle existing in the volume V is given by the integral of the norm of \(\psi\) squared.
 So, if we take the integral to encompass all of space we expect the probability to be 1, since the particle must exist somewhere. Therefore our constrain is:
-$$ \phi \equiv \int \psi^</em>\psi\;d^3x - 1 = 0 \;\;\; (2.6) $$</p>
+$$ \phi \equiv \int \psi^* \psi\;d^3x - 1 = 0 \;\;\; (2.6) $$</p>
 <p>The action can now be written as
-$$\mathcal{S}= \int (\psi^<em>\hat{\mathcal{H}}\psi + \lambda\psi^</em>\psi)\;d^3x -\lambda \;\;\; (2.7)$$</p>
+$$\mathcal{S}= \int (\psi^* \hat{\mathcal{H}}\psi + \lambda\psi^* \psi)\;d^3x -\lambda \;\;\; (2.7)$$</p>
 <p>If we treat \(\psi\) and \(\psi^*\) as independant variables and apply our usual variational methods for getting the equations of motion <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> we get the equation (and it&rsquo;s complex conjugate)
 $$\hat{\mathcal{H}}\psi=\lambda\psi   \;\;\; (2.8)$$</p>
 <p>This is Schrodinger&rsquo;s time independant equation and it tells us that the wave functions \(\psi\) that describe any time-independant system are the eigenfunctions of the Hamiltonian operator,
