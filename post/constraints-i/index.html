@@ -82,13 +82,13 @@ As predicted, the force is orthogonal to the circle describing the constrained m
 <p>Lagrange multipliers, and constraints in general, can also be used to derive the equations describing a system. The first example we are going to look at is a derivation of Schrodinger&rsquo;s time independant equation.
 We define the Hamiltonian operator \(\hat{\mathcal{H}}\) by the relation
 $$&lt;E&gt;=\int  \psi^*\hat{\mathcal{H}}\psi\;d^3x \;\;\; (2.5)$$</p>
-<p>Where \(&lt;E&gt;\) is the mean value of the energy, \(\psi\) the wave function of the system and \(\psi^* \) it&rsquo;s complex conjugate. Similar to the principle of least action, we demand that \(&lt;E&gt;\) is stationary so we identify the action with \(&lt;E&gt;\).<br>
+<p>Where \(&lt;E&gt;\) is the mean value of the energy, \(\psi\) the wave function of the system and \(\psi^* \) its complex conjugate. Similar to the principle of least action, we demand that \(&lt;E&gt;\) is stationary so we identify the action with \(&lt;E&gt;\).<br>
 It is well known that the probability of a particle existing in the volume V is given by the integral of the norm of \(\psi\) squared.
 So, if we take the integral to encompass all of space we expect the probability to be 1, since the particle must exist somewhere. Therefore our constrain is:
 $$ \phi \equiv \int \psi^* \psi\;d^3x - 1 = 0 \;\;\; (2.6) $$</p>
 <p>The action can now be written as
 $$\mathcal{S}= \int (\psi^* \hat{\mathcal{H}}\psi + \lambda\psi^* \psi)\;d^3x -\lambda \;\;\; (2.7)$$</p>
-<p>If we treat \(\psi\) and \(\psi^*\) as independant variables and apply our usual variational methods for getting the equations of motion <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> we get the equation (and it&rsquo;s complex conjugate)
+<p>If we treat \(\psi\) and \(\psi^*\) as independant variables and apply our usual variational methods for getting the equations of motion <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> we get the equation (and its complex conjugate)
 $$\hat{\mathcal{H}}\psi=\lambda\psi   \;\;\; (2.8)$$</p>
 <p>This is Schrodinger&rsquo;s time independant equation and it tells us that the wave functions \(\psi\) that describe any time-independant system are the eigenfunctions of the Hamiltonian operator,
 with energy equal to the eigenvalue \(\lambda\). \(\hat{\mathcal{H}}\) itself is specific to the particular problem one is investigating so there is no general formula.</p>
@@ -101,7 +101,7 @@ $$\mathcal{S}=\int_{t_1}^{t_2}  \int_V \mathcal{L}\; d^3x;dt\;\;\; (3.1)$$</p>
 $$ -\frac{\delta\mathcal{L}}{\delta\phi} \equiv \frac{\partial}{\partial t} \frac{\partial \mathcal{L}}{\partial(\partial\phi / \partial t)} + \frac{\partial}{\partial x_i} \frac{\partial \mathcal{L}}{\partial(\partial\phi / \partial x^i)} - \frac{\partial \mathcal{L}}{\partial \phi} = 0 \;\;\; (3.2) $$</p>
 <p>Where \(\frac{\delta\mathcal{L}}{\delta\phi}\) is called a functional derivative of \(\mathcal{L}\) and \( x^i \) the three coordinates of space.</p>
 <h6 id="lagrangian-description-of-fluids">Lagrangian description of fluids</h6>
-<p>There are two ways to describe a fluid in motion. One of them, introduced by Lagrange is to give an &ldquo;label&rdquo; \(\vec{\alpha}\) to every elementary part of the fluid and then describe it&rsquo;s current coordinate as a function of time and the label: \(\vec{q}(\vec{\alpha},t)=(q^1,q^2,q^3)\).
+<p>There are two ways to describe a fluid in motion. One of them, introduced by Lagrange is to give an &ldquo;label&rdquo; \(\vec{\alpha}\) to every elementary part of the fluid and then describe its current coordinate as a function of time and the label: \(\vec{q}(\vec{\alpha},t)=(q^1,q^2,q^3)\).
 Usually we chose the label \(\vec{\alpha}\) to be the starting coordinates of the specific element.<br>
 An important matrix is the deformation matrix with elements \(\frac{\partial q_i}{\partial \alpha^j}\) and determinant \(J\) :
 $$ J= \frac{1}{6} \epsilon_{kjl}\epsilon^{imn} \frac{\partial q^k}{\partial\alpha^i}\frac{\partial q^j}{\partial\alpha^m}\frac{\partial q^l}{\partial\alpha^n} \;\;\; (3.3) $$</p>
@@ -135,7 +135,7 @@ $$\rho_o\ddot{q}^i = -A^i_j \frac{\partial \lambda}{\partial \alpha^j} \;\;\; (3
 $$\rho\ddot{q}^i = -\frac{\partial \lambda}{\partial \alpha^i} \;\;\; $$</p>
 <p>using vector notation and going over to Euler&rsquo;s description we get
 $$\rho(\frac{\partial \vec{u}}{\partial t} + \vec{u}\cdot\vec{\nabla}\vec{u})=-\vec{\nabla}\lambda \;\;\; (3.12) $$</p>
-<p>In other derivations of (3.12) one sees that \(-\vec{\nabla}\lambda\) is replaced by \(-\vec{\nabla}P\) where \(P\) is the pressure. Therefore, we can conclude that pressure is the force keeping a fluid from changing it&rsquo;s density (i.e. making it incompressible).
+<p>In other derivations of (3.12) one sees that \(-\vec{\nabla}\lambda\) is replaced by \(-\vec{\nabla}P\) where \(P\) is the pressure. Therefore, we can conclude that pressure is the force keeping a fluid from changing its density (i.e. making it incompressible).
 To get the full expression we just need to add any external potential field $\Phi$ and the inner friction coefficient \(\eta\):
 $$\rho(\frac{\partial \vec{u}}{\partial t} + \vec{u}\cdot\vec{\nabla}\vec{u})=-\vec{\nabla}P + \vec{\nabla}\Phi + \eta\nabla^2\vec{u} \;\;\; (3.13) $$</p>
 <h1 id="conclusion-and-resources">Conclusion and (Re)sources</h1>
