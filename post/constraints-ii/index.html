@@ -60,7 +60,7 @@ Also, Latin indices (i,j,k) run from 1 to 3 while Greek indices \(\alpha,\beta\)
 $$ q^iq_i=q^1q_1 + q^2q_2+q^3q_3 \;\;\; (1.1)$$</p>
 <p>Here \(q^i\) is not q to the i-th power, i is an index.<br>
 Also we symbolise partial derivatives as \(\partial_\mu=\frac{\partial}{\partial x^\mu}\) and the D&rsquo;Alembert symbol \(\Box = \partial_t - \partial_1 - \partial_2 - \partial_3 \).</p>
-<p>#Singular Lagrangians and constraints of the Hamiltonian</p>
+<h1 id="singular-lagrangians-and-constraints-of-the-hamiltonian">Singular Lagrangians and constraints of the Hamiltonian</h1>
 <h6 id="gauge-invariant-lagrangians">Gauge invariant Lagrangians</h6>
 <p>Suppose a system is described by the Lagrangian
 $$\mathcal{L}=\frac{1}{2}[(q_1 + \dot{q}_2 + q_3)^2 + (\dot{q}_4-\dot{q}_2)^2 + (q_1 + 2q_2)(q_1 +2q_4)] \;\;\; (2.1)   $$</p>
@@ -120,11 +120,11 @@ $$g=\begin{pmatrix}
 <h6 id="the-classical-lagrangian-of-electrodynamics">The Classical Lagrangian of Electrodynamics</h6>
 <p>The free (without charges) Electromagnetic (EM) field is described by the Lagrangian density
 $$\mathcal{L}= -\frac{1}{4}F^2_{\mu\nu} = -\frac{1}{2}(\partial_\mu A_\nu)^2 + \frac{1}{2}(\partial_\mu A_\mu )^2 + \frac{1}{2}(A_\nu \partial_\nu A_\mu - A_\mu \partial_\nu A_\nu) \;\;\; (3.1) $$</p>
-<p>Where \(F_{\mu\nu}=\partial_\mu A_\nu - \partial_\nu A_\mu\) is called the Maxwell tensor and $A_\nu$ the four-dimensional potential of EM. \(F_{\mu\nu}\) is invariant under gauge transformations
+<p>Where \(F_{\mu\nu}=\partial_\mu A_\nu - \partial_\nu A_\mu\) is called the Maxwell tensor and \(A_\nu\) the four-dimensional potential of EM. \(F_{\mu\nu}\) is invariant under gauge transformations
 of the form \(A_\mu \longrightarrow A_\mu + \partial_\mu\Lambda(\vec{x})\) where \(\Lambda(\vec{x})\) is an arbitrary function of the coordinates <em>See the article on deriving this Lagrangian from first Principles</em>.<br>
 As we saw in our example, the gauge invariance means that there are some degrees of freedom (variables) that are non-physical. To see that in action we must go to the Hamiltonian formalism.</p>
 <h6 id="the-constrained-hamiltonian-of-em">The Constrained Hamiltonian of EM</h6>
-<p>First of all, we see that $T_{00}=0$ so our Lagrangian is indeed singular, as we expected. Trying to find the momenta
+<p>First of all, we see that \(T_{00}=0\) so our Lagrangian is indeed singular, as we expected. Trying to find the momenta
 $$\pi^\mu=\frac{\partial \mathcal{L}}{\partial \dot{A_\mu}}=F_{\mu 0} \;\;\; (3.2) $$</p>
 <p>we find our primary constraint 
 $$\phi_1 \equiv \pi^0 =0 \;\;\; (3.3) $$</p>
@@ -137,11 +137,11 @@ $$\phi_2 \equiv {\pi^0,\mathcal{H}_0 } = \nabla\vec{E} = 0 \;\;\; (3.5) $$</p>
 $$\{f,g \} = \int d^3x (\frac{\delta f}{\delta A_\mu}\frac{\delta g}{\delta \pi^\mu} - \frac{\delta f}{\delta \pi^\mu}\frac{\delta g}{\delta A_\mu}) \;\;\; (3.6)$$</p>
 <p>For the shake of completeness, we can see that \(\{\nabla\vec{E},\mathcal{H}_0 \} = 0\) so there are no other constraints, and \(\{\nabla\vec{E},\pi^0 \} = 0\) so both constraints are first-class.</p>
 <h6 id="the-quantization">The Quantization</h6>
-<p>To &ldquo;quantize&rdquo; a theory, one needs to replace the canonical coordinates $(A,\pi)$ with operators that satisfy the following commutation rule:
+<p>To &ldquo;quantize&rdquo; a theory, one needs to replace the canonical coordinates \((A,\pi)\) with operators that satisfy the following commutation rule:
 $$ [\hat{A},\hat{\pi}] = \hat{A}\hat{\pi}-\hat{\pi}\hat{A} = i\{A,\pi \} \;\;\; (3.7) $$</p>
 <p>In the classical theory we saw that the non-physical quantities are completely arbitrary. However, in QM they must satisfy (3.7). Therefore, we need to choose the right gauge. There are a lot of gauges that have been used throughout the history of Electrodynamics, but we are going to use the Feynmann gauge because it simplifies the Lagrangian (by removing the first term):
 $$G= -\frac{1}{2}(\partial_\mu A_\mu)^2 \;\;\; (3.8) $$</p>
-<p>Our Lagrangian is now  \(\mathcal{L}&rsquo;=\mathcal{L} + G\) and the Hamiltonian is \(\mathcal{H}=\mathcal{H}<em>o-G\) from (2.5). Although we chose a gauge the theory in general remains gauge invariant since the results will hold for any choice of gauge.<br>
+<p>Our Lagrangian is now  \(\mathcal{L}'=\mathcal{L} + G\) and the Hamiltonian is \(\mathcal{H}=\mathcal{H}<em>o-G\) from (2.5). Although we chose a gauge the theory in general remains gauge invariant since the results will hold for any choice of gauge.<br>
 The E-L equations give the equations of motion:
 $$\Box A</em>\mu = 0 \;\;\; (3.9) $$</p>
 <p>And the momenta can now be fully defined from the equation (2.4)
