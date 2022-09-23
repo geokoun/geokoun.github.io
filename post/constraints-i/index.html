@@ -96,7 +96,7 @@ with energy equal to the eigenvalue \(\lambda\). \(\hat{\mathcal{H}}\) itself is
 <h6 id="continuous-formalism">Continuous formalism</h6>
 <p>To describe continuous media we use fields instead of variables. That means that variables like the coordinates \(q\) are replaced by quantities called field variables \(\phi(q)\) of the coordinates.
 The Lagrangian too is replaced by a Lagrangian density \(\mathcal{L}\) so the action is given by
-$$\mathcal{S}=\int_{t_1}^{t_2}  \int_V \mathcal{L}\; d^3x;dt\;\;\; (3.1)$$</p>
+$$\mathcal{S}=\int_{t_1}^{t_2}  \int_V \mathcal{L}\; d^3x\;dt\;\;\; (3.1)$$</p>
 <p>The Euler-Lagrange equations are now given by
 $$ -\frac{\delta\mathcal{L}}{\delta\phi} \equiv \frac{\partial}{\partial t} \frac{\partial \mathcal{L}}{\partial(\partial\phi / \partial t)} + \frac{\partial}{\partial x_i} \frac{\partial \mathcal{L}}{\partial(\partial\phi / \partial x^i)} - \frac{\partial \mathcal{L}}{\partial \phi} = 0 \;\;\; (3.2) $$</p>
 <p>Where \(\frac{\delta\mathcal{L}}{\delta\phi}\) is called a functional derivative of \(\mathcal{L}\) and \( x^i \) the three coordinates of space.</p>
@@ -120,7 +120,7 @@ $$A^i_k=\frac{1}{2} \epsilon_{kjl}\epsilon^{imn} \frac{\partial q^j}{\partial \a
 All elements are now identical (without a label) and \(\vec{u}(\vec{x},t)\) is the velocity of the element that happens to be at point \(\vec{x}\) at time \(t\).<br>
 To connect the two descriptions we assume that the labeling system \(\vec{\alpha}\) is 1-1 and reversible and so we can &ldquo;identify&rdquo; the element at point \(\vec{x}\) at time \(t\) as \(\vec{\alpha}=\vec{q}^{-1}(\vec{x},t)\).
 Therefore
-$$\vec{u}(\vec{x},t) = \dot{\vec{q}};(\vec{q}^{-1}(\vec{x},t) )\;\;\; (3.8) $$</p>
+$$\vec{u}(\vec{x},t) = \dot{\vec{q}}\;(\vec{q}^{-1}(\vec{x},t) )\;\;\; (3.8) $$</p>
 <p>Notice now that the time derivative of the velocity field, using the chain rule, is
 $$\frac{d}{dt}\vec{u}= \frac{\partial \vec{u}}{\partial t} + \vec{u}\cdot\vec{\nabla}\vec{u} \;\;\; (3.9) $$</p>
 <h6 id="navier-stokes-equations">Navier-Stokes equations</h6>
@@ -136,13 +136,13 @@ $$\rho\ddot{q}^i = -\frac{\partial \lambda}{\partial \alpha^i} \;\;\; $$</p>
 <p>using vector notation and going over to Euler&rsquo;s description we get
 $$\rho(\frac{\partial \vec{u}}{\partial t} + \vec{u}\cdot\vec{\nabla}\vec{u})=-\vec{\nabla}\lambda \;\;\; (3.12) $$</p>
 <p>In other derivations of (3.12) one sees that \(-\vec{\nabla}\lambda\) is replaced by \(-\vec{\nabla}P\) where \(P\) is the pressure. Therefore, we can conclude that pressure is the force keeping a fluid from changing its density (i.e. making it incompressible).
-To get the full expression we just need to add any external potential field $\Phi$ and the inner friction coefficient \(\eta\):
+To get the full expression we just need to add any external potential field \(\Phi\) and the inner friction coefficient \(\eta\):
 $$\rho(\frac{\partial \vec{u}}{\partial t} + \vec{u}\cdot\vec{\nabla}\vec{u})=-\vec{\nabla}P + \vec{\nabla}\Phi + \eta\nabla^2\vec{u} \;\;\; (3.13) $$</p>
 <h1 id="conclusion-and-resources">Conclusion and (Re)sources</h1>
 <h6 id="conclusion">Conclusion</h6>
 <p>We have seen the Lagrange multiplier formalism for constrained systems and how it can, not only be applied to mechanical problems like the pendulum to calculate the forces, but also applied to fundamental matters like the theory of fluids to see physical forces in a different light.<br>
 Although we mentioned the geometric interpretation of constrains there is a whole lot more depth to it. If one is interested, one should look into D&rsquo;Alambert&rsquo;s principle and the principle of virtual displacements found in classical mechanics textbooks.<br>
-The second article in this series is going to go into constraints in the Hamiltonian formalism of mechanics and how it used to quantize fields.</p>
+The second article in this series is going to go into constraints in the Hamiltonian formalism of mechanics and how it&rsquo;s used to quantize fields.</p>
 <h6 id="sources-and-further-reading">Sources and Further Reading</h6>
 <ol>
 <li>The motivation for this two-parter came from the constrains section of Theocharis Apostolatos&rsquo;s book on classical mechanics. (I don&rsquo;t believe there is an English translation of the book which is a giant pity).</li>
