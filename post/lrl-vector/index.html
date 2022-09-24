@@ -115,16 +115,16 @@ Therefore, the conservation of the angular momentum as a whole corresponds to a 
 <p><strong>The Bit of Group Theory:</strong>  A group is a collection of elements equiped with a product operation \(\cdot)\) that satisfy certain conditions.</p>
 <ol>
 <li>The product of two elements gives another element of the group (the group is closed)</li>
-<li>There exists an identity e element such that \((e\cdot a)=a\;\; \forall a \in Group\)<br>
-We are going to be concerned with continuous groups here, groups with infinite elements, like the group of all rotations (also known as the symmetry group of a sphere, because a sphere remains unchanged under all rotations). In particular the symmetry group of rotations in n dimensions is called \(O(n)\).<br>
+<li>There exists an identity e element such that \((e\cdot a)=a\;\; \forall a \in Group\)\</li>
+</ol>
+<p>We are going to be concerned with continuous groups here, groups with infinite elements, like the group of all rotations (also known as the symmetry group of a sphere, because a sphere remains unchanged under all rotations). In particular the symmetry group of rotations in n dimensions is called \(O(n)\).<br>
 Now, a representation (Rep.) of a group is a set of objects paired with a product operation, so that a correspondence can be made between each element of the group and the Rep. and the product relations hold. that means that if
 $$a\cdot b = c \;\;\; then\;\;\;Rep(a)Rep(b)=Rep(c) $$
 If the correspondence is one to one then we say that the representation is isomorphic. Usually, matrices paired with the matrix product operation are used to represent groups so for example \(O(3)\) can be represented isomorphicaly by the set of all 3x3 matrices with determinant \(\pm 1\)<br>
 We are now going to assert without proof that a valid representation of \(O(3)\) is the angular momentum components paired with the Poisson bracket. The characteristic properties we care about are the following relations:
 $$ \{L_i,L_j\}=\epsilon_{ijk} L_k \;\;\;(5)$$
 Where \(\epsilon_{ijk}\) is the fancifully named fully anti-symmetric tensor of rank 3. By definition \(\epsilon_{ijk} = 0\) if any two indices are the same 
-and is \(\epsilon_{ijk}=\pm 1\) depending on whether the indices are an even or odd permutation of (1,2,3). Keep these thoughts in mind as we tackle the main event</li>
-</ol>
+and is \(\epsilon_{ijk}=\pm 1\) depending on whether the indices are an even or odd permutation of (1,2,3). Keep these thoughts in mind as we tackle the main event</p>
 <h1 id="the-laplace-runge-lenz-vector">The Laplace-Runge-Lenz vector</h1>
 <p><strong>The Kepler Problem:</strong> We are going to be concerned with the classical problem of a small mass m orbiting
 around a stationary mass M under the influence of Newton&rsquo;s gravitational law. Our Hamiltonian is now:
@@ -134,7 +134,7 @@ But there is another triplet of quantities (or components of a vector) that are 
 $$\vec{\mathcal{A}}=\vec{p}\times \vec{L} -mk\hat{r} $$
 The solutions to the Kepler problem are ellipses and \(\vec{\mathcal{A}}\) is a vector that is always parallel to the big axis of the ellipse. 
 This is a strange conserved quantity because there is no obvious symmetry corresponding to it. However, as we now know <em>every</em> conserved quantity generates a symmetry.<br>
-o begin our search we are going to find the group that is isomorphic to the total symmetry of the system. To make things easy we will define two new vectors:
+To begin our search we are going to find the group that is isomorphic to the total symmetry of the system. To make things easy we will define two new vectors:
 $$\vec{M}=\frac{1}{2}(\vec{L} + \vec{\mathcal{A}}),\vec{N}=\frac{1}{2}(\vec{L} - \vec{\mathcal{A}}) $$
 Now we observe the following three relations
 $$\{M_i,M_j\}=\epsilon_{ijk} M_k\;\;,\;\;\{N_i,N_j\}=\epsilon_{ijk} N_k\;\;,\;\;\{N_i,M_j\}=0   $$
