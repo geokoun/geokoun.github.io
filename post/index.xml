@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Principia Physicae Generalis</title>
-    <link>https://geokoun.github.io/post/</link>
+    <link>https://principiaphysicaegeneralis.com/post/</link>
     <description>Recent content in Posts on Principia Physicae Generalis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://geokoun.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://principiaphysicaegeneralis.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Constraining Nature II: The Hamiltonian Formalism and Quantizing Electrodynamics</title>
-      <link>https://geokoun.github.io/post/constraints-ii/</link>
+      <link>https://principiaphysicaegeneralis.com/post/constraints-ii/</link>
       <pubDate>Fri, 23 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://geokoun.github.io/post/constraints-ii/</guid>
+      <guid>https://principiaphysicaegeneralis.com/post/constraints-ii/</guid>
       <description>&lt;p&gt;A summary of constraints in the Hamiltonian formalism and their connection to gauge symmetry. The classical field theory of Electrodynamics is quantizing using constraints.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Constraining Nature I: Lagrange Multipliers and Pressure</title>
-      <link>https://geokoun.github.io/post/constraints-i/</link>
+      <link>https://principiaphysicaegeneralis.com/post/constraints-i/</link>
       <pubDate>Wed, 21 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://geokoun.github.io/post/constraints-i/</guid>
+      <guid>https://principiaphysicaegeneralis.com/post/constraints-i/</guid>
       <description>&lt;p&gt;An explanation of constraints in classical mechanics and the derivation of the Navier-Stokes equations, treating pressure as a Lagrange multiplier.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Electrodynamics from First Principles</title>
-      <link>https://geokoun.github.io/post/maxwell/</link>
+      <link>https://principiaphysicaegeneralis.com/post/maxwell/</link>
       <pubDate>Sat, 10 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://geokoun.github.io/post/maxwell/</guid>
+      <guid>https://principiaphysicaegeneralis.com/post/maxwell/</guid>
       <description>&lt;p&gt;A step to step derivation of Maxwell&amp;rsquo;s equations for Electrodynamics starting
 from the principles of Relativity and Quantum Mechanics&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>(Hidden) Symmetries in Physics and the LRL vector</title>
-      <link>https://geokoun.github.io/post/lrl-vector/</link>
+      <link>https://principiaphysicaegeneralis.com/post/lrl-vector/</link>
       <pubDate>Mon, 05 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://geokoun.github.io/post/lrl-vector/</guid>
+      <guid>https://principiaphysicaegeneralis.com/post/lrl-vector/</guid>
       <description>&lt;p&gt;Constructing the formalism used to deal with symmetries in physics and applying it on the Laplace-Runge-Lenz vector.&lt;/p&gt;</description>
     </item>
     
