@@ -44,7 +44,7 @@
     <article class="article" class="blog-post">
       <div class="postmeta">
         <span class="meta-post">
-  <i class="fa fa-calendar-alt"></i>Jan 1, 0001
+  <i class="fa fa-calendar-alt"></i>Feb 2, 2023
   
 </span>
       </div>
@@ -77,7 +77,7 @@ $$ \begin{pmatrix} x&rsquo;^1 \\ x&rsquo;^2 \end{pmatrix} = \begin{pmatrix} a &a
 <p>Again, if we use the letter \(\mathcal{R}\) to describe the \(2x2\) matrix we can write (2.7) using indices and the summation convention instead of the whole matrices as: 
 $$x&rsquo;^i=\mathcal{R}^i_{;j}x^j \;\;\; (2.8) $$</p>
 <p>If we want \(\mathcal{R}\) to describe rotations we want it to conserve distances so
-$$ x^ag_{ab}x^b = x&rsquo;^cg_{cd}x&rsquo;^d = \mathcal{R}^c_{;a}x^a g_{cd} \mathcal{R}^d_{;b}x^b \;\;\; (2.9) $$</p>
+$$ x^ag_{ab}x^b = x&rsquo;^cg_{cd}x&rsquo;^d = \mathcal{R}^c_{\;a}x^a g_{cd} \mathcal{R}^d_{\;b}x^b \;\;\; (2.9) $$</p>
 <p>Now remember that all the quantities in (2.9) are numbers so as long as we leave the indices alone we can move them around
 $$ x^ag_{ab}x^b =x^e  \mathcal{R}^c_{\;a}  g_{cd} \mathcal{R}^d_{\;b}x^b = x^a(\mathcal{R^T}^{\;a}<em>{c}  g</em>{cd} \mathcal{R}^d_{\;b})x^b \;\;\; (2.10) $$</p>
 <p>Where \(\mathcal{R^T} \) is the transpose \(\mathcal{R}\).
@@ -87,7 +87,7 @@ $$\mathcal{R^T}  g \mathcal{R} = g = \begin{pmatrix} a &amp; c \\ b &amp; d \end
 <p>The system we get is 
 $$\begin{matrix} a^2 + c^2 = 1, &amp; b^2 + d^2 =1, &amp; ab = -cd \end{matrix} \;\;\; (2.12) $$</p>
 <p>The above is a system of 4 variables and 3 equations so one variable is left free. The solution to the above, that you can check yourselves, is 
-$$ a = d = cos\theta;;,;; b=-c= sin\theta \;\;\; (2.13)  $$</p>
+$$ a = d = cos\theta\;\;,\;\; b=-c= sin\theta \;\;\; (2.13)  $$</p>
 <p>where \(\theta\) has the obvious interpretation of the specific angle we chose to rotate the system by. The matrix is
 $$ \mathcal{R}(\theta) = \begin{pmatrix} cos\theta &amp; sin\theta \\ -sin\theta &amp; cos\theta \end{pmatrix} \;\;\; (2.14)  $$</p>
 <p>We fully defined the rotation matrix for the Euclidean metric and we are ready to move on to more interesting geometries.</p>
@@ -110,7 +110,7 @@ $$ds^2=-c^2dt^2 + dx^2+dy^2+dz^2 \;\;\; (3.4) $$</p>
 <p>We have found a quantity which stays the same in every inertial frame of reference, therefore the implication is that, again, this quantity is inherent to the geometry of the space itself. As before, we set c=1, and express the distance from the origin in two dimensions as
 $$(s)^2 = -x^0x^0 + x^1x^1 = \begin{pmatrix} x^0 &amp; x^1 \end{pmatrix} \begin{pmatrix} -1 &amp; 0 \\ 0 &amp;  1 \end{pmatrix} \begin{pmatrix} x^0 \\ x^1 \end{pmatrix} \;\;\; (3.5) $$</p>
 <p>where \(x^0 \equiv t\). We can now see that the metric if this space is the so called <em>Minkowski metric</em>:
-$$ \eta = \begin{pmatrix} -1 &amp; 0 \ 0 &amp; 1 \end{pmatrix} \;\;\; (3.6)  $$</p>
+$$ \eta = \begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \;\;\; (3.6)  $$</p>
 <p>This means that the space-time of special relativity does not take place in a usual Euclidean (3+1)-dimensional space but in a new one called Minkowski space. What are the &ldquo;Rotations&rdquo; of this space then?</p>
 <h6 id="lorentz-transformations">Lorentz Transformations</h6>
 <p>We now know what we are looking for, a \(2x2\) matrix (let&rsquo;s call it \( \Lambda \)) that does not change the metric of this space. We again have to solve a linear system:
@@ -157,7 +157,7 @@ $$V(t) = \int_{V_t}  d^Nq(t) d^Np(t) = \int_{V} \frac{\partial(q_i(t),p_i(t))}{\
 <p>It can be proven by plugging in the equations (4.1) into (4.3) that indeed the Jacobian of the transformation defined by Hamilton&rsquo;s equation has a unitary determinant. This is due to the <em>symplectic</em> nature of (4.1). We see that, not only are q and p entangled in each other&rsquo;s equation, but also there exists that all important minus sign in (4.1b).</p>
 <h6 id="poisson-brackets-and-symplectic-structure">Poisson Brackets and Symplectic Structure</h6>
 <p>Consider any quantity \(F=F(q,p)\) defined on the phase space. By using the chain rule we can see that its time evolution is given by:
-$$\frac{dF}{dt}= \sum_i\left[ \frac{\partial F}{\partial q_i}\Dot{q_i} + \frac{\partial F}{\partial p_i} \Dot{p_i}\right] $$
+$$\frac{dF}{dt}= \sum_i\left[ \frac{\partial F}{\partial q_i}\dot{q_i} + \frac{\partial F}{\partial p_i} \dot{p_i}\right] $$
 $$\frac{dF}{dt}= \sum_i \left[\frac{\partial F}{\partial q_i}\frac{\partial \mathcal{H}}{\partial p_i} - \frac{\partial F}{\partial p_i} \frac{\partial \mathcal{H}}{\partial q_i}\right]= {F,\mathcal{H}} \;\;\; (4.5) $$</p>
 <p>Where:
 $${A,B}=\sum_i\left[ \frac{\partial A}{\partial q_i}\frac{\partial B}{\partial p_i} - \frac{\partial A}{\partial p_i} \frac{\partial B}{\partial q_i}\right] =\sum_i \frac{\partial(A,B)}{\partial(q_i,p_i)} \;\;\; (4.6) $$
@@ -165,7 +165,7 @@ is called the Poisson Bracket of A and B.</p>
 <p>As we noted before, the chain rule also applies the Jacobian determinants and so if we transform the coordinates according to (4.1) again we get that
 $$ {A,B}_t = \sum_i \frac{\partial(A,B)}{\partial(q(t)_i,p(t)_i)}  = \sum_i \frac{\partial(A,B)}{\partial(q(0)_i,p(0)_i)} \frac{\partial(q(0)_i,p(0)_i)}{\partial(q(t)_i,p(t)_i)} =  \sum_i \frac{\partial(A,B)}{\partial(q(0)_i,p(0)_i)} = {A,B}_0  \;\;\;(4.7) $$</p>
 <p>What we have found is an operation between any two quantities in phase space that remains constant under the transformation of time progression. That means we have also found the structure of phase space. <em>Instead of an inner product the phase space is equipped with the Poisson Bracket</em> . This structure is called symplectic and has the following properties:
-$${A,B} = - {B,A} \;\;\; and \;;so \;\; {A,A} \equiv 0 \;\;\; (4.8a) $$
+$${A,B} = - {B,A} \;\;\; and \;\;so \;\; {A,A} \equiv 0 \;\;\; (4.8a) $$
 $$ {A,{B,C}} + {C,{A,B}}   +{B,{C,A}} \equiv 0\;\;\; (4.8b) $$
 Equation (4.8b) is called Jacobi&rsquo;s identity and like the Cauchy-Schwarz inequality, it holds for a much larger group of spaces equiped with operations (which are collectively called Lie algebras).</p>
 <h6 id="canonical-transformations">Canonical Transformations</h6>
@@ -179,7 +179,7 @@ $$\frac{dp_i}{d\epsilon} =  K^{(p)}_i \;\;\; (4.10b) $$</p>
 $$ J(\epsilon) = 1 + \epsilon(\frac{\partial K^{(q)}_i }{\partial q_i} + \frac{\partial K^{(p)}_i }{\partial p_i}) \;\;\; (4.11)  $$</p>
 <p>and so our condition is 
 $$\frac{\partial K^{(q)}_i }{\partial q_i} + \frac{\partial K^{(p)}_i }{\partial p_i} = 0 = \nabla(K^{(q)}_i,K^{(p)}_i) \;\;\; (4.12) $$</p>
-<p>We can easily see that (4.12) holds if we define a \emph{generating} function \(W(q,p)\) such that
+<p>We can easily see that (4.12) holds if we define a <em>generating</em> function \(W(q,p)\) such that
 $$ K^{(q)}_i = \frac{\partial W}{\partial p_i}\;\;,\;\; K^{(p)}_i = -\frac{\partial W}{\partial q_i} \;\;\; (4.13) $$</p>
 <p>Let&rsquo;s now take a moment to see what this result means. We have found that to every physical quantity \(W(q,p)\) corresponds to a transformation of the coordinates given by (4.10). And so, in keeping with the spirit of abstraction, the Hamiltonian
 \(\mathcal{H}\) loses it&rsquo;s special place as <em>The</em> generator and becomes one of the many generators of transformations. Similarly to (4.5) we see that any quantity \(F(q,p)\) transforms as
@@ -223,7 +223,7 @@ Operators are equivalent to matrices, so for example we can define the Euclidean
 \(\hat{\mathcal{R}}\) using the matrix (2.14). Since Hilbert Space is infinite-dimensional the matrices would need to have infinite rows and columns and so we prefer operators.</p>
 <p>The Hermitian adjoint of an operator is symbolised by a dagger \(\hat{A}^\dagger\) and is defined as \(&lt;\hat{A}^ \dagger\phi,\psi&gt; = &lt;\phi,\hat{A}\psi&gt;\)</p>
 <p>An operator \(\hat{A}\) is <em>Hermitian</em> if \(&lt;\phi,\hat{A}\psi&gt;=&lt;\hat{A}\phi,\psi&gt;\) which is (almost) equivalent to \(\hat{A}=\hat{A}^\dagger\).
-For example, using the same operator $\hat{A}=\frac{d}{dx}$ we can integrate by parts to get:
+For example, using the same operator \(\hat{A}=\frac{d}{dx}\) we can integrate by parts to get:
 $$\int_\infty^\infty \phi^* \frac{d}{dx}\psi \; dx = [\phi^* \psi]<em>\infty^\infty - \int</em>\infty^\infty \frac{d}{dx}\phi^* \psi \; dx  = - \int_\infty^\infty \frac{d}{dx}\phi^* \psi \; dx $$</p>
 <p>The integrated part disappears because the integral (5.2) is finite, which means that
 \(\psi(x\rightarrow \pm \infty)  = 0\) for any function \(\psi\) in Hilbert Space. The above relation means that \(\hat{A}\) is <em>not</em> Hermitian.
@@ -300,7 +300,7 @@ $$\hat{\mathcal{H}}= - \frac{\hbar^2}{2m}\frac{d^2}{dx^2} + V(x) \;\;\; (5.13) $
         <br>
         <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
         &copy;
-        2022
+        2023
       </p>
   </div>
 </footer></body>

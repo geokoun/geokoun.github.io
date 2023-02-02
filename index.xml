@@ -6,7 +6,16 @@
     <description>Recent content on Principia Physicae Generalis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://principiaphysicaegeneralis.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://principiaphysicaegeneralis.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Naturally Defined Geometries and Rotations</title>
+      <link>https://principiaphysicaegeneralis.com/post/natural-geometries/</link>
+      <pubDate>Thu, 02 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://principiaphysicaegeneralis.com/post/natural-geometries/</guid>
+      <description>&lt;p&gt;We look at the geometries that arise from the equations of special relativity, classical mechanics and quantum mechanics. We then extract some interesting properties of every theory by considering the &amp;ldquo;rotations&amp;rdquo; in every geometry.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Constraining Nature II: The Hamiltonian Formalism and Quantizing Electrodynamics</title>
       <link>https://principiaphysicaegeneralis.com/post/constraints-ii/</link>
@@ -52,15 +61,6 @@ from the principles of Relativity and Quantum Mechanics&lt;/p&gt;</description>
       
       <guid>https://principiaphysicaegeneralis.com/post/lrl-vector/</guid>
       <description>&lt;p&gt;Constructing the formalism used to deal with symmetries in physics and applying it on the Laplace-Runge-Lenz vector.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Naturally Defined Geometries and Rotations</title>
-      <link>https://principiaphysicaegeneralis.com/post/natural-geometries/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://principiaphysicaegeneralis.com/post/natural-geometries/</guid>
-      <description>&lt;p&gt;We look at the geometries that arise from the equations of special relativity, classical mechanics and quantum mechanics. We then extract some interesting properties of every theory by considering the &amp;ldquo;rotations&amp;rdquo; in every geometry.&lt;/p&gt;</description>
     </item>
     
   </channel>
