@@ -77,7 +77,7 @@ $$ \begin{pmatrix} x&rsquo;^1 \\ x&rsquo;^2 \end{pmatrix} = \begin{pmatrix} a &a
 <p>Again, if we use the letter \(\mathcal{R}\) to describe the \(2x2\) matrix we can write (2.7) using indices and the summation convention instead of the whole matrices as: 
 $$x&rsquo;^i=\mathcal{R}^i_{;j}x^j \;\;\; (2.8) $$</p>
 <p>If we want \(\mathcal{R}\) to describe rotations we want it to conserve distances so
-$$ x^ag_{ab}x^b = x^c&rsquo;g_{cd}x^d&rsquo; = \mathcal{R}^c_{\;a}x^a g_{cd} \mathcal{R}^d_{\;b}x^b \;\;\; (2.9) $$</p>
+$$ x^ag_{ab}x^b = x&rsquo;^c g_{cd}x&rsquo;^d = \mathcal{R}^c_{\;a}x^a g_{cd} \mathcal{R}^d_{\;b}x^b \;\;\; (2.9) $$</p>
 <p>Now remember that all the quantities in (2.9) are numbers so as long as we leave the indices alone we can move them around
 $$ x^ag_{ab}x^b =x^e  \mathcal{R}^c_{\;a}  g_{cd} \mathcal{R}^d_{\;b}x^b = x^a(\mathcal{R^T}^{\;a}<em>{c}  g</em>{cd} \mathcal{R}^d_{\;b})x^b \;\;\; (2.10) $$</p>
 <p>Where \(\mathcal{R^T} \) is the transpose \(\mathcal{R}\).
@@ -224,7 +224,7 @@ Operators are equivalent to matrices, so for example we can define the Euclidean
 <p>The Hermitian adjoint of an operator is symbolised by a dagger \(\hat{A}^\dagger\) and is defined as \(&lt;\hat{A}^ \dagger\phi,\psi&gt; = &lt;\phi,\hat{A}\psi&gt;\)</p>
 <p>An operator \(\hat{A}\) is <em>Hermitian</em> if \(&lt;\phi,\hat{A}\psi&gt;=&lt;\hat{A}\phi,\psi&gt;\) which is (almost) equivalent to \(\hat{A}=\hat{A}^\dagger\).
 For example, using the same operator \(\hat{A}=\frac{d}{dx}\) we can integrate by parts to get:
-$$\int_\infty^\infty \phi^* \frac{d}{dx}\psi \; dx = \phi^* \psi|<em>{-\infty}^\infty - \int</em>\infty^\infty \frac{d}{dx}\phi^* \psi \; dx  = - \int_\infty^\infty \frac{d}{dx}\phi^* \psi \; dx $$</p>
+$$\int_\infty^\infty \phi^* \frac{d}{dx}\psi \; dx =- \int_\infty^\infty \frac{d}{dx}\phi^* \psi \; dx $$</p>
 <p>The integrated part disappears because the integral (5.2) is finite, which means that
 \(\psi(x\rightarrow \pm \infty)  = 0\) for any function \(\psi\) in Hilbert Space. The above relation means that \(\hat{A}\) is <em>not</em> Hermitian.
 However, the operator \(\hat{P}=i\frac{d}{dx}\) is Hermitian, since following the same steps as before
