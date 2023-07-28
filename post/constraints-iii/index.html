@@ -68,12 +68,12 @@ and so a unitary functions are defined as
 $$ ||\phi||^2=&lt;\phi,\phi&gt; =1 \;\;\; (2.4) $$
 by definition, for any non-zero function
 $$ ||\phi||^2 &gt; 0  \;\;\;(2.5)$$
-If \(||\phi||^2 &lt; 0\) then we wouldn&rsquo;t be able to modify $\phi$ by a constant (try it) to get (2.1) and our function would not be physical.</p>
+If \(||\phi||^2 &lt; 0\) then we wouldn&rsquo;t be able to modify \(\phi\) by a constant (try it) to get (2.1) and our function would not be physical.</p>
 <h6 id="operator-norm">Operator norm</h6>
 <p>For any operator \(\hat{O}\) we define the Hermitian conjugate operator \(\hat{O}^\dagger \) from the relation
 $$ &lt;\hat{O}\phi,\psi&gt;=&lt;\phi,\hat{O}^\dagger\psi&gt;\;\;\; (2.6)  $$
 and so we expect
-$$  ||\hat{O}\phi||^2 = &lt;\hat{O}\phi,\hat{O}\phi&gt; = &lt;\phi,\hat{O}^\dagger \hat{O}\phi&gt;;; &gt; 0 ;;; (2.7)   $$
+$$  ||\hat{O}\phi||^2 = &lt;\hat{O}\phi,\hat{O}\phi&gt; = &lt;\phi,\hat{O}^\dagger \hat{O}\phi&gt;\;\; &gt; 0 \;\;\; (2.7)   $$
 from now on we will denote the average value of an operator \(\hat{O}\) as
 $$ &lt;\hat{O}&gt; = &lt;\phi,\hat{O}\phi&gt; \;\;\; (2.8) $$
 and therefore, we expect 
@@ -125,18 +125,18 @@ We can now say that an operator \(A\) is self-adjoint \((A=A^\dagger)\) if it me
 <p>By definition of the Hamiltonian operator
 $$ i\frac{\partial \psi}{\partial t} = H \psi \;\;\; (4.1) $$
 and assuming that the operator \(A\) is time independant, we write
-$$ \frac{d<A>}{dt} = &lt;\frac{\partial \psi}{\partial t},A\psi&gt; +  &lt;\psi,A\frac{\partial \psi}{\partial t}&gt; = i(&lt;H\psi,A\psi&gt;-&lt;\psi,AH\psi&gt;) \;\;\; (4.2)$$</p>
-<p>The first product is well defined assuming that \(\psi\in D(H) \cap D(A)\) as expected. The second product however is problematic if  ((H\psi\not \in D(A)\). If we can algebraically compute the commutator \([A,H]\) for the whole real line (\emph{that means not only in the domain where the operator is self-adjoint}), then \(AH=[A,H] + HA \) everywhere and the bracket in (4.2) can be written as:
+$$ \frac{d&lt;A&gt;}{dt} = &lt;\frac{\partial \psi}{\partial t},A\psi&gt; +  &lt;\psi,A\frac{\partial \psi}{\partial t}&gt; = i(&lt;H\psi,A\psi&gt;-&lt;\psi,AH\psi&gt;) \;\;\; (4.2)$$</p>
+<p>The first product is well defined assuming that \(\psi\in D(H) \cap D(A)\) as expected. The second product however is problematic if  \((H\psi\not \in D(A)\). If we can algebraically compute the commutator \([A,H]\) for the whole real line (\emph{that means not only in the domain where the operator is self-adjoint}), then \(AH=[A,H] + HA \) everywhere and the bracket in (4.2) can be written as:
 $$ &lt;\psi,[H,A]\psi&gt; + &lt;H\psi,A\psi&gt; - &lt;\psi,HA\psi&gt; = &lt;\psi,[H,A]\psi&gt; + &lt;\psi,(H^\dagger -H)A\psi&gt;  \;\;\; (4.3) $$
 In the second step we see that, since the Hamiltonian is no longer self-adjoint in the real line, we have to replace it by \(H^\dagger\) when we move it from one side of a product to the other. The theorem of time evolution is now written as
-$$ \frac{d<A>}{dt} = i&lt;[H,A]&gt; + i &lt;(H^\dagger -H)A&gt; \;\;\; (4.4)   $$</p>
+$$ \frac{d&lt;A&gt;}{dt} = i&lt;[H,A]&gt; + i &lt;(H^\dagger -H)A&gt; \;\;\; (4.4)   $$</p>
 <p>We notice of course that in the case that the Hamiltonian is self adjoint \(H = H^\dagger \) (4.4) reduces to (2.11). Our generating function (3.11) is now
 $$  &lt;[H,\mathcal{O}]&gt; +  &lt;(H^\dagger -H)\mathcal{O}&gt; = 0    \;\;\; (4.5) $$</p>
 <p>The &ldquo;anomalous&rdquo; term \(\mathcal{A} = &lt;(H^\dagger -H)\mathcal{O}&gt;\) must now be computed separately for every operator \(\mathcal{O}\).</p>
 <p>What follows is a worked out example to understand the concept of arithmetically calculating a commutator. If calculations bore you you can go directly to the conclusion.</p>
 <h6 id="an-example-the-half-line">An example: the half line</h6>
 <p>We are now ready to deal with a Hamiltonian that has boundary conditions
-$$H=p^2 + V(x) ;;,;; x \geq 0 \;\;\; (4.6) $$</p>
+$$H=p^2 + V(x) \;\;,\;\; x \geq 0 \;\;\; (4.6) $$</p>
 <p>It is well known that such an Hamiltonian is self-adjoint only if the boundary conditions of the domain \(D(H)\) are of the \(Robin\) variety: \(\psi(0)+A\psi&rsquo;(0)=0\). Which explicitly means that \(D(H)={\psi(x)|\psi(0)+A\psi&rsquo;(0)=0,x\geq 0}\).</p>
 <p>Let&rsquo;s begin by looking at the operator \(\mathcal{O}_1=x^k\). As in the first paragraph, the commutator with H is:
 $$ [H,x^k]=[p^2,x^k]=-2ikx^{k-1}p - k(k-1)x^{k-2} \;\;\; (4.7) $$</p>
@@ -144,26 +144,26 @@ $$ [H,x^k]=[p^2,x^k]=-2ikx^{k-1}p - k(k-1)x^{k-2} \;\;\; (4.7) $$</p>
 $$ \mathcal{A}_1 = &lt;(H^\dagger -H)\mathcal{O}&gt; = \int_0^{\infty}dx(-\psi&rsquo;&lsquo;x^k\psi +\psi(x^k\psi)&rsquo;&rsquo;) =      $$
 $$ =-\int_0^{\infty}dx \psi&rsquo;&lsquo;x^k\psi+[\psi(x^k\psi)&rsquo;&rsquo;-\psi&rsquo;x^k\psi]_0^{\infty} + \int_0^{\infty}dx\psi&rsquo;&lsquo;x^k\psi\;\;\; (4.8) $$</p>
 <p>The first term cancels out with the last and  \(k \geq 0\) so
-$$ \mathcal{A}_1 = \lim_{x\rightarrow 0} kx^{k-1}\psi(0)^2 = \delta_{1,k}\psi(0)^2 \;\;\; (3.8)  $$
+$$ \mathcal{A}_1 = \lim_{x\rightarrow 0} kx^{k-1}\psi(0)^2 = \delta_{1,k}\psi(0)^2 \;\;\; (4.8)  $$
 where \(\delta_{1,k}\) is \(Kronecker&rsquo;s\) delta.</p>
 <p>We can already see that the boundary conditions appeared in our construction of the recursive relations. Doing the same for \(\mathcal{O}_2=x^k p\) we find that
-$$ [H,x^k p]= -2ikx^{k-1}p^2 - k(k-1)x^{k-2}p + ix^k V&rsquo;(x) \;\;\; (4.8a)  $$
-$$ \mathcal{A}_2 = i\delta_{1,k}\psi(0)\psi&rsquo;(0) \;\;\; (4.8b)  $$</p>
+$$ [H,x^k p]= -2ikx^{k-1}p^2 - k(k-1)x^{k-2}p + ix^k V&rsquo;(x) \;\;\; (4.89a)  $$
+$$ \mathcal{A}_2 = i\delta_{1,k}\psi(0)\psi&rsquo;(0) \;\;\; (4.9b)  $$</p>
 <p>in the special case where $k=0$ the anomalous term becomes
-$$ \mathcal{A}_{k=0} = i(\psi&rsquo;(0))^2 + i\psi(0)^2(E-V(0)) \;\;\; (4.9) $$</p>
+$$ \mathcal{A}_{k=0} = i(\psi&rsquo;(0))^2 + i\psi(0)^2(E-V(0)) \;\;\; (4.10) $$</p>
 <p>Lastly, by using the energy like in (1.8) we get
-$$ &lt;x^{k-2}p^2&gt;=E&lt;x^{k-1}&gt; - &lt;x^{k-1}V(x)&gt; \;\;\; (4.10) $$</p>
+$$ &lt;x^{k-2}p^2&gt;=E&lt;x^{k-1}&gt; - &lt;x^{k-1}V(x)&gt; \;\;\; (4.11) $$</p>
 <p>We can finally type the completed recursive relation for  \(\psi&rsquo;(0)=\frac{\psi(0)}{\alpha}\) and \(k&gt;0: \)
 $$ 0 = 2k E&lt;x^{k-1}&gt; + \frac{1}{2}k(k-1)(k-2)&lt;x^{k-3}&gt;-2k&lt;x^{k-1}V&gt; - &lt;x^k V&rsquo;&gt; $$
-$$ + \delta_{k,2} \psi&rsquo;^2_{0}+\delta_{k,1}\frac{\psi^2_{0}}{\alpha} \;\;\; (4.11) $$</p>
+$$ + \delta_{k,2} \psi&rsquo;^2_{0}+\delta_{k,1}\frac{\psi^2_{0}}{\alpha} \;\;\; (4.12) $$</p>
 <p>for \(k=0\)
-$$ 0 = -&lt;V&rsquo;&gt;+ (\psi &lsquo;(0))^2 + \psi(0)^2(E-V(0)) \;\;\; (4.12)$$</p>
+$$ 0 = -&lt;V&rsquo;&gt;+ (\psi &lsquo;(0))^2 + \psi(0)^2(E-V(0)) \;\;\; (4.13)$$</p>
 <p>Combining this relation and the boundary conditions we get
-$$ \psi(0)^2 = \frac{\alpha^2 &lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0)} ;;,;; \psi&rsquo;(0)^2 = \frac{&lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0)} \;\;\; (4.13) $$</p>
+$$ \psi(0)^2 = \frac{\alpha^2 &lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0)} \;\;,\;\; \psi&rsquo;(0)^2 = \frac{&lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0)} \;\;\; (4.14) $$</p>
 <p>And so our final recursive relation is
 $$0 = 2k E&lt;x^{k-1}&gt; + \frac{1}{2}k(k-1)(k-2)&lt;x^{k-3}&gt;-2k&lt;x^{k-1}V&gt; - &lt;x^k V&rsquo;&gt;+  $$
-$$  \delta_{k,2}\frac{\alpha^2 &lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0))} +\delta_{k,1}\frac{\alpha&lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0))} \;\;\; (4.14) $$</p>
-<p>for \(k=1,2,&hellip;\) and not for \(k=0\)  (for k=0 we have (4.12)). From here our algorithm for finding the physical states is identical to that on the full real line or for that matter any other space.</p>
+$$  \delta_{k,2}\frac{\alpha^2 &lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0))} +\delta_{k,1}\frac{\alpha&lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0))} \;\;\; (4.15) $$</p>
+<p>for \(k=1,2,&hellip;\) and not for \(k=0\)  (for k=0 we have (4.13)). From here our algorithm for finding the physical states is identical to that on the full real line or for that matter any other space.</p>
 <h1 id="conclusion-and-sources">Conclusion and Sources</h1>
 <h6 id="conclusion">conclusion</h6>
 <p>The fact that the wave function is unitary and that the operators we use in Quantum Mechanics are self-adjoint is usually only mentioned in the beginning of any course and is then left to the side when one starts dealing with Schrodinger&rsquo;s equation. I hope you now see that these two pillars of QM  hold enough strength to almost uniquely define the solution to any problem. However this &ldquo;bootstrapping&rdquo; method is not limited to solving simple QM problems. There are many theories out there for which we indeed do not have an equivalent master equations such as Schrodinger&rsquo;s and so demands of unitarity and other &ldquo;self-evident&rdquo; properties are the only thing have as a tool. As we&rsquo;ve seen this is more than nothing.
