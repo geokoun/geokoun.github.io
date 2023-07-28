@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8" />
+
+  <title>Constraining Nature IIΙ: Unitarity and bootstrapping - Principia Physicae Generalis</title>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/latex.css" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/main.css" />
+
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hugo 0.102.3" /><body>
+
+
+
+
+
+
+<header>
+  <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+  <div class="intro-header">
+    <div class="container">
+      <div class="post-heading">
+        
+          <h1>Constraining Nature IIΙ: Unitarity and bootstrapping</h1>
+          
+        
+      </div>
+    </div>
+  </div>
+</header>
+<div id="content">
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      <div class="postmeta">
+        <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>Jul 28, 2023
+  
+</span>
+      </div>
+      <br>
+      
+    <p>An arithmetic method for finding the spectrum of QM systems based on the demand for unitarity</p>
+<p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+<h1 id="introduction">Introduction</h1>
+<p>The wave function $\Psi$ in Quantum mechanics (or to be more specific the norm squared), is interpreted as a probability density function. Therefore, the most basic requirement imposed on it is that the total probability it represents is equal to unity (therefore Unitarity).
+$$\int\Psi^*\Psi ; dV = 1  \;\;\; (2.1) $$
+Where the integral is taken over all of space and the star denotes the complex conjugate. Another obvious requirement of any physical theory is that the measurable quantities take real (and not complex) values.</p>
+<p>In this article we will see how far we can go by using these simple (and dare I say self-evident) facts. In specific, we are going to see a computational method of solving the Schrodinger equation called bootstrapping that is based on the requirement of Unitarity. Then we will see how the demand for reality of measured quantities leads into dealing with boundary conditions.</p>
+<h1 id="the-principles">The Principles</h1>
+<p>####### Unitarity and the Inner Product
+The set of all possible wave functions live in a space called Hilbert space. Specifically, since we want our solutions to satisfy (2.1), our Hilbert space is only populated by &ldquo;square-integrable&rdquo; functions i.e.: 
+$$ \int\phi^<em>\phi ; dV &lt; \infty \;\;\;(2.2) $$
+Following the formalism of the last article, we can define the inner product of Hilbert space as
+$$ &lt;\phi,\psi&gt; = \int\phi^</em>\psi ; dV \;\;\; (2.3)  $$
+and so a unitary functions are defined as
+$$ ||\phi||^2=&lt;\phi,\phi&gt; =1 \;\;\; (2.4) $$
+by definition, for any non-zero function
+$$ ||\phi||^2 &gt; 0  \;\;\;(2.5)$$
+If $||\phi||^2 &lt; 0$ then we wouldn&rsquo;t be able to modify $\phi$ by a constant (try it) to get (2.1) and our function would not be physical.</p>
+<h6 id="operator-norm">Operator norm</h6>
+<p>For any operator \(\hat{O}\) we define the Hermitian conjugate operator \(\hat{O}^\dagger \) from the relation
+$$ &lt;\hat{O}\phi,\psi&gt;=&lt;\phi,\hat{O}^\dagger\psi&gt;\;\;\; (2.6)  $$
+and so we expect
+$$  ||\hat{O}\phi||^2 = &lt;\hat{O}\phi,\hat{O}\phi&gt; = &lt;\phi,\hat{O}^\dagger \hat{O}\phi&gt;;; &gt; 0 ;;; (2.7)   $$
+from now on we will denote the average value of an operator \(\hat{O}\) as
+$$ &lt;\hat{O}&gt; = &lt;\phi,\hat{O}\phi&gt; \;\;\; (2.8) $$
+and therefore, we expect 
+$$ &lt;\hat{O}^\dagger \hat{O}&gt; ;;; &gt; 0 \;\;\; (2.9) $$</p>
+<h6 id="ehrenfests-theorem">Ehrenfest&rsquo;s Theorem</h6>
+<p>The most general formulation of Ehrenfest&rsquo;s theorem is that all of the equations that are true in classical mechanics also apply to the average values of quantum operators. The only difference being that Poisson&rsquo;s brackets are replaced by the commutator (we assume that \(\hbar = 1\))
+$$ \{A,B\} \longrightarrow i[\hat{A},\hat{B}] \;\;\; (2.10)  $$
+where $[\hat{A},\hat{B}] = \hat{A}\hat{B}-\hat{B}\hat{A}$ is the commutator between two operators. Therefore, the classical equation of time evolution is
+$$ \frac{dA}{dt} = {H,A} \longrightarrow \frac{d&lt;\hat{O}&gt;}{dt} = i&lt;[\hat{H},\hat{O}]&gt; ;;; (2.11) $$
+where \(\hat{H}\) is the Hamiltonian operator. Here we have told a bit of a lie, but we will come back to correct it later.</p>
+<h1 id="bootstrapping">Bootstrapping</h1>
+<h6 id="the-recursive-relation">The recursive relation</h6>
+<p>Let&rsquo;s suppose the Hamiltonian:
+$$  H= p^2 + x^2 + gx^4   \;\;\;(3.1)  $$
+When in an eigenstate of the Hamiltonian, of energy \(E_n$\), all of the average values are time-independant and therefore, from (2.11):
+$$ &lt;[\hat{O},\hat{H}]&gt; = 0 \;\;\;(3.2) $$
+This is going to be our &ldquo;generating&rdquo; equation from which we will get all other results. For \(O=x^k\) and \(O=px^k\) we get respectively
+$$ k(k-1)&lt;x^{k-2}&gt; = -2ik&lt;x^{k-1}p&gt; \;\;\; (3.3) $$
+$$ 4k&lt;x^{k-1}p^2&gt;= 4&lt;x^{k+1}&gt; + 8g&lt;x^{k+3}&gt; - k(k-1)(k-2)&lt;x^{k-3}&gt; \;\;\; (3.4)$$
+We notice that for $k=1$ relation (3.4) becomes the Virial Theorem
+$$ 2&lt;p^2&gt; = 2&lt;x^2&gt; + 4g&lt;x^4&gt; \;\;\; (3.5) $$
+and therefore the energy can be written as
+$$  E = <H> = 2&lt;x^2&gt; + 3g&lt;x^4&gt; \;\;\; (3.6) $$
+The last fact we are going to need is that, in eigenstates of the Hamiltonian, \(&lt;\mathcal{O}H&gt; = E&lt;\mathcal{O}&gt; \) and so for \(\mathcal{O}=x^{k-1}\) we get 
+$$ &lt;x^{k-1}p^2&gt;=E&lt;x^{k-1}&gt; - &lt;x^{k+1}&gt; -g&lt;x^{k+5}&gt; \;\;\; (3.7) $$
+Combining all of the above and trying to replace every operator with the energy and powers of x we finally get 
+$$4kE&lt;x^{k-1}&gt; + k(k-1)(k-2)&lt;x^{k-3}&gt; -4(k+1)&lt;x^{k+1}&gt; -4g(k+2)&lt;x^{k+3}&gt; \;\;\; (3.8) $$
+Since \( &lt;x^o&gt;=1\) and, from symmetry \(&lt;x^k&gt;=0\) for all odd values of k, the only values we need to evaluate every moment \((&lt;x^k&gt;)\) is that of the energy and of \(&lt;x^2&gt;\). Notice that \(&lt;x^4&gt;\) can be evaluated from Virial&rsquo;s Theorem (3.5).</p>
+<h6 id="demanding-positivity">Demanding Positivity</h6>
+<p>It is a fact of Fourier analysis that we can calculate a function if we know all of the moments. Therefore the question is, is there any way to constraint the possible values of \(E\) and \(&lt;x^2&gt;\)? The answer comes in the form of (2.9). The most general form of the operator \(O\), assuming it&rsquo;s a function of x, is 
+$$ \mathcal{O}= \sum_{i=0}^{K} c_ix^i \;\;\; (3.9)$$
+In reality \(K\rightarrow \infty\) but if we want to calculate anything we must stay in a finite range. The positivity condition (2.9) becomes 
+$$\sum_{i=0}^{K} \sum_{j=0}^{K} &lt;c_i^* x^i c_j x^j &gt; = \sum_{i=0}^{K} \sum_{j=0}^{K}c_i^<em>&lt;x^{i+j}&gt;c_j =\sum_{i=0}^{K} \sum_{j=0}^{K} c_i^</em>\mathcal{M}^{ij}c_j \geq 0 \;\;\; (3.10) $$</p>
+<p>This is just matrix multiplication between the \(K\times1\) matrix \(c\) and the \(K\times K\) matrix \(\mathcal{M}^{ij} = &lt;x^{i+j}&gt; \). In fact, since the constants \(c_i\) are arbitrary, (3.10) is the definition of a positively defined matrix. If we want to see if a certain pair of \(E\) and \(&lt;x^2&gt;\) correspond to a physical state we just calculate the first \(2K\) moments using the recursive relation (3.4) and then check if \(\mathcal{M}\) is positive. A simple positivity check (for a computer) is to make sure that all eigenvalues of the matrix are greater of equal to zero.</p>
+<p>The algorithm is now clear, we scan through a possible range of values for our free variables and we check the positivity of \(\mathcal{M}\) for every value to get the physical ones. Since our K is finite, we get a small range of physical values instead of a single one. If we want more precision we increase K to include more moments. I won&rsquo;t include arithmetic results here but it takes about 10 seconds for a computer to compute the right energies with less than 1% error.</p>
+<h6 id="generalisation-and-comments">Generalisation and Comments</h6>
+<p>Following the same process for an arbitrary potential \(V(x)\) we get the equivilent recursion relation
+$$ k(k-1)(k-2)&lt;x^{k-3}&gt; + 4Ek&lt;x^{k-1}&gt; - 4k&lt;x^{k-1}V&gt; - 2&lt;x^kV&rsquo;&gt; = 0 \;\;\; (3.11) $$
+where \(V&rsquo;= \frac{dV}{dx}\). What we have found is pretty impressive. Without ever even mentioning Schrodinger&rsquo;s equation, we have a procedure for finding the energies and eigenstates of any potential. In fact the only fact that we did use was the positivity of Hilbert space which as we mentioned was almost self evident. This simple demand not only constrained the possible states of the system but for high enough K they completely defines them. Nature really tied our hands.</p>
+<h1 id="self-adjointness-and-boundary-conditions">Self-Adjointness and Boundary Conditions</h1>
+<p>In our previous analysis we didn&rsquo;t mention anything about boundary conditions and in fact they appeared nowhere in our calculations. This is because, as we said then, we lied when we postulated Ehrenfest&rsquo;s Theorem (2.11). The correction to this mistake is subtle and has to do with the definition of Hermitian operators and their relation to the boundary conditions. We will now remedy this.</p>
+<h6 id="self-adjointness-and-operator-domains">Self-Adjointness and Operator Domains</h6>
+<p>Any operator \(\mathcal{O}\), if we let it act on every function \(\Psi\) of our Hilbert space, is very likely to map it into a function \(\Psi &lsquo;\) that lies outside the acceptable solutions of our problem. For this reason, every operator is defined on an operator domain of Hilbert space \(D(\mathcal{O})\). The domain is defined by the boundary conditions of the wavefunctions $\psi$ that occupy it (\(\psi \in (D(\mathcal{O}))\). 
+We can now say that an operator \(A\) is self-adjoint \((A=A^\dagger)\) if it meets the following two conditions:\\
+a) the operator must be symmetric, so $&lt;\phi,A\psi&gt;=&lt;A\phi,\psi&gt;$\\
+b) the operator domains must be the same $D(A)=D(A^\dagger)$\\</p>
+<p>If an operator, including the Hamiltonian, do not meet the above two conditions then \((A=A^\dagger)\) and we need to rethink relations like (2.11). This problem did not appear in our example Hamiltonian (3.1)  because the space of acceptable solutions was the real line and so all operators had the same domain \(D(\mathcal{O}) = {\psi | \psi(x\rightarrow \pm \infty) = 0 }\).</p>
+<h6 id="modified-ehrenfest">Modified Ehrenfest</h6>
+<p>By definition of the Hamiltonian operator
+$$ i\frac{\partial \psi}{\partial t} = H \psi \;\;\; (4.1) $$
+and assuming that the operator $A$ is time independant, we write
+$$\frac{d<A>}{dt} = &lt;\frac{\partial \psi}{\partial t},A\psi&gt; +  &lt;\psi,A\frac{\partial \psi}{\partial t}&gt; = i{&lt;H\psi,A\psi&gt;-&lt;\psi,AH\psi&gt;} \;\;\; (4.2)$$</p>
+<p>The first product is well defined assuming that \(\psi\in D(H) \cap D(A)\) as expected. The second product however is problematic if  ((H\psi\not \in D(A)\). If we can algebraically compute the commutator \([A,H]\) for the whole real line (\emph{that means not only in the domain where the operator is self-adjoint}), then \(AH=[A,H] + HA \) everywhere and the bracket in (4.2) can be written as:
+$$&lt;\psi,[H,A]\psi&gt; + &lt;H\psi,A\psi&gt; - &lt;\psi,HA\psi&gt; = &lt;\psi,[H,A]\psi&gt; + &lt;\psi,(H^\dagger -H)A\psi&gt;  \;\;\; (4.3) $$
+In the second step we see that, since the Hamiltonian is no longer self-adjoint in the real line, we have to replace it by \(H^\dagger\) when we move it from one side of a product to the other. The theorem of time evolution is now written as
+$$ \frac{d<A>}{dt} = i&lt;[H,A]&gt; + i &lt;(H^\dagger -H)A&gt; \;\;\; (4.4)   $$</p>
+<p>We notice of course that in the case that the Hamiltonian is self adjoint \(H = H^\dagger \) (4.4) reduces to (2.11). Our generating function (3.11) is now
+$$  &lt;[H,\mathcal{O}]&gt; +  &lt;(H^\dagger -H)\mathcal{O}&gt; = 0    \;\;\; (4.5) $$</p>
+<p>The &ldquo;anomalous&rdquo; term \(\mathcal{A} = &lt;(H^\dagger -H)\mathcal{O}&gt;\) must now be computed separately for every operator \(\mathcal{O}\).</p>
+<p>What follows is a worked out example to understand the concept of arithmetically calculating a commutator. If calculations bore you you can go directly to the conclusion.</p>
+<h6 id="an-example-the-half-line">An example: the half line</h6>
+<p>We are now ready to deal with a Hamiltonian that has boundary conditions
+$$H=p^2 + V(x) ;;,;; x \geq 0 \;\;\; (4.6) $$</p>
+<p>It is well known that such an Hamiltonian is self-adjoint only if the boundary conditions of the domain $D(H)$ are of the $Robin$ variety: \(\psi(0)+A\psi&rsquo;(0)=0\). Which explicitly means that \(D(H)={\psi(x)|\psi(0)+A\psi&rsquo;(0)=0,x\geq 0}\).</p>
+<p>Let&rsquo;s begin by looking at the operator \(\mathcal{O}_1=x^k\). As in the first paragraph, the commutator with H is:
+$$ [H,x^k]=[p^2,x^k]=-2ikx^{k-1}p - k(k-1)x^{k-2} \;\;\; (4.7) $$</p>
+<p>but now we have the anomalous term which we will compute by integrating by parts:
+$$ \mathcal{A}_1 = &lt;(H^\dagger -H)\mathcal{O}&gt; = \int_0^{\infty}dx(-\psi&rsquo;&lsquo;x^k\psi +\psi(x^k\psi)&rsquo;&rsquo;) =      $$
+$$=-\int_0^{\infty}dx \psi&rsquo;&lsquo;x^k\psi+[\psi(x^k\psi)&rsquo;&rsquo;-\psi&rsquo;x^k\psi]_0^{\infty} + \int_0^{\infty}dx\psi&rsquo;&lsquo;x^k\psi\;\;\; (4.8) $$</p>
+<p>The first term cancels out with the last and  \(k \geq 0\) so
+$$ \mathcal{A}<em>1 = \lim</em>{x\rightarrow 0} kx^{k-1}\psi(0)^2 = \delta_{1,k}\psi(0)^2 \;\;\; (3.8)  $$
+where \(\delta_{1,k}\) is \(Kronecker&rsquo;s\) delta.</p>
+<p>We can already see that the boundary conditions appeared in our construction of the recursive relations. Doing the same for \(\mathcal{O}_2=x^k p\) we find that
+$$ [H,x^k p]= -2ikx^{k-1}p^2 - k(k-1)x^{k-2}p + ix^k V&rsquo;(x) \;\;\; (4.8)  $$
+$$\mathcal{A}<em>2 = i\delta</em>{1,k}\psi(0)\psi&rsquo;(0) \;\;\; (3.10)  $$</p>
+<p>in the special case where $k=0$ the anomalous term becomes
+$$ \mathcal{A}_{k=0} = i(\psi&rsquo;(0))^2 + i\psi(0)^2(E-V(0)) \;\;\; (4.9) $$</p>
+<p>Lastly, by using the energy like in (1.8) we get
+$$ &lt;x^{k-2}p^2&gt;=E&lt;x^{k-1}&gt; - &lt;x^{k-1}V(x)&gt; \;\;\; (4.10) $$</p>
+<p>We can finally type the completed recursive relation for  \(\psi&rsquo;(0)=\frac{\psi(0)}{\alpha}\) and \(k&gt;0: \)
+$$0 = 2k E&lt;x^{k-1}&gt; + \frac{1}{2}k(k-1)(k-2)&lt;x^{k-3}&gt;-2k&lt;x^{k-1}V&gt; - &lt;x^k V&rsquo;&gt; $$
+$$ + \delta_{k,2} \psi&rsquo;^2_{0}+\delta_{k,1}\frac{\psi^2_{0}}{\alpha} \;\;\; (4.11) $$</p>
+<p>for \(k=0\)
+$$ 0 = -&lt;V&rsquo;&gt;+ (\psi &lsquo;(0))^2 + \psi(0)^2(E-V(0)) \;\;\; (4.12)$$</p>
+<p>Combining this relation and the boundary conditions we get
+$$ \psi(0)^2 = \frac{\alpha^2 &lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0)} ;;,;; \psi&rsquo;(0)^2 = \frac{&lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0)} \;\;\; (4.13) $$</p>
+<p>And so our final recursive relation is
+$$0 = 2k E&lt;x^{k-1}&gt; + \frac{1}{2}k(k-1)(k-2)&lt;x^{k-3}&gt;-2k&lt;x^{k-1}V&gt; - &lt;x^k V&rsquo;&gt;+  $$
+$$  \delta_{k,2}\frac{\alpha^2 &lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0))} +\delta_{k,1}\frac{\alpha&lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0))} \;\;\; (4.14) $$</p>
+<p>for \(k=1,2,&hellip;\) and not for \(k=0\)  (for k=0 we have (4.12)). From here our algorithm for finding the physical states is identical to that on the full real line or for that matter any other space.</p>
+<h1 id="conclusion-and-sources">Conclusion and Sources</h1>
+<h6 id="conclusion">conclusion</h6>
+<p>The fact that the wave function is unitary and that the operators we use in Quantum Mechanics are self-adjoint is usually only mentioned in the beginning of any course and is then left to the side when one starts dealing with Schrodinger&rsquo;s equation. I hope you now see that these two pillars of QM  hold enough strength to almost uniquely define the solution to any problem. However this &ldquo;bootstrapping&rdquo; method is not limited to solving simple QM problems. There are many theories out there for which we indeed do not have an equivalent master equations such as Schrodinger&rsquo;s and so demands of unitarity and other &ldquo;self-evident&rdquo; properties are the only thing have as a tool. As we&rsquo;ve seen this is more than nothing.</p>
+<h6 id="sources">{Sources}</h6>
+<ol>
+<li>A good introductory paper on the subject which also deals with more issues on bootstrapping is: &ldquo;X. Han. , S. A. Hartnoll and J. Kruthoff, Bootstraping Matrix Quantum Mechanics,
+Phys. Lett. 125 (2020) 041601&rdquo;</li>
+</ol>
+<p>2.Boundary conditions and other subtleties of bootstrapping are studied in &ldquo;D. Berenstein. and G. Hulsey, Anomalous Bootstrap on the half line, Phys. Rev. D
+106 (2022) 045029 .&rdquo;</p>
+<ol start="3">
+<li>The very interesting problem of self-adjoint operators in QM is dealt with at length is &ldquo;T. Juric, Observables in Quantum Mechanics and the Importance of Self-adjointness,
+Universe 8 (2021) 129 .&rdquo;</li>
+</ol>
+
+
+      
+    </article>
+    
+  </div>
+
+        </div><footer>
+  <div class="container">
+    <p class="credits copyright">
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;/&nbsp;Theme&nbsp;<a href="https://github.com/kaisugi/HugoTeX">HugoTeX</a>
+        <br>
+        <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
+        &copy;
+        2023
+      </p>
+  </div>
+</footer></body>
+</html>
