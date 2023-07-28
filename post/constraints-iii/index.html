@@ -125,7 +125,7 @@ We can now say that an operator \(A\) is self-adjoint \((A=A^\dagger)\) if it me
 <p>By definition of the Hamiltonian operator
 $$ i\frac{\partial \psi}{\partial t} = H \psi \;\;\; (4.1) $$
 and assuming that the operator \(A\) is time independant, we write
-$$ \frac{d<A>}{dt} = &lt;\frac{\partial \psi}{\partial t},A\psi&gt; +  &lt;\psi,A\frac{\partial \psi}{\partial t}&gt; = i{&lt;H\psi,A\psi&gt;-&lt;\psi,AH\psi&gt;} \;\;\; (4.2)$$</p>
+$$ \frac{d<A>}{dt} = &lt;\frac{\partial \psi}{\partial t},A\psi&gt; +  &lt;\psi,A\frac{\partial \psi}{\partial t}&gt; = i(&lt;H\psi,A\psi&gt;-&lt;\psi,AH\psi&gt;) \;\;\; (4.2)$$</p>
 <p>The first product is well defined assuming that \(\psi\in D(H) \cap D(A)\) as expected. The second product however is problematic if  ((H\psi\not \in D(A)\). If we can algebraically compute the commutator \([A,H]\) for the whole real line (\emph{that means not only in the domain where the operator is self-adjoint}), then \(AH=[A,H] + HA \) everywhere and the bracket in (4.2) can be written as:
 $$ &lt;\psi,[H,A]\psi&gt; + &lt;H\psi,A\psi&gt; - &lt;\psi,HA\psi&gt; = &lt;\psi,[H,A]\psi&gt; + &lt;\psi,(H^\dagger -H)A\psi&gt;  \;\;\; (4.3) $$
 In the second step we see that, since the Hamiltonian is no longer self-adjoint in the real line, we have to replace it by \(H^\dagger\) when we move it from one side of a product to the other. The theorem of time evolution is now written as
@@ -137,18 +137,18 @@ $$  &lt;[H,\mathcal{O}]&gt; +  &lt;(H^\dagger -H)\mathcal{O}&gt; = 0    \;\;\; (
 <h6 id="an-example-the-half-line">An example: the half line</h6>
 <p>We are now ready to deal with a Hamiltonian that has boundary conditions
 $$H=p^2 + V(x) ;;,;; x \geq 0 \;\;\; (4.6) $$</p>
-<p>It is well known that such an Hamiltonian is self-adjoint only if the boundary conditions of the domain $D(H)$ are of the $Robin$ variety: \(\psi(0)+A\psi&rsquo;(0)=0\). Which explicitly means that \(D(H)={\psi(x)|\psi(0)+A\psi&rsquo;(0)=0,x\geq 0}\).</p>
+<p>It is well known that such an Hamiltonian is self-adjoint only if the boundary conditions of the domain \(D(H)\) are of the \(Robin\) variety: \(\psi(0)+A\psi&rsquo;(0)=0\). Which explicitly means that \(D(H)={\psi(x)|\psi(0)+A\psi&rsquo;(0)=0,x\geq 0}\).</p>
 <p>Let&rsquo;s begin by looking at the operator \(\mathcal{O}_1=x^k\). As in the first paragraph, the commutator with H is:
 $$ [H,x^k]=[p^2,x^k]=-2ikx^{k-1}p - k(k-1)x^{k-2} \;\;\; (4.7) $$</p>
 <p>but now we have the anomalous term which we will compute by integrating by parts:
 $$ \mathcal{A}_1 = &lt;(H^\dagger -H)\mathcal{O}&gt; = \int_0^{\infty}dx(-\psi&rsquo;&lsquo;x^k\psi +\psi(x^k\psi)&rsquo;&rsquo;) =      $$
 $$ =-\int_0^{\infty}dx \psi&rsquo;&lsquo;x^k\psi+[\psi(x^k\psi)&rsquo;&rsquo;-\psi&rsquo;x^k\psi]_0^{\infty} + \int_0^{\infty}dx\psi&rsquo;&lsquo;x^k\psi\;\;\; (4.8) $$</p>
 <p>The first term cancels out with the last and  \(k \geq 0\) so
-$$ \mathcal{A}<em>1 = \lim</em>{x\rightarrow 0} kx^{k-1}\psi(0)^2 = \delta_{1,k}\psi(0)^2 \;\;\; (3.8)  $$
+$$ \mathcal{A}_1 = \lim_{x\rightarrow 0} kx^{k-1}\psi(0)^2 = \delta_{1,k}\psi(0)^2 \;\;\; (3.8)  $$
 where \(\delta_{1,k}\) is \(Kronecker&rsquo;s\) delta.</p>
 <p>We can already see that the boundary conditions appeared in our construction of the recursive relations. Doing the same for \(\mathcal{O}_2=x^k p\) we find that
 $$ [H,x^k p]= -2ikx^{k-1}p^2 - k(k-1)x^{k-2}p + ix^k V&rsquo;(x) \;\;\; (4.8a)  $$
-$$ \mathcal{A}<em>2 = i\delta</em>{1,k}\psi(0)\psi&rsquo;(0) \;\;\; (4.8b)  $$</p>
+$$ \mathcal{A}_2 = i\delta_{1,k}\psi(0)\psi&rsquo;(0) \;\;\; (4.8b)  $$</p>
 <p>in the special case where $k=0$ the anomalous term becomes
 $$ \mathcal{A}_{k=0} = i(\psi&rsquo;(0))^2 + i\psi(0)^2(E-V(0)) \;\;\; (4.9) $$</p>
 <p>Lastly, by using the energy like in (1.8) we get
@@ -170,14 +170,18 @@ $$  \delta_{k,2}\frac{\alpha^2 &lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0))} +\delta_{k,
 <strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
 <h6 id="sources">{Sources}</h6>
 <ol>
-<li>A good introductory paper on the subject which also deals with more issues on bootstrapping is: &ldquo;X. Han. , S. A. Hartnoll and J. Kruthoff, Bootstraping Matrix Quantum Mechanics,
-Phys. Lett. 125 (2020) 041601&rdquo;</li>
-</ol>
-<p>2.Boundary conditions and other subtleties of bootstrapping are studied in &ldquo;D. Berenstein. and G. Hulsey, Anomalous Bootstrap on the half line, Phys. Rev. D
+<li>
+<p>A good introductory paper on the subject which also deals with more issues on bootstrapping is: &ldquo;X. Han. , S. A. Hartnoll and J. Kruthoff, Bootstraping Matrix Quantum Mechanics,
+Phys. Lett. 125 (2020) 041601&rdquo;</p>
+</li>
+<li>
+<p>Boundary conditions and other subtleties of bootstrapping are studied in &ldquo;D. Berenstein. and G. Hulsey, Anomalous Bootstrap on the half line, Phys. Rev. D
 106 (2022) 045029 .&rdquo;</p>
-<ol start="3">
-<li>The very interesting problem of self-adjoint operators in QM is dealt with at length is &ldquo;T. Juric, Observables in Quantum Mechanics and the Importance of Self-adjointness,
-Universe 8 (2021) 129 .&rdquo;</li>
+</li>
+<li>
+<p>The very interesting problem of self-adjoint operators in QM is dealt with at length is &ldquo;T. Juric, Observables in Quantum Mechanics and the Importance of Self-adjointness,
+Universe 8 (2021) 129 .&rdquo;</p>
+</li>
 </ol>
 
 
