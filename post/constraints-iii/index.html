@@ -53,14 +53,14 @@
     <p>An arithmetic method for finding the spectrum of QM systems based on the demand for unitarity</p>
 <p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
 <h1 id="introduction">Introduction</h1>
-<p>The wave function $\Psi$ in Quantum mechanics (or to be more specific the norm squared), is interpreted as a probability density function. Therefore, the most basic requirement imposed on it is that the total probability it represents is equal to unity (therefore Unitarity).
+<p>The wave function \(\Psi\) in Quantum mechanics (or to be more specific the norm squared), is interpreted as a probability density function. Therefore, the most basic requirement imposed on it is that the total probability it represents is equal to unity (therefore Unitarity).
 $$ \int\Psi^*\Psi \; dV = 1  \;\;\; (2.1) $$
 Where the integral is taken over all of space and the star denotes the complex conjugate. Another obvious requirement of any physical theory is that the measurable quantities take real (and not complex) values.</p>
 <p>In this article we will see how far we can go by using these simple (and dare I say self-evident) facts. In specific, we are going to see a computational method of solving the Schrodinger equation called bootstrapping that is based on the requirement of Unitarity. Then we will see how the demand for reality of measured quantities leads into dealing with boundary conditions.</p>
 <h1 id="the-principles">The Principles</h1>
-<p>We will begin by stating the most basic constraints that any solution to quantum mechanical problems must obey to be considered &ldquo;physical&rdquo;.
-######Unitarity and the Inner Product
-The set of all possible wave functions live in a space called Hilbert space. Specifically, since we want our solutions to satisfy (2.1), our Hilbert space is only populated by &ldquo;square-integrable&rdquo; functions i.e.: 
+<p>We will begin by stating the most basic constraints that any solution to quantum mechanical problems must obey to be considered &ldquo;physical&rdquo;.</p>
+<h6 id="unitarity-and-the-inner-product">Unitarity and the Inner Product</h6>
+<p>The set of all possible wave functions live in a space called Hilbert space. Specifically, since we want our solutions to satisfy (2.1), our Hilbert space is only populated by &ldquo;square-integrable&rdquo; functions i.e.: 
 $$ \int\phi^<em>\phi ; dV &lt; \infty \;\;\;(2.2) $$
 Following the formalism of the last article, we can define the inner product of Hilbert space as
 $$ &lt;\phi,\psi&gt; = \int\phi^</em>\psi ; dV \;\;\; (2.3)  $$
