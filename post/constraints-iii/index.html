@@ -63,7 +63,7 @@ Where the integral is taken over all of space and the star denotes the complex c
 <p>The set of all possible wave functions live in a space called Hilbert space. Specifically, since we want our solutions to satisfy (2.1), our Hilbert space is only populated by &ldquo;square-integrable&rdquo; functions i.e.: 
 $$ \int\phi^*\phi \; dV &lt; \infty \;\;\;(2.2) $$
 Following the formalism of the last article, we can define the inner product of Hilbert space as
-$$ &lt;\phi,\psi&gt; = \int\phi^*\psi ; dV \;\;\; (2.3)  $$
+$$ &lt;\phi,\psi&gt; = \int\phi^*\psi \; dV \;\;\; (2.3)  $$
 and so a unitary functions are defined as
 $$ ||\phi||^2=&lt;\phi,\phi&gt; =1 \;\;\; (2.4) $$
 by definition, for any non-zero function
@@ -82,18 +82,19 @@ $$ &lt;\hat{O}^\dagger \hat{O}&gt; \;\;\; &gt; 0 \;\;\; (2.9) $$</p>
 <p>The most general formulation of Ehrenfest&rsquo;s theorem is that all of the equations that are true in classical mechanics also apply to the average values of quantum operators. The only difference being that Poisson&rsquo;s brackets are replaced by the commutator (we assume that \(\hbar = 1\))
 $$ \{A,B\} \longrightarrow i[\hat{A},\hat{B}] \;\;\; (2.10)  $$
 where \([\hat{A},\hat{B}] = \hat{A}\hat{B}-\hat{B}\hat{A}\) is the commutator between two operators. Therefore, the classical equation of time evolution is
-$$ \frac{dA}{dt} = {H,A} \longrightarrow \frac{d&lt;\hat{O}&gt;}{dt} = i&lt;[\hat{H},\hat{O}]&gt; \;\;\; (2.11) $$
+$$ \frac{dA}{dt} = \{H,A\} \longrightarrow \frac{d&lt;\hat{O}&gt;}{dt} = i&lt;[\hat{H},\hat{O}]&gt; \;\;\; (2.11) $$
 where \(\hat{H}\) is the Hamiltonian operator. Here we have told a bit of a lie, but we will come back to correct it later.</p>
 <h1 id="bootstrapping">Bootstrapping</h1>
+<p>From now on all quantities are operators so we will drop the hats.</p>
 <h6 id="the-recursive-relation">The recursive relation</h6>
 <p>Let&rsquo;s suppose the Hamiltonian:
 $$  H= p^2 + x^2 + gx^4   \;\;\;(3.1)  $$
-When in an eigenstate of the Hamiltonian, of energy \(E_n$\), all of the average values are time-independant and therefore, from (2.11):
-$$ &lt;[\hat{O},\hat{H}]&gt; = 0 \;\;\;(3.2) $$
+When in an eigenstate of the Hamiltonian, of energy \(E_n\), all of the average values are time-independant and therefore, from (2.11):
+$$ &lt;[O,H]&gt; = 0 \;\;\;(3.2) $$
 This is going to be our &ldquo;generating&rdquo; equation from which we will get all other results. For \(O=x^k\) and \(O=px^k\) we get respectively
 $$ k(k-1)&lt;x^{k-2}&gt; = -2ik&lt;x^{k-1}p&gt; \;\;\; (3.3) $$
 $$ 4k&lt;x^{k-1}p^2&gt;= 4&lt;x^{k+1}&gt; + 8g&lt;x^{k+3}&gt; - k(k-1)(k-2)&lt;x^{k-3}&gt; \;\;\; (3.4)$$
-We notice that for $k=1$ relation (3.4) becomes the Virial Theorem
+We notice that for \(k=1\) relation (3.4) becomes the Virial Theorem
 $$ 2&lt;p^2&gt; = 2&lt;x^2&gt; + 4g&lt;x^4&gt; \;\;\; (3.5) $$
 and therefore the energy can be written as
 $$  E = &lt;H&gt; = 2&lt;x^2&gt; + 3g&lt;x^4&gt; \;\;\; (3.6) $$
@@ -116,11 +117,11 @@ where \(V&rsquo;= \frac{dV}{dx}\). What we have found is pretty impressive. With
 <h1 id="self-adjointness-and-boundary-conditions">Self-Adjointness and Boundary Conditions</h1>
 <p>In our previous analysis we didn&rsquo;t mention anything about boundary conditions and in fact they appeared nowhere in our calculations. This is because, as we said then, we lied when we postulated Ehrenfest&rsquo;s Theorem (2.11). The correction to this mistake is subtle and has to do with the definition of Hermitian operators and their relation to the boundary conditions. We will now remedy this.</p>
 <h6 id="self-adjointness-and-operator-domains">Self-Adjointness and Operator Domains</h6>
-<p>Any operator \(\mathcal{O}\), if we let it act on every function \(\Psi\) of our Hilbert space, is very likely to map it into a function \(\Psi &lsquo;\) that lies outside the acceptable solutions of our problem. For this reason, every operator is defined on an operator domain of Hilbert space \(D(\mathcal{O})\). The domain is defined by the boundary conditions of the wavefunctions \(\psi\) that occupy it (\(\psi \in (D(\mathcal{O}))\). 
+<p>Any operator \(\mathcal{O}\), if we let it act on every function \(\Psi\) of our Hilbert space, is very likely to map it into a function \(\Psi' \) that lies outside the acceptable solutions of our problem. For this reason, every operator is defined on an operator domain of Hilbert space \(D(\mathcal{O})\). The domain is defined by the boundary conditions of the wavefunctions \(\psi\) that occupy it (\(\psi \in (D(\mathcal{O}))\). 
 We can now say that an operator \(A\) is self-adjoint \((A=A^\dagger)\) if it meets the following two conditions:</p>
 <p>a) the operator must be symmetric, so \(&lt;\phi,A\psi&gt;=&lt;A\phi,\psi&gt;\)</p>
 <p>b) the operator domains must be the same \(D(A)=D(A^\dagger)\)</p>
-<p>If an operator, including the Hamiltonian, do not meet the above two conditions then \((A=A^\dagger)\) and we need to rethink relations like (2.11). This problem did not appear in our example Hamiltonian (3.1)  because the space of acceptable solutions was the real line and so all operators had the same domain \(D(\mathcal{O}) = {\psi | \psi(x\rightarrow \pm \infty) = 0 }\).</p>
+<p>If an operator, including the Hamiltonian, do not meet the above two conditions then \((A \neq A^\dagger)\) and we need to rethink relations like (2.11). This problem did not appear in our example Hamiltonian (3.1)  because the space of acceptable solutions was the real line and so all operators had the same domain \(D(\mathcal{O}) = \{\psi | \psi(x\rightarrow \pm \infty) = 0 \} \).</p>
 <h6 id="modified-ehrenfest">Modified Ehrenfest</h6>
 <p>By definition of the Hamiltonian operator
 $$ i\frac{\partial \psi}{\partial t} = H \psi \;\;\; (4.1) $$
@@ -149,7 +150,7 @@ where \(\delta_{1,k}\) is \(Kronecker&rsquo;s\) delta.</p>
 <p>We can already see that the boundary conditions appeared in our construction of the recursive relations. Doing the same for \(\mathcal{O}_2=x^k p\) we find that
 $$ [H,x^k p]= -2ikx^{k-1}p^2 - k(k-1)x^{k-2}p + ix^k V&rsquo;(x) \;\;\; (4.89a)  $$
 $$ \mathcal{A}_2 = i\delta_{1,k}\psi(0)\psi&rsquo;(0) \;\;\; (4.9b)  $$</p>
-<p>in the special case where $k=0$ the anomalous term becomes
+<p>in the special case where \(k=0\) the anomalous term becomes
 $$ \mathcal{A}_{k=0} = i(\psi&rsquo;(0))^2 + i\psi(0)^2(E-V(0)) \;\;\; (4.10) $$</p>
 <p>Lastly, by using the energy like in (1.8) we get
 $$ &lt;x^{k-2}p^2&gt;=E&lt;x^{k-1}&gt; - &lt;x^{k-1}V(x)&gt; \;\;\; (4.11) $$</p>
