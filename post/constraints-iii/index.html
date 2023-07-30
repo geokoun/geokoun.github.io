@@ -142,13 +142,13 @@ $$H=p^2 + V(x) \;\;,\;\; x \geq 0 \;\;\; (4.6) $$</p>
 <p>Let&rsquo;s begin by looking at the operator \(\mathcal{O}_1=x^k\). As in the first paragraph, the commutator with H is:
 $$ [H,x^k]=[p^2,x^k]=-2ikx^{k-1}p - k(k-1)x^{k-2} \;\;\; (4.7) $$</p>
 <p>but now we have the anomalous term which we will compute by integrating by parts:
-$$ \mathcal{A}_1 = &lt;(H^\dagger -H)\mathcal{O}&gt; = \int_0^{\infty}dx(-\psi&rsquo;&lsquo;x^k\psi +\psi(x^k\psi)&rsquo;&rsquo;) =      $$
-$$ =-\int_0^{\infty}dx \psi&rsquo;&lsquo;x^k\psi+[\psi(x^k\psi)&rsquo;&rsquo;-\psi&rsquo;x^k\psi]_0^{\infty} + \int_0^{\infty}dx\psi&rsquo;&lsquo;x^k\psi\;\;\; (4.8) $$</p>
+$$ \mathcal{A}_1 = &lt;(H^\dagger -H)\mathcal{O}&gt; = \int_0^{\infty}dx(-\psi''x^k\psi +\psi(x^k\psi)&rsquo;&rsquo;) =      $$
+$$ =-\int_0^{\infty}dx \psi''x^k\psi+[\psi(x^k\psi)&rsquo;&rsquo;-\psi&rsquo;x^k\psi]_0^{\infty} + \int_0^{\infty}dx\psi''x^k\psi\;\;\; $$</p>
 <p>The first term cancels out with the last and  \(k \geq 0\) so
 $$ \mathcal{A}_1 = \lim_{x\rightarrow 0} kx^{k-1}\psi(0)^2 = \delta_{1,k}\psi(0)^2 \;\;\; (4.8)  $$
 where \(\delta_{1,k}\) is \(Kronecker&rsquo;s\) delta.</p>
 <p>We can already see that the boundary conditions appeared in our construction of the recursive relations. Doing the same for \(\mathcal{O}_2=x^k p\) we find that
-$$ [H,x^k p]= -2ikx^{k-1}p^2 - k(k-1)x^{k-2}p + ix^k V&rsquo;(x) \;\;\; (4.89a)  $$
+$$ [H,x^k p]= -2ikx^{k-1}p^2 - k(k-1)x^{k-2}p + ix^k V&rsquo;(x) \;\;\; (4.9a)  $$
 $$ \mathcal{A}_2 = i\delta_{1,k}\psi(0)\psi&rsquo;(0) \;\;\; (4.9b)  $$</p>
 <p>in the special case where \(k=0\) the anomalous term becomes
 $$ \mathcal{A}_{k=0} = i(\psi&rsquo;(0))^2 + i\psi(0)^2(E-V(0)) \;\;\; (4.10) $$</p>
@@ -158,7 +158,7 @@ $$ &lt;x^{k-2}p^2&gt;=E&lt;x^{k-1}&gt; - &lt;x^{k-1}V(x)&gt; \;\;\; (4.11) $$</p
 $$ 0 = 2k E&lt;x^{k-1}&gt; + \frac{1}{2}k(k-1)(k-2)&lt;x^{k-3}&gt;-2k&lt;x^{k-1}V&gt; - &lt;x^k V&rsquo;&gt; $$
 $$ + \delta_{k,2} \psi&rsquo;^2_{0}+\delta_{k,1}\frac{\psi^2_{0}}{\alpha} \;\;\; (4.12) $$</p>
 <p>for \(k=0\)
-$$ 0 = -&lt;V&rsquo;&gt;+ (\psi &lsquo;(0))^2 + \psi(0)^2(E-V(0)) \;\;\; (4.13)$$</p>
+$$ 0 = -&lt;V&rsquo;&gt;+ (\psi'(0))^2 + \psi(0)^2(E-V(0)) \;\;\; (4.13)$$</p>
 <p>Combining this relation and the boundary conditions we get
 $$ \psi(0)^2 = \frac{\alpha^2 &lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0)} \;\;,\;\; \psi&rsquo;(0)^2 = \frac{&lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0)} \;\;\; (4.14) $$</p>
 <p>And so our final recursive relation is
@@ -167,8 +167,8 @@ $$  \delta_{k,2}\frac{\alpha^2 &lt;V&rsquo;&gt;}{1+\alpha^2(E-V(0))} +\delta_{k,
 <p>for \(k=1,2,&hellip;\) and not for \(k=0\)  (for k=0 we have (4.13)). From here our algorithm for finding the physical states is identical to that on the full real line or for that matter any other space.</p>
 <h1 id="conclusion-and-sources">Conclusion and Sources</h1>
 <h6 id="conclusion">conclusion</h6>
-<p>The fact that the wave function is unitary and that the operators we use in Quantum Mechanics are self-adjoint is usually only mentioned in the beginning of any course and is then left to the side when one starts dealing with Schrodinger&rsquo;s equation. I hope you now see that these two pillars of QM  hold enough strength to almost uniquely define the solution to any problem. However this &ldquo;bootstrapping&rdquo; method is not limited to solving simple QM problems. There are many theories out there for which we indeed do not have an equivalent master equations such as Schrodinger&rsquo;s and so demands of unitarity and other &ldquo;self-evident&rdquo; properties are the only thing have as a tool. As we&rsquo;ve seen this is more than nothing.
-<strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+<p>The fact that the wave function is unitary and that the operators we use in Quantum Mechanics are self-adjoint is usually only mentioned in the beginning of any course and is then left to the side when one starts dealing with Schrodinger&rsquo;s equation. I hope you now see that these two pillars of QM  hold enough strength to almost uniquely define the solution to any problem. However this &ldquo;bootstrapping&rdquo; method is not limited to solving simple QM problems. There are many theories out there for which we indeed do not have an equivalent master equation such as Schrodinger&rsquo;s and so demands of unitarity and other &ldquo;self-evident&rdquo; properties are the only thing have as a tool. As we&rsquo;ve seen this is more than nothing.</p>
+<p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
 <h6 id="sources">{Sources}</h6>
 <ol>
 <li>
