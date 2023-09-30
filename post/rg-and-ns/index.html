@@ -73,7 +73,7 @@ $$ \mathcal{L}_{eff} = \int^\Lambda_{b\Lambda} d^d k \mathcal{L} $$</p>
 $$ \mathcal{L}_{eff} =  \frac{1}{2}(1+\Delta Z)(\partial_\mu \phi)^2 +\frac{1}{2}(m^2 + \Delta m^2) \phi^2 + (\lambda + \Delta \lambda) \phi^4 + (C+\Delta C)(\partial_\mu \phi)^4 + (D+\Delta D)\phi^6 + &hellip; \;\;\; (2.3)       $$</p>
 <p>The last thing we need to do to compare the two lagrangians is rescale the second one by setting
 $$ k&rsquo;= \frac{k}{b}\;\;,\;\;x&rsquo;=bx \;\;\; (2.4)  $$</p>
-<p>and so we get a theory with the same cutoff $\Lambda$ but without &ldquo;high&rdquo; energy fields. The result is
+<p>and so we get a theory with the same cutoff \(\Lambda\) but without &ldquo;high&rdquo; energy fields. The result is
 $$ \mathcal{L}_{eff} = \frac{1}{2}(\partial_\mu \phi)^2 +\frac{1}{2}m&rsquo;^2 \phi^2 + \lambda&rsquo; \phi^4 + C&rsquo;(\partial_\mu \phi)^4 + D&rsquo;\phi^6 + &hellip; \;\;\; (2.5)   $$</p>
 <p>where for d dimensions:
 $$ m&rsquo;^2 \sim m^2 b^{-2} \;\;\;,\;\;\; \lambda &rsquo; \sim \lambda b^{d-4} $$
@@ -161,7 +161,7 @@ $$</p>
 <p>The mass and energy densities now follow a simple dissipative equation of the form
 $$ \frac{d}{dt} \begin{pmatrix} \rho^m \\ \rho^e \end{pmatrix} = D\nabla^2 \begin{pmatrix} \rho^m \\ \rho^e \end{pmatrix} \;\;\; (3.16) $$</p>
 <p>while momentum follows a similar equation with only friction terms for longitudinal and transverse propagation
-$$ \frac{d}{dt}(\rho^m \vec{v}) = D_T\nabla^2\vec{v} + D_L\nabla(\div\vec{v}) \;\;\; (3.17)   $$</p>
+$$ \frac{d}{dt}(\rho^m \vec{v}) = D_T\nabla^2\vec{v} + D_L\nabla(\nabla\vec{v}) \;\;\; (3.17)   $$</p>
 <h6 id="navier-stokes">Navier-Stokes</h6>
 <p>To reach any of the above fixed points would theoretically take and infinite amount of RG transformations since for that to happen, we would need n applications such that \(\frac{1}{2}^n \rightarrow 0\). Therefore, on the way to fixed points, our theory will spend a lot of time close to them. But close to the fixed points we already know what the propagator looks like, namely our original matrix of (3.9). Combining all previous results, we get the Navier-Stokes equation for the momentum density 
 $$ \frac{d}{dt}(\rho^m\vec{v}) = -\nabla P + D_T\nabla^2\vec{v} + D_L\nabla(\div\vec{v}) \;\;\; (3.18)  $$</p>
@@ -172,7 +172,7 @@ $$ \frac{d}{dt}(\rho^m\vec{v}) = -\nabla P + D_T\nabla^2\vec{v} + D_L\nabla(\div
 <p>What we have seen here is a tiny part of the 50year old idea of the Renormalisation Group. Not only does this tool help us to find effective theories for a wide range of phenomena, it also has serious philosophical implications for science. The first implication, already discussed, is that a huge class of theories end up gravitating towards specific fixed points at low energies and large scales. This means that, although we might not have a theory that is valid on all scales, we know for a fact that <em>any</em> Universal Theory of Everything <em>will</em> look like our modern field theories at our scale. Those are the only fixed points. The second implication is a bit more pessimistic (in my opinion). Through the lens of RG it looks like the job of physics, or any science, is to find an effective theory that works at the scales needed. This means that we might never get to the above mentioned Theory of Everything, since at each energy scale it will look like a different theory, masking the workings of higher energies. This is called scale decoupling, theories at lower scales are not affected by theories at larger scales except for the values of certain constants, giving us no clue as to what is going on &ldquo;up there&rdquo;.</p>
 <p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
 <h6 id="resources">(Re)sources</h6>
-<p>[1] The concept of the RG was first solidified by K. G. Wilson and a philosophical and mathematical treatment is given in his article (more like a book) with Kogut: &ldquo;The renormalization group and the \(epsilon\) expansion&rdquo; , Physical Reports, 1974</p>
+<p>[1] The concept of the RG was first solidified by K. G. Wilson and a philosophical and mathematical treatment is given in his article (more like a book) with Kogut: &ldquo;The renormalization group and the \(\epsilon\) expansion&rdquo; , Physical Reports, 1974</p>
 <p>[2]A more modern approach, and the source of the section of \(\phi^4\) theory is the all encompassing book by Peskin and Schroeder &ldquo;An Introduction to Quantum Field Theory&rdquo; chapter 12.</p>
 <p>[3] This derivation of the Navier-Stokes equations and the fixed points of fluid theory in general are thanks to Visscher&rsquo;s article: &ldquo;Renormalization-group derivation of Navier-Stokes equation&rdquo;, Journal of Statistical Physics, 1985.</p>
 <p>[4] For historical purposes, here&rsquo;s Kadanoff&rsquo;s article about spin blocks: &ldquo;Scaling laws for ising models near Tc&rdquo; ,Physics 2, 1966.</p>
