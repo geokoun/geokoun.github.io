@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Principia Physicae Generalis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 28 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://principiaphysicaegeneralis.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://principiaphysicaegeneralis.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Renormalisation Group and the Navier-Stokes Equations</title>
+      <link>https://principiaphysicaegeneralis.com/post/rg-and-ns/</link>
+      <pubDate>Sat, 30 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://principiaphysicaegeneralis.com/post/rg-and-ns/</guid>
+      <description>&lt;p&gt;After explaining the philosophy behind the Renormalisation Group, we apply it to derive the Navier-Stokes and explain their universality.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Constraining Nature IIΙ: Unitarity and bootstrapping</title>
       <link>https://principiaphysicaegeneralis.com/post/constraints-iii/</link>
@@ -14,15 +23,6 @@
       
       <guid>https://principiaphysicaegeneralis.com/post/constraints-iii/</guid>
       <description>&lt;p&gt;An arithmetic method for finding the spectrum of QM systems based on the demand for unitarity&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>The Renormalisation Group and the Navier-Stokes Equations</title>
-      <link>https://principiaphysicaegeneralis.com/post/rg-and-ns/</link>
-      <pubDate>Fri, 28 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://principiaphysicaegeneralis.com/post/rg-and-ns/</guid>
-      <description>&lt;p&gt;After explaining the philosophy behind the Renormalisation Group, we apply it to derive the Navier-Stokes and explain their universality.&lt;/p&gt;</description>
     </item>
     
     <item>
