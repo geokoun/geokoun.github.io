@@ -101,7 +101,7 @@ $$ G^a_{a&rsquo;} (k,1;k&rsquo;,0) = \sum_{r,r&rsquo;} \frac{e^{ir(k&rsquo;-k)}}
 <p>Since we only care for small energies i.e. small k we will only consider the most &ldquo;relevant&rdquo; terms and so those lowest in powers of k. The general form of each term is given from symmetry considerations. Due to isometry, the scalar propagators will be functions of \(k^2\)
 $$ G^a_{a&rsquo;}(k) = D_{aa&rsquo;}k^2 + \mathcal{O}(k^4) \;\;,\;\;a,a&rsquo;=e,m \;\;\; (3.6)   $$</p>
 <p>Similarly propagators between scalars and momentum have only one preferred direction, that of the momenta so for example
-$$ G^m_{p_j} = -ik_j u_mp + \mathcal{O}(k^3) \;\;\; (3.7)  $$</p>
+$$ G^m_{p_j} = -ik_j u_{mp} + \mathcal{O}(k^3) \;\;\; (3.7)  $$</p>
 <p>The imaginary i is there so that the Fourier transform is real, as we would expect from the equations of motion of a set of real fields. Lastly, two vectors define both a direction and a perpendicular plane so we split the momentum-momentum propagator into transverse (T) and longitudinal (L) parts
 $$ G^{p_i}_{p_j} = -D_T(\delta_{ij}-\hat{k_i}\hat{k_j}) - D_L k_j k_i + \mathcal{O}(k^4) \;\;\;(3.8) $$</p>
 <p>where the hats denote unit vectors. If we think of the state of the system as a column 5-vector we can represent \(G^a_{a&rsquo;} \) as a \(5\times 5\) matrix</p>
@@ -119,8 +119,8 @@ $$ \vec{k} =  \begin{pmatrix} k_x \\ k_y \\ : \\ : \end{pmatrix}       $$</p>
 <p>We define two operators that increase the scale of time and space by a factor of 2, \(\hat{T}\) and \(\hat{S}\) respectively. S is pretty simple to implement
 $$ \hat{S}\Delta r= 2\Delta r $$</p>
 <p>and therefore in momentum space
-$$ \hat{S}G(k) = G(\frac{k}{2}) \;\;\; (3.10)  $$</p>
-<p>Now, for \(\hat{T}\) we notice that the product of two propagators \(GG\) evolves the system by two time steps. Therefore if we multiply every propagator by 2 we get the same result as if we doubled the time interval \(\Delta t\):
+$$ \hat{S}G(k) = G(k/2) \;\;\; (3.10)  $$</p>
+<p>Now we can see why we ignored terms with higher powers of k. They die much faster under \(\hat{S}\). For \(\hat{T}\) we notice that the product of two propagators \(GG\) evolves the system by two time steps. Therefore if we multiply every propagator by 2 we get the same result as if we doubled the time interval \(\Delta t\):
 $$ \hat{T}G(k) = 2G(k)  $$</p>
 <p>If we now move the effect of these changes in scale to the constants in the matrix (3.9) we get
 $$ \hat{S}: \;\; D\rightarrow \frac{1}{4}D \;\;,\;\; u\rightarrow \frac{1}{2}u $$
