@@ -53,15 +53,14 @@
     <p>After demonstrating the connection between black holes and entropy we see how gravity can be possibly interpreted as an entropic force</p>
 <p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
 <h1 id="introduction">Introduction</h1>
-<p>This is a test</p>
 <p>In the last 50 years a lot of work has been done on the correspondence between black holes and statistical systems. In this article we will see how this correspondence arises between these two completely different areas of physics. After a quick primer of black holes and a presentation of the basic results, we will explore the probability that gravity itself can be interpreted as an entropic force.
 In the first chapter we will see how black holes are described in general relativity and how we can extract energy from them. We will also see why the area of a black hole cannot decrease. In the second chapter we will see the connection between black holes and entropy. In the third chapter we will see what an entropic force is and how gravity can be described as one in an emergent spacetime.</p>
 <h6 id="conventions">conventions</h6>
 <p>from here on out we assume that the speed of light is unity \(c=1\) and that we sum over repeated indices</p>
 <p>$$ x^\mu x_\mu = \sum_\mu x^\mu\cdot x_\mu $$</p>
-<p>Greek indices go from 0 to 3 $(\mu=0,1,2,3)$ and the norm of a four-vector is defined as</p>
+<p>Greek indices go from 0 to 3 \((\mu=0,1,2,3)\) and the norm of a four-vector is defined as</p>
 <p>$$ x^\mu x_\mu = g_{\mu\nu} x^\mu x^\nu $$</p>
-<p>where \(g_{\mu\nu\) the components of the metric (see below)</p>
+<p>where \( g_{\mu\nu \) the components of the metric (see below)</p>
 <h1 id="quick-and-dirty-general-relativity">Quick and Dirty General Relativity</h1>
 <h6 id="the-metric">The metric</h6>
 <p>The general theory of relativity describes how spacetime curves in the presence of mass and how mass moves in a curved spacetime. This is done by giving the metric of spacetime a dynamical role. Let&rsquo;s unpack this statement. Beginning with the usual Euclidean space, the distance between two neighboring points \(ds^2\) is given by</p>
@@ -92,9 +91,9 @@ In the first chapter we will see how black holes are described in general relati
 <p>since the angular momentum of the black hole gives us a preferred axis, we can think of the shape of space time as a series of ellipsoids with their small axis being that of rotation. In that case $\rho$ for constant \(r\) describes the radius of an ellipse and $a$ is the ratio between the big and the small axes. This time the problems arise when \(\Delta = 0\) and so we take this quantity&rsquo;s biggest root as the horizon of the black hole \(r_+\)</p>
 <p>$$ r_+ = GM + \sqrt{G^2M^2-a^2}$$</p>
 <p>The expression is (2.5) still a bit scary but we will see what information we can get out of it.</p>
-<p>First of all, the metric is obviously symmetric in $\phi$ since the only thing breaking the spherical symmetry is the axis of rotation (which we put at \(\theta = 0\)). The corresponding conserved quantity is the angular momentum \(J\)</p>
+<p>First of all, the metric is obviously symmetric in \(\phi\) since the only thing breaking the spherical symmetry is the axis of rotation (which we put at \(\theta = 0\)). The corresponding conserved quantity is the angular momentum \(J\)</p>
 <p>$$ J = aM$$</p>
-<p>What most interests us in this solution is an area outside the horizon called the <strong>ergoregion</strong>. To understand this part of spacetime we first need to talk about conserved quantities. As is well known in mechanics, both classical and quantum, conserved quantities are equivalent to symmetries. As we already saw the symmetry of the metric in the change (\(\phi \rightarrow \phi + \xi\)) ,where $\xi$ some constant, gives rise to the conservation of angular momentum. In general relativity we associate every symmetry to a (four)vector called a Killing vector $K$. For example, the Killing vector associated with the transformation of \(\phi\) is</p>
+<p>What most interests us in this solution is an area outside the horizon called the <strong>ergoregion</strong>. To understand this part of spacetime we first need to talk about conserved quantities. As is well known in mechanics, both classical and quantum, conserved quantities are equivalent to symmetries. As we already saw the symmetry of the metric in the change (\(\phi \rightarrow \phi + \xi\)) ,where \(\xi\) some constant, gives rise to the conservation of angular momentum. In general relativity we associate every symmetry to a (four)vector called a Killing vector \(K\). For example, the Killing vector associated with the transformation of \(\phi\) is</p>
 <p>$$ K_{rot} = (0,0,0,1)$$</p>
 <p>then, in general, every Killing vector \(K\) gives rise to a conserved quantity (called a Komar Integral). Specifically, each K defines curves in spacetime where a quantity is conserved, by the equation</p>
 <p>$$ \frac{dx^\mu(\tau)}{d\tau} = K^\mu x^\mu(\tau)    $$</p>
@@ -106,12 +105,12 @@ In the first chapter we will see how black holes are described in general relati
 <p>we immediately notice that (2.6) can take both positive and negative values, which is in itself unusual for something related to the energy. Indeed the first root is at</p>
 <p>$$r_* = GM + \sqrt{G^2M^2-a^2cos^2\theta}  $$</p>
 <p>which is outside the horizon of the Kerr black hole \(r_+\). We call the area between \(r_*\) and the horizon the <strong>ergoregion</strong>.</p>
-<p>It is known from special relativity that a particle with mass can only travel in time-like curves (curves with negative norms). Therefore, when \(K\) becomes space-like (has positive norm) for \(r&lt;r_*\) the particle can no longer follow \(K\)&rsquo;s curves. Comparing to (2.6) this means that no observer can stand at constant \(r,\theta,\phi\) and only move in $t$. Specifically, it turns out that the particle must also move in the $\phi$ direction. This means that inside the ergoregion <strong>it is impossible not to rotate around the black hole</strong>.</p>
+<p>It is known from special relativity that a particle with mass can only travel in time-like curves (curves with negative norms). Therefore, when \(K\) becomes space-like (has positive norm) for \(r&lt;r_*\) the particle can no longer follow \(K\)&rsquo;s curves. Comparing to (2.6) this means that no observer can stand at constant \(r,\theta,\phi\) and only move in \(t\). Specifically, it turns out that the particle must also move in the \(\phi\) direction. This means that inside the ergoregion <strong>it is impossible not to rotate around the black hole</strong>.</p>
 <h6 id="the-penrose-process">The Penrose Process</h6>
 <p>Every particle (or observer) has a certain energy and momentum. We can define the four-momentum \(P^\mu=(E,\vec{p})\) which is also always time-like (\(P^\mu P_\mu = -m^2\) to be exact). Then we can define the energy of said observer using our Killing vector \(K\) as</p>
 <p>$$ E = -K_\mu P^\mu  \;\;\; (2.8)$$</p>
 <p>If \(K\) is time-like then the energy is always positive. However, inside the ergoregion, \(K\) will be space-like and so a particle can have negative energy. This fact can then be used to extract energy from the black hole, in a process first discovered by Penrose.</p>
-<p>We begin with a single body of positive energy $E$ outside the black hole. We have set up the body so that it will separate into two parts once in the ergoregion giving us two particles with energies \(E_1,E_2\) respectively, satisfying the condition</p>
+<p>We begin with a single body of positive energy \(E\) outside the black hole. We have set up the body so that it will separate into two parts once in the ergoregion giving us two particles with energies \(E_1,E_2\) respectively, satisfying the condition</p>
 <p>$$E = E_1 + E_2 \;\;\; (2.9)$$</p>
 <p>It is now possible to arrange things so that particle 1 comes out of the separation with negative energy \(E_1 &lt;0\). But, according to (2.9) this means that particle 2 comes out of the ergoregion with \(E_2&gt;E\) and we have thus extracted energy. Particle 1 does not have sufficient energy to escape and so will inevitably end up inside the black hole&rsquo;s horizon never to be seen again.</p>
 <p>The next logical question is to ask where this energy comes from. The obvious answer the is the black hole itself, the less obvious answer is that is comes <strong>mostly from the rotational energy</strong> and not the rest energy of the mass.</p>
@@ -119,17 +118,17 @@ In the first chapter we will see how black holes are described in general relati
 <p>$$ \xi = K + \Omega K_{rot} = (1,0,0,\Omega) $$</p>
 <p>which is again a Killing vector, irrespective of \(\Omega\). Checking out the norm we have</p>
 <p>$$  \xi^2 = g_{tt}+ 2\Omega g_{t\phi}+ \Omega^2 g_{\phi\phi}$$</p>
-<p>We can always take $\xi^2 = 0$ on the horizon by setting</p>
+<p>We can always take \(\xi^2 = 0\) on the horizon by setting</p>
 <p>$$ \Omega = \frac{a}{r^2_+ + a^2}$$</p>
-<p>We take this to be the angular velocity of the black hole since, for this \(\Omega\) the curves generated by \(\xi\) necessarily rotate in the \(\phi\) direction at the horizon. Since $\xi$ has norm zero at the horizon and the norm of $K$ increases with the radius, we can assume that \(\xi\) is time-like everywhere outside the horizon and so</p>
+<p>We take this to be the angular velocity of the black hole since, for this \(\Omega\) the curves generated by \(\xi\) necessarily rotate in the \(\phi\) direction at the horizon. Since \(\xi\) has norm zero at the horizon and the norm of $K$ increases with the radius, we can assume that \(\xi\) is time-like everywhere outside the horizon and so</p>
 <p>$$ \xi_\mu P^\mu \leq 0 \Rightarrow -E +\Omega j \leq 0 $$</p>
 <p>where \(j=K_{rot;\mu}P^\mu\) the particle&rsquo;s angular momentum. This means that</p>
 <p>$$E_1 \geq \Omega j_1 \;\;\; (2.10) $$</p>
 <p>Since \(E_1 &lt; 0 \) this means that the black hole always loses more angular momentum than energy since we &ldquo;add&rdquo; both the negative energy, and angular momentum of particle 1 to the black hole.</p>
 <h6 id="the-area-theorem">The Area Theorem</h6>
 <p>This all brings us to the main result we will need to establish the connection between black holes and thermodynamics, namely the fact that the area of a black hole always increases after a Penrose process has taken place. To see this we define the area of a black hole \(A\) as the closed area of constant \(t\) and \(r=r_+\). This is the usual integral that gives \(4\pi R^2\) but this time the distances between points are altered by the corresponding components of the metric. Therefore we have</p>
-<p>$$  A = \int^{2\pi}<em>0 d\phi \int^{\pi}<em>0 d\theta \sqrt{g</em>{\theta\theta}g</em>{\phi\phi}} = 4\pi(r^2_+ + a^2)= 8\pi (G^2M^2 + G\sqrt{G^2M^4 - J^2})  \;\;\; (2.11) $$</p>
-<p>After a change of mass and angular momentum, $\delta M, \delta J$ the corresponding change in area is</p>
+<p>$$  A = \int^{2\pi}_0 d\phi \int^{\pi}_0 d\theta \sqrt{g_{\theta\theta}g_{\phi\phi}} = 4\pi(r^\2_+ + a^2)= 8\pi (G^2M^2 + G\sqrt{G^2M^4 - J^2})  \;\;\; (2.11) $$</p>
+<p>After a change of mass and angular momentum, \(\delta M, \delta J\) the corresponding change in area is</p>
 <p>$$ \delta A = \frac{8\pi GJ}{\sqrt{G^2M^4-J^2}} \left[\frac{\delta M}{\Omega}- \delta J \right] $$</p>
 <p>In the Penrose process we have \(\delta J = j_1\) and \(\delta M = E_1\) so from (2.10) we get</p>
 <p>$$ \delta A \geq 0 \;\;\; (2.12) $$</p>
@@ -143,7 +142,7 @@ In the first chapter we will see how black holes are described in general relati
 <p>or, the change of energy is equal to the work done \((PdV)\) (the work has a minus sign since if we get positive work out of a system we reduce its energy) and the heat produced \((TdS)\). The energy that turns into heat contributes to the entropy and can no longer be used to produce work.</p>
 <p>The second law is that entropy can never decrease in a closed system</p>
 <p>$$\Delta S \geq 0 \;\;\; (3.2) $$</p>
-<p>But what is entropy? The concept of entropy has been through quite a journey from the beginning of the 18th century to the middle of the 20th. Currently, it mostly represents the amount of uncertainty about the given state of a system. What we are looking for is a quantity that takes its maximum value when we know nothing about the system (so all its states are equally probable) and it&rsquo;s minimum when we know exactly the state we are in. We also want it to be an extensive property, if a system has entropy \(S_1\) and another \(S_2\) then the composite system should have \(S_{total}=S_1+S_2\). If all we are given is the probability \(p_n\) of the system being in the $n$-th state then the only function that that satisfies the above constraints is</p>
+<p>But what is entropy? The concept of entropy has been through quite a journey from the beginning of the 18th century to the middle of the 20th. Currently, it mostly represents the amount of uncertainty about the given state of a system. What we are looking for is a quantity that takes its maximum value when we know nothing about the system (so all its states are equally probable) and it&rsquo;s minimum when we know exactly the state we are in. We also want it to be an extensive property, if a system has entropy \(S_1\) and another \(S_2\) then the composite system should have \(S_{total}=S_1+S_2\). If all we are given is the probability \(p_n\) of the system being in the \(n\)-th state then the only function that that satisfies the above constraints is</p>
 <p>$$ S = -\sum_n p_n ln(p_n) \;\;\; (3.3)  $$</p>
 <p>Shannon took the extra step and defined the information of a system as the opposite of the entropy</p>
 <p>$$ I = -S$$</p>
@@ -154,21 +153,21 @@ In the first chapter we will see how black holes are described in general relati
 <p>then</p>
 <p>$$\alpha = r^2_+ + a^2 $$</p>
 <p>where \(a\) is the parameter of the Kerr metric. If the black hole also has charge then the most general expression for the rationalized area is</p>
-<p>$$ \alpha = 2Mr_+ - Q^2,;;; r_\pm = M \pm \sqrt{M^2 - Q^2 -a^2} \;\;\; (3.4)  $$</p>
+<p>$$ \alpha = 2Mr_+ - Q^2,\;\;\; r_\pm = M \pm \sqrt{M^2 - Q^2 -a^2} \;\;\; (3.4)  $$</p>
 <p>where we have now set \(G=1\). If we differentiate (3.4) and solve with respect to \(dM\) we get</p>
 <p>$$ dM = \Theta d\alpha + \vec{\Omega}\cdot d\vec{L} + \Phi dQ \;\;\; (3.5)  $$</p>
 <p>where</p>
 <p>$$ \Theta = \frac{1}{4}\frac{r_+ - r_-}{\alpha},\;\;\vec{\Omega} = \frac{\vec{L}}{M\alpha},\;\;\Phi = \frac{Qr_+}{\alpha}    $$</p>
 <p>We now have a clear analog to the first law of thermodynamics (3.1). The mass is equivalent to the energy, and the two terms \(dL,dQ\) are the ways in which you can enact work on the black hole, namely changing its angular momentum or charge, since those two are the only other defining features aside from the mass. This further points to the identification of the last remaining term (the area) with thermodynamic entropy.</p>
 <p>The final observation, due to Bekenstein, is that of information deletion. It is well known, and we have already mentioned, that nothing (classically) escapes a black hole. This means that any information that falls into it is lost forever. As we noted the loss of information and the rise of entropy are two sides of the same coin.</p>
-<p>From all the above considerations we can assert that any black hole has its own entropy $S_{bh}$ that is a function of its area</p>
+<p>From all the above considerations we can assert that any black hole has its own entropy \(S_{bh}\) that is a function of its area</p>
 <p>$$ S_{bh} = f(\alpha) $$</p>
 <p>Now we just need to find the form of \(f\). To do that we follow again the method of Bekenstein. The simplest and most obvious information that is lost when a particle enters a black hole is whether it exists or not. That corresponds to the minimum amount of entropy increase of the black hole after the absorption. If we can calculate the corresponding minimum increase in the black hole&rsquo;s area then we will find \(f\). For the rest of this argument we assume that our particle is spherical, with radius $b$ and mass \(\mu\).</p>
 <p>The computations for the area change are a bit tedious and they don&rsquo;t teach us anything so we just present the result</p>
 <p>$$ \Delta\alpha_{min} = 2\mu b $$</p>
 <p>The radius \(b\) of particle cannot be smaller than the particle&rsquo;s Compton wavelength \(\hbar/\mu\)  (due to the uncertainty principle). It also cannot be smaller than the Schwarzschild radius \(2\mu\) of the particle, otherwise the particle would be a black hole. The Schwarzschild radius is bigger than the Compton wavelength only if \(\mu \geq \sqrt{\hbar/2}\) and so in any case</p>
 <p>$$\Delta\alpha_{min} = 2\hbar \;\;\; (3.6)$$</p>
-<p>Notice that this quantity is independant from $\mu,\alpha$ and $b$.To get this minimum value, the test particle must have wavelength equal to the Compton one, and so it must be elementary. For an elementary particle, the only information that can be lost is that of its existence which we have already found to be \(ln2\). Therefore</p>
+<p>Notice that this quantity is independant from \(\mu,\alpha\) and \(b\).To get this minimum value, the test particle must have wavelength equal to the Compton one, and so it must be elementary. For an elementary particle, the only information that can be lost is that of its existence which we have already found to be \(ln2\). Therefore</p>
 <p>$$ (\Delta S_{bh})<em>{min} = \Delta\alpha</em>{min} \frac{df}{d\alpha}  = ln2  $$</p>
 <p>Integrating the above we find</p>
 <p>$$ f(\alpha) = \frac{ln2}{2\hbar} \alpha \;\;\; (3.7)$$</p>
@@ -187,9 +186,9 @@ In the first chapter we will see how black holes are described in general relati
 <p>from this we get</p>
 <p>$$ \frac{dS}{dE} F + \frac{dS}{dx}  = 0 $$
 and so for \( 1/T = \frac{\partial S}{\partial E}\) we get</p>
-<p>$$ F =  T\frac{dS}{dx}  = CT <x> $$</p>
-<p>where \(<x>\) is the average displacement in the x-axis and \(C\) a constant. Therefore, we find that the entropic force follows Hooke&rsquo;s law</p>
-<p>$$ F_{entr} = -CT<x> $$</p>
+<p>$$ F =  T\frac{dS}{dx}  = CT &lt;x&gt; $$</p>
+<p>where \(&lt;x&gt;\) is the average displacement in the x-axis and \(C\) a constant. Therefore, we find that the entropic force follows Hooke&rsquo;s law</p>
+<p>$$ F_{entr} = -CT&lt;x&gt; $$</p>
 <h6 id="gravity-as-an-entropic-force">Gravity as an Entropic Force</h6>
 <p>The holographic principle states that all of the information of a black hole lies on it&rsquo;s surface. This, currently theoretical suggestion, is a result of the fact that the entropy and so the information of a black hole is proportional to it&rsquo;s area. What if this principle can be extended to ordinary flat space?</p>
 <p>The Compton wavelength of a particle gives us highest possible accuracy we can have of its position. If we were to try, let&rsquo;s say with a photon, to probe a particle&rsquo;s position to a smaller distance then we would form a black hole with volume bigger than a box of Compton edges. Therefore we can postulate that each point in spacetime is an information storage device with a maximum capacity. Following the holographic principle we assume that between these points lie surfaces that encode all of the information. For example, if a particle moves from one point to another, then the surface between them &ldquo;remembers&rdquo; that movement. We will assume nothing about how that information is stored.</p>
@@ -202,7 +201,7 @@ and so for \( 1/T = \frac{\partial S}{\partial E}\) we get</p>
 <p>$$ F\Delta x = T\Delta S\;\;\; (4.5) $$</p>
 <p>similar to the polymer. It is reasonable to assume that each point is surrounded by a closed screen of area \(A\). Then following Bekenstein we assume that the number N of bits of information is proportional to that area</p>
 <p>$$ N = \frac{Ac^3}{G\hbar}\;\;\;(4.6)$$</p>
-<p>where \(c^3\) and \(\hbar\) are there for dimensional reasons and for now \(G\) is an unknown constant. If the total energy of the system is $E$ we further assume that the energy is divided equally over all bits. The temperature then comes from the equipartition rule of thermodynamics</p>
+<p>where \(c^3\) and \(\hbar\) are there for dimensional reasons and for now \(G\) is an unknown constant. If the total energy of the system is \(E\) we further assume that the energy is divided equally over all bits. The temperature then comes from the equipartition rule of thermodynamics</p>
 <p>$$E = \frac{1}{2}NT \;\;\; (4.7)$$</p>
 <p>Finally we need to define the mass inside the area using Einstein&rsquo;s equation</p>
 <p>$$ E = Mc^2\;\;\; (4.8)$$</p>
@@ -224,21 +223,21 @@ and so for \( 1/T = \frac{\partial S}{\partial E}\) we get</p>
 <p>$$ F = ma \;\;\; (4.12) $$</p>
 <p>giving mass its relation to inertia. This relation is also why we chose the factor \(2\pi\) in (4.3) so that it would cancel Unruh&rsquo;s \(2\pi\).</p>
 <h1 id="conclusion-and-sources">Conclusion and sources</h1>
-<p>In this article we have explored the connection between black holes and entropy. Although the first 2 chapters are based on widely accepted physics, the last chapter is way more conjectural. Nevertheless this connection is currently playing a central role in the forefront of fundamental physics as physicists are trying to go beyond general relativity and quantum field theory through the ideas of emergent spacetime and information theory. The most solid takeaways from the above discussion is\\</p>
+<p>In this article we have explored the connection between black holes and entropy. Although the first 2 chapters are based on widely accepted physics, the last chapter is way more conjectural. Nevertheless this connection is currently playing a central role in the forefront of fundamental physics as physicists are trying to go beyond general relativity and quantum field theory through the ideas of emergent spacetime and information theory. The most solid takeaways from the above discussion is\</p>
 <ol>
-<li>The area of a black hole can never decrease through any interaction\\</li>
-<li>Information is lost when it goes through the horizon of a black hole \\</li>
-<li>Information loss is equivalent to the increase of entropy \\</li>
-<li>Based on all of the above we state that a black hole has a characteristic entropy proportional to the area of the event horizon\\</li>
+<li>The area of a black hole can never decrease through any interaction\</li>
+<li>Information is lost when it goes through the horizon of a black hole \</li>
+<li>Information loss is equivalent to the increase of entropy \</li>
+<li>Based on all of the above we state that a black hole has a characteristic entropy proportional to the area of the event horizon\</li>
 <li>Space is linked to information and there is a fundamental limit to how much information any volume of space can store</li>
 </ol>
 <p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
 <h6 id="sources">Sources</h6>
-<p>[1] The basic information about black holes, the metric, and the Penrose procedure come form David Tong&rsquo;s lectures on general relativity which are free online\\
-[2] The idea that a black hole&rsquo;s area cannot decrease was explored by Christodoulou in connection with a quantity we did not mention here, irreducible mass (which is just proportional to the area). An example is his article &ldquo;Reversible and Irreversible Transformations in Black-Hole Physics&rdquo;, (1972) \\
-[3] Hawking also, famously, did a lot of work on black holes. He also proved that the area of a black hole cannot decrease by any process in his article &ldquo;Gravitational Radiation from Colliding Black Holes&rdquo; (1971) \\
-[4] &ldquo;Black Holes and Entropy&rdquo; (1973) is Bekenstein&rsquo;s original article making the connection between entropy and black hole area\\
-[5] &ldquo;On the Origin of Gravity and the Laws of Newton&rdquo; (2011) is Verlinde&rsquo;s article suggesting that gravity is an entropic force.</p>
+<p>[1] The basic information about black holes, the metric, and the Penrose procedure come form David Tong&rsquo;s lectures on general relativity which are free online</p>
+<p>[2] The idea that a black hole&rsquo;s area cannot decrease was explored by Christodoulou in connection with a quantity we did not mention here, irreducible mass (which is just proportional to the area). An example is his article &ldquo;Reversible and Irreversible Transformations in Black-Hole Physics&rdquo;, (1972)</p>
+<p>[3] Hawking also, famously, did a lot of work on black holes. He also proved that the area of a black hole cannot decrease by any process in his article &ldquo;Gravitational Radiation from Colliding Black Holes&rdquo; (1971)</p>
+<p>[4] &ldquo;Black Holes and Entropy&rdquo; (1973) is Bekenstein&rsquo;s original article making the connection between entropy and black hole area</p>
+<p>[5] &ldquo;On the Origin of Gravity and the Laws of Newton&rdquo; (2011) is Verlinde&rsquo;s article suggesting that gravity is an entropic force.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
