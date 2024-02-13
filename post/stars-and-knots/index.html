@@ -80,16 +80,16 @@ and so on. In order to make use of this relation and to abstract away from the s
 <p>To begin with our system consists of a row of \(N\) spins \(\sigma_i\) and our aim will be to build up the lattice by adding edges and vertices. To that effect we first define the operator \(c_i\) that flips the \(i\)-th spin (if it&rsquo;s value is \(+1\) is goes to \(-1\) and vice versa). Now we can define the building operators 
 $$ P_i(K)= e^{K\sigma_i\sigma_{i+1}},\;\;Q_i{L} = Q_i(L)=e^L \mathcal{I} + e^{-L}c_i \;\;\;(1.4)$$
 where \(\mathcal{I}\) is the identity operator. The operator \(P_i(K)\) adds and edge of strength \(K\) between spins \(i\) and \(i+1\). \(Q_i(L)\) adds a new vertex that is connected to the \(i-th\) vertex by a new edge of strength \(L\). We can think of \(Q_i\)&rsquo;s new vertex as being above of below spin \(i\) in the row of existing spins. With these two operators we can build any lattice we want step by step (for those who want more of the mathematical details, this part is taken from Baxter&rsquo;s book on Exactly solved models in statistical mechanics that is also listed in the sources). To make the connection with the star triangle relation we define the diagonal construction operators \(U_i\) as</p>
-<p>$$U_i= \left{
-\begin{array}{ll}
+<p>$$ U_i= \left{
+\begin{matrix}{ll}
 P_j(K), &amp;  i=2j \\
 (2\sinh2L)^{1/2}Q_j(L), &amp; i=2j-1  \\
-\end{array} \right.    $$</p>
+\end{matrix} \right.    $$</p>
 <p>This operator creates a &ldquo;staircase&rdquo; of spins and it&rsquo;s enough to construct the square lattice. Going back to the honeycomb lattice we find that the relation in figure 1 can be translated into 
 $$U_{i+1}(K_1,L_1)U_{i}(K_2,L_2)U_{i+1}(K_3,L_3) = U_{i}(K_3,L_3)U_{i+1}(K_2,L_2)U_{i}(K_1,L_1)\;\;\; (1.5) $$
 We can write this relation and another property of these matrices more compactly as</p>
-<p>$$U_{i+1}U_{i}&lsquo;U_{i+1}&rsquo;&rsquo; = U_{i}&lsquo;&lsquo;U_{i+1}&lsquo;U_{i}\;\;\; (1.6a)  $$
-$$U_iU_j&rsquo;=U_j&rsquo;U_i,\;\; for\;\;|i-j}|geq 2\;\;\; (1.6b) $$</p>
+<p>$$U_{i+1}U_{i}'U_{i+1}&rsquo;&rsquo; = U_{i}&lsquo;&lsquo;U_{i+1}'U_{i}\;\;\; (1.6a)  $$
+$$U_iU_j'=U_j'U_i,\;\; for\;\;|i-j|\geq 2\;\;\; (1.6b) $$</p>
 <p>The above relations, and especially (1.6a) will be the &ldquo;glue&rdquo; that holds integrable systems together. It is called the Yang-Baxter Equation and we will see in chapter 3 that statistical systems that satisfy it are exactly solvable. But first, we will look at a completely different area of mathematics where a similar relation appears.</p>
 <h1 id="knots-and-braids">Knots and Braids</h1>
 <p>The theory of knots in mathematics is relatively new (if the 20th century is considered recent) and at first glance it has nothing to do with statistical physics or for that fact anything more abstract than a noose for holding horses outside of saloons. However, as we dive into the mathematical formalism of knots, links and braids we will see how they can tie many different integrable systems together with a common language.</p>
@@ -115,8 +115,8 @@ Figure 5: The type III Reidemeister move corresponds to the star-triangle transf
 Figure 6: The three generators of the braid group \(B_4\)</p>
 <p>For the above to form a group we also need to define the inverse transformations \(\sigma^{-1}_i\) that correspond to to the opposite move (passing the $i$-th strand under the \((i+1)\)-th). Any braid can be constructed by consecutive applications of the generators. The result of &ldquo;multiplying&rdquo; two generators can be thought of as applying the second generator to the end points of the first. The braid group is characterised by two properties
 $$\sigma_{i+1}\sigma_{i}\sigma_{i+1} = \sigma_{i}\sigma_{i+1}\sigma_{i}\;\;\; (2.1a)$$
-$$\sigma_{i}\sigma_{j}=\sigma_{j}\sigma_{i},\;\;\abs{i-j}\geq 2\;\;\;(2.1b)$$
-Property (2.1a) corresponds to a type III move as can be checked out on paper\footnote{The type II Reidemeister move translates into the definitional fact that \(\sigma^{-1}_i\sigma_i =1\)}. The observant reader will notice that the group properties (2.1) are exactly the same as the operator relations (1.6) that appeared in the Ising model. This means that the construction operators we defined there form a representation of the braid group and every lattice system can be thought of as a braid.</p>
+$$\sigma_{i}\sigma_{j}=\sigma_{j}\sigma_{i},\;\;|i-j|\geq 2\;\;\;(2.1b)$$
+Property (2.1a) corresponds to a type III move as can be checked out on paper (The type II Reidemeister move translates into the definitional fact that \(\sigma^{-1}_i\sigma_i =1\)). The observant reader will notice that the group properties (2.1) are exactly the same as the operator relations (1.6) that appeared in the Ising model. This means that the construction operators we defined there form a representation of the braid group and every lattice system can be thought of as a braid.</p>
 <p>The last and easiest step of this connection is that between braids and knots. It has been proved that any knot can be represented as a closed braid, that is a braid where all the strands are connected in a loop as seen in the below figure</p>
 <p><a href="/knots_from_braids.png" title="every knot can be seen as a closed braid">Image alt</a> 
 Figure 7: every knot can be seen as a closed braid</p>
@@ -164,7 +164,7 @@ Figure 9: the star triangle relation in the ice-type vertex model</p>
 <p>If a system is described by a set of states \(\ket{n}\), where $n$ are the quantum numbers (e.g. angular momentum) that define the state, then the probability amplitude of going from state \(\ket{i}\) to \(\ket{f}\) after time T is given by
 $$ p_{i\rightarrow f} = \bra{f}e^{iHT}\ket{i} \;\;\; (3.7) $$</p>
 <p><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> where H is the Hamiltonian of the system, similar to the energy (1.1) of a statistical system. In the case of free particles scattering of each other, like in accelerators, the probability amplitude is determined by a quantity called the S-matrix in which case</p>
-<p>$$P(k\rightarrow p) = \abs{\bra{p}S\ket{k}}^2$$</p>
+<p>$$P(k\rightarrow p) = |{\bra{p}S\ket{k}|^2$$</p>
 <p>where \(p\) and \(k\) are now momenta. The S is just a different name for the operator \(e^{iHT}\) when \(T\rightarrow \infty\) because we assume that the state of the particle(s) was \(\ket{k}\) in the infinite past and \(\ket{p}\) and infinite time after the scattering, so that we can consider both states free (not interacting). Although we won&rsquo;t calculate them here, the two-particle S-matrix of a theory is the bread and butter of Quantum Field Theories. That is, it is straight forward to calculate probability amplitudes for two particles &ldquo;colliding&rdquo; elastically. That is not the case for multi-particle scattering where the computations become substantially more complicated and challenging.</p>
 <p>There are however cases where any multi-particle scattering can be viewed like a series of two-particle collisions in sequence. Then the S-matrix is said to be factorisable and the theory is, in a sense solvable for any number of particles. For example the S-matrix of 3 particles in a factorisable theory can be factorised as follows
 $$S_{3p}=S_{12}(\theta_{12})S_{13}(\theta_{13})S_{13}(\theta_{23}) \;\;\; (3.8) $$</p>
