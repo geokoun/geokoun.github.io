@@ -106,35 +106,35 @@ Figure 3: The three types of Reidemeister move</p>
 <p>Therefore, if we can define a quantity on a knot that stays the same after the application of the above moves, then we have found a knot invariant, it will take the same value on every isotopic knot.</p>
 <p>At first glance knot invariants seem like they belong purely to the domain of mathematics. In fact there are dozens of so-called knot polynomials that mathematicians keep constructing even today. We will see that with a small change of perspective, a lot of physically relevant quantities in different systems end up being knot invariants.</p>
 <p>To make a connection with the last chapter we can turn any link into a graph. It can be proved that any link can be coloured in black and white so that the unbounded &ldquo;outside&rdquo; is white and every area only borders areas of a different colour. To make a graph we assign a vertex to each black area and an edge to each link crossing that connects different black areas, for example</p>
-<p><figure><img src="/link_to_graph.png"
+<!--<figure><img src="/link_to_graph.png"
          alt="The three types of Reidemeister move"/>
 </figure>
-
-Figure 4: We can get a graph from a link by shading every other surface and assigning a vertex to each shaded area</p>
-<p>In addition, we can assign a sign to each edge (corresponding for example to the alignment of spins at each vertex), by the type of crossing. The rule goes as follows: imagine you are travelling along the edge and towards a crossing, if the part of the link that sits below the other is to your right then we assign \(+\), otherwise we assign \(-\). Then the type III Reidemeister move can be translated into a relation between graphs 
-<figure><img src="/type_3_Reid.png"
+-->
+<p>Figure 4: We can get a graph from a link by shading every other surface and assigning a vertex to each shaded area</p>
+<p>In addition, we can assign a sign to each edge (corresponding for example to the alignment of spins at each vertex), by the type of crossing. The rule goes as follows: imagine you are travelling along the edge and towards a crossing, if the part of the link that sits below the other is to your right then we assign \(+\), otherwise we assign \(-\). Then the type III Reidemeister move can be translated into a relation between graphs</p>
+<!--<figure><img src="/type_3_Reid.png"
          alt="The three types of Reidemeister move"/>
 </figure>
-
-Figure 5: The type III Reidemeister move corresponds to the star-triangle transformation</p>
+-->
+<p>Figure 5: The type III Reidemeister move corresponds to the star-triangle transformation</p>
 <p>We can already see the similarities between the type III move and the star-triangle relation we saw in Figure 1. To put the correspondence in steadier mathematical footing we will need to turn to the adjacent mathematical field of braids.</p>
 <h6 id="braids-and-the-yang-baxter-equation">Braids and the Yang-Baxter equation</h6>
 <p>A braid is a set of &ldquo;strings&rdquo; that move vertically and can cross over and under one-another. We can define the braid group of N braids \(B_N\) comprised of the elements \(\sigma_i\) (not to be confused with spins). \(\sigma_i\) corresponds to crossing the \(i\)-th strand over the \((i+1)\)-th one. For example, if we have 4 strands then</p>
-<p><figure><img src="/type_3_Reid.png"
+<!--<figure><img src="/type_3_Reid.png"
          alt="The three types of Reidemeister move"/>
 </figure>
-
-Figure 6: The three generators of the braid group \(B_4\)</p>
+-->
+<p>Figure 6: The three generators of the braid group \(B_4\)</p>
 <p>For the above to form a group we also need to define the inverse transformations \(\sigma^{-1}_i\) that correspond to to the opposite move (passing the $i$-th strand under the \((i+1)\)-th). Any braid can be constructed by consecutive applications of the generators. The result of &ldquo;multiplying&rdquo; two generators can be thought of as applying the second generator to the end points of the first. The braid group is characterised by two properties
 $$\sigma_{i+1}\sigma_{i}\sigma_{i+1} = \sigma_{i}\sigma_{i+1}\sigma_{i}\;\;\; (2.1a)$$
 $$\sigma_{i}\sigma_{j}=\sigma_{j}\sigma_{i},\;\;|i-j|\geq 2\;\;\;(2.1b)$$
 Property (2.1a) corresponds to a type III move as can be checked out on paper (The type II Reidemeister move translates into the definitional fact that \(\sigma^{-1}_i\sigma_i =1\)). The observant reader will notice that the group properties (2.1) are exactly the same as the operator relations (1.6) that appeared in the Ising model. This means that the construction operators we defined there form a representation of the braid group and every lattice system can be thought of as a braid.</p>
-<p>The last and easiest step of this connection is that between braids and knots. It has been proved that any knot can be represented as a closed braid, that is a braid where all the strands are connected in a loop as seen in the below figure 
-<figure><img src="/knots_from_braids.png"
+<p>The last and easiest step of this connection is that between braids and knots. It has been proved that any knot can be represented as a closed braid, that is a braid where all the strands are connected in a loop as seen in the below figure</p>
+<!--<figure><img src="/knots_from_braids.png"
          alt="The three types of Reidemeister move"/>
 </figure>
-
-Figure 7: every knot can be seen as a closed braid</p>
+-->
+<p>Figure 7: every knot can be seen as a closed braid</p>
 <p>What this means is that any object that satisfies the Yang-Baxter equation (1.6a) is a representation of the braid group and can be mapped onto a knot or a link. This also means that any quantity that is constructed by such objects will be a knot invariant since it doesn&rsquo;t change under Reidemeister&rsquo;s moves. In the next chapter we will see how these objects arise in physics</p>
 <h1 id="solving-systems-with-knot-invariants">Solving systems with knot invariants</h1>
 <h6 id="transfer-matrices">Transfer Matrices</h6>
@@ -164,21 +164,21 @@ $$VV&rsquo;=V&rsquo;V\;\;\; (3.6)$$
 This fact, together with some simple assumptions about our system, is enough to find the eigenvalues of \(V\) and so solve the system (see Baxter&rsquo;s book in the sources). What this means is that any solution to the Yang-Baxter equation (1.6a) can both construct an integrable spin model as well as a knot polynomial.</p>
 <h6 id="vertex-models-as-knot-polynomials">Vertex Models as Knot Polynomials</h6>
 <p>There is another type of statistical model that is closely related to spin models. Vertex models are characterised by a set of vertex states that each vertex can take. For example in an ice-type model each vertex corresponds to an atom surrounded by four ions. Two of the ions must be close to the atom while the other two must be at a distance. We then have 6 possible vertices</p>
-<p><figure><img src="/6-vertex_model.png"
+<!--<figure><img src="/6-vertex_model.png"
          alt="The three types of Reidemeister move"/>
 </figure>
- 
-Figure 8: the six possible vertices of an ice-type model</p>
+ -->
+<p>Figure 8: the six possible vertices of an ice-type model</p>
 <p>It is now even easier to project our model onto a knot or link where each strand leaving a crossing is labelled by the corresponding state (ion close to or at a distance from the atom). Indeed we can assign to each vertex a Boltzmann weight based on the state of the four edges connecting to it. For example, labelling the vertices counter-clockwise and starting from the left one, the first vertex of Figure 8 corresponds to \(w(+,+,-,-)\) where \(-\) corresponds to the ion being far away and \(+\) to being close.</p>
 <p>It turns out that the weights of this model satisfy the following equation</p>
 <p>$$ \sum_{\gamma,\mu&rsquo;&rsquo;,\nu&rsquo;&rsquo;} w(\mu,a,\gamma,\mu&rsquo;&rsquo;)w&rsquo;(\nu,\gamma,\beta,\nu&rsquo;&rsquo;)w&rsquo;&rsquo;(\nu&rsquo;&rsquo;,\mu&rsquo;&rsquo;,\nu&rsquo;,\mu&rsquo;)=$$
 $$ =\sum_{\gamma,\mu&rsquo;&rsquo;,\nu&rsquo;&rsquo;} w(\nu,\mu,\nu&rsquo;&rsquo;,\mu&rsquo;&rsquo;)w&rsquo;(\mu&rsquo;&rsquo;,a,\gamma,\mu&rsquo;)w&rsquo;&rsquo;(\nu&rsquo;&rsquo;,\gamma,\beta,\nu&rsquo;) $$</p>
 <p>or in pictorial form:</p>
-<p><figure><img src="/vertex_star-triangle.png"
+<!--<figure><img src="/vertex_star-triangle.png"
          alt="The three types of Reidemeister move"/>
 </figure>
- 
-Figure 9: the star triangle relation in the ice-type vertex model</p>
+ -->
+<p>Figure 9: the star triangle relation in the ice-type vertex model</p>
 <p>The connection to knots is even more obvious now since this is simply a type III Reidemeister move (see Figure 3). The result is again a general one: Following the exact same steps and as in a spin model, a solution to the Yang-Baxter equation corresponds to an integrable vertex model, the partition function of which is also a knot invariant.</p>
 <h6 id="scattering-in-quantum-field-theories-as-knot-polynomials">Scattering in Quantum Field Theories as Knot Polynomials</h6>
 <p>The final model we shall look at is that of quantum particles scattering. In quantum mechanics (and in field theory) the end goal is to calculate probability amplitudes for events to take place.</p>
@@ -191,11 +191,11 @@ $$ p_{i\rightarrow f} = \bra{f}e^{iHT}\ket{i} \;\;\; (3.7) $$</p>
 $$S_{3p}=S_{12}(\theta_{12})S_{13}(\theta_{13})S_{13}(\theta_{23}) \;\;\; (3.8) $$</p>
 <p>Here \(S_{ij}\) is the S-matrix between particles i and j and \(\theta_{ij}\) is the relative rapidity of the two particles. Rapidity is defined as \(\theta_{ij}=\tanh p_{ij}\) where \(p_{ij}\) the relative momentum.</p>
 <p>The important question then, is, when is an S-matrix factorisable? The answer comes in a very familiar form. We make two simple assumptions, the number of particles stays the same after every two-particle collision and the momenta before and after the scattering are the same thanks to the conservation of momentum. These two constraints (in 1+1 spacetime dimensions) lead to the following picture: There are two distinct ways of scattering 3 particles in pairs of two that should give the exact same result, since momentum and particles are conserved. These are the following (where the x axis is space and the y axis time):</p>
-<p><figure><img src="/particle_scattering.png"
+<!--<figure><img src="/particle_scattering.png"
          alt="The three types of Reidemeister move"/>
 </figure>
- 
-Figure 10: The two different ways in which 3 particles can scatter in pairs of two should give the same end result</p>
+ -->
+<p>Figure 10: The two different ways in which 3 particles can scatter in pairs of two should give the same end result</p>
 <p>Well, by now we are familiar with the above diagram, it&rsquo;s a type III Reidemeister move. Written out, we have
 $$ S_{23}(\theta - \theta&rsquo;)S_{13}(\theta)S_{12}(\theta&rsquo;) = S_12(\theta&rsquo;)S_13(\theta)S_{23}(\theta -\theta) \;\;\; (3.9) $$
 which as we should expect by now is another form of the Yang-Baxter equation (1.6a). We also have the self evident relation
