@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Principia Physicae Generalis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 27 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://principiaphysicaegeneralis.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://principiaphysicaegeneralis.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stars, Knots and Everything</title>
+      <link>https://principiaphysicaegeneralis.com/post/stars-and-knots/</link>
+      <pubDate>Tue, 13 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://principiaphysicaegeneralis.com/post/stars-and-knots/</guid>
+      <description>&lt;p&gt;We explore the star-triangle relation in statistical mechanics and see how, through knot theory it can connect to a multitude of other, exactly solvable systems in physics&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Gravity as Entropy</title>
       <link>https://principiaphysicaegeneralis.com/post/gravity-entropy/</link>
@@ -32,15 +41,6 @@
       
       <guid>https://principiaphysicaegeneralis.com/post/constraints-iii/</guid>
       <description>&lt;p&gt;An arithmetic method for finding the spectrum of QM systems based on the demand for unitarity&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Stars, Knots and Everything</title>
-      <link>https://principiaphysicaegeneralis.com/post/stars-and-knots/</link>
-      <pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://principiaphysicaegeneralis.com/post/stars-and-knots/</guid>
-      <description>&lt;p&gt;We explore the star-triangle relation in statistical mechanics and see how, through knot theory it can connect to a multitude of other, exactly solvable systems in physics&lt;/p&gt;</description>
     </item>
     
     <item>

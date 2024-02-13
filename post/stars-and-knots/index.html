@@ -44,7 +44,7 @@
     <article class="article" class="blog-post">
       <div class="postmeta">
         <span class="meta-post">
-  <i class="fa fa-calendar-alt"></i>Feb 13, 2023
+  <i class="fa fa-calendar-alt"></i>Feb 13, 2024
   
 </span>
       </div>
@@ -77,9 +77,9 @@ Figure 1: The star-triangle transformation from a star on the honeycomb lattice 
 <p>To be more precise, by integrating the white vertex labelled l we go from a triangle of \(L_i\) couplings to a triangle of \(K_i\) couplings. The \(K\)&rsquo;s are fully determined from the \(L\)&rsquo;s through quite complex relations like
 $$ 2\cosh(L_1+L_2+L_3) = R\exp(K_1+K_2+K_3) $$
 and so on. In order to make use of this relation and to abstract away from the specific problem it will prove very useful to switch over to the language of operators (or just matrices if operators seem scary). These operators act on the partition function Z to give a different one.</p>
-<p>To begin with our system consists of a row of $N$ spins $\sigma_i$ and our aim will be to build up the lattice by adding edges and vertices. To that effect we first define the operator \(c_i\) that flips the \(i\)-th spin (if it&rsquo;s value is \(+1\) is goes to \(-1\) and vice versa). Now we can define the building operators 
-$$ P_i(K)= e^{K\sigma_i\sigma_{i+1}},;;Q_i{L} = Q_i(L)=e^L \mathcal{I} + e^{-L}c_i \;\;\;(1.4)$$
-where \(\mathcal{I}\) is the identity operator. The operator \(P_i(K)\) adds and edge of strength \(K\) between spins \(i\) and \(i+1\). \(Q_i(L)\) adds a new vertex that is connected to the \(i-th\) vertex by a new edge of strength \(L\). We can think of \(Q_i\)&rsquo;s new vertex as being above of below spin \(i\) in the row of existing spins. With these two operators we can build any lattice we want step by step\footnote{for those who want more of the mathematical details, this part is taken from Baxter&rsquo;s book on Exactly solved models in statistical mechanics that is also listed in the sources}. To make the connection with the star triangle relation we define the diagonal construction operators \(U_i\) as</p>
+<p>To begin with our system consists of a row of \(N\) spins \(\sigma_i\) and our aim will be to build up the lattice by adding edges and vertices. To that effect we first define the operator \(c_i\) that flips the \(i\)-th spin (if it&rsquo;s value is \(+1\) is goes to \(-1\) and vice versa). Now we can define the building operators 
+$$ P_i(K)= e^{K\sigma_i\sigma_{i+1}},\;\;Q_i{L} = Q_i(L)=e^L \mathcal{I} + e^{-L}c_i \;\;\;(1.4)$$
+where \(\mathcal{I}\) is the identity operator. The operator \(P_i(K)\) adds and edge of strength \(K\) between spins \(i\) and \(i+1\). \(Q_i(L)\) adds a new vertex that is connected to the \(i-th\) vertex by a new edge of strength \(L\). We can think of \(Q_i\)&rsquo;s new vertex as being above of below spin \(i\) in the row of existing spins. With these two operators we can build any lattice we want step by step (for those who want more of the mathematical details, this part is taken from Baxter&rsquo;s book on Exactly solved models in statistical mechanics that is also listed in the sources). To make the connection with the star triangle relation we define the diagonal construction operators \(U_i\) as</p>
 <p>$$U_i= \left{
 \begin{array}{ll}
 P_j(K), &amp;  i=2j \\
@@ -89,7 +89,7 @@ P_j(K), &amp;  i=2j \\
 $$U_{i+1}(K_1,L_1)U_{i}(K_2,L_2)U_{i+1}(K_3,L_3) = U_{i}(K_3,L_3)U_{i+1}(K_2,L_2)U_{i}(K_1,L_1)\;\;\; (1.5) $$
 We can write this relation and another property of these matrices more compactly as</p>
 <p>$$U_{i+1}U_{i}&lsquo;U_{i+1}&rsquo;&rsquo; = U_{i}&lsquo;&lsquo;U_{i+1}&lsquo;U_{i}\;\;\; (1.6a)  $$
-$$U_iU_j&rsquo;=U_j&rsquo;U_i,;; for\;\;\abs{i-j}\geq 2\;\;\; (1.6b) $$</p>
+$$U_iU_j&rsquo;=U_j&rsquo;U_i,\;\; for\;\;|i-j}|geq 2\;\;\; (1.6b) $$</p>
 <p>The above relations, and especially (1.6a) will be the &ldquo;glue&rdquo; that holds integrable systems together. It is called the Yang-Baxter Equation and we will see in chapter 3 that statistical systems that satisfy it are exactly solvable. But first, we will look at a completely different area of mathematics where a similar relation appears.</p>
 <h1 id="knots-and-braids">Knots and Braids</h1>
 <p>The theory of knots in mathematics is relatively new (if the 20th century is considered recent) and at first glance it has nothing to do with statistical physics or for that fact anything more abstract than a noose for holding horses outside of saloons. However, as we dive into the mathematical formalism of knots, links and braids we will see how they can tie many different integrable systems together with a common language.</p>
@@ -113,8 +113,8 @@ Figure 5: The type III Reidemeister move corresponds to the star-triangle transf
 <p>A braid is a set of &ldquo;strings&rdquo; that move vertically and can cross over and under one-another. We can define the braid group of N braids \(B_N\) comprised of the elements \(\sigma_i\) (not to be confused with spins). \(\sigma_i\) corresponds to crossing the $i$-th strand over the \((i+1)\)-th one. For example, if we have 4 strands then</p>
 <p><a href="/braid_group_4.png" title="The type III Reidemeister move corresponds to the star-triangle transformation">Image alt</a> 
 Figure 6: The three generators of the braid group \(B_4\)</p>
-<p>For the above to form a group we also need to define the inverse transformations \(\sigma^{-1}<em>i\) that correspond to to the opposite move (passing the $i$-th strand under the \((i+1)\)-th). Any braid can be constructed by consecutive applications of the generators. The result of &ldquo;multiplying&rdquo; two generators can be thought of as applying the second generator to the end points of the first. The braid group is characterised by two properties
-$$\sigma</em>{i+1}\sigma_{i}\sigma_{i+1} = \sigma_{i}\sigma_{i+1}\sigma_{i}\;\;\; (2.1a)$$
+<p>For the above to form a group we also need to define the inverse transformations \(\sigma^{-1}_i\) that correspond to to the opposite move (passing the $i$-th strand under the \((i+1)\)-th). Any braid can be constructed by consecutive applications of the generators. The result of &ldquo;multiplying&rdquo; two generators can be thought of as applying the second generator to the end points of the first. The braid group is characterised by two properties
+$$\sigma_{i+1}\sigma_{i}\sigma_{i+1} = \sigma_{i}\sigma_{i+1}\sigma_{i}\;\;\; (2.1a)$$
 $$\sigma_{i}\sigma_{j}=\sigma_{j}\sigma_{i},\;\;\abs{i-j}\geq 2\;\;\;(2.1b)$$
 Property (2.1a) corresponds to a type III move as can be checked out on paper\footnote{The type II Reidemeister move translates into the definitional fact that \(\sigma^{-1}_i\sigma_i =1\)}. The observant reader will notice that the group properties (2.1) are exactly the same as the operator relations (1.6) that appeared in the Ising model. This means that the construction operators we defined there form a representation of the braid group and every lattice system can be thought of as a braid.</p>
 <p>The last and easiest step of this connection is that between braids and knots. It has been proved that any knot can be represented as a closed braid, that is a braid where all the strands are connected in a loop as seen in the below figure</p>
@@ -123,7 +123,7 @@ Figure 7: every knot can be seen as a closed braid</p>
 <p>What this means is that any object that satisfies the Yang-Baxter equation (1.6a) is a representation of the braid group and can be mapped onto a knot or a link. This also means that any quantity that is constructed by such objects will be a knot invariant since it doesn&rsquo;t change under Reidemeister&rsquo;s moves. In the next chapter we will see how these objects arise in physics</p>
 <h1 id="solving-systems-with-knot-invariants">Solving systems with knot invariants</h1>
 <h6 id="transfer-matrices">Transfer Matrices</h6>
-<p>To apply the ideas of knot theory to statistical systems we first need to introduce a tool called the transfer matrix. To do this we will start with the simplest possible system, the Ising model in one dimension. The energy of the system is given by (1.1) where we assume \(i=1,&hellip;,N\). To make our life easier we define cyclic boundary conditions so that \(s_{N+1}=s_1\). In the thermodynamic limit where $N\rightarrow \infty$ the boundary conditions should not affect the system since the boundary is an infinitely small part of the system.</p>
+<p>To apply the ideas of knot theory to statistical systems we first need to introduce a tool called the transfer matrix. To do this we will start with the simplest possible system, the Ising model in one dimension. The energy of the system is given by (1.1) where we assume \(i=1,&hellip;,N\). To make our life easier we define cyclic boundary conditions so that \(s_{N+1}=s_1\). In the thermodynamic limit where \(N\rightarrow \infty\) the boundary conditions should not affect the system since the boundary is an infinitely small part of the system.</p>
 <p>We can now write the partition function (1.2) in the following form (from now on \(kT = 1\))
 $$Z_N = \sum_s V(s_1,s_2)V(s_2,s_3)&hellip;V(s_N,s_1) \;\;\; (3.1) $$
 where 
@@ -164,8 +164,8 @@ Figure 9: the star triangle relation in the ice-type vertex model</p>
 <p>If a system is described by a set of states \(\ket{n}\), where $n$ are the quantum numbers (e.g. angular momentum) that define the state, then the probability amplitude of going from state \(\ket{i}\) to \(\ket{f}\) after time T is given by
 $$ p_{i\rightarrow f} = \bra{f}e^{iHT}\ket{i} \;\;\; (3.7) $$</p>
 <p><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> where H is the Hamiltonian of the system, similar to the energy (1.1) of a statistical system. In the case of free particles scattering of each other, like in accelerators, the probability amplitude is determined by a quantity called the S-matrix in which case</p>
-<p>[P(k\rightarrow p) = \abs{\bra{p}S\ket{k}}^2]</p>
-<p>where \(p\) and \(k\) are now momenta. The S is just a different name for the operator \(e^{iHT}\) when \(T\rightarrow \infty\) because we assume that the state of the particle(s) was \(\ket{k}\) in the infinite past and $\ket{p}$ and infinite time after the scattering, so that we can consider both states free (not interacting). Although we won&rsquo;t calculate them here, the two-particle S-matrix of a theory is the bread and butter of Quantum Field Theories. That is, it is straight forward to calculate probability amplitudes for two particles &ldquo;colliding&rdquo; elastically. That is not the case for multi-particle scattering where the computations become substantially more complicated and challenging.</p>
+<p>$$P(k\rightarrow p) = \abs{\bra{p}S\ket{k}}^2$$</p>
+<p>where \(p\) and \(k\) are now momenta. The S is just a different name for the operator \(e^{iHT}\) when \(T\rightarrow \infty\) because we assume that the state of the particle(s) was \(\ket{k}\) in the infinite past and \(\ket{p}\) and infinite time after the scattering, so that we can consider both states free (not interacting). Although we won&rsquo;t calculate them here, the two-particle S-matrix of a theory is the bread and butter of Quantum Field Theories. That is, it is straight forward to calculate probability amplitudes for two particles &ldquo;colliding&rdquo; elastically. That is not the case for multi-particle scattering where the computations become substantially more complicated and challenging.</p>
 <p>There are however cases where any multi-particle scattering can be viewed like a series of two-particle collisions in sequence. Then the S-matrix is said to be factorisable and the theory is, in a sense solvable for any number of particles. For example the S-matrix of 3 particles in a factorisable theory can be factorised as follows
 $$S_{3p}=S_{12}(\theta_{12})S_{13}(\theta_{13})S_{13}(\theta_{23}) \;\;\; (3.8) $$</p>
 <p>Here \(S_{ij}\) is the S-matrix between particles i and j and \(\theta_{ij}\) is the relative rapidity of the two particles. Rapidity is defined as \(\theta_{ij}=\tanh p_{ij}\) where \(p_{ij}\) the relative momentum.</p>
@@ -176,9 +176,9 @@ Figure 10: The two different ways in which 3 particles can scatter in pairs of t
 $$ S_{23}(\theta - \theta&rsquo;)S_{13}(\theta)S_{12}(\theta&rsquo;) = S_12(\theta&rsquo;)S_13(\theta)S_{23}(\theta -\theta) \;\;\; (3.9) $$
 which as we should expect by now is another form of the Yang-Baxter equation (1.6a). We also have the self evident relation
 $$ S_{12}(\theta)S_{21}(-\theta)=I_{12}\;\;\; (3.10) $$
-where $I_{12}$ is the identity i.e. nothing happens. This is again an obvious restatement of a type II Reidemeister move.</p>
+where \(I_{12}\) is the identity i.e. nothing happens. This is again an obvious restatement of a type II Reidemeister move.</p>
 <p>From the above we can conclude that in \(1+1\) dimensional quantum systems, every factorisable system is also a representation of the braid group and its S-matrix is a knot invariant.</p>
-<p>$$ Conclusion and Resources $$</p>
+<h1 id="conclusion-and-resources">Conclusion and Resources</h1>
 <p>What started out as an interesting transformation on a 2d lattice spin problem grew into a web of interconnected integrable systems through the language of knots and braids. What we have found is that if a quantity satisfies the Yang-Baxter equation (1.6a) then it corresponds to both a knot invariant and an exactly solvable problem in physics, be that spin models, lattice models or quantum mechanics. This is very interesting and useful both for mathematicians as well as physicists. A mathematician can get a knot invariant from a physicist&rsquo;s solved system and a physicist can get a solution to a system from a mathematician&rsquo;s knot invariant.</p>
 <p>In the last 30 years there has been a lot of work in systematically finding solutions to the Yang-Baxter equations. The modern approach is a method called Quantum-Groups which involve a lot of high-end mathematical concepts such as Hopf algebras and group deformations. We did not even attempt to scrape the surface of these subjects here.</p>
 <p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
@@ -215,7 +215,7 @@ where $I_{12}$ is the identity i.e. nothing happens. This is again an obvious re
         <br>
         <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
         &copy;
-        2023
+        2024
       </p>
   </div>
 </footer></body>
