@@ -80,15 +80,15 @@ and so on. In order to make use of this relation and to abstract away from the s
 <p>To begin with our system consists of a row of \(N\) spins \(\sigma_i\) and our aim will be to build up the lattice by adding edges and vertices. To that effect we first define the operator \(c_i\) that flips the \(i\)-th spin (if it&rsquo;s value is \(+1\) is goes to \(-1\) and vice versa). Now we can define the building operators 
 $$ P_i(K)= e^{K\sigma_i\sigma_{i+1}},\;\;Q_i{L} = Q_i(L)=e^L \mathcal{I} + e^{-L}c_i \;\;\;(1.4)$$
 where \(\mathcal{I}\) is the identity operator. The operator \(P_i(K)\) adds and edge of strength \(K\) between spins \(i\) and \(i+1\). \(Q_i(L)\) adds a new vertex that is connected to the \(i-th\) vertex by a new edge of strength \(L\). We can think of \(Q_i\)&rsquo;s new vertex as being above of below spin \(i\) in the row of existing spins. With these two operators we can build any lattice we want step by step (for those who want more of the mathematical details, this part is taken from Baxter&rsquo;s book on Exactly solved models in statistical mechanics that is also listed in the sources). To make the connection with the star triangle relation we define the diagonal construction operators \(U_i\) as</p>
-<p>$$ U_i= \left{
+<p>$$ U_i= 
 \begin{matrix}{ll}
 P_j(K), &amp;  i=2j \\
 (2\sinh2L)^{1/2}Q_j(L), &amp; i=2j-1  \\
-\end{matrix} \right.    $$</p>
+\end{matrix}   $$</p>
 <p>This operator creates a &ldquo;staircase&rdquo; of spins and it&rsquo;s enough to construct the square lattice. Going back to the honeycomb lattice we find that the relation in figure 1 can be translated into 
 $$U_{i+1}(K_1,L_1)U_{i}(K_2,L_2)U_{i+1}(K_3,L_3) = U_{i}(K_3,L_3)U_{i+1}(K_2,L_2)U_{i}(K_1,L_1)\;\;\; (1.5) $$
 We can write this relation and another property of these matrices more compactly as</p>
-<p>$$U_{i+1}U_{i}'U_{i+1}&rsquo;&rsquo; = U_{i}&lsquo;&lsquo;U_{i+1}'U_{i}\;\;\; (1.6a)  $$
+<p>$$U_{i+1}U_{i}'U_{i+1}&rsquo;&rsquo; = U_{i}''U_{i+1}'U_{i}\;\;\; (1.6a)  $$
 $$U_iU_j'=U_j'U_i,\;\; for\;\;|i-j|\geq 2\;\;\; (1.6b) $$</p>
 <p>The above relations, and especially (1.6a) will be the &ldquo;glue&rdquo; that holds integrable systems together. It is called the Yang-Baxter Equation and we will see in chapter 3 that statistical systems that satisfy it are exactly solvable. But first, we will look at a completely different area of mathematics where a similar relation appears.</p>
 <h1 id="knots-and-braids">Knots and Braids</h1>
