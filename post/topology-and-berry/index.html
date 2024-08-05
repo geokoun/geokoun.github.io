@@ -83,7 +83,7 @@ $$\vec{A}^S = \frac{g}{r(r-z)}(y,-x,0) = -\frac{g(1+\cos\theta)}{r\sin\theta}\ha
 <p>With these observations in mind let&rsquo;s take a quick dive into topology.</p>
 <h6 id="circles-and-spheres">Circles and Spheres</h6>
 <p>Everything we talk about in physics takes place on a manifold. A manifold is a space that locally looks like \(\mathbb{R}^n\) for some \(n\). The simplest example after \(\mathbb{R}\) is the circle \(\mathcal{S}^1\). The circle is an abstract geometrical object so we need to introduce some coordinate scheme. We call this a chart \(U\) of the manifold and the simplest guess would be
-$$U_{naive} = \{(x,y) \in \mathbb{R}^2 | x=\cos\theta,;y=\sin\theta,; 0\leq \theta \leq 2\pi\}]</p>
+$$U_{naive} = \{(x,y) \in \mathbb{R}^2 | x=\cos\theta,\;y=\sin\theta,; 0\leq \theta \leq 2\pi\}]</p>
 <p>However, if we want to define well behaving objects such as vectors and derivatives we require that the charts covering a manifold are open, otherwise the derivative at exactly \(\theta=0,2\pi\) is ill-defined. Therefore the simplest description of \(\mathcal{S}^1\) is accomplished by two charts</p>
 <p>$$U^N = \{(\cos\theta,\sin\theta) \in \mathbb{R}^2| 0&lt;\theta&lt;\pi+\epsilon    \}\;\;\;(1.7a)$$
 $$U^S = \{(\cos\theta&rsquo;,\sin\theta&rsquo;)\in \mathbb{R}^2 | \pi&lt;\theta&rsquo;&lt;2\pi+\epsilon \}  \;\;\; (1.7b)$$</p>
@@ -97,7 +97,7 @@ $$f_2(u)=(\theta&rsquo;,t&rsquo;),\;\;\;\theta&rsquo;\in U_2,\;t&rsquo;\in F= \m
 <p>In order to fully define the fibre bundle we should give a rule for going from one chart to another like we did before. This time we have a little bit more freedom, since we have not specified how we go from fibre to fibre we can give a general rule that in the overlap \(U_1\cap U_2\) we require the local trivialisations to be somehow related</p>
 <p>$$ f_2(u) = (\theta&rsquo;,t&rsquo;)=(\theta,t_{12}(\theta)t)$$</p>
 <p>where \(t_{12}\) is the aforementioned transition function. In this context it tells us how the neighbouring fibres fit together. We want our construction to make sense so there are some sensible restrictions on \(t_{ij}\). Specifically we require that</p>
-<p>$$t_{ii} = 1,\quad t_{ij}=t^{-1}<em>{ji},\quad t</em>{ij}t_{jk}=t_{ik}$$</p>
+<p>$$t_{ii} = 1,\;\;\; t_{ij}=t^{-1}_{ji},\;\;\; t_{ij}t_{jk}=t_{ik}$$</p>
 <p>If you think about the above you will see how they are all required for our fibre to be single-valued. A closer look will reveal that in order for \(t_{ij}\) to fulfil the above conditions, the set of transition functions \({t_{ij}}\) must form a group \(G\) called the structure group of the manifold.</p>
 <p>In the present case we only have two charts and a one-dimensional fibre \(F\) so we only have two options for the transition functions. Either \(t_{12} = 1\) and \(G\) is the trivial group or \(t_{12}=-1\) and \(G\) is the cyclic group with two elements \(G=\mathbb{Z}_2={-1,1}\). The trivial case describes a usual cylinder while the \(\mathbb{Z}_2\) case describes a Möbius strip since we have a reversal of the t coordinate near \(\theta = 0\).</p>
 <h6 id="the-connection">The connection</h6>
@@ -128,7 +128,7 @@ $$U(x,x) = e^{i\oint \vec{A}\cdot d\vec{s}}\;\;\; (1.12)$$</p>
 <h6 id="homotopy-and-winding">Homotopy and winding</h6>
 <p>Before we go back to the physics, we will need one more concept from topology. Two functions \(f(s),h(s):\mathbb{R}\rightarrow M\) on a manifold \(M\) are called homotopic if there is a smooth continuous function \(F(x,t)\) such that</p>
 <p>$$F(s,0) = f(s),\quad F(s,1)=h(s)$$</p>
-<p>in other words two functions are homotopic if one can be deformed continuously into the other. Turns out that if we require \(f\) and \(h\) to be loops at the same point, that is \(s \in [0,1]\) and \(f(0)=h(0)=f(1)=h(1)\) then the question of their homology is a topological invariant. This means that if two loops are homotopic in $M$ but not in \(M&rsquo;\) then $M$ and \(M&rsquo;\) are topologically different manifolds and they cannot be deformed into each other in a smooth way.</p>
+<p>in other words two functions are homotopic if one can be deformed continuously into the other. Turns out that if we require \(f\) and \(h\) to be loops at the same point, that is \(s \in [0,1]\) and \(f(0)=h(0)=f(1)=h(1)\) then the question of their homology is a topological invariant. This means that if two loops are homotopic in \(M\) but not in \(M&rsquo;\) then $M$ and \(M&rsquo;\) are topologically different manifolds and they cannot be deformed into each other in a smooth way.</p>
 <p>The simplest example and the one we will need here is that of loops on the circle \(\mathcal{S}^1\). We can easily change the parameter of the loop from \(s\in[0,1]\) to \(s\in[0,2\pi]\) so that the loops \(f\) are now maps \(\mathcal{S}^1\rightarrow \mathcal{S}^1\). To see how there are homotopically different ways to map a circle onto a circle consider two maps</p>
 <p>$$f_1: (s)\rightarrow (\theta)$$
 $$f_2: (s)\rightarrow (2\theta)$$</p>
