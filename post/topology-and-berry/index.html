@@ -83,7 +83,7 @@ $$\vec{A}^S = \frac{g}{r(r-z)}(y,-x,0) = -\frac{g(1+\cos\theta)}{r\sin\theta}\ha
 <p>With these observations in mind let&rsquo;s take a quick dive into topology.</p>
 <h6 id="circles-and-spheres">Circles and Spheres</h6>
 <p>Everything we talk about in physics takes place on a manifold. A manifold is a space that locally looks like \(\mathbb{R}^n\) for some \(n\). The simplest example after \(\mathbb{R}\) is the circle \(\mathcal{S}^1\). The circle is an abstract geometrical object so we need to introduce some coordinate scheme. We call this a chart \(U\) of the manifold and the simplest guess would be
-$$U_{naive} = \{(x,y) \in \mathbb{R}^2 | x=\cos\theta,\;y=\sin\theta,; 0\leq \theta \leq 2\pi\}]</p>
+$$U_{naive} = \{(x,y) \in \mathbb{R}^2 | x=\cos\theta,\;y=\sin\theta,; 0\leq \theta \leq 2\pi\}$$</p>
 <p>However, if we want to define well behaving objects such as vectors and derivatives we require that the charts covering a manifold are open, otherwise the derivative at exactly \(\theta=0,2\pi\) is ill-defined. Therefore the simplest description of \(\mathcal{S}^1\) is accomplished by two charts</p>
 <p>$$U^N = \{(\cos\theta,\sin\theta) \in \mathbb{R}^2| 0&lt;\theta&lt;\pi+\epsilon    \}\;\;\;(1.7a)$$
 $$U^S = \{(\cos\theta&rsquo;,\sin\theta&rsquo;)\in \mathbb{R}^2 | \pi&lt;\theta&rsquo;&lt;2\pi+\epsilon \}  \;\;\; (1.7b)$$</p>
@@ -128,7 +128,7 @@ $$U(x,x) = e^{i\oint \vec{A}\cdot d\vec{s}}\;\;\; (1.12)$$</p>
 <h6 id="homotopy-and-winding">Homotopy and winding</h6>
 <p>Before we go back to the physics, we will need one more concept from topology. Two functions \(f(s),h(s):\mathbb{R}\rightarrow M\) on a manifold \(M\) are called homotopic if there is a smooth continuous function \(F(x,t)\) such that</p>
 <p>$$F(s,0) = f(s),\quad F(s,1)=h(s)$$</p>
-<p>in other words two functions are homotopic if one can be deformed continuously into the other. Turns out that if we require \(f\) and \(h\) to be loops at the same point, that is \(s \in [0,1]\) and \(f(0)=h(0)=f(1)=h(1)\) then the question of their homology is a topological invariant. This means that if two loops are homotopic in \(M\) but not in \(M&rsquo;\) then $M$ and \(M&rsquo;\) are topologically different manifolds and they cannot be deformed into each other in a smooth way.</p>
+<p>in other words two functions are homotopic if one can be deformed continuously into the other. Turns out that if we require \(f\) and \(h\) to be loops at the same point, that is \(s \in [0,1]\) and \(f(0)=h(0)=f(1)=h(1)\) then the question of their homology is a topological invariant. This means that if two loops are homotopic in \(M\) but not in \(M&rsquo;\) then \(M\) and \(M&rsquo;\) are topologically different manifolds and they cannot be deformed into each other in a smooth way.</p>
 <p>The simplest example and the one we will need here is that of loops on the circle \(\mathcal{S}^1\). We can easily change the parameter of the loop from \(s\in[0,1]\) to \(s\in[0,2\pi]\) so that the loops \(f\) are now maps \(\mathcal{S}^1\rightarrow \mathcal{S}^1\). To see how there are homotopically different ways to map a circle onto a circle consider two maps</p>
 <p>$$f_1: (s)\rightarrow (\theta)$$
 $$f_2: (s)\rightarrow (2\theta)$$</p>
