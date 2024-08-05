@@ -6,7 +6,16 @@
     <description>Recent content on Principia Physicae Generalis</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://principiaphysicaegeneralis.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://principiaphysicaegeneralis.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Topology in simple QM systems</title>
+      <link>https://principiaphysicaegeneralis.com/post/topology-and-berry/</link>
+      <pubDate>Mon, 05 Aug 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://principiaphysicaegeneralis.com/post/topology-and-berry/</guid>
+      <description>&lt;p&gt;We look at some simple systems in quantum mechanics that can be interpreted gemoetricaly through some basic concepts of topology.&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Too much freedom: equations of motion out of symmetry</title>
       <link>https://principiaphysicaegeneralis.com/post/too-much-freedom/</link>

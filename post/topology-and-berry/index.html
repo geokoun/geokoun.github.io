@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8" />
+
+  <title>Topology in simple QM systems - Principia Physicae Generalis</title>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/latex.css" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/main.css" />
+
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hugo 0.102.3" /><body>
+
+
+
+
+
+
+<header>
+  <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+  <div class="intro-header">
+    <div class="container">
+      <div class="post-heading">
+        
+          <h1>Topology in simple QM systems</h1>
+          
+        
+      </div>
+    </div>
+  </div>
+</header>
+<div id="content">
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      <div class="postmeta">
+        <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>Aug 5, 2024
+  
+</span>
+      </div>
+      <br>
+      
+    <p>We look at some simple systems in quantum mechanics that can be interpreted gemoetricaly through some basic concepts of topology.</p>
+<p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+<h1 id="introduction">Introduction</h1>
+<p>In the last 40 years topology has found its way to the centre of particle physics. It is used to define, classify and explore the fundamental forces that govern the interactions of particles but also to describe the curved spacetime of General Relativity. However, more recently topology has seeped into ordinary Quantum Mechanics (QM) thanks to Berry and his phase which we are going to explore in this article.</p>
+<p>We are going to proceed as follows. First we will look at the classic and instructive example of the magnetic monopole. Then we will introduce Berry&rsquo;s phase in QM and then look at a simple application.</p>
+<p>This is by no means a rigorous explanation of topology or its applications in physics. This is meant to excite the reader and give them an intuitive sense of the concepts so that they may be driven to read further if they so desire (see sources).</p>
+<h1 id="dirac-and-his-monopole">Dirac and his Monopole</h1>
+<h6 id="the-potential">The potential</h6>
+<p>We begin this article by going against all of classical Electrodynamics and assuming that there is such a thing as a magnetic monopole. To be exact we assume that at the origin of our coordinate system there sits an object of magnetic charge \(g\) that generates a magnetic field \(B\) such that
+$$ \vec{B} = g \frac{\vec{r}}{r^3} = g\frac{\hat{r}}{r^2} \;\;\; (1.1) $$</p>
+<p>\noindent which should remind us of the electric field of a simple point-like electric charge. Let&rsquo;s try to find the vector potential \(\vec{A}\) that generates this field</p>
+<p>$$ \vec{\nabla} \times \vec{A}= \vec{B} $$</p>
+<p>A possible choice for \(\vec{A}\) is given by</p>
+<p>$$\vec{A}^N = \frac{g}{r(r+z)}(-y,x,0) = \frac{g(1-\cos\theta)}{r\sin\theta}\hat{\phi} \;\;\; (1.2)$$</p>
+<p>This potential does indeed generate the magnetic field (1.1) everywhere in space except on the negative \(z\) axis (or \(\theta=\pi\) in polar coordinates). Likewise, we can define a different potential
+$$\vec{A}^S = \frac{g}{r(r-z)}(y,-x,0) = -\frac{g(1+\cos\theta)}{r\sin\theta}\hat{\phi} \;\;\; (1.3)$$</p>
+<p>Which is ill-defined for \(\theta = 0\).</p>
+<p>It seems as though there is a fundamental refusal of the vector potential to cover all of space. This line of points where the potential is ill-define is  called a Dirac line. However, if we persist we notice that the difference between the two potentials is an exact gradient:</p>
+<p>$$\vec{A}^N-\vec{A}^S= \frac{2g}{r\sin\theta}\hat{\phi} = \vec{\nabla}(2g\phi) \;\;\; (1.4)$$</p>
+<p>Therefore we can make the following arrangement: we employ \(\vec{A}^N\) in the north hemisphere (\(0\leq \theta \leq \pi/2\)) while we employ \(\vec{A}^S\) in the south hemisphere (\(\pi/2 \leq \theta \leq \pi \)). Additionally we state the transition relation at exactly \(\theta = 2\pi\) where both potentials exist</p>
+<p>$$\vec{A}^S = \vec{A}^N - \vec{\nabla}(2g\phi) \;\;\; (1.4) $$</p>
+<p>For later convenience we can rewrite the above relation as</p>
+<p>$$\vec{A}^S = t^{-1}\vec{A}^N t + it^{-1}\vec{\nabla} t,\;\;\; t=e^{i2g\phi}\;\;\; (1.5)$$</p>
+<p>\noindent Here \(t(\phi)\) is called a \emph{transition function} and it lives on the intersection of the two hemispheres, the equator. Some remarks before we make the connection with topology explicit. In order for (1.5) to be one-valued we require</p>
+<p>$$t(0)=t(2\pi) \rightarrow g = \frac{n}{2},\;\;\; n \in 	\mathbb{Z}\;\;\;(1.6)$$</p>
+<p>\noindent We have arrived at Dirac&rsquo;s quantisation condition. In other words, the magnetic charge \(g\) can only take values that are integer multiples of a fundamental quantum, here \(\frac{1}{2}\). There are usually some dimensionful constants that are not present here because we chose a &ldquo;natural&rdquo; unit system.</p>
+<p>Also, anyone familiar with group theory will notice that the transition function t belongs to the unitary \(U(1)\) group. It depends on one parameter \(\phi\) and it is unitary in the sense that</p>
+<p>$$ t^* \cdot t = 1$$</p>
+<p>\noindent where the star denotes the complex conjugate. Therefore, t is a map from the equator \(\mathcal{S}^1\) to the group \(U(1)\) or in maths lingo</p>
+<p>$$t: \mathcal{S}^1 \rightarrow U(1)$$</p>
+<p>With these observations in mind let&rsquo;s take a quick dive into topology.</p>
+<h6 id="circles-and-spheres">Circles and Spheres</h6>
+<p>Everything we talk about in physics takes place on a manifold. A manifold is a space that locally looks like \(\mathbb{R}^n\) for some \(n\). The simplest example after \(\mathbb{R}\) is the circle \(\mathcal{S}^1\). The circle is an abstract geometrical object so we need to introduce some coordinate scheme. We call this a chart $U$ of the manifold and the simplest guess would be
+[U_{naive} = {(x,y) \in \mathbb{R}^2 | x=\cos\theta,;y=\sin\theta,; 0\leq \theta \leq 2\pi}]</p>
+<p>\noindent However, if we want to define well behaving objects such as vectors and derivatives we require that the charts covering a manifold are open, otherwise the derivative at exactly \(\theta=0,2\pi\) is ill-defined. Therefore the simplest description of \(\mathcal{S}^1\) is accomplished by two charts</p>
+<p>$$U^N = \{(\cos\theta,\sin\theta) \in \mathbb{R}^2| 0&lt;\theta&lt;\pi+\epsilon    \}\;;\;(1.7a)$$
+$$U^S = \{(\cos\theta&rsquo;,\sin\theta&rsquo;)\in \mathbb{R}^2 | \pi&lt;\theta&rsquo;&lt;2\pi+\epsilon \}  \;\;\; (1.7b)$$</p>
+<p>\noindent where \(\epsilon\) is a small number that is put there so that there are no gaps in the coverage of the two charts. We want the two charts to describe the same manifold and so, in the areas where they overlap (\(U^N \cap U^S\)) we require that \(\theta = \theta&rsquo;\).</p>
+<p>The exact same situation arises when we consider the sphere \(\mathcal{S}^2\). We need again to split the charts in the north and south hemisphere in order for all charts to be open. This is beginning to remind us of the situation we found ourself in during our study of the magnetic monopole where we needed two different fields to cover the entirety of space (except the origin).</p>
+<h6 id="fibre-bundles-and-twisting">Fibre bundles and twisting</h6>
+<p>To describe the magnetic field living on a sphere we need something more general than a manifold since \(\vec{A}\) lives on the sphere but it has it&rsquo;s own geometry. To see this we need to talk about fibre bundles.</p>
+<p>Let&rsquo;s begin with \(\mathcal{S}^1\) and this time we chose the charts \(U_1=(0,2\pi),;U_2=(-\epsilon,\epsilon)\) so that there is only one interval where the two charts overlap and our life becomes easier. If we want to describe a scalar field \(\phi(\theta)\) (\(\phi(\theta) \in \mathbb{R}\)) on the circle we can attach to each point another line manifold \(F=\mathbb{R}\) which is called a fibre. Now each point of this composite manifold \(E\), called a <strong>{fibre bundle}</strong>, corresponds to a specific value of \(\phi\) on a specific point of the circle. Locally, each point of the bundle \(E\) will look like the simple product space of \(F\) and \(\mathcal{S}^1\). We call this the local trivialisation of the fibre bundle. To be more precise, a local trivialisation \(f\) is defined on a chart of \(S^1\) and acts as \(f:E\rightarrow F\times \mathcal{S}^1\). In our example, if \(u\in E\) then</p>
+<p>$$f_1(u) = (\theta,t), \quad\theta\in U_1,\;t\in F= \mathbb{R} $$
+$$f_2(u)=(\theta&rsquo;,t&rsquo;),\quad\theta&rsquo;\in U_2,\;t&rsquo;\in F= \mathbb{R} $$</p>
+<p>In order to fully define the fibre bundle we should give a rule for going from one chart to another like we did before. This time we have a little bit more freedom, since we have not specified how we go from fibre to fibre we can give a general rule that in the overlap \(U_1\cap U_2\) we require the local trivialisations to be somehow related</p>
+<p>$$ f_2(u) = (\theta&rsquo;,t&rsquo;)=(\theta,t_{12}(\theta)t)$$</p>
+<p>\noindent where \(t_{12}\) is the aforementioned transition function. In this context it tells us how the neighbouring fibres fit together. We want our construction to make sense so there are some sensible restrictions on \(t_{ij}\). Specifically we require that</p>
+<p>$$t_{ii} = 1,\quad t_{ij}=t^{-1}<em>{ji},\quad t</em>{ij}t_{jk}=t_{ik}$$</p>
+<p>If you think about the above you will see how they are all required for our fibre to be single-valued. A closer look will reveal that in order for \(t_{ij}\) to fulfil the above conditions, the set of transition functions \({t_{ij}}\) must form a group \(G\) called the structure group of the manifold.</p>
+<p>In the present case we only have two charts and a one-dimensional fibre \(F\) so we only have two options for the transition functions. Either \(t_{12} = 1\) and \(G\) is the trivial group or \(t_{12}=-1\) and \(G\) is the cyclic group with two elements \(G=\mathbb{Z}_2={-1,1}\). The trivial case describes a usual cylinder while the \(\mathbb{Z}_2\) case describes a Möbius strip since we have a reversal of the t coordinate near \(\theta = 0\).</p>
+<h6 id="the-connection">The connection</h6>
+<p>So how do objects move on a fibre bundle? To know that we need to specify the local geometry of our bundle through what is called a <strong>connection</strong>.</p>
+<p>In ordinary \(\mathbb{R}^n\) Euclidean space, if we have a vector \(\vec{u}\) at point \(x\) and we want to move it to a different point $y$ then we can just define a vector \(\vec{u}&rsquo;\) at \(y\) with the exact same components as \(\vec{u}\). However, on more complicated manifolds, \(\vec{u}&rsquo;\) will not necessarily be a vector since the definition of a vector will change from point to point.</p>
+<p>A quick and dirty definition of a vector is an object that transforms in the right way. For example, in \(\mathbb{R}^2\) (and this is easily generalised for \(\mathbb{R}^n\)) if we rotate our coordinate system by and angle \(\theta\) then we expect our vectors to rotate as</p>
+<p>$$\begin{pmatrix} u_x&rsquo; \ u_y&rsquo;  = \end{pmatrix} =\begin{pmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{pmatrix}\begin{pmatrix} u_x \\ u_y    \end{pmatrix} \;\;\; (1.8) $$</p>
+<p>In other words we want vectors to obey the global rotational group \(O(2)\). We call it global because every point in \(\mathbb{R}^2\) rotates in the same way.</p>
+<p>Let&rsquo;s now look at an example where the above expectation breaks down. In fact we will look at a fibre bundle! Let&rsquo;s stick with \(\mathbb{R}^n\) but now at each point we have attached a circle \(\mathcal{S}^1\). You can think of this as a wavefunction \(\psi(x)\) in \(\mathbb{R}^n\) where the value on the circle fibre corresponds to its phase. But now we ask that our theory is invariant under location based changes of phase</p>
+<p>$$\psi(x) \rightarrow e^{ia(x)}\psi(x) \;\;\; (1.9) $$</p>
+<p>\noindent where \(a(x)\) is an arbitrary, smooth function. This is a reasonable ask since the phase of a wavefunction is not observable in quantum mechanics. Transformation (1.9) is our vector definition on the fibre like (1.8) was on the Euclidean plane. Now comes the problems, if we just move \(\psi(x)\) to \(y\) we get that the new object \(\psi(y)\) transforms as</p>
+<p>$$\psi(y)\rightarrow e^{ia(x)}\psi(y)$$</p>
+<p>\noindent which is clearly different from (1.9). To fix this we need a rule for moving wavefunctions around space, we need a connection. If we had an object \(U(x,y)\) that transformed like</p>
+<p>$$U(x,y) \rightarrow e^{ia(y)}U(x,y)e^{-ia(x)}$$</p>
+<p>\noindent then \(\psi(y)=U(x,y)\psi(x)\) would transform is the right way to be a &ldquo;vector&rdquo;. It is easy to assume that \(U(x,y)= e^{i\phi(x,y)}\) and so if \(\vec{y}=\vec{x}+\epsilon\vec{\delta x}\)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> where \(\epsilon\) is very small, we can Taylor expand as</p>
+<p>$$U(x,\vec{x}+\epsilon\vec{\delta x})= 1 - i\epsilon\vec{\delta x}\cdot\vec{A}(x)+&hellip;$$</p>
+<p>Where $\vec{A}$ is called a \emph{connection}. Mind that the connection is a function of $x\in\mathbb{R}^n$ but it governs how the phase $\theta\in F=\mathcal{S}^1$ moves. If we further make the reasonable assumption that, if $z$ is a point on the path from x to y, then: 
+[U(x,z)U(z,y)=U(x,y)]</p>
+<p>\noindent or in plain English, that it doesn&rsquo;t matter if we first make a stop at z or go straight to y <strong>as long as z is on the same path</strong>. From the above assumption we can write 
+$$U(x,y)  = e^{\int_x^y \vec{A}\cdot d\vec{s}}\;\;\;(1.10)$$
+where \(d\vec{s}\) is a specific path from x to y.</p>
+<p>Note that in order for \(U(x,y)\) to transform in the way that we want,\(\vec{A}\) must transform as</p>
+<p>$$\vec{A}\rightarrow \vec{A} - \vec{\nabla}a(x) \;\;\;(1.11)$$</p>
+<p>Well well if it isn&rsquo;t a gauge transformation from Electrodynamics. We can even bring this to the from of (1.5) if we just define \(t(x)=e^{ia(x)}\). It&rsquo;s all coming together.</p>
+<p>As a last note, if the path \(d\vec{s}\) is closed (e.g. if \(x=y\)) then the quantity 
+$$U(x,x) = e^{i\oint \vec{A}\cdot d\vec{s}}\;\;\; (1.12)$$</p>
+<p>\noindent is gauge invariant and is called a <strong>Wilson loop</strong>. Usually gauge invariant objects can affect observable quantities as we will see later (for applications of this Wilson loop you can look at the Bohm-Aharonov effect).</p>
+<h6 id="homotopy-and-winding">Homotopy and winding</h6>
+<p>Before we go back to the physics, we will need one more concept from topology. Two functions \(f(s),h(s):\mathbb{R}\rightarrow M\) on a manifold \(M\) are called homotopic if there is a smooth continuous function \(F(x,t)\) such that</p>
+<p>$$F(s,0) = f(s),\quad F(s,1)=h(s)$$</p>
+<p>\noindent in other words two functions are homotopic if one can be deformed continuously into the other. Turns out that if we require \(f\) and \(h\) to be loops at the same point, that is \(s \in [0,1]\) and \(f(0)=h(0)=f(1)=h(1)\) then the question of their homology is a topological invariant. This means that if two loops are homotopic in $M$ but not in \(M&rsquo;\) then $M$ and \(M&rsquo;\) are topologically different manifolds and they cannot be deformed into each other in a smooth way.</p>
+<p>The simplest example and the one we will need here is that of loops on the circle \(\mathcal{S}^1\). We can easily change the parameter of the loop from \(s\in[0,1]\) to \(s\in[0,2\pi]\) so that the loops \(f\) are now maps \(\mathcal{S}^1\rightarrow \mathcal{S}^1\). To see how there are homotopically different ways to map a circle onto a circle consider two maps</p>
+<p>$$f_1: (s)\rightarrow (\theta)$$
+$$f_2: (s)\rightarrow (2\theta)$$</p>
+<p>Both maps are acceptable since they have the right periodicity of \(f_i(s)=f_i(s+2\pi)\) however \(f_2\) goes around the circle twice where as \(f_1\) goes only once. Playing with an elastic band around your finger you can easily see that there is no way to deform two windings into one without cutting the band (or removing it from your finger) and therefore we say that \(f_1\) and \(f_2\) belong in different homotopy classes. Evidently there are \(\mathbb{Z}\) different such classes, one for each winding (we consider clockwise windings to have a negative number). In topological terms we say that the first<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> homotopy group is</p>
+<p>$$\pi_1(\mathcal{S}^1) \cong \mathbb{Z}$$</p>
+<h6 id="the-topological-monopole">The topological monopole</h6>
+<p>We are now ready to tackle Dirac&rsquo;s monopole in a topological way. First we note that the space we are working with is \(\mathbb{R}^3-{0}\) since the point at the origin is not well defined, the field diverges to infinity and point like charges are not something classical electrodynamics is good at studying up close. Now we can notice that our space is topologically the same as the sphere $S^2$ or the surface of a 3d ball. All we have to do is continuously deform all point onto the sphere which we can do since the &ldquo;sticking point&rdquo; of the origin is removed. We can use our good old charts \(U^N\) and \(U^S\) that overlap in a small region at the equator that again is equivalent to a circle \(S^1\).</p>
+<p>As in our connection example we consider a wavefunction \(\psi(x)\) living around the monopole with a phase in \(\mathcal{S}^1\). This means that we introduce a bundle over \(S^2\). Specifically, since \(\mathcal{S}^1\) and \(U(1)\) are the same (both are parameterised by a periodic angle \(\theta\)) we have a \(U(1)\) bundle (because we like groups here). Just as obvious is the fact that the north and south vector potentials (1.2),(1.3) are the connections on each chart \(U^N\) and \(U^S\). From (1.5) we get that our transition functions are</p>
+<p>$$t_{SN}(\phi)=e^{i2g\phi}\in U(1)$$</p>
+<p>This means that our structure group is \(G=U(1)\). When a fibre bundle has a structure group that is the same as its fibre, it&rsquo;s called a principle bundle. Recall also from the end of our monopole discussion that the transition function is \(t:\mathcal{S}^1\rightarrow U(1)\cong \mathcal{S}^1\) which means that is belongs into a class of the first homotopy group \(\pi_1(\mathcal{S}^1)\cong \mathbb{Z}\). Now we can see the topological interpretation of the quantized magnetic charge \(g\). It counts how many times the two hemispheres are twisted before being glued together at the equator.</p>
+<p>The Wilson loop now takes a familiar form</p>
+<p>$$U(x,x)=e^{i\oint \vec{A}\cdot d\vec{s}} = e^{i\iint \vec{B}\cdot d\vec{A}} = e^{i\Phi}$$</p>
+<p>\noindent where \(\Phi\) is the magnetic flux of the monopole. Indeed the flux of a field is an observable quantity as we would expect from our previous discussion .</p>
+<p>The fact that the magnetic monopole is topologically different from empty space (due to the non-zero value of the homotopy class) means that it&rsquo;s stable, the field cannot unwind continuously and therefore, if such a monopole were ever to form it would have quite a long lifetime. These kinds of monopoles have never been observed in nature but the equivalent of a monopole in the weak interaction (instantons) play a central role in fundamental particle physics. Similarly gluons of the strong interaction might form so called glue balls that have non-zero mass but this is still an open problem (with a price-tag of a million dollars).</p>
+<h1 id="berry-and-his-phase">Berry and his Phase</h1>
+<h6 id="parameter-space">Parameter space</h6>
+<p>We now turn away from field theories and return to simple Quantum Mechanics. Let \(H(\vec{l})\) be a Hamiltonian that is dependent on a set of \(k\) parameters \(\vec{l}=(l_1,&hellip;l_k)\) and assume that these parameters vary with time \(\vec{l}=\vec{l}(t)\). These can be anything from an external field to the length of a well. Assuming that the parameters vary slowly enough (adiabatic approximation), we can define at each point in time a set of eigenstates (we omit the vector arrow from now on unless we deem it useful)</p>
+<p>$$H(l(t))\ket{n,l(t)} = E_n(l(t))\ket{n,l(t)}\;\;\; (2.1)$$</p>
+<p>\noindent and as we would expect every wavefunction satisfies the Schrodinger equation</p>
+<p>$$ i\frac{d}{dt}\ket{\psi(t)}=H(l(t))\ket{\psi(t)}$$</p>
+<p>If the Hamiltonian wasn&rsquo;t time dependant and \(\ket{\psi(0)}=\ket{n}\) then we would have</p>
+<p>$$\ket{\psi(t)}=e^{iE_nt}\ket{\psi(0)}$$</p>
+<p>If we now turn on the time dependence, an obvious guess would be</p>
+<p>$$\ket{\psi(t)}_{naive} = e^{\int_0^t E_n(l(s)) ds } \ket{\psi(0)}   $$</p>
+<p>\noindent but this would be wrong. That&rsquo;s because</p>
+<p>$$ H(l(t))\ket{\psi(t)}_{naive} \neq E_n(l(t))\ket{\psi(t)} $$</p>
+<p>It turns out that we need to add one more term to the exponential</p>
+<p>$$\ket{\psi(t)} = e^{\int_0^t dt&rsquo; \bra{n,l(t&rsquo;)} \frac{d}{dt&rsquo;} \ket{n,l(t&rsquo;)}  }\ket{\psi(t)}_{naive}  $$</p>
+<p>\noindent to get the desired relation (2.1). We can change the integral from time to the parameter space itself. Then we have</p>
+<p>$$\int_0^t dt&rsquo; \bra{n,l(t&rsquo;)} \frac{d}{dt&rsquo;} \ket{n,l(t&rsquo;)} = \int_{l(0)}^{l(t)} \bra{n,l(t)} \vec{\nabla}_l \ket{n,l(t)}\cdot d\vec{l} $$</p>
+<p>\noindent where \(\vec{\nabla}_l = (\frac{d}{dl_1},&hellip;,\frac{d}{d_k})\). We can now define Berry&rsquo;s connection \(\mathcal{A}_n\) as</p>
+<p>$$\mathcal{A}_{ni} =  \bra{n,l(t)} \frac{d}{dl_i} \ket{n,l(t)} $$</p>
+<p>\noindent and so</p>
+<p>$$\ket{\psi(t)} = e^{\int_{l(0)}^{l(t)} \vec{\mathcal{A}}<em>n\cdot d\vec{l}  }\ket{\psi(t)}</em>{naive}  $$</p>
+<p>We can easily see that Berry&rsquo;s connection acts in the same way as the vector potential connection of electromagnetism (1.10). The difference is that this connection doesn&rsquo;t live on \(\mathbb{R}^d\) anymore but on the space of all possible parameters \(\vec{l}\). If the topology of this parameter space is not trivial, interesting things can happen. As was stated before, to get observable effects we should look at closed loops in parameter space. The corresponding Wilson loop is called Berry&rsquo;s phase</p>
+<p>$$\gamma_n = \oint \vec{\mathcal{A}}_n\cdot d\vec{l} $$</p>
+<h6 id="the-two-state-system">The two-state system</h6>
+<p>We will be concerned here with systems of only two states. This might sound limiting (and ofcourse it is) but there&rsquo;s many systems that can be looked at as two-state systems. We can use column two-vectors as a basis and so the Hamiltonian can be written as a \(2\times 2 \) matrix. For convenience, and because it reminds us of spin coupling to a magnetic field, we write our Hamiltonian as</p>
+<p>$$ H(l) = \vec{l}\cdot \vec{\sigma} = \begin{pmatrix} l_3 &amp; l_1 - il_2 \\ l_1 + il_2 &amp; -l_3 \end{pmatrix}  $$</p>
+<p>\noindent where \(\vec{\sigma} = (\sigma_1,\sigma_2,\sigma_3)\). The highest eigenvalue state, with eigenvalue (\(l = |\vec{l}|\)), is</p>
+<p>$$\ket{+}_N = \frac{1}{\sqrt{2l(l+l_3)}} \begin{pmatrix} l + l_3 \\ l_1 +il_2\end{pmatrix} \;\;\; (2.2)  $$</p>
+<p>\noindent we will understand the N subscript in a bit. Berry&rsquo;s connection is now</p>
+<p>$$\vec{\mathcal{A}}_N = \frac{1}{2l(l+l_3)}(l_2,-l_1,0)  $$</p>
+<p>\noindent which immediately reminds us of the vector potential (1.2). In fact, if we go to polar coordinates</p>
+<p>$$\vec{l}=l(\cos\phi\sin\theta,\sin\phi\sin\theta,\cos\theta) $$</p>
+<p>we get</p>
+<p>$$\ket{+}_N = \begin{pmatrix} \cos(\theta/2) \\ e^{i\phi}\sin(\theta/2) \end{pmatrix}$$</p>
+<p>To no-one&rsquo;s surprise this eigenvector has a problem on the south pole (\(\theta = \pi\)). We can see this in two ways, first the \(\phi\) coordinate is ill defined on both poles, the north pole is safe because the \(\sin(\theta/2)\) also goes to zero. The other way is to look at (2.2) and notice that when \(\vec{l}=(0,0,l_3)\) the coefficient diverges. Obviously the problem doesn&rsquo;t stop having eigenvectors for \(l=l_3\) and so we can just chose a different eigenvector</p>
+<p>$$\ket{+}_S = e^{-i\phi} \ket{+}_N $$</p>
+<p>\noindent which diverges on the North pole instead. If we calculate the Berry connections we get</p>
+<p>$$\vec{\mathcal{A}}^N = \frac{g(1-\cos\theta)}{l\sin\theta}\hat{\phi} \;\;\; (2.3)$$</p>
+<p>$$\vec{\mathcal{A}}_S  -\frac{g(1+\cos\theta)}{l\sin\theta}\hat{\phi} \;\;\; (2.4)$$</p>
+<p>This is the exact same connection as in the magnetic monopole. But this time we have a &ldquo;magnetic field&rdquo; in the parameter space of our Hamiltonian. Indeed, if we look at the equivalent field</p>
+<p>$$\mathcal{\vec{B}} = \vec{\nabla}_l\times \mathcal{\vec{A}} = \frac{1}{2}\frac{\hat{h}}{h^2}$$</p>
+<p>This is a monopole of charge \(1/2\) at the origin of parameter space. But what happens at the origin? Well if we set \(l=0\) we can see that the Hamiltonian has only one eigenvalue and so we have a degeneracy. Therefore, points of degeneracy act like monopoles in parameter space. The corresponding Berry&rsquo;s phase after a full loop <strong>that includes the origin</strong> is</p>
+<p>$$\gamma_n = \iint \vec{\mathcal{B}}\cdot d\vec{A} = 2\pi $$</p>
+<p>Comparing with the quantisation of the magnetic charge, we see that our space has a homotopy winding number of 1. Berry&rsquo;s phase has many applications in solid state physics and maybe there will be another article on the subject, for now see the sources.</p>
+<h1 id="conclusion-and-sources">Conclusion and sources</h1>
+<p>What we&rsquo;ve seen here is some of the basic concepts of topology that find regular application is physics. These connections on fibre bundles are called gauge theories and as was demonstrated, they can appear in every quantum mechanical system under the right eye. In our opinion, if nothing else, this geometric picture of physics is very aesthetically pleasing. But it can also generate results that classic methods like perturbation theory cannot see (instantons, topological insulators, qft anomalies and more).</p>
+<p>As a bonus, this is one of the very few fields where physics gives back to mathematics. There are several topology theorems that have been proven through Quantum Field Theory and String Theory although these subjects are far too abstracted for this article.</p>
+<h6 id="sources">Sources</h6>
+<p>[1] All the necessary topological concepts and much more can be found in M. Nakahara&rsquo;s &ldquo;Geometry, Topology and physics&rdquo; \\
+[2] A quick dive into gauge theories can be found in D. Tong&rsquo;s lectures on gauge theories that can be found online\\
+[3] Some of the ideas about connections were inspired by the third section of Peskin&rsquo;s &ldquo;An introduction to Quantum Field Theory&rdquo;\\
+[4] More on Berry&rsquo;s phase and many applications in solid state physics can be found in Xiao, Chang and Niu&rsquo;s &ldquo;Berry Phase Effects on Electronic Properties&rdquo;</p>
+<p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>the arrows here denote points in \(\mathbb{R}^n\) which are not to be confused with &ldquo;vectors&rdquo; on the fibre.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>It&rsquo;s the first because we mapped \(S^1\), the n-th homotopy group is concerned with maps of \(S^n\) }&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+      
+    </article>
+    
+  </div>
+
+        </div><footer>
+  <div class="container">
+    <p class="credits copyright">
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;/&nbsp;Theme&nbsp;<a href="https://github.com/kaisugi/HugoTeX">HugoTeX</a>
+        <br>
+        <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
+        &copy;
+        2024
+      </p>
+  </div>
+</footer></body>
+</html>
