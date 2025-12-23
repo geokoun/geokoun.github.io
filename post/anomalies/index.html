@@ -87,11 +87,11 @@ d\omega=0
 $$
 All 1-forms are closed. What about exactness? Well, if there was a function \(F\) such that \(dF=\omega\) then it would have to take the form
 $$
-F(\theta)=\int^\theta_0ds;f(s)
+F(\theta)=\int^\theta_0ds\;f(s)
 $$
 But for this to make sense on a circle we also need periodicity \(F(2\pi)=F(0)=0\). So a 1-form is exact only if
 $$
-\int^{2\pi}_0ds; f(s)=0
+\int^{2\pi}_0ds\; f(s)=0
 $$
 We can now define the cohomology class of a closed form \(\omega\) as
 $$
@@ -99,7 +99,7 @@ $$
 $$
 So \(\omega&rsquo;\) differs from \(\omega\) by an exact form. Note that all elements of \([\omega]\) are closed since \(d(d\eta)=0\). The set of all cohomology classes of \(p\) forms is called the cohomology group \(H^p(M)\). Looking at our example we can characterize each class of \(H^1(S^1)\) by the value of
 $$
-\int^{2\pi}_0 d\theta;f(\theta)\in\mathbb{R}
+\int^{2\pi}_0 d\theta\;f(\theta)\in\mathbb{R}
 $$
 Note that if we add the derivative of a function \(\omega&rsquo;=\omega+F\) , based on our previous argument this would not affect the value of the above integral. Therefore, each class is characterized by a number in \(\mathbb{R}\) and so
 $$
@@ -148,7 +148,7 @@ It&rsquo;s no coincidence that polygons are topologically equivalent to a circle
 <h1 id="2-the-dirac-complex-and-its-index">2. The Dirac Complex and its Index</h1>
 <p>Let&rsquo;s make contact with some physics. Consider a massless fermion \(\psi\) coupled, for simplicity, to a background electromagnetic field \(A\). The action is
 $$
-S=\int d^4x; \bar\psi i\gamma^\mu(i\partial_\mu+iA_\mu)\psi\equiv\int d^4x ; \bar\psi i\not D\psi
+S=\int d^4x\; \bar\psi i\gamma^\mu(i\partial_\mu+iA_\mu)\psi\equiv\int d^4x \; \bar\psi i\not D\psi
 $$
 Here we are using the \(\gamma^\mu\) matrices satisfying
 $$
@@ -193,19 +193,19 @@ $$
 so all non-zero eigenvalues come in \(\pm \lambda\) pairs. Note that if \(\psi_\lambda\) has negative chirality then \(\gamma^5\psi_\lambda\) has positive chirality so for each negative chirality eigenfunction with non-zero eigenvalue there exists a positive chirality one and so the two \(\textup{im }i\not D\) cancel each other out and we&rsquo;re left with the zero modes.</p>
 <p>Can we calculate this index? Since we&rsquo;re physicists we&rsquo;ll try to avoid cohomology groups for now and compute it using our own bag of tricks. Note that \(i\not D\) is Hermitian so eigenfunctions with different eigenvalues are orthogonal. This means that for \(\lambda\neq 0\) we have
 $$
-\left&lt;\psi_\lambda,\gamma^5\psi_\lambda \right&gt;\equiv\int d^4x;\psi_\lambda^\dagger \gamma^5\psi_\lambda=0\quad \textup{when}\quad \lambda\neq 0
+\left&lt;\psi_\lambda,\gamma^5\psi_\lambda \right&gt;\equiv\int d^4x\;\psi_\lambda^\dagger \gamma^5\psi_\lambda=0\quad \textup{when}\quad \lambda\neq 0
 $$
 This means that
 $$
-\textup{ind }i\not D=\sum_\lambda \int d^4x;\psi^\dagger_\lambda\gamma^5\psi_\lambda
+\textup{ind }i\not D=\sum_\lambda \int d^4x\;\psi^\dagger_\lambda\gamma^5\psi_\lambda
 $$
 since the non-zero \(\lambda\) vanish and we are only left with zero modes, \(\gamma^5\) giving us the difference in sign between positive and negative chirality ones. (We assume that \(\psi_\lambda\) is normalized to unity). Although we know that most terms in the above sum cancel each other, we need something better than words to compute this infinite sum. To do this we regulate as
 $$
-\textup{ind} i\not D=\lim_{\Lambda\to\infty}\sum_\lambda \int d^4x;\psi_\lambda^\dagger\gamma^5\psi_\lambda ;e^{-(\lambda/\Lambda)^2}
+\textup{ind} i\not D=\lim_{\Lambda\to\infty}\sum_\lambda \int d^4x\;\psi_\lambda^\dagger\gamma^5\psi_\lambda \;e^{-(\lambda/\Lambda)^2}
 $$
 This will ensure that non-zero eigenvalues are manageable while we do our calculations and taking the limit obviously gives us back what we started with. The full calculation can be found in the sources but here&rsquo;s the gist. First we rewrite the regulator as
 $$
-\textup{ind } i\not D=\lim_{\Lambda\to\infty}\sum_\lambda \int d^4x;\psi_\lambda^\dagger\gamma^5\psi_\lambda ;e^{-(i\not D/\Lambda)^2}
+\textup{ind } i\not D=\lim_{\Lambda\to\infty}\sum_\lambda \int d^4x\;\psi_\lambda^\dagger\gamma^5\psi_\lambda \;e^{-(i\not D/\Lambda)^2}
 $$
 and then, using the \(\gamma^\mu\) anticommutator and the fact that the field strength is given by \(ieF_{\mu\nu}=[D_\nu,D_\mu]\) we have
 $$
@@ -217,11 +217,11 @@ $$
 $$
 and finally, since \(\psi_\lambda\) is a complete basis, we are free to substitute any other complete basis to perform the integral \(d^4x\). The easiest choice is always plane waves \(e^{ip\cdot x}\) and we take the trace since we need to account for all \(4\)-components of the spinors \(\psi_\lambda\). The result is to substitute the sum for a momentum integral and
 $$
-\textup{ind }i\not D=\lim_{\Lambda\to \infty}\int \frac{d^4p}{(2\pi)^4}d^4x;\textup{tr}(e^{ip\cdot x}\gamma^5e^{(D^2-ie\gamma^\mu\gamma^\nu F_{\mu\nu}/2)/\Lambda^2}e^{-ip\cdot x})
+\textup{ind }i\not D=\lim_{\Lambda\to \infty}\int \frac{d^4p}{(2\pi)^4}d^4x\;\textup{tr}(e^{ip\cdot x}\gamma^5e^{(D^2-ie\gamma^\mu\gamma^\nu F_{\mu\nu}/2)/\Lambda^2}e^{-ip\cdot x})
 $$
 It&rsquo;s not hard to move \(e^{ip\cdot x}\) to the right using a lot of \([x,D_\mu]=i\) (with \(\hbar=1\)) and expand in \(\Lambda^{-1}\). From the traces above we get that the first non-zero term is of order \(\Lambda^{-4}\) which is exactly canceled by \(d^4p\) contributing a \(\Lambda^4\). All higher terms vanish in the limit \(\Lambda\to\infty\) and we&rsquo;re left with
 $$
-\textup{ind }i\not D=-\frac{e^2}{32\pi^2}\int d^4x; \epsilon^{\mu\nu\rho\sigma}F_{\mu\nu}F_{\rho\sigma}=-\frac{e^2}{32\pi}\int F\wedge F
+\textup{ind }i\not D=-\frac{e^2}{32\pi^2}\int d^4x\; \epsilon^{\mu\nu\rho\sigma}F_{\mu\nu}F_{\rho\sigma}=-\frac{e^2}{32\pi}\int F\wedge F
 $$
 where in the last equality we&rsquo;ve rewritten it in a more topological way, thinking of \(F\) as a \(2\)-form.</p>
 <p>This is the simplest form of an <em>index theorem</em>. We have connected the index of an operator (a topological quantity) with an integral over a form (analytic quantity). Note that
@@ -250,7 +250,7 @@ $$
 so the group looks a bit like \(S^3\).</p>
 <p>To make contact with physics we look at an \(SU(2)\) gauge theory with action
 $$
-S_{YM}=\frac{1}{2g^2}\int d^4x; \textup{tr}F^{\mu\nu}F_{\mu\nu}
+S_{YM}=\frac{1}{2g^2}\int d^4x\; \textup{tr}F^{\mu\nu}F_{\mu\nu}
 $$
 where the field strength \(F\) is now a \(2\times 2\) matrix so we need to take the trace to get a real number. We also make a Wick rotation \(t\to it\) so that we are working in Euclidean spacetime and all of our math is legal.</p>
 <p>To get a finite action configuration of the fields we need \(F=0\) at some finite distance \(|x|&gt;L\) this means that at that point the gauge field \(A\) is purely gauge. For electromagnetism this would mean \(A_\mu=\partial_\mu a(x)\) for some function \(a\). Note that electromagnetism is a \(U(1)\) gauge theory and any element of \(U(1)\) can be written as \(e^{ia}\in U(1)\). So a pure gauge can be written as
@@ -284,7 +284,7 @@ A=(x^4I_2-i\sigma^ix^i)d(x^4I_2+i\sigma^ix^i)
 $$
 To integrate over all of \(4d\) space we obviously need some \(4\)-form. We also need it to be gauge invariant since we only care about gauge invariant quantities. The only quantity we can form, that is not the action itself, is
 $$
-\int\textup{tr} F\wedge F=\int d^4x;\textup{tr}( \epsilon^{\mu\nu\rho\sigma}F_{\mu\nu}F_{\rho\sigma})
+\int\textup{tr} F\wedge F=\int d^4x\;\textup{tr}( \epsilon^{\mu\nu\rho\sigma}F_{\mu\nu}F_{\rho\sigma})
 $$
 This already looks like the index of \(i\not D\) but let&rsquo;s see if it&rsquo;s the right form. Since \(F\) vanishes for \(|x|&gt;L=1\) and we only care about gauge equivalent configurations we split \(\mathbb{R}^4\) into
 $$
@@ -365,7 +365,7 @@ or the equivalent for \(\psi_-\).</p>
 <p>What if we couple \(\psi\) to a gauge field? Can we still write a well-behaving theory of a single chiral fermion, as it is called? For \(U(1)\) and \(SU(N&gt;2)\) the answer is no. This is because the theory is anomalous, the classical theory is gauge invariant but when we quantize it it&rsquo;s not.</p>
 <p>The way to see this that makes contact with what we have done is using the path integral. The main object of any QFT is the partition function defined as
 $$
-Z=\int\mathcal{D}\psi_+\mathcal{D}\psi^\dagger_+ \mathcal{D}A; e^{-S[\psi_+,\psi^\dagger_+,A]}
+Z=\int\mathcal{D}\psi_+\mathcal{D}\psi^\dagger_+ \mathcal{D}A\; e^{-S[\psi_+,\psi^\dagger_+,A]}
 $$
 The classical symmetry ensures that the action \(S\) is invariant under gauge transformations. However, the same is not true for the measure \(\mathcal{D}\psi\mathcal{D}\bar\psi\) of the integral. It turns out that under a gauge transformation the measure transforms as
 $$
@@ -375,19 +375,19 @@ where \(\nu\) is the <em>winding number we have already calculated</em> and \(A(
 <p>However \(SU(2)\) seems to be safe since \(A(R)\) vanishes for all representations of \(SU(2)\) and this anomaly seems to go away. As we will see, a subtler effect still manages to make \(SU(2)\) anomalous.</p>
 <p>First some basic QFT. Fermions are Grassmann-numbered fields this means that \(\psi\psi=0\) and \(\psi&rsquo;\psi=-\psi\psi&rsquo;\). This reflect the Fermi statistics that they obey. But Grassmann integration is really easy. If \(a\) is a Grassmann number then
 $$
-\int da=0\quad\textup{and}\quad\int da; a=1
+\int da=0\quad\textup{and}\quad\int da\; a=1
 $$
 There are no higher terms since \(a^2=0\). This means that, if \(A_{ij}\) is a square matrix and \(a_i,b_j\) two Grassmann column vectors then the integral
 $$
-I=\int\prod_{i} da_idb_i; e^{-b_i A_{ij}a_j}
+I=\int\prod_{i} da_idb_i\; e^{-b_i A_{ij}a_j}
 $$
 can be computed by first going to the eigenbasis of \(A_{ij}\) with eigenvalues \(\lambda_j\) and then Taylor expanding. Since only terms linear in both \(a\) and \(b\) survive integration we get
 $$
-I=\int\prod_i da_i db_i; (-a_i\lambda_ib_i)=\prod_i\lambda_i=\det A
+I=\int\prod_i da_i db_i\; (-a_i\lambda_ib_i)=\prod_i\lambda_i=\det A
 $$
 where we need to anti commute \(a_i\) through \(db_i\) to get to \(da_i\) and so we get rid of the minus sign. We can generalize this to path integrals and operators so
 $$
-\int \mathcal{D}\psi\mathcal{D}\bar\psi  e^{-\int d^4x;\bar\psi i\not D \psi}=\det (i\not D)
+\int \mathcal{D}\psi\mathcal{D}\bar\psi  e^{-\int d^4x\;\bar\psi i\not D \psi}=\det (i\not D)
 $$
 Where we understand the determinant as the product of all eigenvalues of \(\not D\) . We already know that thanks to \(\gamma^5\) these come in \(\pm\lambda\) pairs so that when considering all fermions
 $$
@@ -395,7 +395,7 @@ $$
 $$
 What if we now restrict ourselves to a chiral Weyl fermion \(\psi_+\)? This halves the number of eigenvalues since half of them came from the \(\psi_-\) sector. We denote this as
 $$
-Z=\int\mathcal{D}\psi_+\mathcal{D}\psi^\dagger_+ \mathcal{D}A; e^{-S[\psi_+,\psi^\dagger_+,A]}=\det!^{1/2}(i\not D)
+Z=\int\mathcal{D}\psi_+\mathcal{D}\psi^\dagger_+ \mathcal{D}A\; e^{-S[\psi_+,\psi^\dagger_+,A]}=\det!^{1/2}(i\not D)
 $$
 where the \(1/2\) denotes that we take only half of the eigenvalues. So far so good. But how do we decide which half of the eigenvalues to take? The naive answer would be to take the positive ones. However there is another condition we need to meet, the determinant should be gauge invariant. This means that two fields \(A\) and \(A^{\Omega}=\Omega^{-1}A\Omega+\Omega^{-1}d\Omega\)  connected by gauge transformation \(\Omega\) should give the same determinant. The absolute value will be the same since we have established that all eigenvalues come in \(\pm\) pairs but what about the sign?</p>
 <p>Think of it as follows. For \(A\) we take the determinant to equal the product of all positive eigenvalues of \(i\not D\). Then, we slowly change \(A\) to \(A^\Omega\). As we do this we can imagine one of the positive eigenvalues crossing zero and becoming negative. This of course will be accompanied by the corresponding negative eigenvalue becoming positive. However, the damage is done, since the eigenvalue we were considering in our determinant has flipped sign and so has the sign of the determinant. Our only hope is that an even number of eigenvalues cross zero.</p>
@@ -430,14 +430,14 @@ $$
 $$
 where \(\psi_0\) is a function of \(x\) and eigenfunction of \(\gamma^\tau \not D\). Essentially, at each point in \(\tau\) we can decompose \(\Psi_0\) into a basis of \(\gamma^\tau \not D\). Then
 $$
-f&rsquo;(\tau)=-\lambda(\tau)f(\tau)\Rightarrow f(t)=f_0 \exp\left(\int^\tau_{-1}ds;\lambda(\tau)\right)
+f&rsquo;(\tau)=-\lambda(\tau)f(\tau)\Rightarrow f(t)=f_0 \exp\left(\int^\tau_{-1}ds\;\lambda(\tau)\right)
 $$
 For \(f\), and so \(\Psi_0\), to be normalisable we need \(\lambda(\tau\to -1)&lt;0\) and \(\lambda(\tau\to 1)&gt;0\).</p>
 <p>What this means is that each zero mode of \(\not D ^{(5)}\) corresponds to a eigenvalue of \(\not D\) crossing zero as we go from \(A\) to \(A^{\Omega}\). This is exactly what we want to calculate. So the next question is, how many zero modes does \(\not D^{(5)}\) have?</p>
 <p>Well in odd dimensions it turns out that the index of any operator vanishes. This relates to the fact that the Chern character is a \(2j\)-form so there is nothing to integrate over in an odd dimensional space. (More fundamentally this relates to the fact that \(b^{r-m}=b^r\), a relation known as Poincare Duality).</p>
 <p>However, there is another index we can define for anti-symmetric operators like our \(\not D^{(5)}\). This is the mod \(2\) index and it&rsquo;s defined as
 $$
-\textup{ind}_2; \not D^{(5)}=\dim\ker \not D^{(5)}\quad\textup{mod }2
+\textup{ind}_2\; \not D^{(5)}=\dim\ker \not D^{(5)}\quad\textup{mod }2
 $$
 This it turns out is a topological invariant and is precisely what we want to calculate. We can see where this is going. The mod \(2\) index is connected to a characteristic class of \(H^5(M)\). The regular index was equal to the integer winding number \(\pi_3(SU(2))\) so it&rsquo;s only natural that the mod 2 index is equal to the mod 2 winding number of \(\pi_4(SU(2))\). Therefore, for non-trivial \(\Omega\) we have
 $$
