@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8" />
+
+  <title>Too much freedom: equations of motion out of symmetry - Principia Physicae Generalis</title>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/latex.css" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/main.css" />
+
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hugo 0.153.2"><body>
+
+
+
+
+
+
+<header>
+  <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+  <div class="intro-header">
+    <div class="container">
+      <div class="post-heading">
+        
+          <h1>Too much freedom: equations of motion out of symmetry</h1>
+          
+        
+      </div>
+    </div>
+  </div>
+</header>
+<div id="content">
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      <div class="postmeta">
+        <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>Apr 26, 2024
+  
+</span>
+      </div>
+      <br>
+      
+    <p>We derive the basic equations of quantum mechanics and field theory using only symmetry and redundancy. We elucidate the concept of gauge symmety.</p>
+<p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+<h1 id="introduction">Introduction</h1>
+<p>Symmetry is everything in modern physics. From the assumption of symmetry all else follows. In particular, in the realm of elementary particles, one idea that is at the heart of our understanding is that of gauge symmetry. But what is gauge symmetry and why is it so important?</p>
+<p>In what follows we will use Lorentz symmetry and gauge symmetry in order to derive the most basic equations of elementary quantum mechanics almost effortlessly. This is based on A. Zee&rsquo;s book &ldquo;Quantum Field Theory in a Nutshell&rdquo;.</p>
+<h1 id="relativity-and-lorentz-invariance">Relativity and Lorentz Invariance</h1>
+<p>Our starting point will be Lorentz symmetry. Everything that happens in our world takes place on a spacetime parameterised by 4 coordinates \((t,x,y,z)\). Our laws of physics should not be bound by the coordinate system we use and so the objects we use should transform from system to system following definite &ldquo;well-behaving&rdquo; rules.
+Restricting ourself to special relativity<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> we will only be concerned with inertial coordinate systems (or reference frames). A quick and dirty definition of an inertial frame is that if an object&rsquo;s velocity is constant in one inertial frame, it should be in all inertial frames. This of course leaves us with the problem of finding the &ldquo;first&rdquo; inertial frame but this is besides the point.</p>
+<p>If we want to go from one inertial frame to another there are two different types of transformations we can enact. The first is rotations and the second is boosts. A boost is a change in the velocity of the inertial frame by a constant amount in any direction. The complete set of these operations is called the Lorentz group (also denoted by \(SO(3,1)\)). In group theoretical language what we need from a physical object is for it to transform under \(SO(3.1)\) is a specific way i.e. for it to belong to a representation of the group (For more on representations look at the Appendix at the end).</p>
+<p>The way we generally describe system transformations in physics is through the group generators. The generators are a set of matrices that describe infinitesimal transformations. Out of those we can build any possible finite transformation of the system if that finite transformation is continuous.</p>
+<p>For example, a <em>very</em> small rotation by \(d\phi\) around the z-axis would be equivalent to \(x\rightarrow x-d\phi y,y\rightarrow y+d\phi x\). If we represent the space-time coordinates as a column vector</p>
+<p>$$ \begin{pmatrix} t \\ x\\y\\z \end{pmatrix}$$
+then the rotation corresponds to acting on this column vector with the matrix</p>
+<p>$$ \begin{pmatrix} 1&amp;0&amp;0&amp;0 \\ 0&amp;1&amp;-d\phi&amp;0 \\ 0&amp;d\phi&amp;1&amp;0 \\0&amp;0&amp;0&amp;1 \end{pmatrix}  = \begin{pmatrix} 1&amp;0&amp;0&amp;0 \\ 0&amp;1&amp;0&amp;0 \\ 0&amp;0&amp;1&amp;0 \\0&amp;0&amp;0&amp;1 \end{pmatrix} + d\phi \begin{pmatrix} 0&amp;0&amp;0&amp;0 \\ 0&amp;0&amp;-1&amp;0 \\ 0&amp;1&amp;0&amp;0 \\0&amp;0&amp;0&amp;0 \end{pmatrix} = I + d\phi J_z $$</p>
+<p>The matrix \(J_z\) is called a generator of rotations because we can generate any finite rotation around the z-axis by acting with it multiple times. To see this assume that we want to rotate around the z-axis by an angle \(\phi\).
+We can separate \(\phi\) into N small angles \(\phi=N\cdot d\phi\) and then we can just rotate N times by that smaller angle \(d\phi\). Taking the limit \(N\rightarrow \infty\) we&rsquo;ve already seen what such a rotation looks like and so</p>
+<p>$$R_z(\phi)=\lim_{N\rightarrow \infty}(1+d\phi J_z)^N = \lim_{N\rightarrow \infty}\left(1+\frac{\phi}{N} J_z\right)^N = e^{J_z} $$</p>
+<p>We can conclude that all of the information we need to study a continuous group (in this case) can be found in its generators<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> and so for the rest of this article we will focus on those.</p>
+<p>As we would expect, the full set of rotation generators are \(J_x,J_y,J_z\) and they statisfy the commutation relations</p>
+<p>$$ [J_i,J_j]= J_i J_j-J_j J_i = \epsilon_{ijk}J_k \quad (1.1)  $$
+where \(\epsilon\) is the fully anti-symmetric symbol. The commutation relations (1.1) define what is called a Lie algebra, essentially any three objects satisfying those relations act in the exact same way, they have the same eigenvalues, the same eigenvectors and the same representations.</p>
+<p>The other part of the Lorentz group is the boosts. In the unified picture of space and time that special relativity operates in, we can think of boosts as &ldquo;rotations&rdquo; where the plane of rotation contains the time axis with just a small difference (thanks to the minus sign in the Minkowski metric).
+The corresponding infinitesimal boost towards the z-axis is \(t\rightarrow t+d\phi z,z\rightarrow z+d\phi t\). Notice that now both transformations have a plus sign. The three boost generators are called \(M_x,M_y,M_z\) and I am sure you can figure out their matrix form. To finish out the commutation relations we have</p>
+<p>$$ [M_i,M_j] = -\epsilon_{ijk}J_k,\quad [J_i,M_j] = i\epsilon_{ijk}M_k\quad (1.2)   $$</p>
+<p>Now that we have the whole set of generators we can make a simple change of variables. We can define six new operators \(J_{\pm i}=\frac{1}{2}(iJ_i\pm K_i)\). These now satisfy the following relations</p>
+<p>$$[J_{+i},J_{+j}] = \epsilon_{ijk}J_{+k},\quad[J_{-i},J_{-j}] = \epsilon_{ijk}J_{-k} \quad (1.3)$$
+and
+$$[J_{+i},J_{-j}]=0\quad (1.4)$$
+Well hold on, we just got two of the same algebra (1.1) and in fact (1.4) tells that that they are separate from each other.</p>
+<h6 id="representations-of-the-lorentz-group">Representations of the Lorentz Group</h6>
+<p>If you are familiar with quantum mechanics<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> . you will know that the eigenvectors of the angular momentum, or in this case \(J_z\) come in separate groups called representations that are characterised by the eigenvalue of the total angular momentum \(J^2=J^2_x+J^2_y+J^2_z\).
+If we symbolise that eigenvalue as \(j\) we know that \(j\) is either an integer or a half-integer and that the total amount of states with total momentum \(j\) are \((2j+1)\) in number. Any rotation of the system can only change vectors into other vectors that belong to the same representation, you cannot, by rotation change the value of \(j\).
+Back to the Lorentz group, as we&rsquo;ve seen we get two instances of the rotational group and so we can characterise each representation by a set of two numbers \(j_{+}\) and \(j_{-}\). Each representation will now have \((2j_{+}+1)\cdot(2j_{-}+1)\) elements that transform into each other under rotations and boosts. In other words, we can say that that is the amount of degrees of freedom in our representation. The first representations by number of degrees of freedom are \((j_{+},j_{-})=(0,0),(1/2,0),(0,1/2),(1,0),&hellip;\)</p>
+<p>But why do we care about this? Well, as we&rsquo;ve said at the start we want all physical objects to &ldquo;behave well&rdquo; under Lorentz transformations. In our new language this means exactly that any physical object must belong into a representation of the Lorentz group. Otherwise, one object would turn into a completely different object when we changed our inertial frame. That of course would be contradictory to our physical intuition and observation.</p>
+<h1 id="equations-of-motion">Equations of motion</h1>
+<h6 id="the-scalar">The scalar</h6>
+<p>Lets put all of those abstract concepts to work and start with the simplest case. The first representation is \((0,0)\) and it has precisely one degree of freedom. Following the above discussion this means that objects in this representation do not change at all under Lorentz transformations since it has nothing to change into. We call such an object a <em>scalar</em> denoted as \(\phi(x)\).</p>
+<p>We now require two properties from a candidate equation of motion for \(\phi(x)\). The first comes to us from Newton himself, an equation of motion should have no more than two time derivatives since we have never observed a system that needs more than the initial speed and initial position to define its time evolution. The second is that is our physical object satisfies the equation, then it should satisfy the same equation in every inertial frame of reference. This is sometimes called Lorentz co-variance since the equation changes to fit the change in the variable. This of course follows from the principle of (special) relativity, the same equation should apply in every inertial frame.
+In the case of the scalar \(\phi(x)\) which does not change, we would also ask of the equation to stay the same under Lorentz transformation. Following the two rules above we are left with a single choice in equation, namely the Klein-Gordon equation:
+$$(\partial^2+m^2)\phi=0\quad (1.5)$$</p>
+<p>where \(m^2\) is a constant (it obviously doesn&rsquo;t change under \(SO(3,1)\)) that can be interpreted as the mass of \(\phi\) and \(\partial^2 = \partial^2_t -\partial^2_t-\partial^2_y-\partial^2_z\) which is sometimes called the d&rsquo;Alembertian, similar to the Laplacian \(\nabla^2\).</p>
+<p>That wasn&rsquo;t too hard. Based solely on the way that the scalar transforms under Lorentz transformations (it doesn&rsquo;t) we found that there is only one equation of motion that is could possibly satisfy. There are no other Lorentz invariant terms we could add.</p>
+<h6 id="the-fermion">The fermion</h6>
+<p>The next representation on our list is (1/2,0). Following our formulas an object in this representation should have 2 degrees of freedom. Sound simple enough, we denote this object by a two-component column vector</p>
+<p>$$ \psi(x)=\begin{pmatrix} \psi_1(x)\\ \psi_2(x) \end{pmatrix}  $$</p>
+<p>How does this object transform? Well we need a set of three \(2\times 2\) matrices that satisfy the relations (1.3) with the right eigenvalues for \(J^2_{+}\) and \(J^2_{-}\) namely \(\frac{1}{2}\) and \(0\). That&rsquo;s simple enough, we choose the Pauli matrices</p>
+<p>$$\sigma_1 = \begin{pmatrix} 0&amp;1\\1&amp;0 \end{pmatrix},\quad \sigma_2 = \begin{pmatrix} 0&amp;-i\\i&amp;0 \end{pmatrix},\quad \sigma_3 = \begin{pmatrix} 1&amp;0\\0&amp;-1 \end{pmatrix} $$</p>
+<p>and so we define</p>
+<p>$$J_i = \frac{1}{2}\sigma_i,\quad K_i=\frac{-i}{2}\sigma_i\quad (1.6)$$</p>
+<p>In the same way, the (0,1/2) representation acts on objects that look like:</p>
+<p>$$\chi(x)=\begin{pmatrix} \chi_1(x)\\ \chi_2(x) \end{pmatrix} $$
+with matrices that look like:
+$$J_i = \frac{1}{2}\sigma_i,\quad K_i=\frac{i}{2}\sigma_i\quad (1.6)$$</p>
+<p>Now come the problems. There is one more symmetry that we would like our theory to have. This doesn&rsquo;t fit into the Lorentz group because it&rsquo;s discrete. This extra symmetry is parity, (or \(\vec{x}\rightarrow -\vec{x}\)). Again the reason we want this symmetry is because our world seems to obey it<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.
+What does this mean for us? Well under a parity transformation a boost is reversed, this means that \(M_i\rightarrow -M_i\) and so \(J_{+}\rightarrow J_{-}\) and vice versa. But now we got exactly  what we were trying to avoid, we have an object jumping representations between frames of reference. To solve this we need to describe the physical object with a combination of the two representations, namely a 4-component column vector</p>
+<p>$$\Psi(x) = \begin{pmatrix}\psi(x)\\ \chi(x) \end{pmatrix} \quad (1.7) $$
+We call this object a Dirac spinor. Now the top two components transform with (1.6) and the bottom two with (1.7). We say that a Dirac spinor belongs in the sum representation \((1/2,0)\oplus(0,1/2)\) of SO(3,1).
+The elements of this representation are just a block diagonal matrix with the elements of one representation diagonal to the elements of the other. Schematically
+$$ (1/2,0)\oplus(0,1/2) = \begin{pmatrix}(1/2,0)&amp;0\\ 0&amp;(0,1/2)  \end{pmatrix}  \quad (1.8)$$</p>
+<p>Well now we have a different problem, we started with an object with 2 degrees of freedom but our Dirac spinor has 4. We have too much freedom! To solve this we need to project \(\Psi\) into a space with 2 degrees of freedom. To do this we use the four-momentum as a variable so \(\Psi(p)\) and we got to the fermion&rsquo;s rest frame so that \(\vec{p}=0\).</p>
+<p>We now define a projection matrix that we denote as \(\mathcal{P}=\frac{1}{2}(1-\gamma^0)\) for future convenience. \(\gamma^0\) is, for now, just some \(4\times 4\) matrix. After we act once with \(\mathcal{P}\) we project \(\Psi\) to a specific basis and so, if we act with \(\mathcal{P}\) again we would expect nothing to happen since we are already in the correct basis. This translates into \(\mathcal{P}^2=\mathcal{P}\) which also means that \((\gamma^0)^2= I\) and so its eigenvalues are \(\pm1\).</p>
+<p>Of course this projection cannot just take us into 2d space of \(\psi\) or \(\chi\) since we would run into exactly the problem we would like to avoid, we would again not satisfy parity. We need a projection that treats both representation in the same way and so we chose</p>
+<p>$$\gamma^0 = \begin{pmatrix} 0&amp;0&amp;1&amp;0\\0&amp;0&amp;0&amp;1\\1&amp;0&amp;0&amp;0\\0&amp;1&amp;0&amp;0  \end{pmatrix}  $$
+There are many matrices we could&rsquo;ve chosen, this is just a matter of convention. If we act with \(\mathcal{P}\) on \(\Psi\) we go into the subspace where \(\psi_i-\chi_i=0\). This projection can be written as</p>
+<p>$$(\gamma^0-1)\Psi(p_r)=0\quad (1.9)$$
+where \(p_r\) is the four-momentum in the rest frame. To reiterate, what we accomplish by enforcing (1.9) is to discard 2 of the 4 degrees of freedom of \(\Psi\) to get back to the 2 we want.</p>
+<p>Equation (1.9) looks a lot like an equation of motion. To see that all we have to do is to boost the system into an arbitrary frame with an arbitrary momentum. We have the generators so we know that a finite boost is just</p>
+<p>$$\Psi(p) = e^{\vec{\phi}\cdot\vec{M}}\Psi(p_r)\quad (1.10)$$
+where \(\phi\) is the &ldquo;angle&rdquo; of the boost<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> and</p>
+<p>$$\vec{M}=(M_x,M_y,M_z)$$</p>
+<p>From linear algebra we know that to transform a matrix into a different basis we need to multiply it from the left and the right with the transformation and its inverse so
+$$\gamma^0\rightarrow e^{\vec{\phi}\cdot\vec{M}}\gamma^0 e^{-\vec{\phi}\cdot\vec{M}} $$</p>
+<p>Thus, we get Dirac&rsquo;s equation</p>
+<p>$$(e^{\vec{\phi}\cdot\vec{M}}\gamma^0 e^{-\vec{\phi}\cdot\vec{M}}-1)\Psi(p)$$</p>
+<p>To bring this into a more physical form, we define</p>
+<p>$$\frac{\gamma^\mu p_\mu}{m} \equiv e^{\vec{\phi}\cdot\vec{M}}\gamma^0 e^{-\vec{\phi}\cdot\vec{M}} $$
+where we sum over repeated indices (Einstein&rsquo;s summing convention) and so we finally get</p>
+<p>$$(\gamma^\mu p_\mu - m)\Psi(p)=0$$</p>
+<p>If we wanted to to go back to position space instead of momentum space all we would have to do with Fourier transform this expression to get</p>
+<p>$$(i\gamma^\mu\partial_\mu-m)\Psi(x)=0\quad (1.11)$$</p>
+<p>And there we have it, the equation of motion for an object that belongs in the (1/2,0) representation of the Lorentz group. By the way, the non-zero eigenvalue of the representation (in this case 1/2) corresponds to the spin of the object. That is, spin is an inherent property of an object that corresponds to how it transforms under Lorentz transformations.</p>
+<p>What did we learn from this? Well we learned what Gauge symmetry is! In order to fit all of the symmetry we need into our physical objects we had to add more degrees of freedom than the object actually had. These are sometimes called unphysical degrees of freedom since they should not affect any property of the system. Then, to get back to the physical degrees of freedom we put a constraint -here (1.11)- on our higher-dimensional object -here \(\Psi\)- which ends up being its equation of motion. This concept of unphysical degrees of freedom is called gauge symmetry since we can change them without changing the physical system<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>.</p>
+<p>One last thing to note: it turns out that the matrices \(\gamma^\mu\) satisfy the anticommutation relations</p>
+<p>$$ {\gamma^\mu,\gamma^\nu  } = \gamma^\nu\gamma^\mu+\gamma^\mu\gamma^\mu = 2g^{\mu\nu} $$</p>
+<p>where \(g=diag(1,-1,-1,-1)\) is the Minkowski metric. Therefore, if we multiply (1.11) with \((-i\gamma^\nu\partial_\nu - m)\) we get</p>
+<p>$$(\partial^2 + m^2)\Psi(x)\quad (1.12)$$</p>
+<p>Well well, if it isn&rsquo;t the Klein-Gordon equation (1.5) for the scalar object. What does this mean? Well, one way to look at this is to say that everything in Relativity, regardless of representation, satisfies the K-G equation and we need to supplement it with certain constraints so that the number of degrees of freedom match.</p>
+<h6 id="the-spin-1-field">The spin-1 field</h6>
+<p>The last object we will look at is the vector spin-1 field, also known as the object that transforms in the \((1,0)\) representation. Our vector has \((2\cdot 1+1)=3\) degrees of freedom. We already know of an object that contains a Lorentz 3-vector, namely a 4-vector \(A_\mu = (A_o,\vec{A})\). As before, we expect this extended vector to satisfy the Klein-Gordon equation</p>
+<p>$$(\partial^2+m^2)A_\mu=0\quad (1.13)$$</p>
+<p>We now need to cut one degree of freedom. Turns out that, with our limited tools, the only constraint we can impose that is both Lorentz covariant and projects out precisely one degree of freedom is</p>
+<p>$$\partial^\mu A_\mu=0\quad (1.14)$$</p>
+<p>We can in fact combine both conditions (1.13) and (1.14) into one equation, namely
+$$(g^{\mu\nu}\partial^2-\partial^\mu\partial^\nu)A_\nu+m^2A^\mu=0\quad (1.15)$$</p>
+<p>Notice that if we act with \(\partial_\mu\) on (1.15) the first two terms cancel each other out and we are left with
+$$m^2\partial_\mu A^\mu=0$$</p>
+<p>which is just (1.14). We can now use (1.14) on (1.15) to get rid of the second term and get (1.13).</p>
+<p>With just a little more formalism we can get to an even cooler result. Remembering our classical mechanics we can easily see that equation (1.15) can be derived from the following action density/Lagrangian</p>
+<p>$$S = \int d^4x \mathcal{L} = \int d^4x\left[ \frac{1}{2}A_\mu [(\partial^2+m^2)g^{\mu\nu}-\partial^\mu\partial^\nu]A_\nu  \right] \quad (1.16)$$
+where the integral runs over all of spacetime.</p>
+<p>It is well known that Electromagnetism has a gauge symmetry all of its own: we can change \(A_\mu\) by the derivative of a function without affecting the physics (i.e. the electric and magnetic fields). This acts in exactly the same way as the gauge symmetry in the fermion case, it tells us that \(A_\mu\) does not have 3 degrees of freedom after all, it only has 2. The transformation is
+$$A_\mu(x)\rightarrow A_\mu(x)+\partial_\mu a(x)$$
+and we would like for our action (1.16) to stay the same under such a transformation. If we go through the calculations and discard total derivative terms such as \(\int d^4x \partial^\mu(A_\mu \partial_\mu a(x))\) because they vanish at infinity, we can see that the only problematic term is the mass which gives terms of the form
+$$m^2\int d^4x  A_\mu \partial^\mu a(x) \neq 0 $$</p>
+<p>Fitting a total of 3 conditions in one single equation we are left with the action</p>
+<p>$$S_{em}=  \int d^4x \mathcal{L} = \int d^4x\left[ \frac{1}{2}A_\mu [(\partial^2g^{\mu\nu}-\partial^\mu\partial^\nu]A_\nu  \right] \quad (1.17)$$
+or, if we integrate by parts and again assume that \(A_\mu\) vanishes at infinity we get our familiar expression</p>
+<p>$$S_{em} = \frac{-1}{4}\int d^4x (\partial^\mu A^\nu - \partial^\nu A^\mu) (\partial_\mu A_\nu - \partial_\nu A_\mu)\equiv \frac{-1}{4}\int d^4x F^{\mu\nu}F_{\mu\nu} $$
+where \(F^{\mu\nu}\) is the electromagnetic tensor, sometimes called Faraday&rsquo;s tensor.</p>
+<p>So there it is, after applying all of the symmetries we would like our theory to have, we have reached the only possible equations they could satisfy. To do that we started again with a &ldquo;free-er&rdquo; object and then constrained it down to the actual degrees of freedom we want.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>Well there it is, the foundation of modern physics: symmetry and redundancy. Following the same methodology as above we can construct the equations of motion for any object in any representation of the Lorentz group and, if Relativity is true, that should include about everything in the universe. Maybe in the future someone will find a way to describe physics without the need unphysical degrees of freedom but maybe that&rsquo;s just the way things are, and in my oponion they&rsquo;re not all that bad.</p>
+<h6 id="sources">Sources</h6>
+<p>[1] A vast amount of this article is taken or inspired from A. Zee&rsquo;s fantastic book &ldquo;Quantum Field Theory in a Nutshell&rdquo;. Any potential reader should know that this is not meant to be an introduction to QFT but rather a supplement to a more rigorous textbook.</p>
+<p>[2] Any quantum mechanics textbook should contain a section on the representations of SU(2) usually going under the name &ldquo;angular momentum algebra&rdquo; or &ldquo;spin representations&rdquo;.</p>
+<p>[3] Likewise, information about Lie algebras, generators and all of that can be found in books about group theory and continuous group. A. Zee also has a group theory book with the innovative name &ldquo;Group Theory in a Nutshell&rdquo;.</p>
+<p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+<h1 id="appendix-representations-of-groups">Appendix: Representations of groups</h1>
+<p>A group is defined as an abstract set of objects \(G={e,g_1,&hellip;,g_n } \) together with a form of multiplication such that</p>
+<p>i)There exist an identity element \(e\): \(e\cdot g_i = g_i\cdot e=g_i,\quad \forall g_i \in G\)</p>
+<p>ii) There exists an inverse element \(g_i^{-1}:g_i^{-1}\cdot g_i = g_i\cdot g_i^{-1} = e, \quad \forall g_i\in G \)</p>
+<p>iii) The group is closed under multiplication:  \(g_i\cdot g_j\in G,\quad \forall g_i,g_j\in G\)</p>
+<p>An example of a group is the set of all rotations in two dimensions, also called \(SO(2)\) or the special orthogonal group. To understand that name we need to talk about representations.</p>
+<p>A representation is a set of matrices \(D(g)\) that satisfy the group multiplication. What that means is that</p>
+<p>$$D(g_i)\times D(g_j) = D(g_i\cdot g_j) $$
+where \(\times\) denotes the usual matrix multiplication. Following our example, a possible representation of \(SO(2)\) is the set of matrices
+$$D(\theta) = \begin{pmatrix} \cos\theta &amp; -\sin\theta \\ \sin\theta &amp; \cos\theta \end{pmatrix}$$</p>
+<p>This is non other than the rotation matrix in two dimensions. If we rotate our system by an angle \(\theta\) then our new coordinates will be</p>
+<p>$$\begin{pmatrix} x&rsquo; \\ y&rsquo; \end{pmatrix} = D(\theta)\begin{pmatrix} x \\ y \end{pmatrix} $$
+We call this representation the fundamental or defining representation of the group. Now we can translate the name of the group. Special means that the fundamental representation the group has a determinant of one and orthogonal means that \(D^T(\theta)=D(\theta)^{-1}\) where T denotes the transpose.</p>
+<p>The next step is to see how rotations affect functions of \((x,y)\). We notice that rotating a function by an angle, let&rsquo;s say \(\theta\), has the exact same effect as rotating the coordinate system by the opposite angle \(-\theta\). To see this think of a clock as the coordinate system and it&rsquo;s hand as the function.
+If we rotate the hand from 1 to 2 we get the exact same result as if we had rotated the numbers underneath the hand from 1 to 12, the hand ends up pointing at 2 either way. Therefore we define a rotation \(R_\theta\) on a function \(f(x,y)\) as</p>
+<p>$$R_\theta f(\vec{x}) \equiv f(D^{-1}(\theta) \vec{x})$$</p>
+<p>There is no general rule for \(R_\theta\) but there are specific functions that &ldquo;act nicely&rdquo; under rotation. We define the basis functions \({\phi_n}\) of the group \(SO(2)\) (or any group for that matter) as the functions that obey the following transformation rule</p>
+<p>$$R_\theta\phi_n = \sum^d_m R_{mn}(\theta) \phi_m$$
+where \(R(\theta)\) are \(d\times d\) matrices that form a representation of the group. Every representation has a set of \(d\) basis functions where \(d\) is the dimension of the representation.</p>
+<p>Each representation comes with its own generators of the Lie algebra of the group. All you have to do is expand \(R_(\theta)\) around \(\theta=0\) and keep only the terms of order \(\theta\) to get \(d\)-dimensional matrices satisfying the commutation relations of the group. We saw an example of these in (1.1).</p>
+<p>One way to characterise each representation is by finding a matrix, called the Casimir-matrix \(\mathcal{C}\), that commutes with all generators of the group. This means that if \({T_i}\) the generators, we have
+$$ [T_i,\mathcal{C}]=0,\quad \forall i$$</p>
+<p>This has an interesting consequence, \(\mathcal{C}\) ends up having a single eigenvalue since, assuming that \(\vec{v}_\lambda\) is one of \(\mathcal{C}\)&rsquo;s eigenvectors with eigenvalue \(\lambda\), we have</p>
+<p>$$ \mathcal{C}(T_i \vec{v}_\lambda) = T_i(\mathcal{C}\vec{v}_\lambda) = \lambda (T_i \vec{v}_\lambda)$$</p>
+<p>which means that \(T_i \vec{v}_\lambda\) is also an eigenvector with the exact same eigenvalue. But we can get any vector we want by rotation, and so \(\mathcal{C}\) has a single eigenvalue. This is also known as Schur&rsquo;s first lemma. Therefore, we can characterise a representation of the group by the eigenvalue of the Casimir matrix.
+In the main text we used the fact that the matrix \(J^2\) is the Casimir matrix of \(SO(3)\) or the group of rotations in 3d space, and so we characterised the representations by it&rsquo;s eigenvalue \(j\). More precisely the eigenvalue of \(J^2\) is \(j(j+1)\) but that&rsquo;s besides the point.</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>General Relativity is not all that different but the formalism would be too dense for this article.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>As a matter of convention, relating to quantum mechanics, physicists usually define the generators as Hermitian matrices so in this case \(J_{z,physicist}=iJ_{z,here}\)&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>if not, look up ladder operators.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p>There are exceptions to this but this is beyond the scope of this article&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p>{In special relativity we define this angle as \(\tan\phi_i=v_i/c\) where \(\vec{v}\) is our desired velocity and c the speed of light.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p>This explains the symmetry part of the name. The gauge part is a little bit harder since it comes from an 80-year old theory of Weyl&rsquo;s and has stuck around for no particular reason.&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+      
+    </article>
+    
+  </div>
+
+        </div><footer>
+  <div class="container">
+    <p class="credits copyright">
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;/&nbsp;Theme&nbsp;<a href="https://github.com/kaisugi/HugoTeX">HugoTeX</a>
+        <br>
+        <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
+        &copy;
+        2025
+      </p>
+  </div>
+</footer></body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8" />
+
+  <title>Constraining Nature II: The Hamiltonian Formalism and Quantizing Electrodynamics - Principia Physicae Generalis</title>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/latex.css" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/main.css" />
+
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hugo 0.153.2"><body>
+
+
+
+
+
+
+<header>
+  <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+  <div class="intro-header">
+    <div class="container">
+      <div class="post-heading">
+        
+          <h1>Constraining Nature II: The Hamiltonian Formalism and Quantizing Electrodynamics</h1>
+          
+        
+      </div>
+    </div>
+  </div>
+</header>
+<div id="content">
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      <div class="postmeta">
+        <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>Sep 23, 2022
+  
+</span>
+      </div>
+      <br>
+      
+    <p>A summary of constraints in the Hamiltonian formalism and their connection to gauge symmetry. The classical field theory of Electrodynamics is quantized using constraints.</p>
+<p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+<h1 id="introduction">Introduction</h1>
+<p>This article is going to deal with constraints in the Hamiltonian formalism and how, using them, one can quantize field theories. The discussion is going to get a bit more technical than the last article on Lagrange multipliers because there are more definitions and we are dealing with Quantum Mechanics directly. However, my hope is that someone reading this without any prior knowledge of quantum field theory (QFT) or even basic quantum mechanics will be able to follow the arguments and maybe be motivated to start (or continue) their own research on the subject.<br>
+What we are going to do is explore the Hamiltonian formalism of constraints and its connection to gauge symmetry, through an example. After we&rsquo;ve laid the groundwork we are going to apply our tools to &ldquo;quantize&rdquo; the classical theory of Electrodynamics.</p>
+<h6 id="notation">Notation</h6>
+<p>The notation we are going to use is the most common across the literature. We are going to assume the summing convention which tells us that when we see two of the same index, one upstairs and one downstairs we sum over all values of the index.
+Also, Latin indices (i,j,k) run from 1 to 3 while Greek indices \(\alpha,\beta\) run from 0 to 3. So for example
+$$ q^iq_i=q^1q_1 + q^2q_2+q^3q_3 \;\;\; (1.1)$$</p>
+<p>Here \(q^i\) is not q to the i-th power, i is an index.<br>
+Also we symbolise partial derivatives as \(\partial_\mu=\frac{\partial}{\partial x^\mu}\) and the D&rsquo;Alembert symbol \(\Box = \partial_t - \partial_1 - \partial_2 - \partial_3 \).</p>
+<h1 id="singular-lagrangians-and-constraints-of-the-hamiltonian">Singular Lagrangians and constraints of the Hamiltonian</h1>
+<h6 id="gauge-invariant-lagrangians">Gauge invariant Lagrangians</h6>
+<p>Suppose a system is described by the Lagrangian
+$$\mathcal{L}=\frac{1}{2}[(q_1 + \dot{q}_2 + q_3)^2 + (\dot{q}_4-\dot{q}_2)^2 + (q_1 + 2q_2)(q_1 +2q_4)] \;\;\; (2.1)   $$</p>
+<p>Solving the four Euler-Lagrange equations
+$$\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q_i}}=\frac{\partial \mathcal{L}}{\partial q_i} \;\;\; (2.2)$$</p>
+<p>we find that one of the coordinates is left undefined. For example, if we chose \(q_2\) to be left undefined, then for any function of time \(\Phi (t)\) the motion is described by
+$$q_1(t) = -Asint-Bcost -2\Phi (t) \;\;\; (2.3a) $$
+$$q_2(t) = \Phi (t) \;\;\; (2.3b) $$
+$$q_3(t) = -Acost +Bsint -\Phi (t) + \int_0^t 2\Phi (s) ds + C \;\;\; (2.3c) $$
+$$q_4(t)=Asint+Bcost + \Phi (t) \;\;\; (2.3d) $$</p>
+<p>This arbitrariness of the function \(\Phi\) is called <em>gauge invariance</em>, where in this example \(\Phi\) is the gauge.
+\(q_2\) is now a <em>non-physical degree of freedom</em> which means that it can change without any effect to the physical system.
+As long as the initial values of \(\Phi,\dot{\Phi}\) remain the same, the equations of motion remain unchanged. This doesn&rsquo;t mean that the coordinates (2.3) stay the same but that the Lagrangian remains the same.<br>
+The system (2.2) does not have a unique solution <em>because</em> the matrix \(T_{ij}=\frac{\partial^2 \mathcal{L}}{\partial \dot{q_i} \partial \dot{q_j}}\) is singular (has a determinant equal to zero).</p>
+<h6 id="from-a-gauge-invariant-lagrangian-to-a-constrained-hamiltonian">From a Gauge invariant Lagrangian to a Constrained Hamiltonian</h6>
+<p>If a physical system is described by a Lagrangian \(\mathcal{L}\), then to every coordinate \(q_i\) corresponds a generalised momentum \(p^i\) given by
+$$p^i=\frac{\partial \mathcal{L}}{\partial \dot{q_i}} \;\;\; (2.4) $$</p>
+<p>The Hamiltonian of the system is defined as a function of the coordinates and generalised momenta (not the velocities):
+$$\mathcal{H}=p^i\dot{q_i} - \mathcal{L} \;\;\; (2.5) $$</p>
+<p>Usually \(\dot{q_i}\) is written as a function of the \(q_i\)s and the \(p^i\)s through equation (1.1) but if the matrix  \(\frac{\partial^2 \mathcal{L}}{\partial \dot{q_i} \partial \dot{q_j}}\) is singular, the system (2.4) cannot be solved.
+Instead, some of the equations (2.4) give us restraints of the form \(\phi_\alpha(q,p) =0\) (see the first article on constraints). These are called <em>primary constraints</em> of the Hamiltonian, and in this case they are:
+$$\phi_1 \equiv  p_1=0 \;\;\; (2.6a) $$
+$$\phi_2 \equiv  p_2-p_3+p_4=0 \;\;\; (2.6b)  $$</p>
+<p>It can be proved that the Hamiltonian (2.5) can still be written as a function of \(q_i\) and \(p_i\) since the velocities only appear in (2.5) in the relations (2.4). In this example
+$$\mathcal{H}= \frac{1}{2} [p_3^2+p_4^2 -2p_3p_1 - (q_1+2q_2)(q_1+2q_4)] \;\;\; (2.7) $$</p>
+<p>Now the time evolution of any quantity F in the system described by (2.7) is given by the Poisson Bracket \(\dot{F}=\{F,\mathcal{H}\}\) where
+$$\{A,B\}=\frac{\partial A}{\partial q_i}\frac{\partial B}{\partial p^i} - \frac{\partial A}{\partial p^i} \frac{\partial B}{\partial q_i} \;\;\; (2.8)$$</p>
+<p>We want the constraints (2.6) to be enforced at all times so we demand that their time derivatives are zero. This way we get more constraints called <em>secondary constraints</em>:
+$$\dot{\phi_1}= \{\phi_1,\mathcal{H}\} = p_3 + q_1 + q_2 + q_4 =0 \;\;\; (2.9a) $$
+$$\dot{\phi_2} =\{\phi_2,\mathcal{H}\} = 2(q_1+q_2+q_4) =0 \;\;\; (2.9b)  $$</p>
+<p>This process can be continued to get higher-order constraints until it naturally stops (We get \(0=0\) or the same constraints).</p>
+<h6 id="first-and-second-class-constraints-and-diracs-conjecture">First and Second Class Constraints and Dirac&rsquo;s conjecture</h6>
+<p>For simplicity of symbolism we define \(\phi_3\equiv\dot{\phi_1}\) and \(\phi_4\equiv\dot{\phi_2}\). A function F is called <em>first-class</em> if \(\{F,\phi_\alpha\}=0\) for all \(\alpha\).
+Constraints themselves can be first-class. If a function is not first-class then it&rsquo;s called <em>second-class</em>. By combining the constraints we find that the first-class constraints here are
+$$ C^{fc}_1\equiv \frac{\phi_1+\phi_2}{3} = p_1 - \frac{p_2}{2} + \frac{p_2}{2} - \frac{p_4}{2} = 0\;\;\; (2.10a) $$
+$$  C^{fc}_2 \equiv \frac{\phi_3 + \phi_4}{3} = p_3 = 0 \;\;\; (2.10b) $$</p>
+<p>Dirac conjectured<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> hat every first-class constraint generates a gauge transformation. That means that if we change F by an infinitesimal amount \(\delta F=\delta\epsilon \{F,C^{fc}\}\)  where \(\delta\epsilon\) is an infinitesimal parameter,
+the change is the same as changing \(\Phi(t)\) in (2.3). Here we have 2 first-class constraints so in reality we have 2 gauge symmetries.
+That is because \(q_3\) in (2.3c) also has \(\Phi(t)\) inside an integral that can be changed without changing the rest of the coordinates.</p>
+<h6 id="choosing-a-gauge">Choosing a Gauge</h6>
+<p>In our example, our initial phase space (the space of \(q_i\)s and \(p_i\)s) is 8-dimensional. We have 4 constraints so the evolution of the system is constrained to a 4-dimensional subspace. However, every point in the constrained space can be transformed into a physically equivalent point by the two
+gauge generators \(C^{fc}_\alpha\). That means that every point in the constrained space can be mapped into a 2-dimensional sub-subspace. Every such sub-subspace is called a <em>gauge orbit</em>.<br>
+We can now choose a single point in every orbit to represent the physical state. This is called <em>choosing a gauge</em>.
+To do this<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> we consider a function \(G(q,p)=0\) that is not gauge invariant so it&rsquo;s represented by a single point in every orbit. An example for our system could be
+$$G_1 \equiv q_1 - q_2 =0 \;\;\; (2.11a) $$
+$$G_2 \equiv q_3+p_4=0 \;\;\; (2.11b) $$</p>
+<p>Finally, we have 6 second-class constraints so the phase space of <em>physically different</em> states for the system is 2-dimensional.
+From here we can define a new Bracket called the <em>Dirac Bracket</em> that simplifies the problem tremendously and makes the formalism elegant and simple. We are not going to go into this formalism because it&rsquo;s not necessary for what we are going to do next. If someone is interested, more information can be found in the sources at the end.</p>
+<h1 id="the-quantization-of-electrodynamics">The Quantization of Electrodynamics</h1>
+<p>We are going to use units so \(\hbar=c=1\) and we define the <em>metric tensor</em> \(g_{\mu\nu}=g^{\mu\nu}\) as
+$$g=\begin{pmatrix}
+1&amp;0&amp;0&amp;0 \\
+0&amp;-1&amp;0&amp;0 \\
+0&amp;0&amp;-1&amp;0\\
+0&amp;0&amp;0&amp;-1
+\end{pmatrix} $$</p>
+<h6 id="the-classical-lagrangian-of-electrodynamics">The Classical Lagrangian of Electrodynamics</h6>
+<p>The free (without charges) Electromagnetic (EM) field is described by the Lagrangian density
+$$\mathcal{L}= -\frac{1}{4}F^2_{\mu\nu} = -\frac{1}{2}(\partial_\mu A_\nu)^2 + \frac{1}{2}(\partial_\mu A_\mu )^2 + \frac{1}{2}(A_\nu \partial_\nu A_\mu - A_\mu \partial_\nu A_\nu) \;\;\; (3.1) $$</p>
+<p>Where \(F_{\mu\nu}=\partial_\mu A_\nu - \partial_\nu A_\mu\) is called the Maxwell tensor and \(A_\nu\) the four-dimensional potential of EM. \(F_{\mu\nu}\) is invariant under gauge transformations
+of the form \(A_\mu \longrightarrow A_\mu + \partial_\mu\Lambda(\vec{x})\) where \(\Lambda(\vec{x})\) is an arbitrary function of the coordinates (See the article on deriving this Lagrangian from first Principles).<br>
+As we saw in our example, the gauge invariance means that there are some degrees of freedom (variables) that are non-physical. To see that in action we must go to the Hamiltonian formalism.</p>
+<h6 id="the-constrained-hamiltonian-of-em">The Constrained Hamiltonian of EM</h6>
+<p>First of all, we see that \(T_{00}=0\) so our Lagrangian is indeed singular, as we expected. Trying to find the momenta
+$$\pi^\mu=\frac{\partial \mathcal{L}}{\partial \dot{A_\mu}}=F_{\mu 0} \;\;\; (3.2) $$</p>
+<p>we find our primary constraint
+$$\phi_1 \equiv \pi^0 =0 \;\;\; (3.3) $$</p>
+<p>We calculate the Hamiltonian density through (2.5)
+$$\mathcal{H}_o = \frac{1}{2}(\vec{E}^2 + \vec{H}^2 - A_o\nabla\vec{E} + \pi^0\dot{A_0}) \;\;\; (3.4)$$</p>
+<p>Where \(E^k=F_{k0}, \; \vec{H}^2=\frac{1}{2}F^2_{ik}, \; \nabla\vec{E}=\partial_kE^k\), \((i,k=1,2,3)\). We can ignore the last term since from (3.3) \(\pi^0 =0\).</p>
+<p>Now we find the secondary constraint by demanding \(\dot{\pi}^0=0\) so
+$$\phi_2 \equiv \{\pi^0,\mathcal{H}_0 \} = \nabla\vec{E} = 0 \;\;\; (3.5) $$</p>
+<p>which is one of Maxwell&rsquo;s homogeneous equations(!). Also, since we are now dealing with fields instead of coordinates (see the first part) the Poisson brackets are
+$$\{f,g \} = \int d^3x (\frac{\delta f}{\delta A_\mu}\frac{\delta g}{\delta \pi^\mu} - \frac{\delta f}{\delta \pi^\mu}\frac{\delta g}{\delta A_\mu}) \;\;\; (3.6)$$</p>
+<p>For the shake of completeness, we can see that \(\{\nabla\vec{E},\mathcal{H}_0 \} = 0\) so there are no other constraints, and \(\{\nabla\vec{E},\pi^0 \} = 0\) so both constraints are first-class.</p>
+<h6 id="the-quantization">The Quantization</h6>
+<p>To &ldquo;quantize&rdquo; a theory, one needs to replace the canonical coordinates \((A,\pi)\) with operators that satisfy the following commutation rule:
+$$ [\hat{A},\hat{\pi}] = \hat{A}\hat{\pi}-\hat{\pi}\hat{A} = i\{A,\pi \} \;\;\; (3.7) $$</p>
+<p>In the classical theory we saw that the non-physical quantities are completely arbitrary. However, in QM they must satisfy (3.7). Therefore, we need to choose the right gauge. There are a lot of gauges that have been used throughout the history of Electrodynamics, but we are going to use the Feynmann gauge because it simplifies the Lagrangian (by removing the first term):
+$$G= -\frac{1}{2}(\partial_\mu A_\mu)^2 \;\;\; (3.8) $$</p>
+<p>Our Lagrangian is now  \(\mathcal{L}&rsquo;=\mathcal{L} + G\) and the Hamiltonian is \( \mathcal{H}= \mathcal{H}_o - G \) from (2.5).
+Although we chose a gauge the theory in general remains gauge invariant since the results will hold for any choice of gauge.<br>
+The E-L equations give the equations of motion:
+$$\Box A_\mu = 0 \;\;\; (3.9) $$</p>
+<p>And the momenta can now be fully defined from the equation (2.4)
+$$\pi^\mu = F_{\mu 0} - g^{\mu 0}\partial_\nu A_\nu \;\;\; (3.10) $$</p>
+<p>Finally, we can write the Hamiltonian of the system. For future calculations, we are going to describe it using \(A,\dot{A}\) instead of the momenta.
+$$\mathcal{H} = -\frac{1}{2}[\dot{A}_\mu^2 + (\partial_iA_\mu)^2 + \partial_i(A_k\partial_k A_i - A_i\partial_kA_k)] \;\;\; (3.11) $$</p>
+<h6 id="vibration-modes-of-the-field-and-creation-annihilation-operators">Vibration Modes of the Field and Creation-Annihilation Operators</h6>
+<p>Equation (3.9) is the usual wave equation, usually written as \(\partial_t^2 A_\mu=\nabla^2 A_\mu\). Its solution is a sum (or integral) of all the ways in which waves can propagate (all possible wavelengths). Every possible way of propagation/vibration of the field is called a mode. Every part of the field can be written as
+$$A_\nu (\vec{x})= \int d\mu(q) (\alpha_\nu (\vec{q})e^{-i\vec{q}\cdot\vec{x}} + \alpha_\nu^*  (\vec{q})e^{i\vec{q}\cdot\vec{x}}) \;\;\; (3.12) $$</p>
+<p>where
+$$d\mu (q) = \frac{d^3q}{(2\pi)^32|\vec{q}|} \;\;\; (3.13) $$</p>
+<p>The physical interpretation is that \(\vec{q}\) is the wavenumber that has the direction of the propagation of the wave and components \(q_i=\frac{2\pi}{\lambda_i}\) where \(\lambda_i\) is the wavelength in the i-th axis.
+\(\alpha_\nu(\vec{q})\) is a function that defines the amplitude of the wave of wavenumber \(\vec{q}\), while the terms \(e^{\pm i\vec{q}\cdot\vec{x}}\) describe two waves moving in opposite directions.<br>
+We can now write the Hamiltonian as
+$$\mathcal{H} = -\frac{1}{2} \int d\mu (q) |q|[\alpha_\nu^* (\vec{q}) \alpha_\nu(\vec{q}) + \alpha_\nu(\vec{q})\alpha_\nu^* (\vec{q}) ] \;\;\; (3.14) $$</p>
+<p>Now, we cross over to the quantum description through the condition (3.7). The classical Poisson Brackets are:
+$$\{A_\mu (\vec{x}), \pi^\nu (\vec{y}) \} = \delta_{\nu\mu}\delta(\vec{x}-\vec{y}) \;\;\; (3.15) $$</p>
+<p>so the operators satisfy the relation:
+$$[\hat{A}_\mu (\vec{x}) ,\hat\pi^\nu (\vec{y}) ]= i\delta_{\mu\nu} \delta( \vec{x}-\vec{y}) \;\;\; (3.16) $$</p>
+<p>where \(\delta_{\mu\nu}\) is the Kronecker delta and \(\delta(\vec{x}-\vec{y})\) the Dirac delta function.<br>
+The commutator relations between the operators \(\hat{\alpha}_\nu\) and \(\hat{\alpha}_\nu^\dagger\)<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>
+can be calculated through (3.16) if we express them as functions of the \(\hat{A}_\mu\)s. First we define the scalar product as:
+$$&lt;f,g&gt; = i\int d^3x \partial_t f^* \partial_t g \;\;\; (3.17)  $$</p>
+<p>so we have
+$$\hat{\alpha}_\mu = &lt;e^{-i\vec{q}\cdot\vec{x}},\hat{A}_\mu &gt; \;\;\;\; \hat{\alpha}_\mu^\dagger = &lt;e^{i\vec{q}\cdot\vec{x}},\hat{A}_\mu &gt; \;\;\; (3.18)$$</p>
+<p>Combining equations (3.16),(3.17),(3.18) we have
+$$ [\hat{\alpha}_\mu (\vec{q}),\hat{\alpha}_\mu^\dagger (\vec{q}&rsquo;)] = -g_{\mu\nu} \overline{\delta}(\vec{q},\vec{q}&rsquo;) \;\;\; (3.19)$$</p>
+<p>where
+$$\overline{\delta}(q,q&rsquo;)=(2\pi)^3|q|\delta(\vec{q}-\vec{q}) $$</p>
+<p>Finally we have the Hamiltonian operator of QED (Quantum Electrodynamics)
+$$\hat{\mathcal{H}} = -\frac{1}{2} \int d\mu (\vec{q})|q|[\hat{\alpha}_\mu^\dagger \hat{\alpha}_\mu + \hat{\alpha}_\mu \hat{\alpha}_\mu^\dagger] \;\;\; (3.20) $$</p>
+<p>The two operators \(\hat{\alpha}_\mu(\vec{q})\) and \(\hat{\alpha}_\mu^\dagger(\vec{q})\) are known as the Annihilation and Creation operators respectively. If the operator \(\hat{\alpha}_\mu^\dagger\) is applied to any wave function,
+then a &ldquo;vibration&rdquo; of the \(\mu\)-th component of the Electromagnetic field in the mode with wavenumber \(\vec{q}\) is added.
+That vibration is known as a photon and the mode determines the energy of the photon. Likewise, the operator \(\hat{\alpha}_\mu\) removes a &ldquo;vibration&rdquo; of the \(\mu\)-th component from the wave function. If there are no such vibrations, the operator does nothing.<br>
+In the case where there is charge present the only thing that changes in the formalism is that the constraint (3.5) is now the inhomogeneous Maxwell equation
+$$\nabla\vec{E} - j^0 = 0 \;\;\; (3.21) $$</p>
+<p>where \(j^0\) is the first component of the current four-vector also known as the charge density \(\rho\) of space.
+So the equations of motion (3.9) become
+$$ \Box A_\mu = - j_\mu \;\;\; (3.22) $$</p>
+<h1 id="conclusion-and-resources">Conclusion and (Re)sources</h1>
+<h6 id="conclusion">Conclusion</h6>
+<p>We have seen how constraints naturally arise in the Hamiltonian description of systems, and how we can use them to our advantage in quantizing the EM field. Specifically, we saw that every gauge symmetry of a system corresponds to a non-physical degree of freedom and also to a constraint on the Hamiltonian. Non-physical degrees of freedom do not change the condition of a system, so, for example, if we want to describe the state of the EM field at any point in space and fully predict its future, we only need 4 initial conditions (since 2 of the 6 variables are non-physical).<br>
+A few philosophical notes on Quantum field theories. Weinberg in his amazing book on field theories (see sources) proves that any possible theory of reality that agrees with Relativity and Quantum Mechanics <em>must</em> look like a Quantum Field Theory, at least at low energies. More than that, every Field must be described by a Hamiltonian that only contains Annihilation and Creation operators.
+The photon is not &ldquo;quantized&rdquo; so the operators are functions of a continuous parameter \(\vec{q}\). For most of the fields, like the electron field, the modes of the field are quantized so the Hamiltonian (3.20) becomes a sum of all possible quantum states.<br>
+Lastly, as was mentioned before,  Dirac created a formalism with his Dirac Brackets that integrate the constraints of a system into the Bracket notation of Hamilton&rsquo;s equations.<br>
+<br/>
+<strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+<h6 id="resources-and-further-reading">(Re)sources and Further Reading</h6>
+<ol>
+<li>The example Lagrangian used in the 2nd section is taken from a very good introductory article on the concept of Constrained Hamiltonians from David Brown: &ldquo;Singular Lagrangians, Constrained Hamiltonian Systems and Gauge Invariance: An Example of the Dirac-Bergmann Algorithm&rdquo;. Also contains the Dirac Bracket formalism.</li>
+<li>The bible on the subject of Constrained Hamiltonians and Quantization of fields is the book from M. Henneaux and C. Teitelboim &ldquo;Quantization of Gauge Systems&rdquo;. All kinds of constraints are defined and a general method of quantizing fields is laid out.</li>
+<li>A truly unique book on the subject of Quantum Field Theories is Steven Weinberg&rsquo;s &ldquo;The Quantum Theory of Fields, Volume I :Foundations&rdquo;. Half philosophy, half physics it grapples with the subject of quantum fields in a very fundamental way.</li>
+<li>The specific quantization shown here can be mostly found in L.V. Prokhorov&rsquo;s article &ldquo;Quantization of the electromagnetic field.&rdquo;. The article deals with the many subtleties of the quantization procedure and provides a strict explanation of the conditions the Gauge constraint must fulfil.</li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Every first-class constraint constructed from primary constraints generates a gauge transformation, this can be proved. Dirac conjectured something stronger and it&rsquo;s <em>false</em>. However, the conjecture holds for any physically significant theory.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>The conditions that the gauge function must fulfil are a bit more complicated but we don&rsquo;t need to go into it here. See the sources.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>\(\hat{\alpha}_\nu^\dagger\) is the <em>Hermitian adjoint</em> of \(\hat{\alpha}_\nu\). It&rsquo;s defined by the relation \(&lt;f,\hat{\alpha}_\nu^\dagger g&gt;=&lt;\hat{\alpha}_\nu f,g&gt; \)&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+      
+    </article>
+    
+  </div>
+
+        </div><footer>
+  <div class="container">
+    <p class="credits copyright">
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;/&nbsp;Theme&nbsp;<a href="https://github.com/kaisugi/HugoTeX">HugoTeX</a>
+        <br>
+        <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
+        &copy;
+        2025
+      </p>
+  </div>
+</footer></body>
+</html>

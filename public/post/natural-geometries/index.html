@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8" />
+
+  <title>Naturally Defined Geometries and Rotations - Principia Physicae Generalis</title>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/latex.css" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/main.css" />
+
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hugo 0.153.2"><body>
+
+
+
+
+
+
+<header>
+  <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+  <div class="intro-header">
+    <div class="container">
+      <div class="post-heading">
+        
+          <h1>Naturally Defined Geometries and Rotations</h1>
+          
+        
+      </div>
+    </div>
+  </div>
+</header>
+<div id="content">
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      <div class="postmeta">
+        <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>Feb 2, 2023
+  
+</span>
+      </div>
+      <br>
+      
+    <p>We look at the geometries that arise from the equations of special relativity, classical mechanics and quantum mechanics. We then extract some interesting properties of each theory by considering the &ldquo;rotations&rdquo; in each geometry.</p>
+<p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+<h1 id="introduction">Introduction</h1>
+<p>Different branches of physics take place in different spaces with unique geometries. These spaces usually don&rsquo;t coincide with the classical Euclidean space and a deeper understanding of each subject can be achieved by exploring these geometrically diverse spaces. In this article we are going to explore some of them and derive some interesting results by considering &ldquo;rotations&rdquo; in each space. In specific, we are going to start with rotations in eucledian and minkowski space. We are then going to look at the symplectic phase space of classical mechanics and derive the canonical transformations. Lastly, we will look into Hilbert space of quantum mechanics and derive Schrodinger&rsquo;s equations from a geometric prespective.</p>
+<h1 id="euclidean-space-and-rotations">Euclidean Space and Rotations</h1>
+<p>We are going to begin with Euclidean space because it&rsquo;s the one we are most used to and it will gives us some intuition for the rest of the geometries. We will also constrain ourselves to 2-dimensional spaces for now so we don&rsquo;t get bogged down in equations.</p>
+<h6 id="the-metric">The metric</h6>
+<p>If we assume a Cartesian system of coordinates in Euclidean space, we know that distance is given by the Pythagorean theorem
+$$ s^2 = x^2 + y^2 \;\;\; (2.1)$$</p>
+<p>What we want is a generalisation of this &ldquo;distance&rdquo; concept. We are going to go into the world of matrices by describing points in space (vectors) as column matrices
+$$\vec{r}= \begin{pmatrix} x \ y \end{pmatrix} \;\;\; (2.2)$$</p>
+<p>Now (2.1), using matrix multiplication, can be rewritten as:
+$$ s^2 = \begin{pmatrix} x &amp; y \end{pmatrix} \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} \;\;\;(2.3) $$</p>
+<p>We are going to call the \(2x2\) matrix the <em>metric tensor</em> of Euclidean space \(g\). The inner product of two vectors can also be expressed through the metric:
+$$\vec{r_1}\cdot \vec{r_2} =  \begin{pmatrix} x_1 &amp; y_1 \end{pmatrix} \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \begin{pmatrix} x_2 \\ y_2 \end{pmatrix} = x_1\cdot x_2 + y_1\cdot y_2 \;\;\; (2.4) $$</p>
+<p>or the last step of our generalisation we are going to introduce index notation and the summation convention. We now write \(x=x^1,y=x^2\) where 1 and 2 indices and not exponents. When a specific index is repeated twice, once upstairs and once downstairs, we assume summation over all values of the index. For example
+$$(s)^2 = x^ag_{ab}x^b = x^1g_{11}x^1 + x^1g_{12}x^2 + x^2g_{21}x^1 + x^2g_{22}x^2 = x^1x^1 + x^2x^2 \;\;\; (2.5) $$</p>
+<p>The metric is a quantity inherent to the geometry of the space we are describing. Riemann proved a long time ago that if you know the metric tensor in every point of a space you have perfectly defined the geometry of that space. That means that we now have a quantity that does not depend on the coordinate system we use and there in lies the key to what we are going to do next.</p>
+<h6 id="rotations-in-euclidean-space">Rotations in Euclidean Space</h6>
+<p>What is a rotation? It is easy to visualise but here we are looking for a mathematical description that we can later generalise. The obvious answer is the changes in coordinates that retain the distance between any two points. We are going to start by only considering linear transformations because they are easier to deal with and generally the only ones with the properties we are looking for.
+A linear transformation in 2-dimensions looks like:
+$$ x&rsquo;^1 = ax^1 + bx^2\;,\; x&rsquo;^2 = cx^1 + dx^2 \;\;\; (2.6) $$</p>
+<p>Where a,b,c,d are constants. The above relation can be rewritten in the form of matrices as
+$$ \begin{pmatrix} x&rsquo;^1 \\ x&rsquo;^2 \end{pmatrix} = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} \begin{pmatrix} x^1 \\ x^2 \end{pmatrix}\;\;\; (2.7) $$</p>
+<p>Again, if we use the letter \(\mathcal{R}\) to describe the \(2x2\) matrix we can write (2.7) using indices and the summation convention instead of the whole matrices as:
+$$x&rsquo;^i=\mathcal{R}^i_{\;j}x^j \;\;\; (2.8) $$</p>
+<p>If we want \(\mathcal{R}\) to describe rotations we want it to conserve distances so
+$$ x^ag_{ab}x^b = x&rsquo;^c g_{cd}x&rsquo;^d = \mathcal{R}^c_{\;a}x^a g_{cd} \mathcal{R}^d_{\;b}x^b \;\;\; (2.9) $$</p>
+<p>Now remember that all the quantities in (2.9) are numbers so as long as we leave the indices alone we can move them around
+$$ x^a g_{ab} x^b =x^a  \mathcal{R}^c_{\;a}  g_{cd} \mathcal{R}^d_{\;b} x^b = x^a ( \mathcal{R^T}_a^{\;c}   g_{cd} \mathcal{R}^d_{\;b} ) x^b  \;\;\; (2.10) $$</p>
+<p>Where \(\mathcal{R^T} \) is the transpose of \(\mathcal{R}\).
+Comparing the two sides of the equation we can see that our actual condition is that \(\mathcal{R}\) doesn&rsquo;t change the metric when applied like in (2.10).
+All we now have to solve is a linear system of equations:
+$$\mathcal{R^T}  g \mathcal{R} = g \rightarrow \begin{pmatrix} a &amp; c \\ b &amp; d \end{pmatrix} \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}  =\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \;\;\; (2.11)  $$</p>
+<p>The system we get is
+$$\begin{matrix} a^2 + c^2 = 1, &amp; b^2 + d^2 =1, &amp; ab = -cd \end{matrix} \;\;\; (2.12) $$</p>
+<p>The above is a system of 4 variables and 3 equations so one variable is left free. The solution to the above, that you can check yourselves, is
+$$ a = d = cos\theta\;\;,\;\; b=-c= sin\theta \;\;\; (2.13)  $$</p>
+<p>where \(\theta\) has the obvious interpretation of the specific angle we chose to rotate the system by. The matrix is
+$$ \mathcal{R}(\theta) = \begin{pmatrix} cos\theta &amp; sin\theta \\ -sin\theta &amp; cos\theta \end{pmatrix} \;\;\; (2.14)  $$</p>
+<p>We fully defined the rotation matrix for the Euclidean metric and we are ready to move on to more interesting geometries.</p>
+<h1 id="minkowski-space-and-lorentz-transformations">Minkowski Space and Lorentz Transformations</h1>
+<h6 id="the-metric-1">The Metric</h6>
+<p>Special relativity is based on the fact that the speed of light c in vacuum is constant and independant of inertial frame of reference.
+We consider two reference frames \(O\) and \(O&rsquo;\) that are moving with constant velocity with respect to one-another.
+We choose the \(X\) and \(X&rsquo;\) so they coincide. From now on all quantities without \(&rsquo;\) refer to them as measured in \(O\)
+and all quantities with \(&rsquo;\) refer to the same quantities as measure in \(O&rsquo;\).
+Assume that a signal traveling at the speed of light is sent at \(t_1\) from the point \(x_1,y_1,z_1\) and reaches the point \(x_2,y_2,z_2\) at time \(t_2\).
+Now the distance traveled can be written as \(c(t_2-t_1)\) and also as \(\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}\) so in \(O\) we have:
+$$(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2 - c^2(t_2-t_1)^2 = 0 \;\;\; (3.1) $$</p>
+<p>By the same logic, the same relation holds in \(O&rsquo;\):
+$$(x&rsquo;_2-x&rsquo;_1)^2+(y&rsquo;_2-y&rsquo;_1)^2+(z&rsquo;_2-z&rsquo;_1)^2 - c^2(t&rsquo;_2-t&rsquo;_1)^2 = 0 \;\;\; (3.2) $$</p>
+<p>We now define the <em>interval</em> between two events in space-time as:
+$$ s_{12}=\sqrt{-c^2(t_2-t_1)^2+(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2 } \;\;\; (3.3) $$ <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>As we have seen, if the interval is zero in one frame of reference then it must be zero in all frames of reference.
+If two events are infinitesimally close to one-another then we can write:
+$$ds^2=-c^2dt^2 + dx^2+dy^2+dz^2 \;\;\; (3.4) $$</p>
+<p>We have found a quantity which stays the same in every inertial frame of reference, therefore the implication is that, again, this quantity is inherent to the geometry of the space itself. As before, we set c=1, and express the distance from the origin in two dimensions as
+$$(s)^2 = -x^0x^0 + x^1x^1 = \begin{pmatrix} x^0 &amp; x^1 \end{pmatrix} \begin{pmatrix} -1 &amp; 0 \\ 0 &amp;  1 \end{pmatrix} \begin{pmatrix} x^0 \\ x^1 \end{pmatrix} \;\;\; (3.5) $$</p>
+<p>where \(x^0 \equiv t\). We can now see that the metric if this space is the so called <em>Minkowski metric</em>:
+$$ \eta = \begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \;\;\; (3.6)  $$</p>
+<p>This means that the space-time of special relativity does not take place in a usual Euclidean (3+1)-dimensional space but in a new one called Minkowski space. What are the &ldquo;Rotations&rdquo; of this space then?</p>
+<h6 id="lorentz-transformations">Lorentz Transformations</h6>
+<p>We now know what we are looking for, a \(2x2\) matrix (let&rsquo;s call it \( \Lambda \)) that does not change the metric of this space. We again have to solve a linear system:
+$$\Lambda^T \eta \Lambda = \eta \rightarrow \begin{pmatrix} a &amp; c \\ b &amp; d \end{pmatrix} \begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = \begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}  \;\;\; (3.7)  $$</p>
+<p>The system we get is
+$$\begin{matrix} a^2 - c^2 = 1, &amp; b^2 - d^2 =1, &amp; ab = cd \end{matrix} \;\;\; (3.8) $$</p>
+<p>The solution now uses the hyperbolic functions
+$$ a=d=cosh\phi\;\;,\;\;b=c=sinh\phi \;\;\; (3.9)$$</p>
+<p>Therefore
+$$\Lambda (\phi) = \begin{pmatrix} cosh\phi &amp; -sinh\phi \\ -sinh\phi &amp; cosh\phi \end{pmatrix} \;\;\; (3.10) $$</p>
+<p>What is now the interpretation of the angle \(\phi\)? The difference between two (1+1)-dimensional systems is the velocity \(u\) with which they move with respect to one-another. Remember that right now we only have one spacial dimension so the ordinary meaning of a rotation does not apply.
+To find the relation between \(\phi\) and \(u\) we consider two systems \(O\) and \(O&rsquo;\) that, at \(t=t&rsquo;=0\), have coinciding origins and have relative velocity $u$ to each other.
+We consider the two events \((0,0)\) and \((dt,u\cdot dt)\) in \(O\). These events both coincide with the origin of \(O&rsquo;\) and therefore \(dx&rsquo;=0\). We have
+$$0 = dx&rsquo; = \Lambda^1_{\;j}dx^j=cosh\phi x -sinh\phi t \rightarrow \frac{dx}{dt} = tanh\phi = u \;\;\; (3.11) $$</p>
+<p>Nowe see that
+$$\phi = tanh^{-1}u  \;\;\; (3.12)  $$</p>
+<p>\(\phi\) is called rapidity and we can now rewrite the the matrix (3.10) using the below relations:
+$$\frac{1}{\sqrt{1-u^2}} = \frac{1}{1-tanh^2\phi}=\frac{cosh\phi}{\sqrt{cosh^2\phi -sinh^2\phi }}=cosh\phi \;\;\; (3.13a) $$</p>
+<p>$$sinh\phi = cosh\phi \cdot tanh\phi = \frac{u}{\sqrt{1-u^2}} \;\;\; (3.13b) $$</p>
+<p>Therefore
+$$\Lambda (u) = \begin{pmatrix} \frac{1}{\sqrt{1-u^2}} &amp; -\frac{u}{\sqrt{1-u^2}} \\ -\frac{u}{\sqrt{1-u^2}} &amp; \frac{1}{\sqrt{1-u^2}} \end{pmatrix} = \begin{pmatrix} \gamma &amp; -u\gamma \\ -u\gamma &amp; \gamma \end{pmatrix} \;\;\; (3.14) $$</p>
+<p>Which is Lorentz&rsquo;s transformation for \(\gamma= \frac{1}{\sqrt{1-u^2}}\). Since, by the principles of relativity, every inertial frame of reference must measure the same \(s^2\) and so have the same metric \(\eta\), the only way to jump between systems is via the Lorentz transformations.</p>
+<h1 id="the-symplectic-phase-space-and-canonical-transformations">The Symplectic Phase Space and Canonical Transformations</h1>
+<h6 id="phase-space-and-the-hamiltonian">Phase Space and the Hamiltonian</h6>
+<p>Classical Mechanics deals with the fully deterministic motion of point-like particles in space. One of the ways to describe a system in any point and time is through the position \(\vec{q}\) and the momentum \(\vec{p}\) of each particle. The space of all points
+\((\vec{q},\vec{p})\) is called the phase space.</p>
+<p>The time evolution of the system is governed by a function called the Hamiltonian \(\mathcal{H}\). In particular, the coordinates of phase space evolve following Hamilton&rsquo;s equations of motion:
+$$ \dot{q}_i = \frac{\partial \mathcal{H}}{\partial p_i}\;\;\; (4.1a) $$
+$$\dot{p}_i = -\frac{\partial \mathcal{H}}{\partial q_i}\;\;\; (4.1b) $$</p>
+<p>Where the dot indicates the time derivative of the quantity. The Hamiltonian is given by the total energy of a system. The most basic form is
+\(\mathcal{H}=\frac{\vec{p}^2}{2m} + V(\vec{x})\) where \(V\) the potential. We will not really be concerned with the specific form of the Hamiltonian in this discussion.</p>
+<p>Looking at the phase space it doesn&rsquo;t really make sense to define an inner product equivalent to that of Euclidean space since momentum and position are treated as independant variables and the multiplication of the two seems rather lacking in physical meaning. To see what kind of space best describes phase space we need to delve a little deeper into the Hamiltonian formalism.</p>
+<h6 id="liouvilles-theorem">Liouville&rsquo;s Theorem</h6>
+<p>We can look at equations (4.1) as transformations of the coordinates, mapping one set of q&rsquo;s and p&rsquo;s to another, according to the value of the continuous parameter t. This transformation has an interesting quality, it maintains volume. We can prove this by using some basic results of fluid dynamics but instead we are here going to be using a quantity called the Jacobian.</p>
+<p>The volume \(V\) of any given part of an 2N dimensional phase space is given by the integral
+$$V = \int_V d^Nq(0) d^Np(0) \;\;\; (4.2) $$</p>
+<p>If we now want to calculate the volume of the same points after time t (or under the transformation (4.1)) we have to change our differentials
+\(d^Nq \rightarrow d^N q(t) \;,\; d^Np \rightarrow d^Np(t)\) but also multiply with the determinant of a matrix called the Jacobian matrix. Its values are all the partial derivatives of the new coordinates with respect to all the old ones, so
+$$J_{ij}(t)=\frac{\partial z(t)_i}{\partial z(0)_j} \;\;,\;\; i,j=1,2,&hellip;,2N \;and\; z=(q,p) \;\;\;(4.3) $$</p>
+<p>The determinant of the Jacobian is symbolised by
+\(\frac{\partial(q_i(t),p_i(t))}{\partial(q_i(0),p_i(0))}\) and usually we can treat it like a normal derivative (chain rule etc.). Therefore, the volume at time t is given by
+$$V(t) = \int_{V_t}  d^Nq(t) d^Np(t) = \int_{V} \frac{\partial(q_i(t),p_i(t))}{\partial(q_i(0),p_i(0))} d^Nq(0) d^Np(0)  \;\;\; (4.4) $$</p>
+<p>We can now see that if \(\frac{\partial(q_i(t),p_i(t))}{\partial(q_i(0),p_i(0))} =1\) then \(V(t)=V\) and volume is maintained.</p>
+<p>It can be proven by plugging in the equations (4.1) into (4.3) that indeed the Jacobian of the transformation defined by Hamilton&rsquo;s equation has a unitary determinant. This is due to the <em>symplectic</em> nature of (4.1). We see that, not only are q and p entangled in each other&rsquo;s equation, but also there exists that all important minus sign in (4.1b).</p>
+<h6 id="poisson-brackets-and-symplectic-structure">Poisson Brackets and Symplectic Structure</h6>
+<p>Consider any quantity \(F=F(q,p)\) defined on the phase space. By using the chain rule we can see that its time evolution is given by:
+$$\frac{dF}{dt}= \sum_i\left[ \frac{\partial F}{\partial q_i}\dot{q_i} + \frac{\partial F}{\partial p_i} \dot{p_i}\right] $$
+$$\frac{dF}{dt}= \sum_i \left[\frac{\partial F}{\partial q_i}\frac{\partial \mathcal{H}}{\partial p_i} - \frac{\partial F}{\partial p_i} \frac{\partial \mathcal{H}}{\partial q_i}\right]= \{F,\mathcal{H}\} \;\;\; (4.5) $$</p>
+<p>Where:
+$$\{A,B\}=\sum_i\left[ \frac{\partial A}{\partial q_i}\frac{\partial B}{\partial p_i} - \frac{\partial A}{\partial p_i} \frac{\partial B}{\partial q_i}\right] =\sum_i \frac{\partial(A,B)}{\partial(q_i,p_i)} \;\;\; (4.6) $$
+is called the Poisson Bracket of A and B.</p>
+<p>As we noted before, the chain rule also applies the Jacobian determinants and so if we transform the coordinates according to (4.1) again we get that
+$$ \{A,B\}_t = \sum_i \frac{\partial(A,B)}{\partial(q(t)_i,p(t)_i)}  = \sum_i \frac{\partial(A,B)}{\partial(q(0)_i,p(0)_i)} \frac{\partial(q(0)_i,p(0)_i)}{\partial(q(t)_i,p(t)_i)} =  \sum_i \frac{\partial(A,B)}{\partial(q(0)_i,p(0)_i)} = \{A,B\}_0  \;\;\;(4.7) $$</p>
+<p>What we have found is an operation between any two quantities in phase space that remains constant under the transformation of time progression. That means we have also found the structure of phase space. <em>Instead of an inner product the phase space is equipped with the Poisson Bracket</em> . This structure is called symplectic and has the following properties:
+$$\{A,B\} = - \{B,A\} \;\;\; and \;\;so \;\; \{A,A\} \equiv 0 \;\;\; (4.8a) $$
+$$ \{A,\{B,C\}\} + \{C,\{A,B\}\}   +\{B,\{C,A\}\} \equiv 0\;\;\; (4.8b) $$
+Equation (4.8b) is called Jacobi&rsquo;s identity and like the Cauchy-Schwarz inequality, it holds for a much larger group of spaces equiped with operations (which are collectively called Lie algebras).</p>
+<h6 id="canonical-transformations">Canonical Transformations</h6>
+<p>We are finally ready to look for the &ldquo;rotations&rdquo; of this space. As in the previous cases we are looking for transformations of the coordinates that leave Poisson brackets invariant. We are now looking for a much bigger category than just linear transformations but (4.7) gives away the game. What we are looking for are  transformations with a unitary Jacobian determinant. We will start with infinitesimal transformations since they take a simpler form and finite transformations are just repeated applications of infinitesimal ones. Let:
+$$q_i \rightarrow q_i(\epsilon) = q_i + \epsilon K^{(q)}_i \;\;\; (4.9a) $$
+$$p_i \rightarrow p_i(\epsilon) = p_i + \epsilon K^{(p)}_i \;\;\; (4.9b) $$</p>
+<p>Where we can think of the parameter \(\epsilon\) as a generalisation of t in the case of the Hamiltonian. We can write the above in a more familiar way as:
+$$\frac{dq_i}{d\epsilon} =  K^{(q)}_i \;\;\; (4.10a) $$
+$$\frac{dp_i}{d\epsilon} =  K^{(p)}_i \;\;\; (4.10b) $$</p>
+<p>The similarity to Hamilton&rsquo;s equations (4.1) is now plain to see and we can understand better why we can consider time evolution as a sort of transformation. Like we said, we want a unitary Jacobian so ignoring the terms of order \(\epsilon^2\) as &ldquo;very-very small&rdquo; we have
+$$ J(\epsilon) = 1 + \epsilon(\frac{\partial K^{(q)}_i }{\partial q_i} + \frac{\partial K^{(p)}_i }{\partial p_i}) \;\;\; (4.11)  $$</p>
+<p>and so our condition is
+$$\frac{\partial K^{(q)}_i }{\partial q_i} + \frac{\partial K^{(p)}_i }{\partial p_i} = 0 = \nabla(K^{(q)}_i,K^{(p)}_i) \;\;\; (4.12) $$</p>
+<p>We can easily see that (4.12) holds if we define a <em>generating</em> function \(W(q,p)\) such that
+$$ K^{(q)}_i = \frac{\partial W}{\partial p_i}\;\;,\;\; K^{(p)}_i = -\frac{\partial W}{\partial q_i} \;\;\; (4.13) $$</p>
+<p>Let&rsquo;s now take a moment to see what this result means. We have found that to every physical quantity \(W(q,p)\) corresponds to a transformation of the coordinates given by (4.10). And so, in keeping with the spirit of abstraction, the Hamiltonian
+\(\mathcal{H}\) loses it&rsquo;s special place as <em>The</em> generator and becomes one of the many generators of transformations. Similarly to (4.5) we see that any quantity \(F(q,p)\) transforms as
+$$\frac{dF}{d\epsilon} = \{F,W\} \;\;\; (4.14) $$</p>
+<p>From (4.8a) we have
+$$ \frac{d \mathcal{H}}{d\epsilon} =\{\mathcal{H},W\} = -\frac{dW}{dt}  \;\;\; (4.15) $$</p>
+<p>and so if the Hamiltonian stays the same under the transformation generated by \(W\) we have
+\(\{\mathcal{H},W\} = 0\) and the quantity W also remains constant in time.</p>
+<h6 id="finite-transformations">Finite Transformations</h6>
+<p>Before we dive into our last subject, we have some unfinished business. As we pointed out our discussion was constrained to infinitesimal transformations. So how do we get to finite ones? Let&rsquo;s start with the simplest example possible and see what transformation is generated by
+\(W=p_i\). Equations (4.10) and (4.13) become
+$$\frac{dq_i}{d\epsilon} = \frac{dp_i}{dp_i} = 1 \;\;,\;\; \frac{dq_j}{d\epsilon} = \frac{dp_i}{d\epsilon} =0 \;\;\; (4.16) $$</p>
+<p>Solving this system of differential equations we see that the only coordinate to change is the i-th position
+$$q_i(\epsilon) = q_i(0) + \epsilon \;\;\; (4.17) $$</p>
+<p>This means that the transformation generated by the momentum is a infinitesimal displacement by \(\epsilon\).
+To get a finite displacement we define the operator \(D_p=\{p_i,\;\;\}\) which acts on functions \(f\) like \(D_p f =\{p_i,f\}= -\frac{\partial}{\partial q_i} f \) .</p>
+<p>The exponential of a quantity can be written in the form of an infinite series as follows:
+$$e^x = 1 + \frac{1}{1!}x + \frac{1}{2!}x^2 + &hellip;   $$
+and so for \(x=D_p \) we have
+$$ e^{aD_p}f = f + -a\frac{\partial}{\partial dq_i}f + a\frac{1}{2}\frac{\partial^2}{\partial dq^2_i}f + &hellip;   $$</p>
+<p>Which is just a Taylor series
+$$e^{aD_p}f(q_i) = f(q_i-a) \;\;\; (4.18)  $$</p>
+<p>And so we got a finite displacement by \(a\) from the momentum. This process can be generalised with the simple change of operator \(D_W = \{W,\;\;\}\) to get from infinitesimal transformations to finite ones.</p>
+<p>In the same fashion we get
+$$e^{-tD_\mathcal{H}}f(x,t=0) = f(x,t) \;\;\; (4.19) $$</p>
+<p>Where \(D_\mathcal{H} = \{\mathcal{H},\;\;\}\)</p>
+<h1 id="hilbert-space-and-unitary-transformations">Hilbert Space and Unitary Transformations</h1>
+<h6 id="hilbert-space-and-the-wave-function">Hilbert Space and the Wave Function</h6>
+<p>All of the information that one needs to describe a quantum mechanical system is found in the wave function \(\Psi\) of that system.
+The physical interpretation of \(\Psi\) is that the norm squared \(|\Psi|^2=\Psi^* \Psi\) (where the star indicates the complex conjugate) is the probability of the system being at a certain state.
+For example, if we only have one particle, then \(|\Psi(\vec{x})|^2\) is the probability of finding the particle &ldquo;close&rdquo; to the point \(\vec{x}\).</p>
+<p>Since \(|\Psi|^2\) is what is called a probability density function, we expect that if we integrate it over all of space we should get probability 1. Which means that the particle will definitely be found somewhere in space. Mathematically (in one dimension):
+$$||\Psi||^2 = \int_\infty^\infty |\Psi|^2 dx = 1 \;\;\; (5.1) $$</p>
+<p>We can now define a space (Hilbert space) comprised of every function for which the integral (5.1) is finite. Based on (5.1) we can define an inner product between two functions living in Hilbert Space as follows:
+$$&lt;\phi,\psi&gt; =  \int_\infty^\infty \phi^* \psi \; dx \;\;\; (5.2) $$</p>
+<p>Now we can see that \(||\Psi||^2 = &lt;\Psi,\Psi&gt; \). We can also define orthogonal functions is Hilbert space as two functions that have an inner product equal to zero. Hilbert space is infinite dimensional, which means that there is an infinite number of functions that are orthogonal to each other.</p>
+<p>From (5.1) we see that all of the wavefunctions describing a real system live on the unitary sphere of Hilbert Space (a sphere with a radius of 1). Remember that in Euclidean space, the inner product of a vector with itself gives us the distance of the vector from the origin. This means that the only acceptable transformations are &ldquo;rotations&rdquo;.</p>
+<h6 id="hermitian-operators">Hermitian Operators</h6>
+<p>An operator acts on a function and gives a different function. For example if \(\hat{A}=\frac{d}{dx}\) then we can write \(\hat{A}f=\frac{d}{dx}f\).
+Operators are equivalent to matrices, so for example we can define the Euclidean rotation operator
+\(\hat{\mathcal{R}}\) using the matrix (2.14). Since Hilbert Space is infinite-dimensional the matrices would need to have infinite rows and columns and so we prefer operators.</p>
+<p>The Hermitian adjoint of an operator is symbolised by a dagger \(\hat{A}^\dagger\) and is defined as \(&lt;\hat{A}^ \dagger\phi,\psi&gt; = &lt;\phi,\hat{A}\psi&gt;\)</p>
+<p>An operator \(\hat{A}\) is <em>Hermitian</em> if \(&lt;\phi,\hat{A}\psi&gt;=&lt;\hat{A}\phi,\psi&gt;\) which is (almost) equivalent to \(\hat{A}=\hat{A}^\dagger\).
+For example, using the same operator \(\hat{A}=\frac{d}{dx}\) we can integrate by parts to get:
+$$\int_\infty^\infty \phi^* \frac{d}{dx}\psi \; dx =- \int_\infty^\infty \frac{d}{dx}\phi^* \psi \; dx $$</p>
+<p>The integrated part disappears because the integral (5.2) is finite, which means that
+\(\psi(x\rightarrow \pm \infty)  = 0\) for any function \(\psi\) in Hilbert Space. The above relation means that \(\hat{A}\) is <em>not</em> Hermitian.
+However, the operator \(\hat{P}=i\frac{d}{dx}\) is Hermitian, since following the same steps as before
+$$\int_\infty^\infty \phi^* i\frac{d}{dx}\psi \; dx = - \int_\infty^\infty i\frac{d}{dx}\phi^* \psi \; dx =  \int_\infty^\infty (i\frac{d}{dx}\phi)^* \psi \; dx $$</p>
+<p>or, in the language of inner products \(&lt;\phi,\hat{P}\psi&gt; = &lt;\hat{P}\phi,\psi&gt;\)</p>
+<h6 id="unitary-operators">Unitary Operators</h6>
+<p>An operator \(\hat{U}\) is <em>unitary</em> if the inner product is maintained: \(&lt;\hat{U}\phi,\hat{U}\psi&gt;=&lt;\phi,\psi&gt; \).
+By using the Hermitian adjoint we can see that \(&lt;\hat{U}\phi,\hat{U}\psi&gt;=&lt;\hat{U}^\dagger\hat{U}\phi,\psi&gt;\) and so the definition is equivalent to the demand that \(\hat{U}^\dagger\hat{U}=1\).</p>
+<p>Remembering the operator \(\hat{O}=e^{i\hat{A}}\) from section 4 we can see that if \(\hat{A}\) is Hermitian, then
+$$ \hat{O}^\dagger\hat{O}=e^{i\hat{A}} e^{-i\hat{A}^\dagger} =e^{i\hat{A}-i\hat{A}^\dagger} = 1 \;\;\; (5.3) $$</p>
+<p>which means that \(\hat{O}\) is unitary.</p>
+<h6 id="time-evolution">Time evolution</h6>
+<p>Taking notes from section 4 again, we can consider time evolution as a transformation, or an operator \(\hat{T}\), acting on the wavefunction \(\Psi\). So
+$$\hat{T}(\Delta t)\Psi(x,0) = \Psi(x,\Delta t) \;\;\; (5.4) $$</p>
+<p>\(\hat{T}(t)\) must fulfill two requirements. The first requirement is that probability is conserved, or in other words (5.1) holds at every moment t.
+This means that \(\hat{T}(\Delta t)\) is unitary and so it can be written as \(\hat{T}=e^{-i\hat{A}f(\Delta t)}\)
+where \(\hat{A}\) is Hermitian and \(f(\Delta t)\) some function of the time interval \(\Delta t\).</p>
+<p>The second requirement is that for time intervals \(\Delta t_1,\Delta t_2\) we should have
+$$\hat{T}(\Delta t_2) \hat{T}(\Delta t_1) \Psi(x,0) = \hat{T}(\Delta t_1 + \Delta t_2)\Psi(x,0) \;\;\; (5.5) $$</p>
+<p>since it shouldn&rsquo;t matter if we &ldquo;took a stop&rdquo; at \(\Delta t_1\) before going to \(\Delta t_2\).
+This second requirement limits \(f(\Delta t)\) to being a linear function of \(\Delta t\), so \(f(\Delta t)=\alpha\Delta t\) where \(\alpha\) is some real constant. In this case (5.5) is
+$$\hat{T}(\Delta t_2) \hat{T}(\Delta t_1)=e^{-i\hat{A}\alpha\Delta t_1}e^{-i\hat{A}\alpha\Delta t_2}  =e^{-i\hat{A}\alpha(\Delta t_1 + \Delta t_2)} = \hat{T}(\Delta t_1 + \Delta t_2)  $$</p>
+<p>And so the final form of \(\hat{T}\) is \(\hat{T}=e^{-i\alpha\Delta t \hat{A}}\). Two observations are in order.
+Firstly, by comparing to (4.19) we can see that \(\hat{A} = \hat{H}\) the Hamiltonian operator. Secondly, the exponent has to be dimensionless and so we introduce Planck&rsquo;s constant \(\hbar\) with dimensions of \(energy\cdot time\) so \(\alpha = \frac{1}{\hbar}\).</p>
+<h6 id="schrodingers-equation">Schrodinger&rsquo;s equation</h6>
+<p>For an infinitesimal time interval \(dt\) we have
+$$ e^{-i\frac{dt}{\hbar}\hat{\mathcal{H}}} = 1  -i\frac{dt}{\hbar}\hat{\mathcal{H}} \;\;\; (5.6) $$</p>
+<p>and so
+$$ \Psi(x,t+dt) = \Psi(x,t)(1  -i\frac{dt}{\hbar}\hat{\mathcal{H}}) \;\;\; (5.7)$$</p>
+<p>but also, from Taylor&rsquo;s Theorem
+$$ \Psi(x,t+dt) = \Psi(x,t) + dt\frac{d\Psi}{dt}\;\;\; (5.8) $$</p>
+<p>Which means that
+$$\frac{d\Psi}{dt} = -\frac{i}{\hbar}\hat{\mathcal{H}}\Psi(x,t) \;\;\; (5.9) $$</p>
+<p>Finally, by rearranging the terms we get <em>Schrodinger&rsquo;s</em> equation of time evolution
+$$i\hbar \frac{d\Psi}{dt} =\hat{\mathcal{H}}\Psi(x,t) \;\;\; (5.10)  $$</p>
+<h6 id="the-hamiltonian">The Hamiltonian</h6>
+<p>To tie any lose ends let&rsquo;s try to find the form of the Hamiltonian operator with the tools we have developed. In the fourth section we saw that the general form of the Hamiltonian is \(\mathcal{H}=\frac{p^2}{2m} + V(x)\).
+What we need to do is replace both momentum and position with operators. Position is pretty fundamental and so we&rsquo;re gonna treat position and therefore the potential as a multiplicative operator. This means that
+$$\hat{x}\Psi = x\Psi \;\;\;,\;\;\; \hat{V}(\hat{x})\Psi= V(x)\Psi \;\;\; (5.11) $$</p>
+<p>Assuming that the potential is a real function, then the potential is clearly an Hermitian operator.</p>
+<p>If we look at subsection 4.4 we can see that the finite operator tied to momentum is \(e^{-a\frac{d}{dx}}\)
+which is also the operator for finite displacements. However, as we saw in this section, for the displacement to be physical the exponent of the operator needs to be of the form
+\(i\hat{p}\) where \(\hat{p}\) is Hermitian. Also, as before, the exponent needs to be dimensionless. Combining these two facts we get the form of the momentum operator
+$$\hat{p}=-i\hbar\frac{d}{dx} \;\;\; (5.12) $$
+you will recall that this is indeed a Hermitian operator.</p>
+<p>This means that the Hamiltonian is
+$$\hat{\mathcal{H}}= - \frac{\hbar^2}{2m}\frac{d^2}{dx^2} + V(x) \;\;\; (5.13) $$</p>
+<p>Looking at all of the above, we can see that the geometry and unitarity requirements of quantum mechanics severely limits the possible equations and operators we can use making the process of finding them easier. We can also see a connection between classical mechanics and quantum mechanics that is rarely so visible.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>This whole article was motivated by a line in Arnold&rsquo;s book for mathematical methods of classical mechanics. The line was &ldquo;the phase space has a naturally symplectic structure.&rdquo; I didn&rsquo;t understand then how a physical theory can have a natural geometry so I looked into it. I hope that after reading this article the reader can see how different geometries arise in different theories even in the abstract phase space or Hilbert space.</p>
+<p>It is also interesting to see how much information can be &ldquo;hidden&rdquo; in the geometry of said space, such as the Lorentz transformation or Schrodinger&rsquo;s equation.</p>
+<p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>for a more detailed derivation of the basics of special relativity see the article on deriving Maxwell&rsquo;s equations from first principles&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+      
+    </article>
+    
+  </div>
+
+        </div><footer>
+  <div class="container">
+    <p class="credits copyright">
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;/&nbsp;Theme&nbsp;<a href="https://github.com/kaisugi/HugoTeX">HugoTeX</a>
+        <br>
+        <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
+        &copy;
+        2025
+      </p>
+  </div>
+</footer></body>
+</html>

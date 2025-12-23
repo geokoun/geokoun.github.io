@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8" />
+
+  <title>Constraining Nature I: Lagrange Multipliers and Pressure - Principia Physicae Generalis</title>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/latex.css" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/main.css" />
+
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hugo 0.153.2"><body>
+
+
+
+
+
+
+<header>
+  <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+  <div class="intro-header">
+    <div class="container">
+      <div class="post-heading">
+        
+          <h1>Constraining Nature I: Lagrange Multipliers and Pressure</h1>
+          
+        
+      </div>
+    </div>
+  </div>
+</header>
+<div id="content">
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      <div class="postmeta">
+        <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>Sep 21, 2022
+  
+</span>
+      </div>
+      <br>
+      
+    <p>An explanation of constraints in classical mechanics and the derivation of the Navier-Stokes equations, treating pressure as a Lagrange multiplier.</p>
+<p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+<h1 id="introduction">Introduction</h1>
+<p>One of the reasons for Lagrange&rsquo;s initial discovery of what is now classical mechanics was the elimination of so called constrain forces (like the tension of a rope) from the description of a physical system to make the equations simpler. However there is a way (also suggested first by Lagrange) to re-introduce these constrain forces into the formalism of classical mechanics gaining more information in the process.<br>
+In this article we are going to explore the Lagrange multiplier description of constrains and use it to derive a fundamental form of Schrodinger&rsquo;s equation and the Navier-Stokes equations for incompressible fluids.</p>
+<h1 id="holonomic-constraints">Holonomic constraints</h1>
+<h6 id="the-definitions">The definitions</h6>
+<p>The constraints we are going to be concerned with here are going to be Holonomic. That means that they can be expressed as the demand that a certain function
+\(\phi(q)\) of the coordinates is zero at all times during the evolution of the system.<br>
+Geometrically, if the original system has \(N\) degrees of freedom then the system evolves in a N-dimensional configuration space. Every constraint we introduce removes one degree of freedom so it limits the evolution to a (N-1)-dimensional subspace. Now the constraint is obviously being enforced by some force that by definition has no other effect on the system so it has to be orthogonal to the constrained subspace.<br>
+To see all of the above remarks in action we will consider the simple problem of a pendulum of mass m that has a constant length</p>
+<h6 id="the-simple-pendulum">The simple pendulum</h6>
+<p>Assuming that the pendulum has a constant length \(L\) and the only force acting on it is gravity, then we only need one variable, the angle
+\(\theta\), to fully describe the system. The configuration space in a circle since \(\theta + 2\pi=\theta\). The Lagrangian is as usual:
+$$ \mathcal{L}=T-V=\frac{1}{2}mL^2\dot{\theta}^2 + mgLcos\theta =\frac{1}{2}L\dot{\theta}^2 - gcos\theta  \;\;\; (2.1)  $$</p>
+<p>and from the Euler-Lagrange equations we get the usual pendulum equation
+$$ L\ddot{\theta}=-gsin\theta \;\;\; (2.2) $$</p>
+<p>But what if we wanted to know the tension force that keeps the pendulum at a constant length?
+We begin with the unconstrained system of 2-dimensions (\(r,\theta\)).
+The configuration space is now a cylinder since again \(\theta + 2\pi=\theta\) and \(0&lt;r&lt;\infty\). As discussed above, we introduce the constraint \(\phi(r,\theta)\equiv r-L = 0\) again limiting our configuration space to a circle. Instead of replacing r in \(\mathcal{L}\) we introduce a new term, the constraint multiplied by an undefined function of time called a <em>Lagrange multiplier</em> \(\lambda\)
+$$\mathcal{L}=\frac{1}{2}m(r^2\dot{\theta}^2 + \dot{r}^2) + mgrcos\theta + \lambda \phi(r) \;\;\; (2.3) $$</p>
+<p>Now, not only do we keep treating \(r\) as a variable, but we also treat the multiplier \(\lambda\) as a variable. We have three E-L equations:
+$$\lambda: \;\;\;r-L=0 \;\;\; (2.3a)$$
+$$\theta: \;\;\;mr^2\ddot{\theta}=mgrsin\theta \;\;\; (2.3b)$$
+$$r: \;\;\; m\ddot{r}=mr\dot{\theta}+mgcos\theta+ \lambda \;\;\; (2.3c)$$</p>
+<p>We can see that (2.3a) is the constraint, so replacing \(r=L\) in (2.3b) gives us the same equation as (2.1). What we have gained is (2.3c). Since \(r\) is constant \(\ddot{r}=0\) so
+$$\lambda = -mL\dot{\theta} -mgcos\theta \;\;\; (2.4)$$</p>
+<p>Comparing (2.3c) with Newton&rsquo;s Second Law \(m\ddot{r}=F_r\) we can see that \(\lambda\) or in general \(\lambda\cdot \nabla\phi\) is the force acting on the system to enforce the constraint \(\phi\).
+As predicted, the force is orthogonal to the circle describing the constrained motion in the configuration space.</p>
+<h6 id="schrodingers-equation">Schrodinger&rsquo;s equation</h6>
+<p>Lagrange multipliers, and constraints in general, can also be used to derive the equations describing a system. The first example we are going to look at is a derivation of Schrodinger&rsquo;s time independant equation.
+We define the Hamiltonian operator \(\hat{\mathcal{H}}\) by the relation
+$$&lt;E&gt;=\int  \psi^*\hat{\mathcal{H}}\psi\;d^3x \;\;\; (2.5)$$</p>
+<p>Where \(&lt;E&gt;\) is the mean value of the energy, \(\psi\) the wave function of the system and \(\psi^* \) its complex conjugate. Similar to the principle of least action, we demand that \(&lt;E&gt;\) is stationary so we identify the action with \(&lt;E&gt;\).<br>
+It is well known that the probability of a particle existing in the volume V is given by the integral of the norm of \(\psi\) squared.
+So, if we take the integral to encompass all of space we expect the probability to be 1, since the particle must exist somewhere. Therefore our constrain is:
+$$ \phi \equiv \int \psi^* \psi\;d^3x - 1 = 0 \;\;\; (2.6) $$</p>
+<p>The action can now be written as
+$$\mathcal{S}= \int (\psi^* \hat{\mathcal{H}}\psi + \lambda\psi^* \psi)\;d^3x -\lambda \;\;\; (2.7)$$</p>
+<p>If we treat \(\psi\) and \(\psi^*\) as independant variables and apply our usual variational methods for getting the equations of motion <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> we get the equation (and its complex conjugate)
+$$\hat{\mathcal{H}}\psi=\lambda\psi   \;\;\; (2.8)$$</p>
+<p>This is Schrodinger&rsquo;s time independant equation and it tells us that the wave functions \(\psi\) that describe any time-independant system are the eigenfunctions of the Hamiltonian operator,
+with energy equal to the eigenvalue \(\lambda\). \(\hat{\mathcal{H}}\) itself is specific to the particular problem one is investigating so there is no general formula.</p>
+<h1 id="continuous-mechanics-and-pressure">Continuous Mechanics and Pressure</h1>
+<h6 id="continuous-formalism">Continuous formalism</h6>
+<p>To describe continuous media we use fields instead of variables. That means that variables like the coordinates \(q\) are replaced by quantities called field variables \(\phi(q)\) of the coordinates.
+The Lagrangian too is replaced by a Lagrangian density \(\mathcal{L}\) so the action is given by
+$$\mathcal{S}=\int_{t_1}^{t_2}  \int_V \mathcal{L}\; d^3x\;dt\;\;\; (3.1)$$</p>
+<p>The Euler-Lagrange equations are now given by
+$$ -\frac{\delta\mathcal{L}}{\delta\phi} \equiv \frac{\partial}{\partial t} \frac{\partial \mathcal{L}}{\partial(\partial\phi / \partial t)} + \frac{\partial}{\partial x_i} \frac{\partial \mathcal{L}}{\partial(\partial\phi / \partial x^i)} - \frac{\partial \mathcal{L}}{\partial \phi} = 0 \;\;\; (3.2) $$</p>
+<p>Where \(\frac{\delta\mathcal{L}}{\delta\phi}\) is called a functional derivative of \(\mathcal{L}\) and \( x^i \) the three coordinates of space.</p>
+<h6 id="lagrangian-description-of-fluids">Lagrangian description of fluids</h6>
+<p>There are two ways to describe a fluid in motion. One of them, introduced by Lagrange is to give an &ldquo;label&rdquo; \(\vec{\alpha}\) to every elementary part of the fluid and then describe its current coordinate as a function of time and the label: \(\vec{q}(\vec{\alpha},t)=(q^1,q^2,q^3)\).
+Usually we chose the label \(\vec{\alpha}\) to be the starting coordinates of the specific element.<br>
+An important matrix is the deformation matrix with elements \(\frac{\partial q_i}{\partial \alpha^j}\) and determinant \(J\) :
+$$ J= \frac{1}{6} \epsilon_{kjl}\epsilon^{imn} \frac{\partial q^k}{\partial\alpha^i}\frac{\partial q^j}{\partial\alpha^m}\frac{\partial q^l}{\partial\alpha^n} \;\;\; (3.3) $$</p>
+<p>To understand the physical meaning of \(J\) consider an elementary volume of fluid at \(t=0\) with label \(d^3\alpha\). At any point in time, if \(d^3x\) is the volume taken up by the starting volume, by definition
+$$ d^3x=Jd^3\alpha \;\;\; (3.4)  $$</p>
+<p>So \(J\) defines how volume changes through time (when the time evolution is described by the function \(\vec{q}(\vec{\alpha},t)\)). Using conservation of mass we get
+$$\rho (\vec{q}(\vec{\alpha},t)) d^3x=\rho_o(\vec{\alpha}) d^3\alpha   $$</p>
+<p>so using (3.4) we get
+$$\rho_o=\rho J \;\;\; (3.5) $$</p>
+<p>The final definition we need is of the cofactor \(A^i_k\) of \(\frac{\partial q_i}{\partial \alpha^j}\) that is defined as<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
+$$\frac{\partial q^k}{\partial \alpha^j} \frac{A^i_k}{J}=\delta^i_j \;\;\; (3.6) $$</p>
+<p>The explicit expression for \(A^i_k\) is:
+$$A^i_k=\frac{1}{2} \epsilon_{kjl}\epsilon^{imn} \frac{\partial q^j}{\partial \alpha^m} \frac{\partial q^l}{\partial \alpha^n} \;\;\; (3.7) $$</p>
+<h6 id="eulerian-description-of-fluids">Eulerian description of fluids</h6>
+<p>The second way to describe a fluid was introduced by Euler and treats the velocity of the fluid \(\vec{u}(\vec{x},t)\) as a field.
+All elements are now identical (without a label) and \(\vec{u}(\vec{x},t)\) is the velocity of the element that happens to be at point \(\vec{x}\) at time \(t\).<br>
+To connect the two descriptions we assume that the labeling system \(\vec{\alpha}\) is 1-1 and reversible and so we can &ldquo;identify&rdquo; the element at point \(\vec{x}\) at time \(t\) as \(\vec{\alpha}=\vec{q}^{-1}(\vec{x},t)\).
+Therefore
+$$\vec{u}(\vec{x},t) = \dot{\vec{q}}\;(\vec{q}^{-1}(\vec{x},t) )\;\;\; (3.8) $$</p>
+<p>Notice now that the time derivative of the velocity field, using the chain rule, is
+$$\frac{d}{dt}\vec{u}= \frac{\partial \vec{u}}{\partial t} + \vec{u}\cdot\vec{\nabla}\vec{u} \;\;\; (3.9) $$</p>
+<h6 id="navier-stokes-equations">Navier-Stokes equations</h6>
+<p>First we are going to construct the Lagrangian of a free fluid, using the Lagrange description. The kinetic energy is
+$$T[\dot{\vec{q}}]=\int \rho_o (\vec{\alpha})|\dot{\vec{q}}|^2\; d^3\alpha $$</p>
+<p>Since we are dealing with incompressible fluids, we want the volume fluid to not change through time, so according to (3.4) we demand that \(J=1\). Using our constraint language, we introduce the constraint \(\phi \equiv J-1=0\).
+Incompressible fluids have no internal potential energy so the Lagrangian is
+$$\mathcal{L}=\int \rho_o (\vec{\alpha})|\dot{\vec{q}}|^2\; d^3\alpha + \lambda(J-1) \;\;\; (3.10) $$</p>
+<p>The Euler-Lagrange equations (3.2) give
+$$\rho_o\ddot{q}^i = -A^i_j \frac{\partial \lambda}{\partial \alpha^j} \;\;\; (3.11) $$</p>
+<p>using (3.5) and (3.6) we get
+$$\rho\ddot{q}^i = -\frac{\partial \lambda}{\partial \alpha^i} \;\;\; $$</p>
+<p>using vector notation and going over to Euler&rsquo;s description we get
+$$\rho(\frac{\partial \vec{u}}{\partial t} + \vec{u}\cdot\vec{\nabla}\vec{u})=-\vec{\nabla}\lambda \;\;\; (3.12) $$</p>
+<p>In other derivations of (3.12) one sees that \(-\vec{\nabla}\lambda\) is replaced by \(-\vec{\nabla}P\) where \(P\) is the pressure. Therefore, we can conclude that pressure is the force keeping a fluid from changing its density (i.e. making it incompressible).
+To get the full expression we just need to add any external potential field \(\Phi\) and the inner friction coefficient \(\eta\):
+$$\rho(\frac{\partial \vec{u}}{\partial t} + \vec{u}\cdot\vec{\nabla}\vec{u})=-\vec{\nabla}P + \vec{\nabla}\Phi + \eta\nabla^2\vec{u} \;\;\; (3.13) $$</p>
+<h1 id="conclusion-and-resources">Conclusion and (Re)sources</h1>
+<h6 id="conclusion">Conclusion</h6>
+<p>We have seen the Lagrange multiplier formalism for constrained systems and how it can, not only be applied to mechanical problems like the pendulum to calculate the forces, but also applied to fundamental matters like the theory of fluids to see physical forces in a different light.<br>
+Although we mentioned the geometric interpretation of constrains there is a whole lot more depth to it. If one is interested, one should look into D&rsquo;Alambert&rsquo;s principle and the principle of virtual displacements found in classical mechanics textbooks.<br>
+The second article in this series is going to go into constraints in the Hamiltonian formalism of mechanics and how it&rsquo;s used to quantize fields.
+<br/>
+<strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+<h6 id="sources-and-further-reading">Sources and Further Reading</h6>
+<ol>
+<li>The motivation for this two-parter came from the constrains section of Theocharis Apostolatos&rsquo;s book on classical mechanics. (I don&rsquo;t believe there is an English translation of the book which is a giant pity).</li>
+<li>A fully mathematical and geometric approach to the subject of constraints and Laplace multipliers is presented in Arnold&rsquo;s &ldquo;Mathematical Methods of Classical Mechanics&rdquo;.</li>
+<li>A deeper dive into constrains and an exploration of the principle of virtual displacements can be found in Lanczos&rsquo;s &ldquo;The Variational Principles of Mechanics&rdquo;.</li>
+<li>The derivation of Schrodinger&rsquo;s equation from constrains was mentioned in Landau&rsquo;s &ldquo;Quantum Mechanics (Non-Relativistic Theory)&rdquo;.</li>
+<li>The derivation of the pressure Lagrange multiplier and the basic theory of fluids is taken from the article &ldquo;Lagrangian and Dirac constraints for the ideal incompressible fluid and magnetohydrodynamics&rdquo; by P.J. Morrison. As one can tell from the title, the article also touches on the Hamiltonian/Dirac formalism and also goes into magnetohydrodynamics which do not concern us here.</li>
+</ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>See the last article on principles&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>\(\delta^i_j\) is the Kronecker delta and we assume the summing convention&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+      
+    </article>
+    
+  </div>
+
+        </div><footer>
+  <div class="container">
+    <p class="credits copyright">
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;/&nbsp;Theme&nbsp;<a href="https://github.com/kaisugi/HugoTeX">HugoTeX</a>
+        <br>
+        <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
+        &copy;
+        2025
+      </p>
+  </div>
+</footer></body>
+</html>
