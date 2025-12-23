@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<meta name="generator" content="Hugo 0.102.3" /><body>
+<meta name="generator" content="Hugo 0.153.2"><body>
 
 
 
@@ -60,7 +60,7 @@ Where the integral is taken over all of space and the star denotes the complex c
 <h1 id="the-principles">The Principles</h1>
 <p>We will begin by stating the most basic constraints that any solution to quantum mechanical problems must obey to be considered &ldquo;physical&rdquo;.</p>
 <h6 id="unitarity-and-the-inner-product">Unitarity and the Inner Product</h6>
-<p>The set of all possible wave functions live in a space called Hilbert space. Specifically, since we want our solutions to satisfy (2.1), our Hilbert space is only populated by &ldquo;square-integrable&rdquo; functions i.e.: 
+<p>The set of all possible wave functions live in a space called Hilbert space. Specifically, since we want our solutions to satisfy (2.1), our Hilbert space is only populated by &ldquo;square-integrable&rdquo; functions i.e.:
 $$ \int\phi^*\phi \; dV &lt; \infty \;\;\;(2.2) $$
 Following the formalism of the last article, we can define the inner product of Hilbert space as
 $$ &lt;\phi,\psi&gt; = \int\phi^*\psi \; dV \;\;\; (2.3)  $$
@@ -76,7 +76,7 @@ and so we expect
 $$  ||\hat{O}\phi||^2 = &lt;\hat{O}\phi,\hat{O}\phi&gt; = &lt;\phi,\hat{O}^\dagger \hat{O}\phi&gt;\;\; &gt; 0 \;\;\; (2.7)   $$
 from now on we will denote the average value of an operator \(\hat{O}\) as
 $$ &lt;\hat{O}&gt; = &lt;\phi,\hat{O}\phi&gt; \;\;\; (2.8) $$
-and therefore, we expect 
+and therefore, we expect
 $$ &lt;\hat{O}^\dagger \hat{O}&gt; \;\;\; &gt; 0 \;\;\; (2.9) $$</p>
 <h6 id="ehrenfests-theorem">Ehrenfest&rsquo;s Theorem</h6>
 <p>The most general formulation of Ehrenfest&rsquo;s theorem is that all of the equations that are true in classical mechanics also apply to the average values of quantum operators. The only difference being that Poisson&rsquo;s brackets are replaced by the commutator (we assume that \(\hbar = 1\))
@@ -98,15 +98,15 @@ We notice that for \(k=1\) relation (3.4) becomes the Virial Theorem
 $$ 2&lt;p^2&gt; = 2&lt;x^2&gt; + 4g&lt;x^4&gt; \;\;\; (3.5) $$
 and therefore the energy can be written as
 $$  E = &lt;H&gt; = 2&lt;x^2&gt; + 3g&lt;x^4&gt; \;\;\; (3.6) $$
-The last fact we are going to need is that, in eigenstates of the Hamiltonian, \(&lt;\mathcal{O}H&gt; = E&lt;\mathcal{O}&gt; \) and so for \(\mathcal{O}=x^{k-1}\) we get 
+The last fact we are going to need is that, in eigenstates of the Hamiltonian, \(&lt;\mathcal{O}H&gt; = E&lt;\mathcal{O}&gt; \) and so for \(\mathcal{O}=x^{k-1}\) we get
 $$ &lt;x^{k-1}p^2&gt;=E&lt;x^{k-1}&gt; - &lt;x^{k+1}&gt; -g&lt;x^{k+5}&gt; \;\;\; (3.7) $$
-Combining all of the above and trying to replace every operator with the energy and powers of x we finally get 
+Combining all of the above and trying to replace every operator with the energy and powers of x we finally get
 $$ 4kE&lt;x^{k-1}&gt; + k(k-1)(k-2)&lt;x^{k-3}&gt; -4(k+1)&lt;x^{k+1}&gt; -4g(k+2)&lt;x^{k+3}&gt; \;\;\; (3.8) $$
 Since \( &lt;x^o&gt;=1\) and, from symmetry \(&lt;x^k&gt;=0\) for all odd values of k, the only values we need to evaluate every moment \((&lt;x^k&gt;)\) is that of the energy and of \(&lt;x^2&gt;\). Notice that \(&lt;x^4&gt;\) can be evaluated from Virial&rsquo;s Theorem (3.5).</p>
 <h6 id="demanding-positivity">Demanding Positivity</h6>
-<p>It is a fact of Fourier analysis that we can calculate a function if we know all of the moments. Therefore the question is, is there any way to constraint the possible values of \(E\) and \(&lt;x^2&gt;\)? The answer comes in the form of (2.9). The most general form of the operator \(O\), assuming it&rsquo;s a function of x, is 
+<p>It is a fact of Fourier analysis that we can calculate a function if we know all of the moments. Therefore the question is, is there any way to constraint the possible values of \(E\) and \(&lt;x^2&gt;\)? The answer comes in the form of (2.9). The most general form of the operator \(O\), assuming it&rsquo;s a function of x, is
 $$ \mathcal{O}= \sum_{i=0}^{K} c_ix^i \;\;\; (3.9)$$
-In reality \(K\rightarrow \infty\) but if we want to calculate anything we must stay in a finite range. The positivity condition (2.9) becomes 
+In reality \(K\rightarrow \infty\) but if we want to calculate anything we must stay in a finite range. The positivity condition (2.9) becomes
 $$ \sum_{i=0}^{K} \sum_{j=0}^{K} &lt;c_i^* x^i c_j x^j &gt; = \sum_{i=0}^{K} \sum_{j=0}^{K}c_i^*&lt;x^{i+j}&gt;c_j =\sum_{i=0}^{K} \sum_{j=0}^{K} c_i^*\mathcal{M}^{ij}c_j \geq 0 \;\;\; (3.10) $$</p>
 <p>This is just matrix multiplication between the \(K\times1\)  matrix \(c\) and the \(K\times K\) matrix \(\mathcal{M}^{ij} = &lt;x^{i+j}&gt; \). In fact, since the constants \(c_i\) are arbitrary, (3.10) is the definition of a positively defined matrix. If we want to see if a certain pair of \(E\) and \(&lt;x^2&gt;\) correspond to a physical state we just calculate the first \(2K\) moments using the recursive relation (3.4) and then check if \(\mathcal{M}\) is positive. A simple positivity check (for a computer) is to make sure that all eigenvalues of the matrix are greater of equal to zero.</p>
 <p>The algorithm is now clear, we scan through a possible range of values for our free variables and we check the positivity of \(\mathcal{M}\) for every value to get the physical ones. Since our K is finite, we get a small range of physical values instead of a single one. If we want more precision we increase K to include more moments. I won&rsquo;t include arithmetic results here but it takes about 10 seconds for a computer to compute the right energies with less than 1% error.</p>
@@ -117,7 +117,7 @@ where \(V&rsquo;= \frac{dV}{dx}\). What we have found is pretty impressive. With
 <h1 id="self-adjointness-and-boundary-conditions">Self-Adjointness and Boundary Conditions</h1>
 <p>In our previous analysis we didn&rsquo;t mention anything about boundary conditions and in fact they appeared nowhere in our calculations. This is because, as we said then, we lied when we postulated Ehrenfest&rsquo;s Theorem (2.11). The correction to this mistake is subtle and has to do with the definition of Hermitian operators and their relation to the boundary conditions. We will now remedy this.</p>
 <h6 id="self-adjointness-and-operator-domains">Self-Adjointness and Operator Domains</h6>
-<p>Any operator \(\mathcal{O}\), if we let it act on every function \(\Psi\) of our Hilbert space, is very likely to map it into a function \(\Psi' \) that lies outside the acceptable solutions of our problem. For this reason, every operator is defined on an operator domain of Hilbert space \(D(\mathcal{O})\). The domain is defined by the boundary conditions of the wavefunctions \(\psi\) that occupy it (\(\psi \in (D(\mathcal{O}))\). 
+<p>Any operator \(\mathcal{O}\), if we let it act on every function \(\Psi\) of our Hilbert space, is very likely to map it into a function \(\Psi' \) that lies outside the acceptable solutions of our problem. For this reason, every operator is defined on an operator domain of Hilbert space \(D(\mathcal{O})\). The domain is defined by the boundary conditions of the wavefunctions \(\psi\) that occupy it (\(\psi \in (D(\mathcal{O}))\).
 We can now say that an operator \(A\) is self-adjoint \((A=A^\dagger)\) if it meets the following two conditions:</p>
 <p>a) the operator must be symmetric, so \(&lt;\phi,A\psi&gt;=&lt;A\phi,\psi&gt;\)</p>
 <p>b) the operator domains must be the same \(D(A)=D(A^\dagger)\)</p>
@@ -199,7 +199,7 @@ Universe 8 (2021) 129 .&rdquo;</p>
         <br>
         <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
         &copy;
-        2024
+        2025
       </p>
   </div>
 </footer></body>

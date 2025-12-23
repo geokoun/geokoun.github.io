@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<meta name="generator" content="Hugo 0.102.3" /><body>
+<meta name="generator" content="Hugo 0.153.2"><body>
 
 
 
@@ -65,7 +65,7 @@
 <h6 id="a-quick-example">A Quick Example</h6>
 <p>Before we go to fluids let&rsquo;s look at a classic example from field theory. The only thing we need to know is that our theory contains one scalar field \(\phi(x)\) and that it&rsquo;s symmetric under reflection \(\phi(x)=\phi(-x)\). The most general Lagrangian is
 $$ \mathcal{L} = \frac{1}{2}(\partial_\mu \phi)^2 +\frac{1}{2}m^2 \phi^2 + \lambda \phi^4 + C(\partial_\mu \phi)^4 + D\phi^6 + &hellip;\;\;\; (2.1)   $$</p>
-<p>Where the dots correspond to every other possible even combination of the field and it&rsquo;s derivative. As we said before, this theory, like any other, has a fundamental cutoff length, call it \(\Lambda\). The next step is to integrate the high energy degrees of freedom. To do that here we define the new Lagrangian by integrating in Fourier space all fields with momentum 
+<p>Where the dots correspond to every other possible even combination of the field and it&rsquo;s derivative. As we said before, this theory, like any other, has a fundamental cutoff length, call it \(\Lambda\). The next step is to integrate the high energy degrees of freedom. To do that here we define the new Lagrangian by integrating in Fourier space all fields with momentum
 $$ b\Lambda \leq |k| &lt; \Lambda \;\;,\;\; 0&lt;b&lt;1 \;\;\; (2.2)   $$
 so
 $$ \mathcal{L}_{eff} = \int^\Lambda_{b\Lambda} d^d k \mathcal{L} $$</p>
@@ -106,13 +106,13 @@ $$ G^m_{p_j} = -ik_j u_{mp} + \mathcal{O}(k^3) \;\;\; (3.7)  $$</p>
 $$ G^{p_i}_{p_j} = -D_T(\delta_{ij}-\hat{k_i}\hat{k_j}) - D_L k_j k_i + \mathcal{O}(k^4) \;\;\;(3.8) $$</p>
 <p>where the hats denote unit vectors. If we think of the state of the system as a column 5-vector we can represent \(G^a_{a&rsquo;} \) as a \(5\times 5\) matrix</p>
 <p>$$  <br>
-G^a_{a&rsquo;} = \begin{pmatrix} 
+G^a_{a&rsquo;} = \begin{pmatrix}
 -D_{mm}k^2 &amp; -D_{me}k^2 &amp; -iu_{mp}\vec{k}^T \\
 -D_{em}k^2 &amp; -D_{ee}k^2 &amp; -iu_{ep}\vec{k}^T \\
 -iu_{pm}\vec{k} &amp; -iu_{pe}\vec{k} &amp;  -D_T(\mathcal{I}-\hat{k_i}\hat{k_j}^T) - D_L \vec{k}\vec{k}^T
 \end{pmatrix} \;\;\; (3.9)
 $$</p>
-<p>If the system is defined in d dimensions, \(\mathcal{I}\) is the \(d\times d\) identity matrix and 
+<p>If the system is defined in d dimensions, \(\mathcal{I}\) is the \(d\times d\) identity matrix and
 $$ \vec{k} =  \begin{pmatrix} k_x \\ k_y \\ : \\ : \end{pmatrix}       $$</p>
 <p>we are now ready to begin the RG flow.</p>
 <h6 id="the-rg-flow">The RG flow</h6>
@@ -133,7 +133,7 @@ $$ \hat{S}\hat{T}^z: \;\; D\rightarrow 2^{z-2}D \;\;,\;\; u\rightarrow 2^{z-1}u 
 <h6 id="euler-points">Euler Points</h6>
 <p>In the case of z=1, at the fixed point, the propagator (3.9) becomes</p>
 <p>$$  <br>
-\begin{pmatrix} 
+\begin{pmatrix}
 0 &amp; 0 &amp; -iu_{mp}\vec{k}^T \\
 0 &amp; 0 &amp; -iu_{ep}\vec{k}^T \\
 -iu_{pm}\vec{k} &amp; -iu_{pe}\vec{k} &amp;  0
@@ -145,14 +145,14 @@ $$ \frac{d\rho^m}{dt} = -iu_{mp}\vec{k} \vec{\rho^p} \;\;\;   $$</p>
 $$ \frac{d}{dt} \rho^m + u_{mp}\nabla{\vec{\rho^p}} = 0 \;\;\;  $$</p>
 <p>If we want to make it even more recognisable we can use the velocity field to get
 $$ \frac{d}{dt} \rho^m + \nabla{(\rho^m \vec{v})} = 0 \;\;\; (3.13) $$</p>
-<p>Likewise, the evolution of the momentum density (written as \(\rho^m \vec{v}\)) becomes 
+<p>Likewise, the evolution of the momentum density (written as \(\rho^m \vec{v}\)) becomes
 $$ \frac{d}{dt}(\rho^m \vec{v}) = -iu_{pm}\vec{k}\rho^m -iu_{pe}\vec{k}\rho^e $$</p>
 <p>Now it turns out that this exact combination of the energy and mass densities can be identified with pressure P leading to Euler&rsquo;s equation
 $$ \frac{d}{dt}(\rho^m \vec{v}) = -\nabla{P}  \;\;\; (3.14)   $$</p>
 <h6 id="incopressible-points">Incopressible Points</h6>
 <p>In the limit of \( u\rightarrow \infty \) we can&rsquo;t really talk about propagating waves since they immediately go to infinity. Therefore we can focus on D terms leaving us with the propagator</p>
 <p>$$    <br>
-G^a_{a&rsquo;} = \begin{pmatrix} 
+G^a_{a&rsquo;} = \begin{pmatrix}
 -D_{mm}k^2 &amp; -D_{me}k^2 &amp; 0 \\
 -D_{em}k^2 &amp; -D_{ee}k^2 &amp; 0 \\
 0 &amp; 0 &amp;  -D_T(\mathcal{I}-\hat{k_i}\hat{k_j}^T) - D_L \vec{k}\vec{k}^T
@@ -163,7 +163,7 @@ $$ \frac{d}{dt} \begin{pmatrix} \rho^m \\ \rho^e \end{pmatrix} = D\nabla^2 \begi
 <p>while momentum follows a similar equation with only friction terms for longitudinal and transverse propagation
 $$ \frac{d}{dt}(\rho^m \vec{v}) = D_T\nabla^2\vec{v} + D_L\nabla(\nabla\vec{v}) \;\;\; (3.17)   $$</p>
 <h6 id="navier-stokes">Navier-Stokes</h6>
-<p>To reach any of the above fixed points would theoretically take and infinite amount of RG transformations since for that to happen, we would need n applications such that \(\frac{1}{2}^n \rightarrow 0\). Therefore, on the way to fixed points, our theory will spend a lot of time close to them. But close to the fixed points we already know what the propagator looks like, namely our original matrix of (3.9). Combining all previous results, we get the Navier-Stokes equation for the momentum density 
+<p>To reach any of the above fixed points would theoretically take and infinite amount of RG transformations since for that to happen, we would need n applications such that \(\frac{1}{2}^n \rightarrow 0\). Therefore, on the way to fixed points, our theory will spend a lot of time close to them. But close to the fixed points we already know what the propagator looks like, namely our original matrix of (3.9). Combining all previous results, we get the Navier-Stokes equation for the momentum density
 $$ \frac{d}{dt}(\rho^m\vec{v}) = -\nabla P + D_T\nabla^2\vec{v} + D_L\nabla(\nabla\vec{v}) \;\;\; (3.18)  $$</p>
 <p>Usually the chain rule is used to get a partial differential equation but we don&rsquo;t need to worry about that here. There is also a potential in most applications which can be easily put into the right side of (3.18) as is done most of the time with potentials. What we have found is the most general equation for large scale fluids and the two kinds of points where it is flowing towards.</p>
 <p>The last question we need to answer is how to decide which point a specific theory approaches. This depends purely on the problem we want to study. We have seen that to get to Euler points we expand the time-scale at the same rate as we do the spacial scale, while to get to the Incopressible points we do it at double the rate. Therefore, if we are interested in short time-scale processes like sound-wave transmission we should expect our theory to approach one of the Euler points. On the other hand, if we want to study physics at a large time-scale, like diffusion, our theory will approach Incopressible fixed points. We already saw , for example, that these fixed points see wave propagation as happening instantaneously and so can say nothing about them.</p>
@@ -192,7 +192,7 @@ $$ \frac{d}{dt}(\rho^m\vec{v}) = -\nabla P + D_T\nabla^2\vec{v} + D_L\nabla(\nab
         <br>
         <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
         &copy;
-        2024
+        2025
       </p>
   </div>
 </footer></body>

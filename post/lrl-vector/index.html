@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<meta name="generator" content="Hugo 0.102.3" /><body>
+<meta name="generator" content="Hugo 0.153.2"><body>
 
 
 
@@ -68,9 +68,9 @@ $$\frac{d}{dt} \frac{\partial \mathcal{L}}{\partial \dot{q_i}}= \frac{\partial \
 <p>Where \(q_i\) is the i-th coordinate and the dot represents the derivative with respect to time.
 To get a better grasp on symmetries we need to go a level of a abstraction deeper. To take that step we first need to define the generalised momentum p as follows:
 $$p_i=\frac{\partial \mathcal{L}}{\partial \dot{q_i}} \;\;\;  (2)$$
-Now we use what is called a Legendre transformation to get the so called Hamiltionian of the system \(\mathcal{H}\). To do this we express every \(\dot{q_i}\) 
+Now we use what is called a Legendre transformation to get the so called Hamiltionian of the system \(\mathcal{H}\). To do this we express every \(\dot{q_i}\)
 as a function of \(p_i\) through the definition (2), and then we define the Hamiltionian as follows:
-$$\mathcal{H} = \sum \dot{q_i} p_i-\mathcal{L} \;\;\; (3)  $$	 
+$$\mathcal{H} = \sum \dot{q_i} p_i-\mathcal{L} \;\;\; (3)  $$	
 By the definition of the Legendre transformation<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> and slight manipulation of (1) using the chain rule, we get Hamilton&rsquo;s equations of motion
 $$\dot{q_i}=\frac{\partial \mathcal{H}}{\partial p_i} \;\;,\;\; \dot{p_i}=-\frac{\partial \mathcal{H}}{\partial q_i} \;\;\; (4) $$
 The first thing we gain by using Hamilton&rsquo;s approach is reducing a second order differential equation (1) into a pair of first order differential equations (4), but remember our goal is an expression of symmetry. For that purpose we define a quantity called the <em>Poisson bracket</em>.<br>
@@ -127,7 +127,7 @@ $$a\cdot b = c \;\;\; then\;\;\;Rep(a)Rep(b)=Rep(c) $$
 If the correspondence is one to one then we say that the representation is isomorphic. Usually, matrices paired with the matrix product operation are used to represent groups so for example \(O(3)\) can be represented isomorphicaly by the set of all 3x3 matrices with determinant \(\pm 1\)<br>
 We are now going to assert without proof that a valid representation of \(O(3)\) is the angular momentum components paired with the Poisson bracket. The characteristic properties we care about are the following relations:
 $$ \{L_i,L_j\}=\epsilon_{ijk} L_k \;\;\;(5)$$
-Where \(\epsilon_{ijk}\) is the fancifully named fully anti-symmetric tensor of rank 3. By definition \(\epsilon_{ijk} = 0\) if any two indices are the same 
+Where \(\epsilon_{ijk}\) is the fancifully named fully anti-symmetric tensor of rank 3. By definition \(\epsilon_{ijk} = 0\) if any two indices are the same
 and is \(\epsilon_{ijk}=\pm 1\) depending on whether the indices are an even or odd permutation of (1,2,3). Keep these thoughts in mind as we tackle the main event</p>
 <h1 id="the-laplace-runge-lenz-vector">The Laplace-Runge-Lenz vector</h1>
 <h6 id="the-kepler-problem">The Kepler Problem</h6>
@@ -137,7 +137,7 @@ $$\mathcal{H}=\frac{p_x^2+p_y^2+p_z^2}{2m} - \frac{k}{\rvert\vec{r}\lvert} $$
 Where \(k=GmM\) .We can see that the form of the Hamiltonian falls into the case we explored in the second example. That means that three of the conserved quantities are the 3 components of the angular momentum.
 But there is another triplet of quantities (or components of a vector) that are conserved. That vector is the titular Laplace-Runge-Lenz vector (LRL). The definition is:
 $$\vec{\mathcal{A}}=\vec{p}\times \vec{L} -mk\hat{r} $$
-The solutions to the Kepler problem are ellipses and \(\vec{\mathcal{A}}\) is a vector that is always parallel to the big axis of the ellipse. 
+The solutions to the Kepler problem are ellipses and \(\vec{\mathcal{A}}\) is a vector that is always parallel to the big axis of the ellipse.
 This is a strange conserved quantity because there is no obvious symmetry corresponding to it. However, as we now know <em>every</em> conserved quantity generates a symmetry.<br>
 To begin our search we are going to find the group that is isomorphic to the total symmetry of the system. To make things easy we will define two new vectors:
 $$\vec{M}=\frac{1}{2}(\vec{L} + \vec{\mathcal{A}}),\vec{N}=\frac{1}{2}(\vec{L} - \vec{\mathcal{A}}) $$
@@ -202,7 +202,7 @@ g(p) of f is the function such that \(\frac{dg(p)}{dp}=x \)&#160;<a href="#fnref
         <br>
         <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
         &copy;
-        2024
+        2025
       </p>
   </div>
 </footer></body>

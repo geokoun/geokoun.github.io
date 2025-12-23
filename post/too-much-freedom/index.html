@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<meta name="generator" content="Hugo 0.102.3" /><body>
+<meta name="generator" content="Hugo 0.153.2"><body>
 
 
 
@@ -76,7 +76,7 @@ The corresponding infinitesimal boost towards the z-axis is \(t\rightarrow t+d\p
 <p>$$ [M_i,M_j] = -\epsilon_{ijk}J_k,\quad [J_i,M_j] = i\epsilon_{ijk}M_k\quad (1.2)   $$</p>
 <p>Now that we have the whole set of generators we can make a simple change of variables. We can define six new operators \(J_{\pm i}=\frac{1}{2}(iJ_i\pm K_i)\). These now satisfy the following relations</p>
 <p>$$[J_{+i},J_{+j}] = \epsilon_{ijk}J_{+k},\quad[J_{-i},J_{-j}] = \epsilon_{ijk}J_{-k} \quad (1.3)$$
-and 
+and
 $$[J_{+i},J_{-j}]=0\quad (1.4)$$
 Well hold on, we just got two of the same algebra (1.1) and in fact (1.4) tells that that they are separate from each other.</p>
 <h6 id="representations-of-the-lorentz-group">Representations of the Lorentz Group</h6>
@@ -106,7 +106,7 @@ $$J_i = \frac{1}{2}\sigma_i,\quad K_i=\frac{i}{2}\sigma_i\quad (1.6)$$</p>
 <p>Now come the problems. There is one more symmetry that we would like our theory to have. This doesn&rsquo;t fit into the Lorentz group because it&rsquo;s discrete. This extra symmetry is parity, (or \(\vec{x}\rightarrow -\vec{x}\)). Again the reason we want this symmetry is because our world seems to obey it<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.
 What does this mean for us? Well under a parity transformation a boost is reversed, this means that \(M_i\rightarrow -M_i\) and so \(J_{+}\rightarrow J_{-}\) and vice versa. But now we got exactly  what we were trying to avoid, we have an object jumping representations between frames of reference. To solve this we need to describe the physical object with a combination of the two representations, namely a 4-component column vector</p>
 <p>$$\Psi(x) = \begin{pmatrix}\psi(x)\\ \chi(x) \end{pmatrix} \quad (1.7) $$
-We call this object a Dirac spinor. Now the top two components transform with (1.6) and the bottom two with (1.7). We say that a Dirac spinor belongs in the sum representation \((1/2,0)\oplus(0,1/2)\) of SO(3,1). 
+We call this object a Dirac spinor. Now the top two components transform with (1.6) and the bottom two with (1.7). We say that a Dirac spinor belongs in the sum representation \((1/2,0)\oplus(0,1/2)\) of SO(3,1).
 The elements of this representation are just a block diagonal matrix with the elements of one representation diagonal to the elements of the other. Schematically
 $$ (1/2,0)\oplus(0,1/2) = \begin{pmatrix}(1/2,0)&amp;0\\ 0&amp;(0,1/2)  \end{pmatrix}  \quad (1.8)$$</p>
 <p>Well now we have a different problem, we started with an object with 2 degrees of freedom but our Dirac spinor has 4. We have too much freedom! To solve this we need to project \(\Psi\) into a space with 2 degrees of freedom. To do this we use the four-momentum as a variable so \(\Psi(p)\) and we got to the fermion&rsquo;s rest frame so that \(\vec{p}=0\).</p>
@@ -144,13 +144,13 @@ where we sum over repeated indices (Einstein&rsquo;s summing convention) and so 
 <p>$$\partial^\mu A_\mu=0\quad (1.14)$$</p>
 <p>We can in fact combine both conditions (1.13) and (1.14) into one equation, namely
 $$(g^{\mu\nu}\partial^2-\partial^\mu\partial^\nu)A_\nu+m^2A^\mu=0\quad (1.15)$$</p>
-<p>Notice that if we act with \(\partial_\mu\) on (1.15) the first two terms cancel each other out and we are left with 
+<p>Notice that if we act with \(\partial_\mu\) on (1.15) the first two terms cancel each other out and we are left with
 $$m^2\partial_\mu A^\mu=0$$</p>
 <p>which is just (1.14). We can now use (1.14) on (1.15) to get rid of the second term and get (1.13).</p>
 <p>With just a little more formalism we can get to an even cooler result. Remembering our classical mechanics we can easily see that equation (1.15) can be derived from the following action density/Lagrangian</p>
 <p>$$S = \int d^4x \mathcal{L} = \int d^4x\left[ \frac{1}{2}A_\mu [(\partial^2+m^2)g^{\mu\nu}-\partial^\mu\partial^\nu]A_\nu  \right] \quad (1.16)$$
 where the integral runs over all of spacetime.</p>
-<p>It is well known that Electromagnetism has a gauge symmetry all of its own: we can change \(A_\mu\) by the derivative of a function without affecting the physics (i.e. the electric and magnetic fields). This acts in exactly the same way as the gauge symmetry in the fermion case, it tells us that \(A_\mu\) does not have 3 degrees of freedom after all, it only has 2. The transformation is 
+<p>It is well known that Electromagnetism has a gauge symmetry all of its own: we can change \(A_\mu\) by the derivative of a function without affecting the physics (i.e. the electric and magnetic fields). This acts in exactly the same way as the gauge symmetry in the fermion case, it tells us that \(A_\mu\) does not have 3 degrees of freedom after all, it only has 2. The transformation is
 $$A_\mu(x)\rightarrow A_\mu(x)+\partial_\mu a(x)$$
 and we would like for our action (1.16) to stay the same under such a transformation. If we go through the calculations and discard total derivative terms such as \(\int d^4x \partial^\mu(A_\mu \partial_\mu a(x))\) because they vanish at infinity, we can see that the only problematic term is the mass which gives terms of the form
 $$m^2\int d^4x  A_\mu \partial^\mu a(x) \neq 0 $$</p>
@@ -231,7 +231,7 @@ In the main text we used the fact that the matrix \(J^2\) is the Casimir matrix 
         <br>
         <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
         &copy;
-        2024
+        2025
       </p>
   </div>
 </footer></body>

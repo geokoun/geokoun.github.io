@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<meta name="generator" content="Hugo 0.102.3" /><body>
+<meta name="generator" content="Hugo 0.153.2"><body>
 
 
 
@@ -74,7 +74,7 @@ A linear transformation in 2-dimensions looks like:
 $$ x&rsquo;^1 = ax^1 + bx^2\;,\; x&rsquo;^2 = cx^1 + dx^2 \;\;\; (2.6) $$</p>
 <p>Where a,b,c,d are constants. The above relation can be rewritten in the form of matrices as
 $$ \begin{pmatrix} x&rsquo;^1 \\ x&rsquo;^2 \end{pmatrix} = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} \begin{pmatrix} x^1 \\ x^2 \end{pmatrix}\;\;\; (2.7) $$</p>
-<p>Again, if we use the letter \(\mathcal{R}\) to describe the \(2x2\) matrix we can write (2.7) using indices and the summation convention instead of the whole matrices as: 
+<p>Again, if we use the letter \(\mathcal{R}\) to describe the \(2x2\) matrix we can write (2.7) using indices and the summation convention instead of the whole matrices as:
 $$x&rsquo;^i=\mathcal{R}^i_{\;j}x^j \;\;\; (2.8) $$</p>
 <p>If we want \(\mathcal{R}\) to describe rotations we want it to conserve distances so
 $$ x^ag_{ab}x^b = x&rsquo;^c g_{cd}x&rsquo;^d = \mathcal{R}^c_{\;a}x^a g_{cd} \mathcal{R}^d_{\;b}x^b \;\;\; (2.9) $$</p>
@@ -84,16 +84,16 @@ $$ x^a g_{ab} x^b =x^a  \mathcal{R}^c_{\;a}  g_{cd} \mathcal{R}^d_{\;b} x^b = x^
 Comparing the two sides of the equation we can see that our actual condition is that \(\mathcal{R}\) doesn&rsquo;t change the metric when applied like in (2.10).
 All we now have to solve is a linear system of equations:
 $$\mathcal{R^T}  g \mathcal{R} = g \rightarrow \begin{pmatrix} a &amp; c \\ b &amp; d \end{pmatrix} \begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix}  =\begin{pmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \;\;\; (2.11)  $$</p>
-<p>The system we get is 
+<p>The system we get is
 $$\begin{matrix} a^2 + c^2 = 1, &amp; b^2 + d^2 =1, &amp; ab = -cd \end{matrix} \;\;\; (2.12) $$</p>
-<p>The above is a system of 4 variables and 3 equations so one variable is left free. The solution to the above, that you can check yourselves, is 
+<p>The above is a system of 4 variables and 3 equations so one variable is left free. The solution to the above, that you can check yourselves, is
 $$ a = d = cos\theta\;\;,\;\; b=-c= sin\theta \;\;\; (2.13)  $$</p>
 <p>where \(\theta\) has the obvious interpretation of the specific angle we chose to rotate the system by. The matrix is
 $$ \mathcal{R}(\theta) = \begin{pmatrix} cos\theta &amp; sin\theta \\ -sin\theta &amp; cos\theta \end{pmatrix} \;\;\; (2.14)  $$</p>
 <p>We fully defined the rotation matrix for the Euclidean metric and we are ready to move on to more interesting geometries.</p>
 <h1 id="minkowski-space-and-lorentz-transformations">Minkowski Space and Lorentz Transformations</h1>
 <h6 id="the-metric-1">The Metric</h6>
-<p>Special relativity is based on the fact that the speed of light c in vacuum is constant and independant of inertial frame of reference. 
+<p>Special relativity is based on the fact that the speed of light c in vacuum is constant and independant of inertial frame of reference.
 We consider two reference frames \(O\) and \(O&rsquo;\) that are moving with constant velocity with respect to one-another.
 We choose the \(X\) and \(X&rsquo;\) so they coincide. From now on all quantities without \(&rsquo;\) refer to them as measured in \(O\)
 and all quantities with \(&rsquo;\) refer to the same quantities as measure in \(O&rsquo;\).
@@ -115,7 +115,7 @@ $$ \eta = \begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \;\;\; (3.6)  $$
 <h6 id="lorentz-transformations">Lorentz Transformations</h6>
 <p>We now know what we are looking for, a \(2x2\) matrix (let&rsquo;s call it \( \Lambda \)) that does not change the metric of this space. We again have to solve a linear system:
 $$\Lambda^T \eta \Lambda = \eta \rightarrow \begin{pmatrix} a &amp; c \\ b &amp; d \end{pmatrix} \begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = \begin{pmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{pmatrix}  \;\;\; (3.7)  $$</p>
-<p>The system we get is 
+<p>The system we get is
 $$\begin{matrix} a^2 - c^2 = 1, &amp; b^2 - d^2 =1, &amp; ab = cd \end{matrix} \;\;\; (3.8) $$</p>
 <p>The solution now uses the hyperbolic functions
 $$ a=d=cosh\phi\;\;,\;\;b=c=sinh\phi \;\;\; (3.9)$$</p>
@@ -172,12 +172,12 @@ Equation (4.8b) is called Jacobi&rsquo;s identity and like the Cauchy-Schwarz in
 <p>We are finally ready to look for the &ldquo;rotations&rdquo; of this space. As in the previous cases we are looking for transformations of the coordinates that leave Poisson brackets invariant. We are now looking for a much bigger category than just linear transformations but (4.7) gives away the game. What we are looking for are  transformations with a unitary Jacobian determinant. We will start with infinitesimal transformations since they take a simpler form and finite transformations are just repeated applications of infinitesimal ones. Let:
 $$q_i \rightarrow q_i(\epsilon) = q_i + \epsilon K^{(q)}_i \;\;\; (4.9a) $$
 $$p_i \rightarrow p_i(\epsilon) = p_i + \epsilon K^{(p)}_i \;\;\; (4.9b) $$</p>
-<p>Where we can think of the parameter \(\epsilon\) as a generalisation of t in the case of the Hamiltonian. We can write the above in a more familiar way as: 
+<p>Where we can think of the parameter \(\epsilon\) as a generalisation of t in the case of the Hamiltonian. We can write the above in a more familiar way as:
 $$\frac{dq_i}{d\epsilon} =  K^{(q)}_i \;\;\; (4.10a) $$
 $$\frac{dp_i}{d\epsilon} =  K^{(p)}_i \;\;\; (4.10b) $$</p>
 <p>The similarity to Hamilton&rsquo;s equations (4.1) is now plain to see and we can understand better why we can consider time evolution as a sort of transformation. Like we said, we want a unitary Jacobian so ignoring the terms of order \(\epsilon^2\) as &ldquo;very-very small&rdquo; we have
 $$ J(\epsilon) = 1 + \epsilon(\frac{\partial K^{(q)}_i }{\partial q_i} + \frac{\partial K^{(p)}_i }{\partial p_i}) \;\;\; (4.11)  $$</p>
-<p>and so our condition is 
+<p>and so our condition is
 $$\frac{\partial K^{(q)}_i }{\partial q_i} + \frac{\partial K^{(p)}_i }{\partial p_i} = 0 = \nabla(K^{(q)}_i,K^{(p)}_i) \;\;\; (4.12) $$</p>
 <p>We can easily see that (4.12) holds if we define a <em>generating</em> function \(W(q,p)\) such that
 $$ K^{(q)}_i = \frac{\partial W}{\partial p_i}\;\;,\;\; K^{(p)}_i = -\frac{\partial W}{\partial q_i} \;\;\; (4.13) $$</p>
@@ -192,7 +192,7 @@ $$ \frac{d \mathcal{H}}{d\epsilon} =\{\mathcal{H},W\} = -\frac{dW}{dt}  \;\;\; (
 <p>Before we dive into our last subject, we have some unfinished business. As we pointed out our discussion was constrained to infinitesimal transformations. So how do we get to finite ones? Let&rsquo;s start with the simplest example possible and see what transformation is generated by
 \(W=p_i\). Equations (4.10) and (4.13) become
 $$\frac{dq_i}{d\epsilon} = \frac{dp_i}{dp_i} = 1 \;\;,\;\; \frac{dq_j}{d\epsilon} = \frac{dp_i}{d\epsilon} =0 \;\;\; (4.16) $$</p>
-<p>Solving this system of differential equations we see that the only coordinate to change is the i-th position 
+<p>Solving this system of differential equations we see that the only coordinate to change is the i-th position
 $$q_i(\epsilon) = q_i(0) + \epsilon \;\;\; (4.17) $$</p>
 <p>This means that the transformation generated by the momentum is a infinitesimal displacement by \(\epsilon\).
 To get a finite displacement we define the operator \(D_p=\{p_i,\;\;\}\) which acts on functions \(f\) like \(D_p f =\{p_i,f\}= -\frac{\partial}{\partial q_i} f \) .</p>
@@ -233,7 +233,7 @@ $$\int_\infty^\infty \phi^* i\frac{d}{dx}\psi \; dx = - \int_\infty^\infty i\fra
 <h6 id="unitary-operators">Unitary Operators</h6>
 <p>An operator \(\hat{U}\) is <em>unitary</em> if the inner product is maintained: \(&lt;\hat{U}\phi,\hat{U}\psi&gt;=&lt;\phi,\psi&gt; \).
 By using the Hermitian adjoint we can see that \(&lt;\hat{U}\phi,\hat{U}\psi&gt;=&lt;\hat{U}^\dagger\hat{U}\phi,\psi&gt;\) and so the definition is equivalent to the demand that \(\hat{U}^\dagger\hat{U}=1\).</p>
-<p>Remembering the operator \(\hat{O}=e^{i\hat{A}}\) from section 4 we can see that if \(\hat{A}\) is Hermitian, then 
+<p>Remembering the operator \(\hat{O}=e^{i\hat{A}}\) from section 4 we can see that if \(\hat{A}\) is Hermitian, then
 $$ \hat{O}^\dagger\hat{O}=e^{i\hat{A}} e^{-i\hat{A}^\dagger} =e^{i\hat{A}-i\hat{A}^\dagger} = 1 \;\;\; (5.3) $$</p>
 <p>which means that \(\hat{O}\) is unitary.</p>
 <h6 id="time-evolution">Time evolution</h6>
@@ -262,7 +262,7 @@ $$\frac{d\Psi}{dt} = -\frac{i}{\hbar}\hat{\mathcal{H}}\Psi(x,t) \;\;\; (5.9) $$<
 $$i\hbar \frac{d\Psi}{dt} =\hat{\mathcal{H}}\Psi(x,t) \;\;\; (5.10)  $$</p>
 <h6 id="the-hamiltonian">The Hamiltonian</h6>
 <p>To tie any lose ends let&rsquo;s try to find the form of the Hamiltonian operator with the tools we have developed. In the fourth section we saw that the general form of the Hamiltonian is \(\mathcal{H}=\frac{p^2}{2m} + V(x)\).
-What we need to do is replace both momentum and position with operators. Position is pretty fundamental and so we&rsquo;re gonna treat position and therefore the potential as a multiplicative operator. This means that 
+What we need to do is replace both momentum and position with operators. Position is pretty fundamental and so we&rsquo;re gonna treat position and therefore the potential as a multiplicative operator. This means that
 $$\hat{x}\Psi = x\Psi \;\;\;,\;\;\; \hat{V}(\hat{x})\Psi= V(x)\Psi \;\;\; (5.11) $$</p>
 <p>Assuming that the potential is a real function, then the potential is clearly an Hermitian operator.</p>
 <p>If we look at subsection 4.4 we can see that the finite operator tied to momentum is \(e^{-a\frac{d}{dx}}\)
@@ -300,7 +300,7 @@ $$\hat{\mathcal{H}}= - \frac{\hbar^2}{2m}\frac{d^2}{dx^2} + V(x) \;\;\; (5.13) $
         <br>
         <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
         &copy;
-        2024
+        2025
       </p>
   </div>
 </footer></body>

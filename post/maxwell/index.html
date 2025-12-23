@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<meta name="generator" content="Hugo 0.102.3" /><body>
+<meta name="generator" content="Hugo 0.153.2"><body>
 
 
 
@@ -57,7 +57,7 @@ from the principles of Relativity and Quantum Mechanics</p>
 <p>The first set of equations somebody studying physics encounters, right after Newton&rsquo;s laws are Maxwell&rsquo;s equations. These equations describe the electromagnetic field permeating space and how it&rsquo;s affected by and affects charges moving through it. In classical electrodynamics these equations are derived by seemingly arbitrary axioms that are limited to just the derivation of Maxwell&rsquo;s equations. In fact there is a way to derive all of Maxwell&rsquo;s equations just by the principles of relativity and quantum mechanics together with some simple experimental observations.<br>
 In the following text we are going derive, step by step, Maxwell&rsquo;s equations from the very fundamental axioms of physics.</p>
 <h1 id="the-principles">The principles</h1>
-<p><strong>Least Action:</strong>  The first principle, proposed by Maupertuis and then formalised by Lagrange and Hamilton is that of the least(/stationary) action. It claims that for every physical system there exists a quantity \(\mathcal{S}\) 
+<p><strong>Least Action:</strong>  The first principle, proposed by Maupertuis and then formalised by Lagrange and Hamilton is that of the least(/stationary) action. It claims that for every physical system there exists a quantity \(\mathcal{S}\)
 called the action that is defined as the integral of another function called the Lagrangian \(\mathcal{L}\) over the path taken by the system, and that that quantity takes an extremal value (usually a minimum) when the path taken is the physical one
 $$\mathcal{S}=\int_{t_1}^{t_2} \mathcal{L} \ dt \;\;\; (2.1) $$</p>
 <p><strong>Relativity:</strong> Based on the famous experiment by Michelson and Morley and, ironically, Maxwell&rsquo;s equations, Einstein postulated two axioms on which to base his theory of relativity. The first one is that the speed of light c in a vacuum is constant and the same regardless of reference frame used. The second one is that the laws of physics should be the same for all inertial frames of reference (not accelerating).<br>
@@ -81,11 +81,11 @@ So using (3.3) and the chain rule we get
 $$\delta\mathcal{S}=\int_{t_1}^{t_2} \frac{\partial \mathcal{L}}{\partial x_i}\eta_i +\frac{\partial \mathcal{L}}{\partial \dot{x_i}}\dot{\eta_i} \ dt =\int_{t_1}^{t_2} \frac{\partial \mathcal{L}}{\partial x_i}\eta_i + \frac{d}{dt}(\frac{\partial \mathcal{L}}{\partial \dot{x_i}}\eta_i) - \frac{d}{dt}(\frac{\partial \mathcal{L}}{\partial \dot{x_i}})\eta_i  dt =0$$
 $$ \delta\mathcal{S}=\int_{t_1}^{t_2} [\frac{\partial \mathcal{L}}{\partial x_i}-\frac{d}{dt}(\frac{\partial \mathcal{L}}{\partial \dot{x_i}})]\eta_i  dt + [\frac{\partial \mathcal{L}}{\partial \dot{x_i}}\eta_i]_{t_1}^{t_2} =0$$</p>
 <p>Now, because of (3.2) the integrated part is equal to zero so the integral also has to be zero. Notice however that \(\vec{\eta}\) is arbitrary so the term inside the parentheses has to be identically zero. The resulting equations are known as the Euler-Lagrange equations
-$$\frac{d}{dt}(\frac{\partial \mathcal{L}}{\partial \dot{x_i}}) = \frac{\partial \mathcal{L}}{\partial x_i} \;\;\; (3.4)$$ 
+$$\frac{d}{dt}(\frac{\partial \mathcal{L}}{\partial \dot{x_i}}) = \frac{\partial \mathcal{L}}{\partial x_i} \;\;\; (3.4)$$
 The term \(\frac{\partial \mathcal{L}}{\partial \dot{x_i}}\) is called the generalised momentum because it plays the role that momentum plays in Newton&rsquo;s second law \(\frac{d\vec{p}}{dt}=\vec{F}\).</p>
 <h6 id="principles-of-qm">Principles of QM</h6>
 <p><strong>Linearlity of equations:</strong> Next we are going to look at QM because the results we need for our derivations are simpler than those of relativity. From the principle of superposition we can deduce that the equations describing the wave equations are <em>linear</em> differential equations. The linearity comes from the fact that the addition of two solutions of the hypothetical equations give another solution of the equations.<br>
-<strong>Operators:</strong> The second result is a bit more subtle. In QM classically measurable quantities are replaced with operators that act on the wave functions. This method is motivated by the uncertainty principle. As a result of uncertainty it is impossible to describe momentum as a function of the position and therefore we need to use mean values instead. 
+<strong>Operators:</strong> The second result is a bit more subtle. In QM classically measurable quantities are replaced with operators that act on the wave functions. This method is motivated by the uncertainty principle. As a result of uncertainty it is impossible to describe momentum as a function of the position and therefore we need to use mean values instead.
 We again need a linear function of the wave equation so we define the operator \(\hat{f}\) of a physical quantity f as the operator that satisfies the relation
 $$ &lt;f&gt;=\int_V \Psi^*\hat{f}\Psi  dV \;\;\; (3.5) $$
 Where \(&lt;f&gt;\) is the mean value of f in the region of space V.
@@ -176,11 +176,11 @@ $$ \sigma_x = \begin{pmatrix}   0 &amp; 1  \\1 &amp; 0 \end{pmatrix},\;\sigma_y 
 The physical interpretation of the \(4x1\) column matrix \(\psi\) is that two of the components refer to a spin up and a spin down electron , while the other two components refer to a spin up and a spin down positron.  We can write Dirac&rsquo;s equation more compactly using the summing convention <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>
 $$(\gamma^a\partial_a+m)\psi=(\not\partial+m)\psi = 0 \;\;\;(4.5) $$</p>
 <p>The corresponding Lagrangian that gives us (4.5) through the E-L equations is
-$$\mathcal{L}= -\psi^* \not\partial \psi-m\psi^* \psi \;\;\; (4.6) $$ 
+$$\mathcal{L}= -\psi^* \not\partial \psi-m\psi^* \psi \;\;\; (4.6) $$
 The star indicates the complex conjugate of \(\psi\) and we consider \(\psi^*\) and \(\psi\) as independent variables.</p>
 <h1 id="the-gauge-theory-of-electromagnetism">The Gauge Theory of Electromagnetism</h1>
 <p><strong>The motivation:</strong> A symmetry of the Lagrangian is a transformation of the variables that leaves the equations of motion unchanged.
-Most symmetries leave \(\mathcal{L}\) unchanged but there are some that change \(\mathcal{L}\) by a perfect divergence 
+Most symmetries leave \(\mathcal{L}\) unchanged but there are some that change \(\mathcal{L}\) by a perfect divergence
 $$\mathcal{L}&rsquo;=\mathcal{L} + \partial^aA_a \;\;\; (5.1)$$</p>
 <p>These symmetries (thanks to Wigner) are called gauge symmetries because they change our &ldquo;measuring&rdquo; system without changing the relations between quantities. For example, if we change the potential by a constant amount \(V&rsquo;=V+const\) the equations of motion do not change because we only care about differences of potential. A similar symmetry exists when considering the phase of a wave-function.
 We can write a wave function in the form \(\Psi=\psi e^{i\theta}\) where \(\theta\) is the phase.
@@ -213,7 +213,7 @@ $$\mathcal{L}=-\frac{1}{4}(\partial_{\mu}A_\nu - \partial_{\nu}A_\mu)^2 -\psi^* 
 $$\partial^\nu F_{\mu\nu}=J_\mu \;\;\; (5.7)$$
 $$( \not\partial + m)\psi = i \not A\psi \;\;\; (5.8)$$
 $$( \not\partial - m)\psi^* = -i \not A\psi^* \;\;\; (5.9)$$</p>
-<p>Where \(J_\mu\) is the four-current defined as \(J_\mu = i\psi^* \gamma_\mu\psi\). This is the flow of charge through space-time. 
+<p>Where \(J_\mu\) is the four-current defined as \(J_\mu = i\psi^* \gamma_\mu\psi\). This is the flow of charge through space-time.
 Equation (5.7) contains the inhomogeneous Maxwell&rsquo;s equations though it is hard to see due to the notation (see Appendix II) while equation (5.8) describes how electrons interact with the electromagnetic field.<br>
 The last thing left to do is to derive the homogeneous Maxwell&rsquo;s equations. To do this we first notice that a covariant derivative of a covariant derivative is also a covariant quantity therefore we can define the commutator
 $$[D_\mu , D_\nu]\psi = D_\mu(D_\nu\psi)-D_\nu(D_\mu\psi) \;\;\; (5.10)$$</p>
@@ -221,9 +221,9 @@ $$[D_\mu , D_\nu]\psi = D_\mu(D_\nu\psi)-D_\nu(D_\mu\psi) \;\;\; (5.10)$$</p>
 $$[D_\mu , D_\nu]\psi = -iF_{\mu\nu}\psi \;\;\; (5.11)$$</p>
 <p>The Jacobi identity that holds for all commutators tells us that:
 $$ [D_\mu,[D_\nu,D_\rho]] +[D_\rho,[D_\mu,D_\nu]] + [D_\nu,[D_\rho,D_\mu]] = 0 \;\;\; (5.12)$$</p>
-<p>Applying the first term of the identity to a function \(\psi\) gives us 
+<p>Applying the first term of the identity to a function \(\psi\) gives us
 $$[D_\mu,[D_\nu,D_\rho]]\psi = D_\mu([D_\nu,D_\rho]\psi)-[D_\nu,D_\rho]D_\mu\psi = -i(D_\mu F_{\nu\rho})\psi $$</p>
-<p>So (5.12) becomes<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> 
+<p>So (5.12) becomes<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>
 $$\partial_\mu F_{\nu\rho} +\partial_\nu F_{\rho\mu} +\partial_\rho F_{\mu\nu} = 0 \;\;\; (5.13)$$</p>
 <p>Which are Hamilton&rsquo;s homogeneous equations (Appendix II). Equations (5.7), (5.8) and (5.13) give us a complete description of the Electromagnetic field and its interaction with the electron field.</p>
 <h1 id="conclusion-and-resources">Conclusion and (Re)sources</h1>
@@ -263,8 +263,8 @@ $$\hat{\vec{p}}=-i\hbar\vec{\nabla} \;\;\; (I.4)$$</p>
 <p><strong>The Field Strengh Tensor:</strong>  We are going to use more familiar symbolism to see how (5.7) describes Maxwell&rsquo;s equations.
 Keeping with the four-dimensional time-space symbolism of relativity we assume the vector potential \(\vec{\mathcal{A}=(\phi,-\vec{A}})\) <sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> so that the Electric and the Magnetic field are given by
 $$\vec{E}=-\frac{\partial \vec{A}}{\partial t}-\vec{\nabla}\phi \;\;,\;\; \vec{H}=\vec{\nabla}\times\vec{A} \;\;\; (II.1)$$
-The field strength tensor is defined in section 5 is now 
-$$ F_{\mu\nu} = \begin{pmatrix} 
+The field strength tensor is defined in section 5 is now
+$$ F_{\mu\nu} = \begin{pmatrix}
 0 &amp; E_x &amp; E_y &amp; E_z\\
 -E_x &amp; 0 &amp; -H_z &amp; H_y\\
 -E_y &amp; H_z &amp; 0 &amp; -H_x\\
@@ -328,7 +328,7 @@ $$\partial^\nu F_{\mu\nu}=\mathcal{J}_\mu \;\;\; (II.8)$$</p>
         <br>
         <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
         &copy;
-        2024
+        2025
       </p>
   </div>
 </footer></body>

@@ -11,7 +11,7 @@
 
 <link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<meta name="generator" content="Hugo 0.102.3" /><body>
+<meta name="generator" content="Hugo 0.153.2"><body>
 
 
 
@@ -62,7 +62,7 @@ In this article we are going to explore the Lagrange multiplier description of c
 Geometrically, if the original system has \(N\) degrees of freedom then the system evolves in a N-dimensional configuration space. Every constraint we introduce removes one degree of freedom so it limits the evolution to a (N-1)-dimensional subspace. Now the constraint is obviously being enforced by some force that by definition has no other effect on the system so it has to be orthogonal to the constrained subspace.<br>
 To see all of the above remarks in action we will consider the simple problem of a pendulum of mass m that has a constant length</p>
 <h6 id="the-simple-pendulum">The simple pendulum</h6>
-<p>Assuming that the pendulum has a constant length \(L\) and the only force acting on it is gravity, then we only need one variable, the angle 
+<p>Assuming that the pendulum has a constant length \(L\) and the only force acting on it is gravity, then we only need one variable, the angle
 \(\theta\), to fully describe the system. The configuration space in a circle since \(\theta + 2\pi=\theta\). The Lagrangian is as usual:
 $$ \mathcal{L}=T-V=\frac{1}{2}mL^2\dot{\theta}^2 + mgLcos\theta =\frac{1}{2}L\dot{\theta}^2 - gcos\theta  \;\;\; (2.1)  $$</p>
 <p>and from the Euler-Lagrange equations we get the usual pendulum equation
@@ -110,9 +110,9 @@ $$ J= \frac{1}{6} \epsilon_{kjl}\epsilon^{imn} \frac{\partial q^k}{\partial\alph
 $$ d^3x=Jd^3\alpha \;\;\; (3.4)  $$</p>
 <p>So \(J\) defines how volume changes through time (when the time evolution is described by the function \(\vec{q}(\vec{\alpha},t)\)). Using conservation of mass we get
 $$\rho (\vec{q}(\vec{\alpha},t)) d^3x=\rho_o(\vec{\alpha}) d^3\alpha   $$</p>
-<p>so using (3.4) we get 
+<p>so using (3.4) we get
 $$\rho_o=\rho J \;\;\; (3.5) $$</p>
-<p>The final definition we need is of the cofactor \(A^i_k\) of \(\frac{\partial q_i}{\partial \alpha^j}\) that is defined as<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> 
+<p>The final definition we need is of the cofactor \(A^i_k\) of \(\frac{\partial q_i}{\partial \alpha^j}\) that is defined as<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
 $$\frac{\partial q^k}{\partial \alpha^j} \frac{A^i_k}{J}=\delta^i_j \;\;\; (3.6) $$</p>
 <p>The explicit expression for \(A^i_k\) is:
 $$A^i_k=\frac{1}{2} \epsilon_{kjl}\epsilon^{imn} \frac{\partial q^j}{\partial \alpha^m} \frac{\partial q^l}{\partial \alpha^n} \;\;\; (3.7) $$</p>
@@ -180,7 +180,7 @@ The second article in this series is going to go into constraints in the Hamilto
         <br>
         <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
         &copy;
-        2024
+        2025
       </p>
   </div>
 </footer></body>

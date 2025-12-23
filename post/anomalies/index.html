@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8" />
+
+  <title>The Witten Anomaly and Index Theorems in Physics - Principia Physicae Generalis</title>
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/latex.css" />
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/main.css" />
+
+<link rel="stylesheet" href="https://principiaphysicaegeneralis.com/css/darkmode.css" />
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<meta name="generator" content="Hugo 0.153.2"><body>
+
+
+
+
+
+
+<header>
+  <nav class="navbar">
+  <div class="nav">
+    
+
+    <ul class="nav-links">
+      
+    </ul>
+  </div>
+</nav>
+  <div class="intro-header">
+    <div class="container">
+      <div class="post-heading">
+        
+          <h1>The Witten Anomaly and Index Theorems in Physics</h1>
+          
+        
+      </div>
+    </div>
+  </div>
+</header>
+<div id="content">
+  <div class="container" role="main">
+    <article class="article" class="blog-post">
+      <div class="postmeta">
+        <span class="meta-post">
+  <i class="fa fa-calendar-alt"></i>Dec 23, 2025
+  
+</span>
+      </div>
+      <br>
+      
+    <p>After reviewing some basic ideas in algebraic topology, we look at what a topological index is and how it can help us find new physics.</p>
+<p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+<h1 id="0-introduction">0. Introduction</h1>
+<p>In our previous article we saw how we can interpret some of the physics we already know (magnetic monopoles and degeneracy in quantum mechanics) in terms of topology. The natural question to ask next is, can topology give us anything new? The answer to that is a resounding yes and we will give an interesting example in this article.</p>
+<p>Our field of interest will be Quantum Field Theories (QFT) and specifically anomalies. An anomaly in a QFT is a symmetry of the classical theory (i.e. the action) that does not survive quantization. While in some cases we can determine whether a symmetry survives using the usual tools of perturbative QFT, there is a class of subtle anomalies (called global anomalies) that require topological arguments to prove.</p>
+<p>The route we will take will be the following. In the first chapter we will go over the topological concept of  cohomology groups, in the language of differential topology, i.e. forms. In the second we will introduce the notion of an index for a differential operator and compute it in the case of Maxwell&rsquo;s theory coupled to a massless fermion.  Our result will be the simplest form of the Atiyah-Singer Index Theorem. In the third chapter we will go over homotopy groups in greater detail. Then in the last chapter we will look at a genuine topological anomaly first discovered by Witten in an SU(2) gauge theory coupled to massless fermions.</p>
+<h1 id="1-cohomology">1. Cohomology</h1>
+<p>There are two ideas from topology that we will need for our anomaly. The first is cohomology, which is inspired by boundaries and loops in polytopes (the $d$ dimensional generalization of polyhedra). The second is homotopy, or the study of winding things around other things. The latter we have already seen in our study of magnetic monopoles in the last article.</p>
+<h5 id="11-cohomolgy">1.1 Cohomolgy</h5>
+<p>We start with a simple example. Consider a vector field $\vec{A}(x)$ in a Euclidean space $\mathbb{R}^3$. We know that if $\vec{A}$ comes from a function $f(x)$, namely
+$$
+\vec{A}(x)=\vec{\nabla}f
+$$
+then
+$$
+\nabla\times A=0
+$$
+because the cross product is anti-symmetric while derivatives are symmetric under interchange. Does this mean that all vector fields with vanishing curl come from a function? Well in the case of smooth vector fields in $\mathbb{R}^3$ the answer is always yes. (We will see later that this is a form of Poincare&rsquo;s lemma).</p>
+<p>Let&rsquo;s generalize this question. Given a manifold $M$ we can define an $p$-form as a anti-linear map that takes $p$ vectors and maps them to $\mathbb{R}$. In a coordinate basis these are given by
+$$
+\omega_p=f(x)dx^{i_1}\wedge\dots\wedge dx^{i_p}
+$$
+where $\wedge$ is the anti-symmetric wedge product between forms. The set of all $p$-forms is denoted $\Omega^p(M)$. One can naturally define an exterior derivative $d$ taking a p-form into a $p+1$ form
+$$
+d\omega_p=\sum_a \frac{\partial f}{\partial x^a}dx^a\wedge dx^{i_1}\wedge\dots\wedge dx^{i_p}
+$$
+Since $\wedge$ is antisymmetric $dx^i\wedge dx^j=-dx^j\wedge dx^i$. This means that, because of the symmetric nature of derivatives:
+$$
+d(d\omega_p)=0
+$$
+This is just like our example above. Indeed the divergence and the curl are specific applications of the exterior derivative. Before we continue we can introduce some names. A closed form $\omega$ is a form that satisfies $d\omega=0$. An exact form $\eta$ is a form that satisfies $\eta=d\zeta$ for some form $\zeta$. We can now ask, is every closed form exact? We already saw that this is true in $\mathbb{R}^3$.</p>
+<p>The simplest setting where this fails to be true is the circle $S^1$ parameterized by an angle $\theta=[0,2\pi)$. Since there is only one dimensions we only have 1-forms $\omega=f(\theta) d\theta$. The exterior derivative $d$ would have to give a $2$ form which does not exist so
+$$
+d\omega=0
+$$
+All 1-forms are closed. What about exactness? Well, if there was a function $F$ such that $dF=\omega$ then it would have to take the form
+$$
+F(\theta)=\int^\theta_0ds;f(s)
+$$
+But for this to make sense on a circle we also need periodicity $F(2\pi)=F(0)=0$. So a 1-form is exact only if
+$$
+\int^{2\pi}_0ds; f(s)=0
+$$
+We can now define the cohomology class of a closed form $\omega$ as
+$$
+[\omega]={\omega&rsquo;\in\Omega^p(M)| \omega&rsquo;=\omega+d\eta}
+$$
+So $\omega&rsquo;$ differs from $\omega$ by an exact form. Note that all elements of $[\omega]$ are closed since $d(d\eta)=0$. The set of all cohomology classes of $p$ forms is called the cohomology group $H^p(M)$. Looking at our example we can characterize each class of $H^1(S^1)$ by the value of
+$$
+\int^{2\pi}_0 d\theta;f(\theta)\in\mathbb{R}
+$$
+Note that if we add the derivative of a function $\omega&rsquo;=\omega+F$ , based on our previous argument this would not affect the value of the above integral. Therefore, each class is characterized by a number in $\mathbb{R}$ and so
+$$
+H^1(S^1)=\mathbb{R}
+$$
+Likewise we can look at $H^0(S^1)$. There are no $(-1)$-forms so no closed forms are exact. This leaves the task of classifying the closed forms. The requirement $df=0$ for a function $f$ is satisfied only if $f=$ constant so again we get a different class for each value of $f$
+$$
+H^0(S^1)=\mathbb{R}
+$$</p>
+<p>In general, cohomology groups take the form of Abelian groups
+$$
+H^r(S^1)=\overbrace{\mathbb{R}\oplus\dots\oplus \mathbb{R}}^{b^r}
+$$
+where
+$$
+b^r(M)=\dim H^r(M)
+$$
+is called the r-th <em>Betti</em> number.</p>
+<p>Before we go on it will be useful to state Poincare&rsquo;s lemma. It says that all closed forms are at least locally exact. In particular, if a closed $\omega$ is defined in some part $U$ of $M$ then $\omega$ is exact in $U$ if $U$ can be contracted to a point in a smooth way.</p>
+<h5 id="12-complexes-and-indices">1.2 Complexes and indices</h5>
+<p>To generalize the above concept of cohomology groups we can write the cohomology group as
+$$
+H^r(M)=\textup{ker } d_{r}/\textup{im }d_{r-1}
+$$
+where $d_r$ acts on $\Omega^r(M)$. We can represent this as a series of spaces connected by operators, called a complex
+$$
+\Omega^0(M)\longrightarrow^{!!!!!!!!d_1}\dots\longrightarrow^{!!!!!!!!!!d_{r-1}}\Omega^r(M)\longrightarrow^{!!!!!!!!d_r}\dots
+$$
+This particular complex is called the <em>de Rham complex</em> and so the corresponding cohomology group is called the de Rham cohomology group. Given such a complex we can also define the index of the operator $d$ as
+$$
+\textup{ind }d=\sum_{i=0}^m(-1)^iH^i(M)
+$$
+where $m=\dim M$. This looks looks a bit weird but it turns out that this is a topological invariant. This means that if there exists a diffeomorphism $f:M\to M&rsquo;$ that is smooth and invertible, then $d$ has the same index in both $M$ and $M&rsquo;$. In our example of the circle the index of the de Rham complex is known as the Euler characteristic
+$$
+\chi(S^1)\equiv \textup{ind }d=1-1=0
+$$
+For those of you familiar with some geometry, there is a well known fact that if you take any polyhedron, then
+$$
+F-E+V=2
+$$
+where $F$ are the faces, $E$ the edges and $V$ the vertices. Likewise, for a polygon
+$$
+-E+V=0
+$$
+It&rsquo;s no coincidence that polygons are topologically equivalent to a circle and that this alternating sum is equal to the corresponding Euler characteristic  $\chi(S^1)$. (Indeed any polyhedron is equivalent to a sphere $S^2$ and $\chi(S^2)=2$). This is where de Rham cohomology makes contact with its brother homology, the study of polytopes, boundaries and loops. We won&rsquo;t look into this any deeper other than to note that we have gotten geometrical insight from analysis. This connection is at the heart of the index theorem we will look at later.</p>
+<h1 id="2-the-dirac-complex-and-its-index">2. The Dirac Complex and its Index</h1>
+<p>Let&rsquo;s make contact with some physics. Consider a massless fermion $\psi$ coupled, for simplicity, to a background electromagnetic field $A$. The action is
+$$
+S=\int d^4x; \bar\psi i\gamma^\mu(i\partial_\mu+iA_\mu)\psi\equiv\int d^4x ; \bar\psi i\not D\psi
+$$
+Here we are using the $\gamma^\mu$ matrices satisfying
+$$
+{\gamma^\mu,\gamma^\nu}\equiv \gamma^\mu\gamma^\nu+\gamma^\nu\gamma^\mu=2\eta^{\mu\nu}I_4
+$$
+where $\eta^{\mu\nu}=\textup{diag}(1,-1,-1,-1)$ and $I_4$ the $4\times 4$ identity matrix. We can also define the chirality matrix
+$$
+\gamma^5=i\gamma^1\gamma^2\gamma^3\gamma^4
+$$
+We can pick the right basis for $\gamma^\mu$ such that
+$$
+\gamma^5=\begin{pmatrix}I_2 &amp; 0\ 0 &amp; -I_2  \end{pmatrix}
+$$
+From this it&rsquo;s clear that $\gamma^5$ has two eigenvalues $+1$ and $-1$. We call these the chirality of $\psi$. To get to a complex we note that, from the properties of $\gamma^\mu$ we have ${\gamma^\mu,\gamma^5}=0$. This also means that
+$$
+{\gamma^5,i\not D   }=0
+$$
+To understand what this means consider $\psi_+$ an eigenfunction of $\gamma^5$ with
+$$
+\gamma^5\psi_+=\psi_+
+$$
+What about $i\not D \psi_+$? Well from the anti-commutation relation
+$$
+\gamma^5(i\not D\psi_+)=-i\not D(\gamma^5\psi_+)=-(i\not D)\psi_+
+$$
+so $i\not D$ flips the chirality. We can now split $\psi$ into two sets $M_+$ and $M_-$ depending on their chirality. This gives us a two-part complex
+$$
+M_+ \xleftrightarrow[\quad i\not D]{!!!!!i\not D} M_-
+$$
+and
+$$
+\textup{ind }i\not D=\dim(\ker i\not D/\textup{im }i\not D)|<em>{M</em>+}-\dim(\ker i\not D/\textup{im }i\not D)|<em>{M</em>-} =\nu_+-\nu_-
+$$
+where $\nu_+$ are the elements in $\ker i\not D$ (also called zero modes because they have zero eigenvalue) with positive chirality and $\nu_-$ those with negative chirality. What about the images? Well let
+$$
+i\not D\psi_\lambda=\lambda\psi_\lambda
+$$
+be a non-zero eigenfunction of $i\not D$. Then using the anticommutator we find
+$$
+i\not D(\gamma^5\psi_\lambda)=-\lambda(\gamma^5 \psi_\lambda)
+$$
+so all non-zero eigenvalues come in $\pm \lambda$ pairs. Note that if $\psi_\lambda$ has negative chirality then $\gamma^5\psi_\lambda$ has positive chirality so for each negative chirality eigenfunction with non-zero eigenvalue there exists a positive chirality one and so the two $\textup{im }i\not D$ cancel each other out and we&rsquo;re left with the zero modes.</p>
+<p>Can we calculate this index? Since we&rsquo;re physicists we&rsquo;ll try to avoid cohomology groups for now and compute it using our own bag of tricks. Note that $i\not D$ is Hermitian so eigenfunctions with different eigenvalues are orthogonal. This means that for $\lambda\neq 0$ we have
+$$
+\left&lt;\psi_\lambda,\gamma^5\psi_\lambda \right&gt;\equiv\int d^4x;\psi_\lambda^\dagger \gamma^5\psi_\lambda=0\quad \textup{when}\quad \lambda\neq 0
+$$
+This means that
+$$
+\textup{ind }i\not D=\sum_\lambda \int d^4x;\psi^\dagger_\lambda\gamma^5\psi_\lambda
+$$
+since the non-zero $\lambda$ vanish and we are only left with zero modes, $\gamma^5$ giving us the difference in sign between positive and negative chirality ones. (We assume that $\psi_\lambda$ is normalized to unity). Although we know that most terms in the above sum cancel each other, we need something better than words to compute this infinite sum. To do this we regulate as
+$$
+\textup{ind} i\not D=\lim_{\Lambda\to\infty}\sum_\lambda \int d^4x;\psi_\lambda^\dagger\gamma^5\psi_\lambda ;e^{-(\lambda/\Lambda)^2}
+$$
+This will ensure that non-zero eigenvalues are manageable while we do our calculations and taking the limit obviously gives us back what we started with. The full calculation can be found in the sources but here&rsquo;s the gist. First we rewrite the regulator as
+$$
+\textup{ind } i\not D=\lim_{\Lambda\to\infty}\sum_\lambda \int d^4x;\psi_\lambda^\dagger\gamma^5\psi_\lambda ;e^{-(i\not D/\Lambda)^2}
+$$
+and then, using the $\gamma^\mu$ anticommutator and the fact that the field strength is given by $ieF_{\mu\nu}=[D_\nu,D_\mu]$ we have
+$$
+\not D^2=D^2-\frac{ie}{2}\gamma^\mu\gamma^\nu F_{\mu\nu}
+$$
+where $e$ is the coupling constant of electromagnetism. Next we again use the anticommutator to prove that
+$$
+\textup{tr}(\gamma^5)=\textup{tr}(\gamma^5\gamma^\mu\gamma^\nu)=0\quad\textup{and}\quad \textup{tr}(\gamma^5\gamma^\mu\gamma^\nu\gamma^\rho\gamma^\sigma)=4\epsilon^{\mu\nu\rho\sigma}
+$$
+and finally, since $\psi_\lambda$ is a complete basis, we are free to substitute any other complete basis to perform the integral $d^4x$. The easiest choice is always plane waves $e^{ip\cdot x}$ and we take the trace since we need to account for all $4$-components of the spinors $\psi_\lambda$. The result is to substitute the sum for a momentum integral and
+$$
+\textup{ind }i\not D=\lim_{\Lambda\to \infty}\int \frac{d^4p}{(2\pi)^4}d^4x;\textup{tr}(e^{ip\cdot x}\gamma^5e^{(D^2-ie\gamma^\mu\gamma^\nu F_{\mu\nu}/2)/\Lambda^2}e^{-ip\cdot x})
+$$
+It&rsquo;s not hard to move $e^{ip\cdot x}$ to the right using a lot of $[x,D_\mu]=i$ (with $\hbar=1$) and expand in $\Lambda^{-1}$. From the traces above we get that the first non-zero term is of order $\Lambda^{-4}$ which is exactly canceled by $d^4p$ contributing a $\Lambda^4$. All higher terms vanish in the limit $\Lambda\to\infty$ and we&rsquo;re left with
+$$
+\textup{ind }i\not D=-\frac{e^2}{32\pi^2}\int d^4x; \epsilon^{\mu\nu\rho\sigma}F_{\mu\nu}F_{\rho\sigma}=-\frac{e^2}{32\pi}\int F\wedge F
+$$
+where in the last equality we&rsquo;ve rewritten it in a more topological way, thinking of $F$ as a $2$-form.</p>
+<p>This is the simplest form of an <em>index theorem</em>. We have connected the index of an operator (a topological quantity) with an integral over a form (analytic quantity). Note that
+$$
+d(F\wedge F)=dF\wedge F+F\wedge dF=0
+$$
+which means that $F\wedge F\in H^4(M)$ belongs to a cohomology class of our manifold. But is there something special about this specific class? To answer that we need another piece of topology, <em>homotopy</em>.</p>
+<h1 id="3-homotopy-and-winding">3. Homotopy and Winding</h1>
+<p>We have already met homotopy in our last article about monopoles so we&rsquo;ll just recap the basics. Given a map $f:M\to N$ from a manifold $M$ to a manifold $N$, there are ways that $M$ can wrap around $N$ in non-trivial ways. The simplest example is a map $f: S^1\to S^1$. Then the map
+$$
+f_n(\theta)=n\theta\quad\textup{with}\quad n\in\mathbb{Z}
+$$
+clearly wraps around the circle $n$ times. As $\theta$ goes from $0$ to $2\pi$, $f_n(\theta)$ passes through all points of $S^1$ a total of $n$ times. This map cannot be deformed continuously to some other $f_{m}(\theta)$ so we say that each $f_n$ belongs to a different homotopy class. Think of wrapping a rubber band around your finger. There is no way to unwind it without removing it from your finger. The homotopy groups of circles and their generalizations have a special symbol. We say that
+$$
+\pi_1(S^1)=\mathbb{Z}
+$$
+Here $\pi_m(M)$ denotes the homotopy group of an $m$-sphere $S^m$ wound around a manifold $M$.</p>
+<p>Now let&rsquo;s consider a more complicated example. We look at the group $SU(2)$ of unitary $2\times 2$ complex matrices with determinant $1$. Any group element $g$ can be parameterized as
+$$
+g(x)=x^4I_2 +ix^i \sigma^i\quad\textup{with}\quad i=1,2,3
+$$
+where we assume Einstein&rsquo;s summing convention. For the determinant to be $1$ we need
+$$
+(x^4)^2+x^ix_i=1
+$$
+so the group looks a bit like $S^3$.</p>
+<p>To make contact with physics we look at an $SU(2)$ gauge theory with action
+$$
+S_{YM}=\frac{1}{2g^2}\int d^4x; \textup{tr}F^{\mu\nu}F_{\mu\nu}
+$$
+where the field strength $F$ is now a $2\times 2$ matrix so we need to take the trace to get a real number. We also make a Wick rotation $t\to it$ so that we are working in Euclidean spacetime and all of our math is legal.</p>
+<p>To get a finite action configuration of the fields we need $F=0$ at some finite distance $|x|&gt;L$ this means that at that point the gauge field $A$ is purely gauge. For electromagnetism this would mean $A_\mu=\partial_\mu a(x)$ for some function $a$. Note that electromagnetism is a $U(1)$ gauge theory and any element of $U(1)$ can be written as $e^{ia}\in U(1)$. So a pure gauge can be written as
+$$
+A_\mu=e^{-ia}\partial_\mu e^{ia}
+$$
+For a general $SU(N)$ gauge theory this is written as
+$$
+A_\mu=g^{-1}(x)\partial_\mu g(x)
+$$
+or in the language of forms, $A$ is a 1-form
+$$
+A\to g^{-1}d g\quad \textup{as}\quad |x|\to L
+$$
+The condition $|x|=L$ defines a three-sphere $S^3$ so $g$ is a map
+$$
+g: S^3\to SU(2)\cong S^3
+$$
+this means that $g$ is characterized by the homotopy class
+$$
+\pi_3(S^3)=\mathbb{Z}
+$$
+Generalizing our previous result of $S^1$ it makes sense in general that a sphere of any dimension can wrap around another copy of itself an integer number of times. The sign of the winding simply denotes the winding direction.</p>
+<p>So, given a field $A$, is there a way to compute the winding? We expect that there is some integral we can perform over spacetime since the winding is a global phenomenon. We claim that the group element
+$$
+g_1(x)=\frac{1}{r}(x^4 I_2+i\sigma^i x^i)
+$$
+has winding $1$ and that $g_n=(g_1)^n$ has winding $n$. This is the equivalent of $f_1(\theta)=\theta$ since as we go around the sphere $S^3$ we get every element of $SU(2)$ once. For simplicity, and since topology is not affected by slight deformations, we take $L=1$ so that we have a unit sphere $S^3$. The corresponding gauge field is
+$$
+A=(x^4I_2-i\sigma^ix^i)d(x^4I_2+i\sigma^ix^i)
+$$
+To integrate over all of $4d$ space we obviously need some $4$-form. We also need it to be gauge invariant since we only care about gauge invariant quantities. The only quantity we can form, that is not the action itself, is
+$$
+\int\textup{tr} F\wedge F=\int d^4x;\textup{tr}( \epsilon^{\mu\nu\rho\sigma}F_{\mu\nu}F_{\rho\sigma})
+$$
+This already looks like the index of $i\not D$ but let&rsquo;s see if it&rsquo;s the right form. Since $F$ vanishes for $|x|&gt;L=1$ and we only care about gauge equivalent configurations we split $\mathbb{R}^4$ into
+$$
+\begin{align}
+U_N ={x\in \mathbb{R}^4 ||x| &lt; 1+\epsilon  }\
+U_S ={x\in \mathbb{R}^4 ||x| &gt; 1-\epsilon  }
+\end{align}
+$$
+where $\epsilon$ is some small number so that we get all points of $\mathbb{R}^4$ with these open sets. (See again the article on monopoles and topology). We already know that $F\wedge F$ is closed so from Poincare&rsquo;s lemma there is some 3-form $K$ such that, at least locally in $U_N$
+$$
+\textup{tr} F\wedge F=dK
+$$
+It turns out that the right $K$ is
+$$
+K=\textup{tr}(A\wedge dA+\frac{2}{3}A\wedge A \wedge A)
+$$
+This has a name, it&rsquo;s a Chern-Simons term. What this means is that
+$$
+\int_{\mathbb{R}^4}\textup{tr}F\wedge F=\int_{U_N}\textup{tr}F\wedge F=\int_{S^3}K
+$$
+where we have used stokes theorem
+$$
+\int_M dK=\int_{\partial M}K
+$$
+with $\partial M$ the boundary of $M$. By definition $F=dA+A\wedge A$ so when $F=0$, as is the case on the $S^3$ ,$dA=-A\wedge A$ and
+$$
+\int_{\mathbb{R}^4}\textup{tr}F\wedge F=-\frac{1}{3}\int_{S^3}\textup{tr}(A\wedge A\wedge A)
+$$
+To compute this final integral we just have to note that our $g_1(x)$ maps $S^3$ in a uniform way onto $SU(2)$ so we can just pick a point, say $x^4=1,x^1=x^2=x^3=0$ and calculate the integral with the field $A$ calculated there. In that case
+$$
+A=x^4 i\sigma^idx^i=i\sigma^i dx^i
+$$
+and
+$$
+\textup{tr}(A\wedge A\wedge A)=i^3\textup{tr}(\sigma^i\sigma^j\sigma^k)dx^i\wedge dx^j \wedge dx^k
+$$
+For the sigma matrices we have that $\sigma^i\sigma^j=i\epsilon^{ijk}\sigma^k+\delta^{ij}$ and $\textup{tr}(\sigma^i)=0$ while $(\sigma^i)^2=I_2$ so
+$$
+\textup{tr}(A\wedge A\wedge A)=2\epsilon^{ijk}dx^i\wedge dx^j \wedge dx^k=12 dx^1\wedge dx^2\wedge dx^3
+$$
+This is finally an integral we can calculate since it&rsquo;s just the volume of the $S^3$ sphere
+$$
+\int_{\mathbb{R}^4}\textup{tr}F\wedge F=4 \int_{S^3}dx^1dx^2dx^3=8\pi^2
+$$
+This means that we can define the winding number as
+$$
+\nu=\frac{1}{8\pi^2}\int \textup{tr}F\wedge F
+$$
+Indeed one can find that plugging in $g^n(x)=(g_1(x))^n$  gives $\nu=n$ as we would expect.</p>
+<p>Let&rsquo;s recap. In the last Section we found that, allowing for the generalization to $SU(N)$
+$$
+\textup{ind }i\not D=-\frac{1}{8\pi^2}\int \textup{tr} F\wedge F
+$$
+The difference in coefficient hides in the trace. But this is simply $\textup{ind }i\not D=-\nu$. This is what makes the cohomology class of $\textup{tr} F\wedge F$ special, it counts winding. It&rsquo;s also nice to see that $\textup{ind }i\not D$ is always an integer since it wouldn&rsquo;t make sense to have a fractional number of zero modes.</p>
+<p>This is a special case of so-called <em>characteristic classes</em>. These are classes of some cohomology group that characterize some property of the manifold. The characteristic class we found is called the $2$nd <em>Chern character</em> $\textup{ch}_2(F)$ where in general
+$$
+\textup{ch}_j(F)=\frac{1}{j!}\textup{tr}\left(\frac{iF}{2\pi} \right)^j
+$$
+where $F^j=\overbrace{F\wedge\dots\wedge F}^j$. In any even dimension, integrating $\textup{ch}_j(F)$ gives us the winding, also known as the instanton number.</p>
+<h1 id="4-the-su2-anomaly">4. The SU(2) Anomaly</h1>
+<p>Let&rsquo;s use everything we have learned to get a subtle result in QFT. We know that we can split a fermion into two parts using $\gamma^5$:
+$$
+\psi=\begin{pmatrix} \psi_+ \ \psi_-  \end{pmatrix}
+$$
+Now $\psi_\pm$ are two-component spinors (called Weyl spinors) with definite chirality. Can we write a theory for only one of the two? In the case of a free fermion we can split the action as
+$$
+\mathcal{L}=\bar\psi i\not \partial \psi=\psi^\dagger_+ i\bar\sigma^\mu\partial_\mu\psi_++\psi^\dagger_-i\sigma^\mu\partial_\mu\psi_-
+$$
+where we have decomposed the $\gamma^\mu$ matrices into
+$$
+\sigma^\mu=(1,\sigma^i)\quad\textup{and}\quad \bar\sigma^\mu=(1,-\sigma^i)
+$$
+If we then want the action of a single Weyl fermion we simply write
+$$
+\mathcal{L}=\psi^\dagger_+i\bar\sigma^\mu\partial_\mu\psi_+
+$$
+or the equivalent for $\psi_-$.</p>
+<p>What if we couple $\psi$ to a gauge field? Can we still write a well-behaving theory of a single chiral fermion, as it is called? For $U(1)$ and $SU(N&gt;2)$ the answer is no. This is because the theory is anomalous, the classical theory is gauge invariant but when we quantize it it&rsquo;s not.</p>
+<p>The way to see this that makes contact with what we have done is using the path integral. The main object of any QFT is the partition function defined as
+$$
+Z=\int\mathcal{D}\psi_+\mathcal{D}\psi^\dagger_+ \mathcal{D}A; e^{-S[\psi_+,\psi^\dagger_+,A]}
+$$
+The classical symmetry ensures that the action $S$ is invariant under gauge transformations. However, the same is not true for the measure $\mathcal{D}\psi\mathcal{D}\bar\psi$ of the integral. It turns out that under a gauge transformation the measure transforms as
+$$
+\mathcal{D}\psi_+\mathcal{D}\psi^\dagger_+\to\mathcal{D}\psi_+\mathcal{D}\psi^\dagger_+e^{iA(R)\nu}
+$$
+where $\nu$ is the <em>winding number we have already calculated</em> and $A(R)$ is a group theoretic factor depending on the representation $R$ of the gauge group that $\psi$ transforms under. Already we see that topology and anomalies go hand in hand.</p>
+<p>However $SU(2)$ seems to be safe since $A(R)$ vanishes for all representations of $SU(2)$ and this anomaly seems to go away. As we will see, a subtler effect still manages to make $SU(2)$ anomalous.</p>
+<p>First some basic QFT. Fermions are Grassmann-numbered fields this means that $\psi\psi=0$ and $\psi&rsquo;\psi=-\psi\psi&rsquo;$. This reflect the Fermi statistics that they obey. But Grassmann integration is really easy. If $a$ is a Grassmann number then
+$$
+\int da=0\quad\textup{and}\quad\int da; a=1
+$$
+There are no higher terms since $a^2=0$. This means that, if $A_{ij}$ is a square matrix and $a_i,b_j$ two Grassmann column vectors then the integral
+$$
+I=\int\prod_{i} da_idb_i; e^{-b_i A_{ij}a_j}
+$$
+can be computed by first going to the eigenbasis of $A_{ij}$ with eigenvalues $\lambda_j$ and then Taylor expanding. Since only terms linear in both $a$ and $b$ survive integration we get
+$$
+I=\int\prod_i da_i db_i; (-a_i\lambda_ib_i)=\prod_i\lambda_i=\det A
+$$
+where we need to anti commute $a_i$ through $db_i$ to get to $da_i$ and so we get rid of the minus sign. We can generalize this to path integrals and operators so
+$$
+\int \mathcal{D}\psi\mathcal{D}\bar\psi  e^{-\int d^4x;\bar\psi i\not D \psi}=\det (i\not D)
+$$
+Where we understand the determinant as the product of all eigenvalues of $\not D$ . We already know that thanks to $\gamma^5$ these come in $\pm\lambda$ pairs so that when considering all fermions
+$$
+\det(i\not D)=\prod_{\lambda\geq0} \lambda^2\geq 0
+$$
+What if we now restrict ourselves to a chiral Weyl fermion $\psi_+$? This halves the number of eigenvalues since half of them came from the $\psi_-$ sector. We denote this as
+$$
+Z=\int\mathcal{D}\psi_+\mathcal{D}\psi^\dagger_+ \mathcal{D}A; e^{-S[\psi_+,\psi^\dagger_+,A]}=\det!^{1/2}(i\not D)
+$$
+where the $1/2$ denotes that we take only half of the eigenvalues. So far so good. But how do we decide which half of the eigenvalues to take? The naive answer would be to take the positive ones. However there is another condition we need to meet, the determinant should be gauge invariant. This means that two fields $A$ and $A^{\Omega}=\Omega^{-1}A\Omega+\Omega^{-1}d\Omega$  connected by gauge transformation $\Omega$ should give the same determinant. The absolute value will be the same since we have established that all eigenvalues come in $\pm$ pairs but what about the sign?</p>
+<p>Think of it as follows. For $A$ we take the determinant to equal the product of all positive eigenvalues of $i\not D$. Then, we slowly change $A$ to $A^\Omega$. As we do this we can imagine one of the positive eigenvalues crossing zero and becoming negative. This of course will be accompanied by the corresponding negative eigenvalue becoming positive. However, the damage is done, since the eigenvalue we were considering in our determinant has flipped sign and so has the sign of the determinant. Our only hope is that an even number of eigenvalues cross zero.</p>
+<p>First the topology. The group element $\Omega$ we use is a map
+$$
+\Omega(x):\mathbb{R^4}\to SU(2)
+$$
+There is a class of such maps that asymptotes to $\Omega(x\to\infty)=1$. This means we can treat infinity as a point (this is a classic maneuver called compactification) and the map becomes
+$$
+\Omega(x):S^4\to SU(2)
+$$
+which is characterized by $\pi_4(SU(2))$. This is why $SU(2)$ is special. It&rsquo;s the only one of the $SU(N)$ groups with a non-vanishing $\pi_4$. Specifically
+$$
+\pi_4(SU(2))=\mathbb{Z}_2
+$$
+This already looks important since we care about eigenvalues crossing zero mod $2$ and this tells us that $\Omega$ has 2 $\pi_4$ classes, a trivial one and a nontrivial one (corresponding to the identity element and the $-1$ element of $\mathbb{Z}_2={1,-1}$).</p>
+<p>Now the analytical part. We consider the five-dimensional field
+$$
+\mathcal{A}(\tau,x)=(1-\tau)A(x)+\tau A^\Omega(x)
+$$
+This clearly interpolates between the two gauge equivalent fields. We can now define the corresponding Dirac operator it $5d$
+$$
+\not D^{(5)}\Psi=\gamma^\tau \frac{\partial \Psi}{\partial \tau}+\not D\Psi
+$$
+where $\not D$ our original $4d$ Dirac operator and $\gamma^\tau$ the fifth $\gamma$ matrix in $5d$. What happens if $\Psi_0$ is a zero mode of $\not D^{(5)}$? Then
+$$
+\frac{\partial \Psi_0}{\partial \tau}=-\gamma^\tau\not D\Psi_0
+$$
+We now take $\tau$  to flow slowly enough to use the adiabatic approximation and write
+$$
+\Psi_0=f(\tau)\psi_0(x;\tau)
+$$
+where $\psi_0$ is a function of $x$ and eigenfunction of $\gamma^\tau \not D$. Essentially, at each point in $\tau$ we can decompose $\Psi_0$ into a basis of $\gamma^\tau \not D$. Then
+$$
+f&rsquo;(\tau)=-\lambda(\tau)f(\tau)\Rightarrow f(t)=f_0 \exp\left(\int^\tau_{-1}ds;\lambda(\tau)\right)
+$$
+For $f$, and so $\Psi_0$, to be normalisable we need $\lambda(\tau\to -1)&lt;0$ and $\lambda(\tau\to 1)&gt;0$.</p>
+<p>What this means is that each zero mode of $\not D ^{(5)}$ corresponds to a eigenvalue of $\not D$ crossing zero as we go from $A$ to $A^{\Omega}$. This is exactly what we want to calculate. So the next question is, how many zero modes does $\not D^{(5)}$ have?</p>
+<p>Well in odd dimensions it turns out that the index of any operator vanishes. This relates to the fact that the Chern character is a $2j$-form so there is nothing to integrate over in an odd dimensional space. (More fundamentally this relates to the fact that $b^{r-m}=b^r$, a relation known as Poincare Duality).</p>
+<p>However, there is another index we can define for anti-symmetric operators like our $\not D^{(5)}$. This is the mod $2$ index and it&rsquo;s defined as
+$$
+\textup{ind}_2; \not D^{(5)}=\dim\ker \not D^{(5)}\quad\textup{mod }2
+$$
+This it turns out is a topological invariant and is precisely what we want to calculate. We can see where this is going. The mod $2$ index is connected to a characteristic class of $H^5(M)$. The regular index was equal to the integer winding number $\pi_3(SU(2))$ so it&rsquo;s only natural that the mod 2 index is equal to the mod 2 winding number of $\pi_4(SU(2))$. Therefore, for non-trivial $\Omega$ we have
+$$
+\textup{ind}_2 ;\not D^{(5)}=1
+$$
+so an odd number of eigenvalues of $\not D$ flow through zero and we end up with
+$$
+\det!^{1/2}(i\not D)<em>A=-\det!^{1/2}(i\not D)</em>{A^\Omega}=-\det!^{1/2}(i\not D)_A=0
+$$
+So the theory is $Z=0$ which has no content.</p>
+<p>What this means is that we can&rsquo;t have a theory of a single (or for that matter any odd number) of chiral fermions coupled to $SU(2)$ in $4d$.</p>
+<h1 id="conclusion-and-sources">Conclusion and Sources</h1>
+<p>Anomalies and chiral fermions sit at the center of modern theoretical physics. They describe the Standard Model of particle physics as well as new states of matter such as superconductors and topological insulators and much more. As we have seen here, chiral fermions come with a lot of mathematical subtleties that require the use of , relatively, new mathematical concepts such as index theorems and characteristic classes.</p>
+<p>This is the start of a long and fruitful relationship between physics and mathematics, one that culminates in supersymmetry, string theory and Calabi-Yau manifolds as well as knot theory (see our previous article on the star-triangle relation).</p>
+<p>If nothing else I hope this article demonstrated that topology is not just a fancier language to reinterpret known results, but a tool for discovering new physics.</p>
+<h3 id="sources">Sources</h3>
+<p>[1] Most of the Topology, specifically the Homotopy examples as well as the explanation of cohomology and complexes come from Nakahara&rsquo;s &ldquo;Geometry, Topology and physics&rdquo;</p>
+<p>[2] The computation of the Dirac index comes from D. Tong&rsquo;s lectures on Gauge Theories</p>
+<p>[3] Witten&rsquo;s argument for the $SU(2)$ anomaly was first presented in his article &ldquo;An SU(2) Anomaly&rdquo;</p>
+<p>[4] The Atiyah-Singer Index theorem first appeared in a big monograph by  M. Atiyah and I. Singer called &ldquo;The Index of Elliptic Operators&rdquo;. In chapter V they also go over the mod 2 index in odd dimensions.</p>
+<p><strong>Back to homepage</strong> <a href="https://principiaphysicaegeneralis.com/">https://principiaphysicaegeneralis.com/</a></p>
+
+
+      
+    </article>
+    
+  </div>
+
+        </div><footer>
+  <div class="container">
+    <p class="credits copyright">
+      <p class="credits theme-by">
+        Powered By <a href="https://gohugo.io">Hugo</a>&nbsp;/&nbsp;Theme&nbsp;<a href="https://github.com/kaisugi/HugoTeX">HugoTeX</a>
+        <br>
+        <a href="https://principiaphysicaegeneralis.com/about">Georgios Koundouros</a>
+        &copy;
+        2025
+      </p>
+  </div>
+</footer></body>
+</html>
